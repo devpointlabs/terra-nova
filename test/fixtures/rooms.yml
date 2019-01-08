@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Room_type: MyString
+  Cost: 1.5
+  Max_occupancy: 1
+  reservation: one
+
+two:
+  Room_type: MyString
+  Cost: 1.5
+  Max_occupancy: 1
+  reservation: two
