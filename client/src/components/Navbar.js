@@ -5,7 +5,10 @@ import { Link, withRouter, } from 'react-router-dom';
 import { faCloud, faPhone, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+// Need to make NavBars fluxuate between login and logout so it isn't always showing?
+
 class Navbar extends React.Component {
+  state = { conversion: false, };
 
   rightNavItems = () => {
     const { auth: { user, handleLogout, }, location, } = this.props;
@@ -25,9 +28,6 @@ class Navbar extends React.Component {
       return (
         <Container>
           <Menu.Menu position='right'>
-            <Menu.Item>
-              USD
-            </Menu.Item>Ï
             <Link to='/login'>
               <Menu.Item
                 id='login'
@@ -48,11 +48,22 @@ class Navbar extends React.Component {
     }
   }
 
+  //  Will need a dollar conversion? Should the whole conversion be in one thing?
+
+  // Need to make this work with state to change dropdown items change from false to true.
+  handleChange = (e) => {
+    // Something about converting page from english to chinese
+    const { name, value, } = e.target;
+    this.setState({ [name]: value, });
+  }
+
+
+
   render() {
-    const { auth: location } = this.props;
+    const { auth: { user, handleLogout, }, location, } = this.props;
+    const { conversion } = this.state;
     return (
       <Container>
-        
         <Menu secondary size='mini'>
           <Menu.Item>
             <FontAwesomeIcon
@@ -81,22 +92,28 @@ class Navbar extends React.Component {
               }} />
             1-800-888-8888
           </Menu.Item>
+
           <Menu.Item position='right'>
-              <Dropdown item text='USD'>
-              <Dropdown.Item>
-                CND
+            <Dropdown item text='$ (USD)'>
+              <Dropdown.Menu>
+                <Dropdown.Item onClick={this.handleChange}>
+                  ¥ (CYN)
               </Dropdown.Item>
-              </Dropdown>
-          </Menu.Item>
-          <Menu.Item position='right'>
-              <Dropdown item text='ENG'>
-              <Dropdown.Item>
-                CHN
+              </Dropdown.Menu>
+            </Dropdown>
+            <Dropdown item text='ENG'>
+              <Dropdown.Menu>
+                <Dropdown.Item onClick={this.handleChange}>
+                  ROC
               </Dropdown.Item>
-              </Dropdown>
+              </Dropdown.Menu>
+            </Dropdown>
           </Menu.Item>
+        
         </Menu>
-        <br />
+
+        
+
         <Menu pointing secondary>
           <Link to='/'>
             <Menu.Item
@@ -105,14 +122,14 @@ class Navbar extends React.Component {
               active={location.pathname === '/'}
             />
           </Link>
-          <Link to='/rooms_and_rates'>
+          <Link to='/rooms'>
             <Menu.Item
               name='Room & Rate'
               id='Room & Rate'
               style={{
                 width: '114px'
               }}
-              active={location.pathname === '/rooms_and_rates'}
+              active={location.pathname === '/rooms'}
             >Room & Rate</Menu.Item>
           </Link>
           <Link to='/reservations'>
@@ -123,9 +140,11 @@ class Navbar extends React.Component {
             />
           </Link>
 
-
+              {/* Logout */}
           {this.rightNavItems()}
         </Menu>
+        <br/>
+        <br/>
       </Container>
     )
   }
