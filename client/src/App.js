@@ -17,8 +17,7 @@ const App = () => (
     <FetchUser>
       <Container>
         <Switch>
-          {/* Don't think Home should be protected */}
-          <ProtectedRoute exact path="/" component={Home} />
+          <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/rooms" component={Rooms} />

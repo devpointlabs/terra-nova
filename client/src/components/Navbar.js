@@ -8,11 +8,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // Need to make NavBars fluxuate between login and logout so it isn't always showing?
 
 class Navbar extends React.Component {
-  state = { conversion: false, };
+  state = { user: null, };
 
   rightNavItems = () => {
     const { auth: { user, handleLogout, }, location, } = this.props;
-
+    // debugger
     if (user) {
       return (
         <Container>
@@ -48,6 +48,8 @@ class Navbar extends React.Component {
     }
   }
 
+// Make this a toggle function instead?
+
   //  Will need a dollar conversion? Should the whole conversion be in one thing?
 
   // Need to make this work with state to change dropdown items change from false to true.
@@ -60,8 +62,7 @@ class Navbar extends React.Component {
 
 
   render() {
-    const { auth: { user, handleLogout, }, location, } = this.props;
-    const { conversion } = this.state;
+    const { auth: { user, }, location, } = this.props;
     return (
       <Container>
         <Menu secondary size='mini'>
@@ -92,8 +93,11 @@ class Navbar extends React.Component {
               }} />
             1-800-888-8888
           </Menu.Item>
-
           <Menu.Item position='right'>
+              <Menu.Item>
+                Name
+                Welcome {user.first_name}
+              </Menu.Item>
             <Dropdown item text='$ (USD)'>
               <Dropdown.Menu>
                 <Dropdown.Item onClick={this.handleChange}>
@@ -154,9 +158,11 @@ export class ConnectedNavbar extends React.Component {
   render() {
     return (
       <AuthConsumer>
-        {auth =>
-          <Navbar {...this.props} auth={auth} />
-        }
+        { auth =>
+        
+        <Navbar {...this.props} auth={auth} />
+      } 
+        
       </AuthConsumer>
     )
   }
