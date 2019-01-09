@@ -1,0 +1,4 @@
+added config i18n Translator in application.rb
+wrapped routes in scope in routes.rb
+added before action to set locale and created a private method in application controller
+created navigation links file in layouts
