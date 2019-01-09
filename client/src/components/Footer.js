@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Container, Image, Segment } from "semantic-ui-react";
+import { Grid, Container, Image, Segment, Icon } from "semantic-ui-react";
 import Terra_Nova_Cabins_Logo from "../images/Terra_Nova_Cabins_Logo.png";
 
 const Footer = () => {
@@ -9,6 +9,12 @@ const Footer = () => {
     width: "100%"
   };
 
+  let flexbox = {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between"
+  };
+
   return (
     <Segment inverted style={styles}>
       <Container inverted>
@@ -16,6 +22,7 @@ const Footer = () => {
           <Grid.Column>
             <Image src={Terra_Nova_Cabins_Logo} size="small" />
           </Grid.Column>
+          {/* Will convert to links when routes are ready */}
           <Grid.Column>
             <p>Sit Map</p>
             <p>Term & Conditions</p>
@@ -37,11 +44,21 @@ const Footer = () => {
             <p>Gift Card</p>
           </Grid.Column>
         </Grid>
+        <br />
         <hr />
         <br />
-        <p>
-          Copyright &copy; 2017 EngoCreative SkyLin Hotel Theme crafted with love
-        </p>
+        <div style={flexbox}>
+          <p>
+            Copyright &copy; 2017 EngoCreative SkyLine Hotel Theme crafted with
+            love
+          </p>
+          <div>
+            <Icon name="paypal" size="large" />
+            <Icon name="cc visa" size="large" />
+            <Icon name="cc mastercard" size="large" />
+            <Icon name="cc discover" size="large" />
+          </div>
+        </div>
       </Container>
     </Segment>
   );
