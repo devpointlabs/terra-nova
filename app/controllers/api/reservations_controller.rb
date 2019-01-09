@@ -1,18 +1,17 @@
 class Api::ReservationsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user
   before_action :set_reservation, only: [:update, :destroy]
 
   def index
-    render json: @user.reservations.all
+    render json: current_user.reservations.all
   end
 
   def show
-    render json: @user.reservation
+    render json: current_user.reservation
   end
 
   def create
-    reservation = @user.reservations.new(reservation_params)
+    reservation = current_user.reservations.new(reservation_params)
     if reservation.save
       render json: reservation
     else
@@ -32,10 +31,6 @@ class Api::ReservationsController < ApplicationController
   end
 
   private
-  def set_user
-    @user = User.find(params[:user_id])
-  end
-
   def set_reservation
     @reservation = Reservation.find(params[:id])
   end
