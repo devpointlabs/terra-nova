@@ -24,6 +24,7 @@ class Api::RoomsController < ApplicationController
       render json: @room
     else 
       render json: @room.error
+    end
   end
 
   def destroy
