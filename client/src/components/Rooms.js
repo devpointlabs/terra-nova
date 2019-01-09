@@ -12,9 +12,8 @@ class Rooms extends React.Component {
         <Header as="h4" textAlign="center"> When you host a party or family reunion, the special celebrations let </Header>
         <Header as="h4" textAlign="center"> you strengthen bonds with each other </Header>
         {/* link to room */}
-        <Card.Group itemsPerRow={3}>
-          {this.renderItems()}
-        </Card.Group>
+
+       {/* card group here */}
    
       </div>
     )
