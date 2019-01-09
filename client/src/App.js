@@ -8,6 +8,8 @@ import FetchUser from './components/FetchUser';
 import ProtectedRoute from './components/ProtectedRoute';
 import { Container, } from 'semantic-ui-react';
 import { Route, Switch, } from 'react-router-dom';
+
+
 import './App.css';
 
 const App = () => (
