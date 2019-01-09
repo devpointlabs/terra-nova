@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   let styles = {
     position: "absolute",
-    bottom: "0",
     width: "100%"
   };
 
@@ -27,10 +26,6 @@ const Footer = () => {
     marginLeft: "30px"
   };
 
-  // let noMargin = {
-  //   marginRight: "0px"
-  // };
-
   return (
     <Segment inverted style={styles}>
       <Container inverted>
@@ -38,7 +33,6 @@ const Footer = () => {
           <Grid.Column>
             <Image src={Terra_Nova_Cabins_Logo} size="small" />
           </Grid.Column>
-          {/* Will convert to links when routes are ready */}
           <Grid.Column>
             <Link to={""} style={linkStyle}>
               Sit Map
