@@ -1,6 +1,7 @@
 import React from "react";
 import { Grid, Container, Image, Segment, Icon } from "semantic-ui-react";
 import Terra_Nova_Cabins_Logo from "../images/Terra_Nova_Cabins_Logo.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   let styles = {
@@ -15,6 +16,21 @@ const Footer = () => {
     justifyContent: "space-between"
   };
 
+  let linkStyle = {
+    color: "white",
+    display: "flex",
+    marginTop: "5px",
+    marginBottom: "15px"
+  };
+
+  let iconStyle = {
+    marginLeft: "30px"
+  };
+
+  // let noMargin = {
+  //   marginRight: "0px"
+  // };
+
   return (
     <Segment inverted style={styles}>
       <Container inverted>
@@ -24,24 +40,52 @@ const Footer = () => {
           </Grid.Column>
           {/* Will convert to links when routes are ready */}
           <Grid.Column>
-            <p>Sit Map</p>
-            <p>Term & Conditions</p>
-            <p>Privacy Policy</p>
-            <p>Help</p>
-            <p>Affiliate</p>
+            <Link to={""} style={linkStyle}>
+              Sit Map
+            </Link>
+            <Link to={""} style={linkStyle}>
+              Term & Conditions
+            </Link>
+            <Link to={""} style={linkStyle}>
+              Privacy Policy
+            </Link>
+            <Link to={""} style={linkStyle}>
+              Help
+            </Link>
+            <Link to={""} style={linkStyle}>
+              Affiliate
+            </Link>
           </Grid.Column>
           <Grid.Column>
-            <p>Our Location</p>
-            <p>Carreer</p>
-            <p>About Us</p>
-            <p>Contact Us</p>
+            <Link to={""} style={linkStyle}>
+              Our Location
+            </Link>
+            <Link to={""} style={linkStyle}>
+              Carreer
+            </Link>
+            <Link to={""} style={linkStyle}>
+              About Us
+            </Link>
+            <Link to={""} style={linkStyle}>
+              Contact Us
+            </Link>
           </Grid.Column>
           <Grid.Column>
-            <p>FAQS</p>
-            <p>News</p>
-            <p>Photo & Video</p>
-            <p>Resturant</p>
-            <p>Gift Card</p>
+            <Link to={""} style={linkStyle}>
+              FAQS
+            </Link>
+            <Link to={""} style={linkStyle}>
+              News
+            </Link>
+            <Link to={""} style={linkStyle}>
+              Photo & Video
+            </Link>
+            <Link to={""} style={linkStyle}>
+              Resturant
+            </Link>
+            <Link to={""} style={linkStyle}>
+              Gift Card
+            </Link>
           </Grid.Column>
         </Grid>
         <br />
@@ -53,10 +97,10 @@ const Footer = () => {
             love
           </p>
           <div>
-            <Icon name="paypal" size="large" />
-            <Icon name="cc visa" size="large" />
-            <Icon name="cc mastercard" size="large" />
-            <Icon name="cc discover" size="large" />
+            <Icon name="paypal" size="big" />
+            <Icon name="cc visa" size="big" style={iconStyle} />
+            <Icon name="cc mastercard" size="big" style={iconStyle} />
+            <Icon name="cc discover" size="big" style={iconStyle} />
           </div>
         </div>
       </Container>
