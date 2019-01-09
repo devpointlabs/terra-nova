@@ -61,6 +61,8 @@ class Navbar extends React.Component {
 
 
 
+
+
   render() {
     const { auth: { user, }, location, } = this.props;
     return (
@@ -94,10 +96,15 @@ class Navbar extends React.Component {
             1-800-888-8888
           </Menu.Item>
           <Menu.Item position='right'>
+              {user ? 
               <Menu.Item>
-                Name
-                Welcome {user.first_name}
+               <i>
+                  Welcome, {user.first_name}
+                 </i>
               </Menu.Item>
+              :
+              null 
+              }
             <Dropdown item text='$ (USD)'>
               <Dropdown.Menu>
                 <Dropdown.Item onClick={this.handleChange}>

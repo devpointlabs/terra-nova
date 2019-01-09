@@ -13,8 +13,8 @@ import "./App.css";
 
 const App = () => (
   <Fragment>
-    <Navbar />
     <FetchUser>
+      <Navbar />
       <Container>
         <Switch>
           <Route exact path="/" component={Home} />
