@@ -12,7 +12,6 @@ class Navbar extends React.Component {
 
   rightNavItems = () => {
     const { auth: { user, handleLogout, }, location, } = this.props;
-    // debugger
     if (user) {
       return (
         <Container>
@@ -48,7 +47,7 @@ class Navbar extends React.Component {
     }
   }
 
-// Make this a toggle function instead?
+  // Make this a toggle function instead?
 
   //  Will need a dollar conversion? Should the whole conversion be in one thing?
 
@@ -58,9 +57,6 @@ class Navbar extends React.Component {
     const { name, value, } = e.target;
     this.setState({ [name]: value, });
   }
-
-
-
 
 
   render() {
@@ -96,15 +92,15 @@ class Navbar extends React.Component {
             1-800-888-8888
           </Menu.Item>
           <Menu.Item position='right'>
-              {user ? 
+            {user ?
               <Menu.Item>
-               <i>
+                <i>
                   Welcome, {user.first_name}
-                 </i>
+                </i>
               </Menu.Item>
               :
-              null 
-              }
+              null
+            }
             <Dropdown item text='$ (USD)'>
               <Dropdown.Menu>
                 <Dropdown.Item onClick={this.handleChange}>
@@ -120,10 +116,7 @@ class Navbar extends React.Component {
               </Dropdown.Menu>
             </Dropdown>
           </Menu.Item>
-        
         </Menu>
-
-        
 
         <Menu pointing secondary>
           <Link to='/'>
@@ -151,11 +144,11 @@ class Navbar extends React.Component {
             />
           </Link>
 
-              {/* Logout */}
+          {/* This Toggles Logout */}
           {this.rightNavItems()}
         </Menu>
-        <br/>
-        <br/>
+        <br />
+        <br />
       </Container>
     )
   }
@@ -165,11 +158,10 @@ export class ConnectedNavbar extends React.Component {
   render() {
     return (
       <AuthConsumer>
-        { auth =>
-        
-        <Navbar {...this.props} auth={auth} />
-      } 
-        
+        {auth =>
+          <Navbar {...this.props} auth={auth} />
+        }
+
       </AuthConsumer>
     )
   }
