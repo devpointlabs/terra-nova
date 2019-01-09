@@ -1,5 +1,6 @@
 import React from "react";
 import { Header, Card } from 'semantic-ui-react';
+import { RoomHeader, RoomBody } from '../styles/AppStyles'
 
 class Rooms extends React.Component {
    state = { rooms: [] }
@@ -8,9 +9,9 @@ class Rooms extends React.Component {
   render() {
     return (
       <div>
-        <Header as="h1" textAlign="center"> Our Rooms </Header>
-        <Header as="h4" textAlign="center"> When you host a party or family reunion, the special celebrations let </Header>
-        <Header as="h4" textAlign="center"> you strengthen bonds with each other </Header>
+        <RoomHeader> Our Rooms </RoomHeader>
+        <RoomBody> When you host a party or family reunion, the special celebrations let </RoomBody>
+        <RoomBody> you strengthen bonds with each other </RoomBody>
         {/* link to room */}
 
        {/* card group here */}
