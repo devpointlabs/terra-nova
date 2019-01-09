@@ -3,7 +3,6 @@ import { Route, Redirect, } from 'react-router-dom';
 import { AuthConsumer, } from '../providers/AuthProvider';
 
 
-// Something wrong in this file?
 const ProtectedRoute = ({ component: Component, ...rest }) => (
   <AuthConsumer>
     {auth =>
