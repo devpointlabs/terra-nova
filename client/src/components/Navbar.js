@@ -1,9 +1,11 @@
 import React from 'react'
 import { AuthConsumer, } from "../providers/AuthProvider";
-import { Menu, Container, Dropdown, } from 'semantic-ui-react';
+import { Menu, Container, Dropdown, Image, Grid,} from 'semantic-ui-react';
 import { Link, withRouter, } from 'react-router-dom';
 import { faCloud, faPhone, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ReactWeather from 'react-open-weather';
+import GrandCanyonoftheYellowstone from "../images/GrandCanyonoftheYellowstone.png";
 
 // Need to make NavBars fluxuate between login and logout so it isn't always showing?
 
@@ -63,6 +65,7 @@ class Navbar extends React.Component {
     const { auth: { user, }, location, } = this.props;
     return (
       <Container>
+      <Image src={GrandCanyonoftheYellowstone} />
         <Menu secondary size='mini'>
           <Menu.Item>
             <FontAwesomeIcon
@@ -71,7 +74,14 @@ class Navbar extends React.Component {
                 width: '20px'
               }} />
             32˚F
-        </Menu.Item>
+            {/* <ReactWeather
+              forecast="today"  
+              apikey="6a02957174474c9ebbe40705191001"
+              type="city"
+              city="Seattle" /> */}
+              {/* Weather API DOCS */}
+              {/* https://www.apixu.com/my/ */}
+          </Menu.Item>
 
           <Menu.Item>
             <FontAwesomeIcon
@@ -119,6 +129,10 @@ class Navbar extends React.Component {
         </Menu>
 
         <Menu pointing secondary>
+        <Grid.Column>
+
+        {/* <Image src={} size="small" /> */}
+        </Grid.Column>
           <Link to='/'>
             <Menu.Item
               name='home'

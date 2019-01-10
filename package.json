@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "react-open-weather": "^0.4.0",
+    "react-weather": "^0.1.3"
+  }
+}
