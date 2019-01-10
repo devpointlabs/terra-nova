@@ -6,6 +6,7 @@ import { faCloud, faPhone, faMapMarkerAlt } from "@fortawesome/free-solid-svg-ic
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ReactWeather from 'react-open-weather';
 import GrandCanyonoftheYellowstone from "../images/GrandCanyonoftheYellowstone.png";
+import Yellowstone from "../images/Yellowstone.png";
 
 // Need to make NavBars fluxuate between login and logout so it isn't always showing?
 
@@ -54,18 +55,24 @@ class Navbar extends React.Component {
   //  Will need a dollar conversion? Should the whole conversion be in one thing?
 
   // Need to make this work with state to change dropdown items change from false to true.
-  handleChange = (e) => {
+  // handleChange = (e) => {
     // Something about converting page from english to chinese
-    const { name, value, } = e.target;
-    this.setState({ [name]: value, });
-  }
+  //   const { name, value, } = e.target;
+  //   this.setState({ [name]: value, });
+  // }
 
+  toggleDropdown = (e) => {
+
+  }
 
   render() {
     const { auth: { user, }, location, } = this.props;
     return (
       <Container>
-      <Image src={GrandCanyonoftheYellowstone} />
+        <Grid.Column>
+
+      {/* <Image src={Yellowstone} /> */}
+        </Grid.Column>
         <Menu secondary size='mini'>
           <Menu.Item>
             <FontAwesomeIcon
