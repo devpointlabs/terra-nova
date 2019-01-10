@@ -16,8 +16,8 @@ import "./App.css";
 const App = () => (
   <Fragment>
     <FetchUser>
+      <Container style={styles.body}>
       <Navbar />
-      <Container>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
@@ -26,9 +26,20 @@ const App = () => (
           <Route component={NoMatch} />
         </Switch>
       </Container>
+      <Footer style={styles.footer} />
     </FetchUser>
-    <Footer />
   </Fragment>
 );
 
 export default App;
+
+const styles = {
+  body: {
+    display: "flex",
+    flexDirection: "column",
+    minHeight: "100vh"
+  },
+  footer: {
+    margin: "auto auto 0 auto"
+  }
+};
