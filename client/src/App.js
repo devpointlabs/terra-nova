@@ -11,21 +11,11 @@ import { Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer";
 import "./App.css";
 
-let body = {
-  display: "flex",
-  flexDirection: "column",
-  minHeight: "100vh"
-};
-
-let footer = {
-  margin: "auto auto 0 auto"
-};
-
 const App = () => (
   <Fragment>
     <Navbar />
     <FetchUser>
-      <Container style={body}>
+      <Container style={styles.body}>
         <Switch>
           <ProtectedRoute exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
@@ -33,9 +23,20 @@ const App = () => (
           <Route component={NoMatch} />
         </Switch>
       </Container>
-      <Footer style={footer} />
+      <Footer style={styles.footer} />
     </FetchUser>
   </Fragment>
 );
 
 export default App;
+
+const styles = {
+  body: {
+    display: "flex",
+    flexDirection: "column",
+    minHeight: "100vh"
+  },
+  footer: {
+    margin: "auto auto 0 auto"
+  }
+};
