@@ -15,7 +15,7 @@ export const Title2 = styled.h3`
   font-family: 'Poppins', sans-serif;
 `;
 
-export const RoomHeader = styled.h1`
+export const SubHeader = styled.h1`
   font-size: 3.0em;
   text-align: center;
   font-family: 'Playfair Display', serif;
@@ -27,6 +27,8 @@ export const RoomBody = styled.p`
   font-family: 'Poppins', sans-serif;
   text-align: center;
   `;
+
+
 
 // export const Card1 = styled.div`
 //   height: 100px;

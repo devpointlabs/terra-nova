@@ -1,15 +1,25 @@
 import React from "react";
 import { Card, Image } from "semantic-ui-react";
-import { Title1 } from ""
-import {  } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { SubHeader } from "../styles/AppStyles";
+import { Grid } from "semantic-ui-react";
+
 
 
 
 const AboutUs = () => (
-
-
-
+ <div>
+   <div>
+     <Grid columns={2} padded='vertically'>
+     <Grid.Column>
+      <SubHeader><u>About Us</u></SubHeader>
+        <p> Contrary to popular belief, Lorem isn't simply random test. </p>
+      </Grid.Column>
+      <Grid.Column>
+        <SubHeader>Picture</SubHeader>
+        </Grid.Column>
+    </Grid>
+  </div>
+ 
   <Card.Group centered itemsPerRow={4}>
     <Card style={styles.card}>
       <Image/>
@@ -44,6 +54,7 @@ const AboutUs = () => (
       <Card.Content>AIRPORT TAXIS</Card.Content>
     </Card>
   </Card.Group>
+  </div>
 )
 
 export default AboutUs;

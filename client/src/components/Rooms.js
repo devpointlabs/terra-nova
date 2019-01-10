@@ -1,6 +1,6 @@
 import React from "react";
 import { Header, Card } from 'semantic-ui-react';
-import { RoomHeader, RoomBody } from '../styles/AppStyles';
+import { SubHeader, RoomBody } from '../styles/AppStyles';
 import RoomCard from './Room';
 import axios from 'axios';
 
@@ -31,7 +31,7 @@ class Rooms extends React.Component {
   render() {
     return (
       <div style={styles.background}>
-        <RoomHeader> Our Rooms </RoomHeader>
+        <SubHeader> Our Rooms </SubHeader>
           <RoomBody> When you host a party or family reunion, the special celebrations let </RoomBody>
           <RoomBody> you strengthen bonds with each other </RoomBody>
         
