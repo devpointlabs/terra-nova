@@ -8,8 +8,6 @@ import ReactWeather from 'react-open-weather';
 import { BackgroundImage, NavText, } from '../styles/AppStyles';
 import Terra_Nova_Cabins_Logo from '../images/Terra_Nova_Cabins_Logo.png';
 
-// Need to make NavBars fluxuate between login and logout so it isn't always showing?
-
 class Navbar extends React.Component {
   state = { user: null, };  
 
@@ -18,16 +16,13 @@ class Navbar extends React.Component {
     if (user) {
       return (
         <Container>
-          <NavText>
-
             <Menu.Menu position='right'>
               <Menu.Item
                 style={styles.font}
-                name='logout'
+                name='LOGOUT'
                 onClick={() => handleLogout(this.props.history)}
               />
             </Menu.Menu>
-          </NavText>
         </Container>
       )
     } else {
@@ -38,7 +33,7 @@ class Navbar extends React.Component {
                 <Menu.Item
                 style={styles.font}
                   id='login'
-                  name='login'
+                  name='LOGIN'
                   active={location.pathname === '/login'}
                 />
               </Link>
@@ -46,7 +41,7 @@ class Navbar extends React.Component {
                 <Menu.Item
                 style={styles.font}
                   id='register'
-                  name='register'
+                  name='REGISTER'
                   active={location.pathname === '/register'}
                 />
               </Link>
@@ -56,37 +51,19 @@ class Navbar extends React.Component {
     }
   }
 
-  // Make this a toggle function instead?
-
-  //  Will need a dollar conversion? Should the whole conversion be in one thing?
-
-  // Need to make this work with state to change dropdown items change from false to true.
-  // handleChange = (e) => {
-  // Something about converting page from english to chinese
-  //   const { name, value, } = e.target;
-  //   this.setState({ [name]: value, });
-  // }
-
-  toggleDropdown = (e) => {
-  }
-
-
-
   render() {
     const { auth: { user, }, location, } = this.props;
-
     return (
-      <div >
-
+      <div>
         <Container >
-          <Menu secondary style={styles.flex}>
+          <Menu position='center' secondary>
           <Menu.Item>
         <Image src={Terra_Nova_Cabins_Logo} size="tiny" style={styles.image}/>
           </Menu.Item>
             <Link to='/'>
               <Menu.Item
                 style={styles.font}
-                name='home'
+                name='HOME'
                 id='home'
                 active={location.pathname === '/'}
               />
@@ -97,13 +74,13 @@ class Navbar extends React.Component {
                 id='Room & Rate'
                 style={styles.fontSize}
                 active={location.pathname === '/rooms'}
-              > Room & Rate
+              > ROOM & RATE
                 </Menu.Item>
             </Link>
             <Link to='/reservations'>
               <Menu.Item
                 style={styles.font}
-                name='reservations'
+                name='RESERVATIONS'
                 id='reservations'
                 active={this.props.location.pathname === '/reservations'}
               />
@@ -111,7 +88,7 @@ class Navbar extends React.Component {
             <Link to='/gallery'>
               <Menu.Item
                 style={styles.font}
-                name='gallery'
+                name='GALLERY'
                 id='gallery'
                 active={this.props.location.pathname === '/gallery'}
               />
@@ -140,7 +117,7 @@ class Navbar extends React.Component {
             <Link to='/about'>
               <Menu.Item
                 style={styles.font}
-                name='about'
+                name='ABOUT'
                 id='about'
                 active={this.props.location.pathname === '/about'}
               />
@@ -148,16 +125,13 @@ class Navbar extends React.Component {
             <Link to='/contact'>
               <Menu.Item
                 style={styles.font}
-                name='contact'
+                name='CONTACT'
                 id='contact'
                 active={this.props.location.pathname === '/contact'}
               />
             </Link>
-
-            {/* This Toggles Logout */}
             {this.rightNavItems()}
           </Menu>
-          <br />
           <br />
         </Container>
       </div>
@@ -192,7 +166,7 @@ export const styles = {
     color: 'white',
     display: 'flex',
     justifyContent: 'center',
-    width: '115px',
+    width: '120px',
   },
   image: {
     padding: '5px',
