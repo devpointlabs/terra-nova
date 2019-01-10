@@ -13,7 +13,7 @@ export const WhiteButton = styled.button`
 
 export const BlackButton = styled.button`
   background-color: #555555;
-  border: 2px solid #555555;
+  border: 2px solid ##f8f8ff;
   color: white;
   padding: 10px 25px;
   text-align: center;
