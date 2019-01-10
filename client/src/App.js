@@ -16,6 +16,7 @@ import { Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer";
 import { BackgroundImage } from './styles/AppStyles';
 import "./App.css";
+import Geobar from "./components/Geobar";
 
 
 const App = () => (
@@ -23,7 +24,8 @@ const App = () => (
     <FetchUser>
 
       <BackgroundImage>
-      <Navbar />
+        <Geobar />
+        <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />

@@ -1,10 +1,11 @@
 import React from 'react';
 import { Header, } from 'semantic-ui-react';
+import { Title3 } from '../styles/AppStyles';
 
 const Reservations = () => (
   <div>
 
-  <Header as="h3" textAlign="center">Reservations</Header>
+  <Title3>Reservations</Title3>
   Really awesome Reservations stuff will go here.
   </div>
 )

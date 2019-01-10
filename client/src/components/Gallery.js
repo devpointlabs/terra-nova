@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link, } from 'react-router-dom';
 import { Header, } from 'semantic-ui-react';
+import { Title3, } from '../styles/AppStyles';
 
 const Gallery = () => (
-  <Header as="h3" textAlign="center">
+  <Title3>
     Gallery
-  </Header>
+  </Title3>
 )
 
 export default Gallery;
