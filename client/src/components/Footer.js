@@ -35,7 +35,7 @@ const Footer = () => {
           </Grid.Column>
           <Grid.Column>
             <Link to={""} style={linkStyle}>
-              Sit Map
+              Site Map
             </Link>
             <Link to={""} style={linkStyle}>
               Term & Conditions
@@ -55,7 +55,7 @@ const Footer = () => {
               Our Location
             </Link>
             <Link to={""} style={linkStyle}>
-              Carreer
+              Career
             </Link>
             <Link to={""} style={linkStyle}>
               About Us
@@ -75,7 +75,7 @@ const Footer = () => {
               Photo & Video
             </Link>
             <Link to={""} style={linkStyle}>
-              Resturant
+              Restaurant
             </Link>
             <Link to={""} style={linkStyle}>
               Gift Card
@@ -89,6 +89,7 @@ const Footer = () => {
           <p>
             Copyright &copy; 2017 EngoCreative SkyLine Hotel Theme crafted with
             love
+            {/* not sure this copyright should be here */}
           </p>
           <div>
             <Icon name="paypal" size="big" />

@@ -6,18 +6,15 @@ import Register from "./components/Register";
 import Navbar from "./components/Navbar";
 import NoMatch from "./components/NoMatch";
 import FetchUser from "./components/FetchUser";
-import ProtectedRoute from "./components/ProtectedRoute";
-import { Container } from "semantic-ui-react";
 import { Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer";
 import "./App.css";
-
 
 const App = () => (
   <Fragment>
     <FetchUser>
       <Navbar />
-      <Container>
+      <div>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
@@ -25,7 +22,7 @@ const App = () => (
           <Route exact path="/reservations" component={Reservations} />
           <Route component={NoMatch} />
         </Switch>
-      </Container>
+      </div>
     </FetchUser>
     <Footer />
   </Fragment>
