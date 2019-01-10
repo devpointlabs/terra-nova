@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import Home from "./components/Home";
+import Reservations from "./components/Reservations";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Navbar from "./components/Navbar";
@@ -23,13 +24,14 @@ let footer = {
 
 const App = () => (
   <Fragment>
-    <Navbar />
     <FetchUser>
       <Container style={body}>
+      <Navbar />
         <Switch>
-          <ProtectedRoute exact path="/" component={Home} />
+          <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
+          <Route exact path="/reservations" component={Reservations} />
           <Route component={NoMatch} />
         </Switch>
       </Container>

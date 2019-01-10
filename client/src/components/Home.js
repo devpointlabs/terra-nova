@@ -3,6 +3,7 @@ import { Header } from "semantic-ui-react";
 import { Title, Title2 } from "../styles/AppStyles";
 import Rooms from "./Rooms";
 
+
 const Home = () => (
   <>
     <br />
