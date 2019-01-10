@@ -12,16 +12,17 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import { Container } from "semantic-ui-react";
 import { Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer";
-import GrandCanyonoftheYellowstone from './images/GrandCanyonoftheYellowstone.png';
+import { BackgroundImage } from "./styles/AppStyles";
 import "./App.css";
 
 
 const App = () => (
   <Fragment>
     <FetchUser>
+      <BackgroundImage>
+
       <Navbar />
       <Container>
-        <Image src={GrandCanyonoftheYellowstone} />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
@@ -31,6 +32,7 @@ const App = () => (
           <Route component={NoMatch} />
         </Switch>
       </Container>
+      </BackgroundImage>
     </FetchUser>
     <Footer />
   </Fragment>

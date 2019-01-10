@@ -69,10 +69,6 @@ class Navbar extends React.Component {
     const { auth: { user, }, location, } = this.props;
     return (
       <Container>
-        <Grid.Column>
-
-      {/* <Image src={Yellowstone} /> */}
-        </Grid.Column>
         <Menu secondary size='mini'>
           <Menu.Item>
             <FontAwesomeIcon
@@ -106,7 +102,7 @@ class Navbar extends React.Component {
               style={{
                 width: '20px'
               }} />
-            1-800-888-8888
+            1-TER-RAN-OVVA
           </Menu.Item>
           <Menu.Item position='right'>
             {user ?

@@ -28,3 +28,9 @@ export const RoomBody = styled.body`
   text-align: center;
   `;
 
+export const BackgroundImage = styled.div`
+background-image: url('https://www.travelwyoming.com/sites/default/files/u5691/Grand%20Canyon%20of%20the%20Yellowstone.jpg');
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+`;
