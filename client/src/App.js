@@ -15,7 +15,8 @@ import Footer from "./components/Footer";
 import { BackgroundImage } from './styles/AppStyles';
 import "./App.css";
 import Geobar from "./components/Geobar";
-import ProtectedRoute from '../src/components/ProtectedRoute';
+import ProtectedRoute from './components/ProtectedRoute';
+import ReviewForm from './components/ReviewForm';
 
 const App = () => (
   <Fragment>

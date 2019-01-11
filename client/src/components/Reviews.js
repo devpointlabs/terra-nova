@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+import { Link } from 'react-router-dom';
 import { BlackButton } from '../styles/AppStyles';
 
 class Reviews extends React.Component {
@@ -15,7 +15,7 @@ class Reviews extends React.Component {
                 <h4>JULIA ROSE</h4>
                 <div>From Los Angeles, California</div>
                 <br />
-                <Link to={`/`}>
+                <Link to={`/review`}>
                     <BlackButton>Write a Review</BlackButton>
                 </Link>
                 </div>
