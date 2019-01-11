@@ -2,17 +2,13 @@ import React from 'react';
 import { Title, Title2, WhiteButton } from '../styles/AppStyles';
 import Rooms from './Rooms';
 import Reviews from './Reviews';
-import {Container} from 'semantic-ui-react'
+import AboutUs from './AboutUs'
 
 const Home = () => (
   <>
-    <br />
-    <br />
-    <Container>
     <Title> Welcome to Terra Nova Cabins</Title>
       <Title2> HOTELS & RESORTS </Title2>
       <WhiteButton>About Us</WhiteButton>
-    </Container>
     {/* check availability */}
     <br/>
     <br/>
@@ -25,10 +21,8 @@ const Home = () => (
     <br/>
     <br/>
     <br/>
-    <br/>
-    <br/>
-    <br/>
     <Reviews/>
+    <AboutUs/>
  </>
 )
 
