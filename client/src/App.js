@@ -17,6 +17,7 @@ import "./App.css";
 import Geobar from "./components/Geobar";
 import ProtectedRoute from './components/ProtectedRoute';
 import ReviewForm from './components/ReviewForm';
+import Careers from './components/Careers';
 
 const App = () => (
   <Fragment>
@@ -35,6 +36,7 @@ const App = () => (
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/gallery" component={Gallery} />
           <Route exact path="/reservations" component={Reservations} />
+          <Route exact path="/careers" component={Careers} />
           <ProtectedRoute path="/review" component={ReviewForm} />
           <Route component={NoMatch} />
         </Switch>
