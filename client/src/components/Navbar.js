@@ -114,12 +114,12 @@ class Navbar extends React.Component {
             </Dropdown>
             </Menu.Item> */}
 
-            <Link to='/about'>
+            <Link to='/about_us'>
               <Menu.Item
                 style={styles.font}
                 name='ABOUT'
                 id='about'
-                active={this.props.location.pathname === '/about'}
+                active={this.props.location.pathname === '/about_us'}
               />
             </Link>
             <Link to='/contact'>
