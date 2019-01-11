@@ -4,15 +4,33 @@ import { Card, Container, Image, } from 'semantic-ui-react';
 import { SubHeader, RoomBody, } from '../styles/AppStyles';
 
 class Gallery extends React.Component {
-  state = { photos: ''}
+  state = { cards: [], };
+
+  renderCards = () => {
+    return this.state.cards.map( content => (
+      <Card raised centered textAlign fluid style={cardStyles.card}>
+        <Card.Content>
+          <Card.Header style={fontColor.font}>
+            <i>{content}TITLE</i>
+          </Card.Header>
+          <br />
+          <Image src="https://picsum.photos/300?random" alt="" />
+          <br />
+          <br />
+          <Card.Meta>
+            {content}
+            PICTURE CATEGORY/DESCRIPTION
+                </Card.Meta>
+        </Card.Content>
+      </Card>
+    ))
+  };
+
 
   render() {
     return (
-
-
-      <div styles={styles.background}>
+      <div styles={styles.background} >
         <Container>
-
           <br />
           <br />
           <br />
@@ -20,7 +38,7 @@ class Gallery extends React.Component {
           <br />
           <br />
           <SubHeader>Gallery</SubHeader>
-          <RoomBody>Please Enjoy Our Gallery of our Property & Commadities.</RoomBody>
+          <RoomBody>Please Enjoy Our Gallery of our Properties & Commodities.</RoomBody>
           <br />
           <br />
           <br />
@@ -28,26 +46,14 @@ class Gallery extends React.Component {
           <br />
           <br />
           <Card.Group centered itemsPerRow={4}>
-            <Card raised centered textAlign fluid style={cardStyles.card}>
-              <Card.Content>
-                <Card.Header style={fontColor.font}>
-                  <i>PHOTO TITLE</i>
-                </Card.Header>
-                <br />
-                <Image src="https://picsum.photos/300?random" alt="" />
-                <br />
-                <br />
-                <Card.Meta>
-                  PICTURE CATEGORY/DESCRIPTION
-                </Card.Meta>
-              </Card.Content>
-            </Card>
+            {this.renderCards()}
           </Card.Group>
         </Container>
       </div>
     )
   }
 }
+
 export default Gallery;
 
 
