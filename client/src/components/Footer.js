@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, Container, Image, Segment, Icon } from "semantic-ui-react";
-import Terra_Nova_Cabins_Logo from "../images/Terra_Nova_Cabins_Logo.png";
+import Terra_Nova_Cabins_Logo from "../assets/images/Terra_Nova_Cabins_Logo.png";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
