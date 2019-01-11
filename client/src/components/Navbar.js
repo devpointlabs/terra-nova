@@ -6,7 +6,7 @@ import { faCloud, faPhone, faMapMarkerAlt } from "@fortawesome/free-solid-svg-ic
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import ReactWeather from 'react-open-weather';
 import { BackgroundImage, NavText, } from '../styles/AppStyles';
-import Terra_Nova_Cabins_Logo from '../images/Terra_Nova_Cabins_Logo.png';
+import Terra_Nova_Cabins_Logo from '../assets/images/Terra_Nova_Cabins_Logo.png';
 
 class Navbar extends React.Component {
   state = { user: null, };  
