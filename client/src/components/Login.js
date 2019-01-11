@@ -2,7 +2,7 @@ import React from 'react';
 import { AuthConsumer, } from "../providers/AuthProvider";
 import { Button, Form, Segment, Header, } from 'semantic-ui-react';
 import styles from './Navbar'
-import { Title3, NavText } from '../styles/AppStyles';
+import { SubHeader, NavText } from '../styles/AppStyles';
 
 class Login extends React.Component {
   state = { email: '', password: '' }
@@ -23,7 +23,7 @@ class Login extends React.Component {
   
     return (
       <Segment basic>
-        <Title3>Login</Title3>
+        <SubHeader>Login</SubHeader>
         <NavText>
 
         <Form onSubmit={this.handleSubmit}>

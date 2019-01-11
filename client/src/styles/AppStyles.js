@@ -37,6 +37,7 @@ export const Title2 = styled.h3`
   color: white;
   text-align: center;
   font-family: 'Poppins', sans-serif;
+  padding-bottom: 200px;
   `;
 
 
@@ -44,7 +45,7 @@ export const SubHeader = styled.h1`
   font-size: 3.0em;
   text-align: center;
   font-family: 'Playfair Display', serif;
-  padding-top: 200px;
+  padding-top: 110px;
 
   `;
 

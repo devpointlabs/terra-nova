@@ -4,7 +4,7 @@ import { Menu, Container, Dropdown, Image, Grid, } from 'semantic-ui-react';
 import { Link, withRouter, } from 'react-router-dom';
 import { faCloud, faPhone, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import ReactWeather from 'react-open-weather';
+// import ReactWeather from 'react-open-weather';
 import { BackgroundImage, NavText, } from '../styles/AppStyles';
 import Terra_Nova_Cabins_Logo from '../images/Terra_Nova_Cabins_Logo.png';
 

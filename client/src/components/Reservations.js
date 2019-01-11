@@ -1,11 +1,11 @@
 import React from 'react';
 import { Header, } from 'semantic-ui-react';
-import { Title3 } from '../styles/AppStyles';
+import { SubHeader } from '../styles/AppStyles';
 
 const Reservations = () => (
   <div>
 
-  <Title3>Reservations</Title3>
+  <SubHeader>Reservations</SubHeader>
   Really awesome Reservations stuff will go here.
   </div>
 )
