@@ -19,6 +19,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import ReviewForm from './components/ReviewForm';
 import Careers from './components/Careers';
 import CareerForm from './components/CareerForm';
+import Events from './components/Events';
 
 const App = () => (
   <Fragment>
@@ -37,8 +38,9 @@ const App = () => (
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/gallery" component={Gallery} />
           <Route exact path="/reservations" component={Reservations} />
+          <Route exact path="/events" component={Events} />
           <Route exact path="/careers" component={Careers} />
-          <ProtectedRoute path='/careerapply' component={CareerForm} />
+          <ProtectedRoute path="/careerapply" component={CareerForm} />
           <ProtectedRoute path="/review" component={ReviewForm} />
           <Route component={NoMatch} />
         </Switch>
