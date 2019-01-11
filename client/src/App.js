@@ -22,10 +22,10 @@ import Geobar from "./components/Geobar";
 const App = () => (
   <Fragment>
     <FetchUser>
-
       <BackgroundImage>
         <Geobar />
         <Navbar />
+      <Container style={styles.body}>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
@@ -38,9 +38,22 @@ const App = () => (
           <Route component={NoMatch} />
         </Switch>
       </BackgroundImage>
+      </Container>
+      <Footer style={styles.footer} />
+
     </FetchUser>
-    <Footer />
   </Fragment>
 );
 
 export default App;
+
+const styles = {
+  body: {
+    display: "flex",
+    flexDirection: "column",
+    minHeight: "100vh"
+  },
+  footer: {
+    margin: "auto auto 0 auto"
+  }
+};
