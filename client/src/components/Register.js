@@ -1,6 +1,7 @@
 import React from 'react';
 import { AuthConsumer, } from "../providers/AuthProvider";
 import { Button, Form, Segment, Header, Checkbox, } from 'semantic-ui-react';
+import { Title3, NavText } from '../styles/AppStyles';
 
 class Register extends React.Component {
   // Need to put First_name last_name, and phone
@@ -27,68 +28,71 @@ class Register extends React.Component {
 
     return (
       <Segment basic>
-        <Header as='h1' textAlign='center'>Register</Header>
+        <Title3>Register</Title3>
         <Form onSubmit={this.handleSubmit}>
-        <Form.Group widths='equal'>
+          <NavText>
+            <Form.Group widths='equal'>
 
-          <Form.Input
-            fluid label="First Name"
-            required
-            autoFocus
-            name='first_name'
-            value={first_name}
-            placeholder='First Name'
-            onChange={this.handleChange}
-            />
-          <Form.Input
-            fluid label="Last Name"
-            required
-            name='last_name'
-            value={last_name}
-            placeholder='Last Name'
-            onChange={this.handleChange}
+
+              <Form.Input
+                fluid label="First Name"
+                required
+                autoFocus
+                name='first_name'
+                value={first_name}
+                placeholder='First Name'
+                onChange={this.handleChange}
+              />
+              <Form.Input
+                fluid label="Last Name"
+                required
+                name='last_name'
+                value={last_name}
+                placeholder='Last Name'
+                onChange={this.handleChange}
+              />
+              <Form.Input
+                label="Phone"
+                name='phone_number'
+                value={phone_number}
+                placeholder='Phone'
+                type="phone_number"
+                onChange={this.handleChange}
+              />
+            </Form.Group>
+            <Form.Input
+              label="Email"
+              required
+              name='email'
+              value={email}
+              placeholder='Email'
+              onChange={this.handleChange}
             />
             <Form.Input
-              label="Phone"
-              name='phone_number'
-              value={phone_number}
-              placeholder='Phone'
-              type="phone_number"
+              label="Password"
+              required
+              name='password'
+              value={password}
+              placeholder='Password'
+              type='password'
               onChange={this.handleChange}
-              />
-              </Form.Group>
-          <Form.Input
-            label="Email"
-            required
-            name='email'
-            value={email}
-            placeholder='Email'
-            onChange={this.handleChange}
-          />
-          <Form.Input
-            label="Password"
-            required
-            name='password'
-            value={password}
-            placeholder='Password'
-            type='password'
-            onChange={this.handleChange}
-          />
-          <Form.Input
-            label="Password Confirmation"
-            required
-            name='passwordConfirmation'
-            value={passwordConfirmation}
-            placeholder='Password Confirmation'
-            type='password'
-            onChange={this.handleChange}
-          />
-          <Form.Field>
-            <Checkbox label='I agree to the Terms and Conditions' />
-          </Form.Field>
-          <Segment textAlign='center' basic>
-            <Button primary type='submit'>Submit</Button>
-          </Segment>
+            />
+            <Form.Input
+              label="Password Confirmation"
+              required
+              name='passwordConfirmation'
+              value={passwordConfirmation}
+              placeholder='Password Confirmation'
+              type='password'
+              onChange={this.handleChange}
+            />
+            <Form.Field>
+              <Checkbox label='I agree to the Terms and Conditions' />
+            </Form.Field>
+            <Segment textAlign='center' basic>
+              <Button primary type='submit'>Submit</Button>
+            </Segment>
+          </NavText>
         </Form>
       </Segment>
     )
