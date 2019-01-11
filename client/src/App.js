@@ -13,6 +13,7 @@ import "./App.css";
 const App = () => (
   <Fragment>
     <FetchUser>
+      <Container style={styles.body}>
       <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
@@ -20,10 +21,22 @@ const App = () => (
           <Route exact path="/register" component={Register} />
           <Route exact path="/reservations" component={Reservations} />
           <Route component={NoMatch} />
-        </Switch>
+       </Switch>
+      </Container>
+      <Footer style={styles.footer} />
     </FetchUser>
-    <Footer />
   </Fragment>
 );
 
 export default App;
+
+const styles = {
+  body: {
+    display: "flex",
+    flexDirection: "column",
+    minHeight: "100vh"
+  },
+  footer: {
+    margin: "auto auto 0 auto"
+  }
+};

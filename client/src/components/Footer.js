@@ -4,26 +4,21 @@ import Terra_Nova_Cabins_Logo from "../images/Terra_Nova_Cabins_Logo.png";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
-  let styles = {
-    position: "absolute",
-    width: "100%"
-  };
-
-  let flexbox = {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between"
-  };
-
-  let linkStyle = {
-    color: "white",
-    display: "flex",
-    marginTop: "5px",
-    marginBottom: "15px"
-  };
-
-  let iconStyle = {
-    marginLeft: "30px"
+  const styles = {
+    flexbox: {
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "space-between"
+    },
+    link: {
+      color: "white",
+      display: "flex",
+      marginTop: "5px",
+      marginBottom: "15px"
+    },
+    icon: {
+      marginLeft: "30px"
+    }
   };
 
   return (
@@ -96,10 +91,11 @@ const Footer = () => {
             <Icon name="cc visa" size="big" style={iconStyle} />
             <Icon name="cc mastercard" size="big" style={iconStyle} />
             <Icon name="cc discover" size="big" style={iconStyle} />
+            </div>
           </div>
-        </div>
-      </Container>
-    </Segment>
+        </Container>
+      </Segment>
+    </div>
   );
 };
 

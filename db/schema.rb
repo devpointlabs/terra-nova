@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_08_230203) do
+ActiveRecord::Schema.define(version: 2019_01_10_234242) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,12 +18,13 @@ ActiveRecord::Schema.define(version: 2019_01_08_230203) do
   create_table "reservations", force: :cascade do |t|
     t.date "start_date"
     t.date "end_date"
-    t.integer "room_id"
     t.integer "adults"
     t.integer "children"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "room_id"
+    t.index ["room_id"], name: "index_reservations_on_room_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
@@ -41,10 +42,8 @@ ActiveRecord::Schema.define(version: 2019_01_08_230203) do
     t.string "room_type"
     t.float "cost"
     t.integer "max_occupancy"
-    t.bigint "reservation_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["reservation_id"], name: "index_rooms_on_reservation_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -78,7 +77,7 @@ ActiveRecord::Schema.define(version: 2019_01_08_230203) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
+  add_foreign_key "reservations", "rooms"
   add_foreign_key "reservations", "users"
   add_foreign_key "reviews", "users"
-  add_foreign_key "rooms", "reservations"
 end
