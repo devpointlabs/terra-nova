@@ -1,7 +1,7 @@
 import React from 'react';
 import { AuthConsumer, } from "../providers/AuthProvider";
 import { Button, Form, Segment, Header, Checkbox, } from 'semantic-ui-react';
-import { Title3, NavText } from '../styles/AppStyles';
+import { SubHeader, NavText } from '../styles/AppStyles';
 
 class Register extends React.Component {
   // Need to put First_name last_name, and phone
@@ -28,7 +28,7 @@ class Register extends React.Component {
 
     return (
       <Segment basic>
-        <Title3>Register</Title3>
+        <SubHeader>Register</SubHeader>
         <Form onSubmit={this.handleSubmit}>
           <NavText>
             <Form.Group widths='equal'>

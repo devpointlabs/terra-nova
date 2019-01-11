@@ -22,10 +22,14 @@ import Geobar from "./components/Geobar";
 const App = () => (
   <Fragment>
     <FetchUser>
-      <BackgroundImage>
+        <BackgroundImage style={imageStyles.size}>
+      <div>
+
         <Geobar />
         <Navbar />
-      <Container style={styles.body}>
+        {/* <img style={imageStyles.size} src={require('./images/GrandCanyonoftheYellowstone.png')} /> */}
+      </div>
+      <div style={styles.body}>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
@@ -37,8 +41,8 @@ const App = () => (
           <Route exact path="/reservations" component={Reservations} />
           <Route component={NoMatch} />
         </Switch>
-      </BackgroundImage>
-      </Container>
+      </div>
+        </BackgroundImage>
       <Footer style={styles.footer} />
 
     </FetchUser>
@@ -55,5 +59,18 @@ const styles = {
   },
   footer: {
     margin: "auto auto 0 auto"
+  }
+};
+
+const imageStyles = {
+  size: {
+      backgroundPosition: 'center top',
+      backgroundSize: '100% 50%',
+      // width: '1500px',
+      // height: '20%',
+      // display: 'flex',
+      // flex: '1',
+      // resizeMode: 'cover',
+
   }
 };

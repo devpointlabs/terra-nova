@@ -4,7 +4,8 @@ import  { AuthConsumer, } from '../providers/AuthProvider';
 import { faCloud, faPhone, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, withRouter, } from 'react-router-dom';
-import ReactWeather from 'react-open-weather';
+import { BackgroundImage } from '../styles/AppStyles';
+// import ReactWeather from 'react-open-weather';
 
 class Geobar extends React.Component {
   state = { user: null, };
@@ -36,7 +37,7 @@ class Geobar extends React.Component {
               style={{
                 width: '15px'
               }}
-            />
+              />
             Salt Lake City, UT
                         </Menu.Item>
 
