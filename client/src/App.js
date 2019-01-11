@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import { Image, } from 'semantic-ui-react';
 import Home from "./components/Home";
 import Reservations from "./components/Reservations";
 import Rooms from "./components/Rooms";
@@ -16,6 +15,7 @@ import Footer from "./components/Footer";
 import { BackgroundImage } from './styles/AppStyles';
 import "./App.css";
 import Geobar from "./components/Geobar";
+import ProtectedRoute from '../src/components/ProtectedRoute';
 
 const App = () => (
   <Fragment>
@@ -34,8 +34,8 @@ const App = () => (
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/gallery" component={Gallery} />
           <Route exact path="/reservations" component={Reservations} />
+          <ProtectedRoute path="/review" component={ReviewForm} />
           <Route component={NoMatch} />
-
         </Switch>
       </div>
       </div>

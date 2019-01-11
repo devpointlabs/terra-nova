@@ -1,6 +1,6 @@
 import React from 'react';
+import axios from 'axios';
 import { BlackButton } from '../styles/AppStyles';
-import { Header } from 'semantic-ui-react';
 
 class Reviews extends React.Component {
     state = { Reviews: {} };
@@ -15,7 +15,9 @@ class Reviews extends React.Component {
                 <h4>JULIA ROSE</h4>
                 <div>From Los Angeles, California</div>
                 <br />
-                <BlackButton>Write a Review</BlackButton>
+                <Link to={`/`}>
+                    <BlackButton>Write a Review</BlackButton>
+                </Link>
                 </div>
             </div>
         )

@@ -10,7 +10,7 @@ class ReviewForm extends React.Component {
         e.preventDefault();
         if (reservation_id) {
             axios.put(`/api/reservations/${id}/reviews/${reviewId}`, {...this.state})
-                .then(res => push (`/reservations/${id}`))
+                .then(res => push(`/reservations/${id}`))
         } else {
             axios.post(`/api/reservations/${id}/reviews`, {...this.state})
                 .then( res=> push(`/reservation/${id}`)
