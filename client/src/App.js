@@ -3,7 +3,7 @@ import { Image, } from 'semantic-ui-react';
 import Home from "./components/Home";
 import Reservations from "./components/Reservations";
 import Rooms from "./components/Rooms";
-// import About from "./components/About";
+import AboutUs from "./components/AboutUs";
 import Contact from "./components/Contact";
 import Gallery from "./components/Gallery";
 import Login from "./components/Login";
@@ -22,22 +22,22 @@ const App = () => (
     <FetchUser>
         <BackgroundImage style={imageStyles.size}>
       <div>
-
         <Geobar />
         <Navbar />
-<div style={styles.body}>
+      <div style={styles.body}>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/rooms" component={Rooms} />
-          {/* <Route exact path="/about" component={About} /> */}
+          <Route exact path="/about_us" component={AboutUs} />
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/gallery" component={Gallery} />
           <Route exact path="/reservations" component={Reservations} />
           <Route component={NoMatch} />
 
         </Switch>
+      </div>
       </div>
         </BackgroundImage>
       <Footer style={styles.footer} />
