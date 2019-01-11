@@ -11,13 +11,11 @@ import Register from "./components/Register";
 import Navbar from "./components/Navbar";
 import NoMatch from "./components/NoMatch";
 import FetchUser from "./components/FetchUser";
-import { Container } from "semantic-ui-react";
 import { Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer";
 import { BackgroundImage } from './styles/AppStyles';
 import "./App.css";
 import Geobar from "./components/Geobar";
-
 
 const App = () => (
   <Fragment>
@@ -27,9 +25,7 @@ const App = () => (
 
         <Geobar />
         <Navbar />
-        {/* <img style={imageStyles.size} src={require('./images/GrandCanyonoftheYellowstone.png')} /> */}
-      </div>
-      <div style={styles.body}>
+<div style={styles.body}>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
@@ -40,11 +36,11 @@ const App = () => (
           <Route exact path="/gallery" component={Gallery} />
           <Route exact path="/reservations" component={Reservations} />
           <Route component={NoMatch} />
+
         </Switch>
       </div>
         </BackgroundImage>
       <Footer style={styles.footer} />
-
     </FetchUser>
   </Fragment>
 );
