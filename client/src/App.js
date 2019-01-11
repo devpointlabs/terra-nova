@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Image, } from 'semantic-ui-react';
+// import { Image, } from 'semantic-ui-react';
 import Home from "./components/Home";
 import Reservations from "./components/Reservations";
 import Rooms from "./components/Rooms";
@@ -9,21 +9,25 @@ import Gallery from "./components/Gallery";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Navbar from "./components/Navbar";
+import Geobar from "./components/Geobar";
 import NoMatch from "./components/NoMatch";
 import FetchUser from "./components/FetchUser";
 import { Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer";
-import { BackgroundImage } from './styles/AppStyles';
+// import { BackgroundImage } from './styles/AppStyles';
+import MainCarousel from './components/carousel/Carousel';
 import "./App.css";
-import Geobar from "./components/Geobar";
 
 const App = () => (
   <Fragment>
     <FetchUser>
-        <BackgroundImage style={imageStyles.size}>
-      <div>
+
+        {/* <BackgroundImage style={imageStyles.size}> */}
+        <MainCarousel>
         <Geobar />
         <Navbar />
+        </MainCarousel>
+
       <div style={styles.body}>
         <Switch>
           <Route exact path="/" component={Home} />
@@ -35,11 +39,9 @@ const App = () => (
           <Route exact path="/gallery" component={Gallery} />
           <Route exact path="/reservations" component={Reservations} />
           <Route component={NoMatch} />
-
         </Switch>
       </div>
-      </div>
-        </BackgroundImage>
+        {/* </BackgroundImage> */}
       <Footer style={styles.footer} />
     </FetchUser>
   </Fragment>
