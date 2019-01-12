@@ -14,7 +14,7 @@ import NoMatch from "./components/NoMatch";
 import FetchUser from "./components/FetchUser";
 import { Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer";
-// import { BackgroundImage } from './styles/AppStyles';
+import { BackgroundImage } from './styles/AppStyles';
 import MainCarousel from './components/carousel/Carousel';
 import "./App.css";
 
@@ -23,10 +23,9 @@ const App = () => (
     <FetchUser>
 
         {/* <BackgroundImage style={imageStyles.size}> */}
-        <MainCarousel>
-        <Geobar />
-        <Navbar />
-        </MainCarousel>
+        {/* <Geobar />
+        <Navbar /> */}
+        <MainCarousel/>
 
       <div style={styles.body}>
         <Switch>

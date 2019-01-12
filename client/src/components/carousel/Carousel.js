@@ -30,8 +30,11 @@ class MainCarousel extends React.Component {
 
     return (
       <div>
-          <Geobar>
-          <Navbar>
+        <Carousel.Caption>
+      <Geobar/>
+      <Navbar/>        
+
+        </Carousel.Caption>
       <Carousel
         activeIndex={index}
         direction={direction}
@@ -59,8 +62,6 @@ class MainCarousel extends React.Component {
             src={Yellowstone} />
         </Carousel.Item>
       </Carousel>
-            </Navbar>
-            </Geobar>
           </div>
     );
   }
