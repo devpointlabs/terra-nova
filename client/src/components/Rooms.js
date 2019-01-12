@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from 'semantic-ui-react';
-import { SubHeader, RoomBody } from '../styles/AppStyles';
+import { SubHeader, RoomBody, HeaderLine } from '../styles/AppStyles';
 import RoomCard from './Room';
 import axios from 'axios';
 
@@ -32,8 +32,8 @@ renderRooms = () => {
     return (
       <div style={styles.background}>
         <SubHeader> Our Rooms </SubHeader>
-          <RoomBody> When you host a party or family reunion, the special celebrations let </RoomBody>
-          <RoomBody> you strengthen bonds with each other </RoomBody>
+          <RoomBody> When you host a party or family reunion, the special celebrations let 
+           you strengthen bonds with each other </RoomBody>
         
 
        <Card.Group centered itemsPerRow={3} >

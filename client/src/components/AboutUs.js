@@ -1,8 +1,7 @@
 import React from "react";
-import { Card, Image, Container } from "semantic-ui-react";
-import { SubHeader } from "../styles/AppStyles";
-import { Grid } from "semantic-ui-react";
-import { WhiteButton} from "../styles/AppStyles";
+import { Card, Image, Container, Grid } from "semantic-ui-react";
+import { WhiteButton, HeaderLine, SubHeader} from "../styles/AppStyles";
+
 
 
 
@@ -13,7 +12,8 @@ const AboutUs = () => (
       <div>
         <Grid columns={2} padded='vertically'>
           <Grid.Column>
-            <SubHeader><u>About Us</u></SubHeader>
+            <h1 style={subHeader}>About Us</h1>
+            <HeaderLine/>
             <p style={text}> Contrary to popular belief, Lorem isn't simply random text. It has roots in classical literature 
               from 45 BC, making it over 2000 years old. Avalon's leading hotels with gracious island hospitality,
               thoughtful amentities and distinctive.
@@ -85,10 +85,11 @@ const text = {
   textAlign: 'left',
   fontFamily: "'Poppins', sans-serif",
   fontSize: '16px',
+  paddingTop: '50px',
+  paddingBottom: '50px'
 }
 
 const background = {
-  paddingTop: '100px',
   paddingBottom: '200px',
 }
 
@@ -96,3 +97,13 @@ const cardGroup = {
   paddingTop: '50px',
   paddingBottom: '50px'
 }
+
+export const subHeader = {
+  fontSize: '3.0em',
+  textAlign: 'left',
+  fontFamily: "'Playfair Display', serif",
+  paddingTop: '110px',
+  // paddingBottom: '50px'
+}
+
+

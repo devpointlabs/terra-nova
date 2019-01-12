@@ -57,17 +57,24 @@ export const RoomBody = styled.p`
   `;
   
 export const BackgroundImage = styled.div`
-background-image: url('https://www.travelwyoming.com/sites/default/files/u5691/Grand%20Canyon%20of%20the%20Yellowstone.jpg');
-background-position: center;
-background-size: cover;
-background-repeat: no-repeat
-color: rgba(0, 0, 0, ,0);
+  background-image: url('https://www.travelwyoming.com/sites/default/files/u5691/Grand%20Canyon%20of%20the%20Yellowstone.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat
+  color: rgba(0, 0, 0, ,0);
 `;
 
 
 export const NavText = styled.div`
-color: white;
-font-family: 'Poppins', sans-serif;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+`;
+
+export const HeaderLine = styled.hr`
+  border-top: .5px solid black ;
+  width: 50%;
+  float: left;
+  border-color: #bf9b30;
 `;
 
 

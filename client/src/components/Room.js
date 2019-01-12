@@ -17,4 +17,5 @@ const RoomCard = ({ room_type, cost, max_occupancy }) => (
 
 )
 
+
 export default RoomCard;
