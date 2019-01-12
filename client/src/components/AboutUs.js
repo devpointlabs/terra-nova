@@ -2,13 +2,14 @@ import React from "react";
 import { Card, Image, Container } from "semantic-ui-react";
 import { SubHeader } from "../styles/AppStyles";
 import { Grid } from "semantic-ui-react";
+import { WhiteButton} from "../styles/AppStyles";
 
 
 
 
 const AboutUs = () => (
   <Container>
-    <div>
+    <div style={background}>
       <div>
         <Grid columns={2} padded='vertically'>
           <Grid.Column>
@@ -17,9 +18,11 @@ const AboutUs = () => (
               from 45 BC, making it over 2000 years old. Avalon's leading hotels with gracious island hospitality,
               thoughtful amentities and distinctive.
               <br/>
+              <br/>
               Richard Mcklintock, a professor at Hampton-Sydney College in Virginia, looked up some of the more
               obscure words in Latin. Consecteteur from a more obscure Latin text...
             </p>
+            <WhiteButton>Read More</WhiteButton>
           </Grid.Column>
           <Grid.Column>
             <SubHeader>Picture</SubHeader>
@@ -27,7 +30,7 @@ const AboutUs = () => (
         </Grid>
       </div>
 
-      <Card.Group centered itemsPerRow={4}>
+      <Card.Group centered itemsPerRow={4} style={cardGroup}>
         <Card style={styles.card}>
           <Image />
           <Card.Content>MASTER BEDROOM</Card.Content>
@@ -81,4 +84,15 @@ const styles = {
 const text = {
   textAlign: 'left',
   fontFamily: "'Poppins', sans-serif",
+  fontSize: '16px',
+}
+
+const background = {
+  paddingTop: '100px',
+  paddingBottom: '200px',
+}
+
+const cardGroup = {
+  paddingTop: '50px',
+  paddingBottom: '50px'
 }
