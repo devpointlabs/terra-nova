@@ -1,6 +1,6 @@
 import React from 'react';
 import { BlackButton } from '../styles/AppStyles';
-import { Header } from 'semantic-ui-react';
+
 
 class Reviews extends React.Component {
     state = { Reviews: {} };
@@ -36,6 +36,7 @@ const styles = {
         color: "white",
         fontSize: "16px",
         textAlign: "center",
+        fontFamily: "'Poppins', sans-serif",
     }
 }
 export default Reviews;
