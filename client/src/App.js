@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import { Image, } from 'semantic-ui-react';
 import Home from "./components/Home";
 import Reservations from "./components/Reservations";
 import Rooms from "./components/Rooms";

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link, } from 'react-router-dom';
 import { Card, Container, Image, } from 'semantic-ui-react';
 import { SubHeader, RoomBody, } from '../styles/AppStyles';
 
