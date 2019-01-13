@@ -1,10 +1,6 @@
 import React from "react";
-import { Card, Image } from "semantic-ui-react";
+import { Card, Image, Grid } from "semantic-ui-react";
 import { SubHeader } from "../styles/AppStyles";
-import { Grid } from "semantic-ui-react";
-
-
-
 
 const AboutUs = () => (
  <div>

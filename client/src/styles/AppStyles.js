@@ -40,7 +40,6 @@ export const Title2 = styled.h3`
   padding-bottom: 200px;
   `;
 
-
 export const SubHeader = styled.h1`
   font-size: 3.0em;
   text-align: center;
@@ -64,12 +63,10 @@ background-repeat: no-repeat
 color: rgba(0, 0, 0, ,0);
 `;
 
-
 export const NavText = styled.div`
 color: white;
 font-family: 'Poppins', sans-serif;
 `;
-
 
 // export const Card1 = styled.div`
 //   height: 100px;
