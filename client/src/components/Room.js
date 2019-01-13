@@ -16,7 +16,12 @@ const RoomCard = ({ room_type, cost, max_occupancy }) => (
         luxury and historic heritage, deluxe accomodations supurb amenities, genuine hospitality
         and dedicated service for an elevated experience the Rocky Mountains.
       </Card.Description>
-      <br/>
+      <ul>
+        <li>Max 4 Persons</li>
+        <li>Size 35 m2/ 376 ft</li>
+        <li>View: Ocean</li>
+        <li>Bed: King-size or Twin Beds</li> 
+      </ul>
     </Card.Content>
     <Card.Content extra> Starting ${cost}/days <GoldButton>View Details</GoldButton></Card.Content> 
     
