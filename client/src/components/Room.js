@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Image, Button, } from "semantic-ui-react";
+import { GoldButton } from  '../styles/AppStyles';
 
 
 const RoomCard = ({ room_type, cost, max_occupancy }) => (
@@ -8,14 +9,21 @@ const RoomCard = ({ room_type, cost, max_occupancy }) => (
     <Image src="https://picsum.photos/300?random" alt="" />
     <Card.Content>
       <Card.Header>
-        {room_type}
+        FAMILY ROOM
       </Card.Header>
+      <Image />
+      <Card.Description> Located in the heart of Aspen with a unique blend of contemporary
+        luxury and historic heritage, deluxe accomodations supurb amenities, genuine hospitality
+        and dedicated service for an elevated experience the Rocky Mountains.
+      </Card.Description>
       <br/>
     </Card.Content>
-    <Card.Content extra>${cost}/PER NIGHT</Card.Content> 
+    <Card.Content extra> Starting ${cost}/days <GoldButton>View Details</GoldButton></Card.Content> 
+    
   </Card>
 
 )
 
 
 export default RoomCard;
+

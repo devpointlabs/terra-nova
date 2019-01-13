@@ -90,7 +90,7 @@ const text = {
 }
 
 const background = {
-  paddingBottom: '200px',
+  paddingBottom: '150px',
 }
 
 const cardGroup = {
@@ -98,7 +98,7 @@ const cardGroup = {
   paddingBottom: '50px'
 }
 
-export const subHeader = {
+const subHeader = {
   fontSize: '3.0em',
   textAlign: 'left',
   fontFamily: "'Playfair Display', serif",

@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from 'semantic-ui-react';
-import { SubHeader, RoomBody, HeaderLine } from '../styles/AppStyles';
+import { SubHeader, RoomBody, } from '../styles/AppStyles';
 import RoomCard from './Room';
 import axios from 'axios';
 
@@ -32,6 +32,7 @@ renderRooms = () => {
     return (
       <div style={styles.background}>
         <SubHeader> Our Rooms </SubHeader>
+        <hr style={headerLine}/>
           <RoomBody> When you host a party or family reunion, the special celebrations let 
            you strengthen bonds with each other </RoomBody>
         
@@ -48,7 +49,16 @@ renderRooms = () => {
 const styles = {
   background: {
   backgroundColor: "#F5F5F5",
+  paddingBottom: "50px",
   }
+}
+
+
+const headerLine = {
+  borderTop: '.5px',
+  width: '20%',
+  float: 'center',
+  borderColor: '#bf9b30',
 }
 
 export default Rooms;

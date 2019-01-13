@@ -11,6 +11,17 @@ export const WhiteButton = styled.button`
   font-family: 'Poppins', sans-serif;
 `;
 
+export const GoldButton = styled.button `
+  background-color: #bf9b30;
+  color: white;
+  padding: 12px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+`
+
 export const BlackButton = styled.button`
   background-color: #555555;
   border: 2px solid ##f8f8ff;
