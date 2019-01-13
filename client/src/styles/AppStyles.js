@@ -65,6 +65,8 @@ export const RoomBody = styled.p`
   font-size: 15px;
   font-family: 'Poppins', sans-serif;
   text-align: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
   `;
   
 export const BackgroundImage = styled.div`

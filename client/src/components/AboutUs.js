@@ -1,6 +1,7 @@
 import React from "react";
-import { Card, Image, Container, Grid } from "semantic-ui-react";
+import { Card, Image, Container, Grid, } from "semantic-ui-react";
 import { WhiteButton, HeaderLine, SubHeader} from "../styles/AppStyles";
+import photogroup from "../assets/images/photogroup.png";
 
 
 
@@ -25,7 +26,13 @@ const AboutUs = () => (
             <WhiteButton>Read More</WhiteButton>
           </Grid.Column>
           <Grid.Column>
-            <SubHeader>Picture</SubHeader>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <Image src={photogroup} size="large"/>
           </Grid.Column>
         </Grid>
       </div>

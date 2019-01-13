@@ -33,7 +33,7 @@ renderRooms = () => {
       <div style={styles.background}>
         <SubHeader> Our Rooms </SubHeader>
         <hr style={headerLine}/>
-          <RoomBody> When you host a party or family reunion, the special celebrations let 
+          <RoomBody> When you host a party or family reunion, the special celebrations let <br/>
            you strengthen bonds with each other </RoomBody>
         
 
