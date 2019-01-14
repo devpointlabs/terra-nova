@@ -4,9 +4,6 @@ import { WhiteButton, HeaderLine, } from "../styles/AppStyles";
 import photogroup from "../assets/images/photogroup.png";
 
 
-
-
-
 const AboutUs = () => (
   <Container>
     <div style={background}>
