@@ -1,17 +1,16 @@
 import React from 'react';
-import { Menu, Container, Dropdown,  } from 'semantic-ui-react';
+import { Menu, Container, Dropdown,} from 'semantic-ui-react';
 import  { AuthConsumer, } from '../providers/AuthProvider';
 import { faCloud, faPhone, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {  withRouter, } from 'react-router-dom';
-
+import { withRouter, } from 'react-router-dom';
 // import ReactWeather from 'react-open-weather';
 
 class Geobar extends React.Component {
   state = { user: null, };
 
   render() {
-    const { auth: { user, }, location, } = this.props;
+    const { auth: { user, } } = this.props;
     return (
       <Container >
         <Menu secondary size='mini'>
