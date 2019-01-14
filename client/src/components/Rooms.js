@@ -1,8 +1,7 @@
 import React from "react";
-import { Header, Card } from 'semantic-ui-react';
+import { Card } from 'semantic-ui-react';
 import { SubHeader, RoomBody } from '../styles/AppStyles';
 import RoomCard from './Room';
-import axios from 'axios';
 
 class Rooms extends React.Component {
    state = { rooms: {} };
