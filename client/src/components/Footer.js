@@ -1,29 +1,24 @@
 import React from "react";
 import { Grid, Container, Image, Segment, Icon } from "semantic-ui-react";
-import Terra_Nova_Cabins_Logo from "../images/Terra_Nova_Cabins_Logo.png";
+import Terra_Nova_Cabins_Logo from "../assets/images/Terra_Nova_Cabins_Logo.png";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
-  let styles = {
-    position: "absolute",
-    width: "100%"
-  };
-
-  let flexbox = {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between"
-  };
-
-  let linkStyle = {
-    color: "white",
-    display: "flex",
-    marginTop: "5px",
-    marginBottom: "15px"
-  };
-
-  let iconStyle = {
-    marginLeft: "30px"
+  const styles = {
+    flexbox: {
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "space-between"
+    },
+    link: {
+      color: "white",
+      display: "flex",
+      marginTop: "5px",
+      marginBottom: "15px"
+    },
+    icon: {
+      marginLeft: "30px"
+    }
   };
 
   return (
@@ -34,50 +29,50 @@ const Footer = () => {
             <Image src={Terra_Nova_Cabins_Logo} size="small" />
           </Grid.Column>
           <Grid.Column>
-            <Link to={""} style={linkStyle}>
-              Sit Map
+            <Link to={""} style={styles.link}>
+              Site Map
             </Link>
-            <Link to={""} style={linkStyle}>
+            <Link to={""} style={styles.link}>
               Term & Conditions
             </Link>
-            <Link to={""} style={linkStyle}>
+            <Link to={""} style={styles.link}>
               Privacy Policy
             </Link>
-            <Link to={""} style={linkStyle}>
+            <Link to={""} style={styles.link}>
               Help
             </Link>
-            <Link to={""} style={linkStyle}>
+            <Link to={""} style={styles.link}>
               Affiliate
             </Link>
           </Grid.Column>
           <Grid.Column>
-            <Link to={""} style={linkStyle}>
+            <Link to={""} style={styles.link}>
               Our Location
             </Link>
-            <Link to={""} style={linkStyle}>
-              Carreer
+            <Link to={""} style={styles.link}>
+              Career
             </Link>
-            <Link to={""} style={linkStyle}>
+            <Link to={""} style={styles.link}>
               About Us
             </Link>
-            <Link to={""} style={linkStyle}>
+            <Link to={""} style={styles.link}>
               Contact Us
             </Link>
           </Grid.Column>
           <Grid.Column>
-            <Link to={""} style={linkStyle}>
+            <Link to={""} style={styles.link}>
               FAQS
             </Link>
-            <Link to={""} style={linkStyle}>
+            <Link to={""} style={styles.link}>
               News
             </Link>
-            <Link to={""} style={linkStyle}>
+            <Link to={""} style={styles.link}>
               Photo & Video
             </Link>
-            <Link to={""} style={linkStyle}>
-              Resturant
+            <Link to={""} style={styles.link}>
+              Restaurant
             </Link>
-            <Link to={""} style={linkStyle}>
+            <Link to={""} style={styles.link}>
               Gift Card
             </Link>
           </Grid.Column>
@@ -85,16 +80,17 @@ const Footer = () => {
         <br />
         <hr />
         <br />
-        <div style={flexbox}>
+        <div style={styles.flexbox}>
           <p>
             Copyright &copy; 2017 EngoCreative SkyLine Hotel Theme crafted with
             love
+            {/* not sure this copyright should be here */}
           </p>
           <div>
             <Icon name="paypal" size="big" />
-            <Icon name="cc visa" size="big" style={iconStyle} />
-            <Icon name="cc mastercard" size="big" style={iconStyle} />
-            <Icon name="cc discover" size="big" style={iconStyle} />
+            <Icon name="cc visa" size="big" style={styles.icon} />
+            <Icon name="cc mastercard" size="big" style={styles.icon} />
+            <Icon name="cc discover" size="big" style={styles.icon} />
           </div>
         </div>
       </Container>
