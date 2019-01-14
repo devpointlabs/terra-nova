@@ -3,10 +3,6 @@ import { Card, Image, Container, Grid, } from "semantic-ui-react";
 import { WhiteButton, HeaderLine, } from "../styles/AppStyles";
 import photogroup from "../assets/images/photogroup.png";
 
-
-
-
-
 const AboutUs = () => (
   <Container>
     <div style={background}>

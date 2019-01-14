@@ -25,7 +25,6 @@ class Gallery extends React.Component {
     ))
   };
 
-
   render() {
     return (
       <div styles={styles.background} >
