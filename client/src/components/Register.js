@@ -1,14 +1,7 @@
-<<<<<<< HEAD
 import React from "react";
 import { AuthConsumer } from "../providers/AuthProvider";
 import { Button, Form, Segment, Header, Checkbox } from "semantic-ui-react";
 import { SubHeader, NavText } from "../styles/AppStyles";
-=======
-import React from 'react';
-import { AuthConsumer, } from "../providers/AuthProvider";
-import { Button, Form, Segment, Checkbox, } from 'semantic-ui-react';
-import { SubHeader, NavText } from '../styles/AppStyles';
->>>>>>> 0a36c62198c366792e2b1ea2bc944b0f4de52e39
 
 class Register extends React.Component {
   // Need to put First_name last_name, and phone

@@ -5,7 +5,6 @@ import {
   Header,
   Container,
   Dropdown,
-  Grid,
   Button
 } from "semantic-ui-react";
 import DatePicker from "react-datepicker";
@@ -13,7 +12,13 @@ import "react-datepicker/dist/react-datepicker.css";
 
 class ResForm extends React.Component {
   state = {
-    reservation: { startDate: new Date(), departureDate: new Date(), room: "" }
+    reservation: {
+      startDate: new Date(),
+      departureDate: new Date(),
+      room: "",
+      adults: null,
+      Children: null
+    }
   };
 
   handleStartDate = date => {
@@ -35,6 +40,21 @@ class ResForm extends React.Component {
     });
   };
 
+  handleAdults = e => {
+    const value = e.target.outerText;
+    this.setState({
+      reservation: { ...this.state.reservation, adults: value }
+    });
+  };
+
+  handleChildren = e => {
+    const value = e.target.outerText;
+    this.setState({
+      reservation: { ...this.state.reservation, Children: value }
+    });
+  };
+
+  adults;
   render() {
     const {
       reservation: { startDate, departureDate }
@@ -42,7 +62,7 @@ class ResForm extends React.Component {
 
     return (
       <Container>
-        <Segment compact>
+        <Segment compact raised>
           <Form>
             <Header>YOUR RESERVATION</Header>
             <Header as="h4">Arrival Date</Header>
@@ -69,25 +89,25 @@ class ResForm extends React.Component {
               onChange={this.handleRoom}
             />
             <div style={styles.flex}>
-              <Header>Adults: </Header>
+              <Header as="h4">Adults: </Header>
               <Dropdown
-                placeholder="Select Number"
+                placeholder="-"
+                fluid
                 selection
-                simple
-                item
                 options={dropDown}
+                onChange={this.handleAdults}
               />
-              <Header>Children: </Header>
+              <Header as="h4">Children: </Header>
               <Dropdown
-                placeholder="Select Number"
+                placeholder="-"
+                fluid
                 selection
-                simple
-                item
                 options={dropDown}
+                onChange={this.handleChildren}
               />
             </div>
           </Form>
-          <Button>Check Availability</Button>
+          <Button color="brown">Check Availability</Button>
         </Segment>
       </Container>
     );
@@ -97,11 +117,11 @@ class ResForm extends React.Component {
 export default ResForm;
 
 const dropDown = [
-  { key: 1, text: 0 },
-  { key: 2, text: 1 },
-  { key: 3, text: 2 },
-  { key: 4, text: 3 },
-  { key: 5, text: 4 }
+  { key: 1, text: "0", value: 0 },
+  { key: 2, text: "1", value: 1 },
+  { key: 3, text: "2", value: 2 },
+  { key: 4, text: "3", value: 3 },
+  { key: 5, text: "4", value: 4 }
 ];
 
 const Room = [
@@ -115,7 +135,7 @@ const styles = {
   flex: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
     alignItems: "baseline",
     marginTop: "30px",
     marginBottom: "30px"
