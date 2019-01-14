@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from 'semantic-ui-react';
-import { SubHeader, RoomBody } from '../styles/AppStyles';
+import { SubHeader, RoomBody, } from '../styles/AppStyles';
 import RoomCard from './Room';
 
 class Rooms extends React.Component {
@@ -20,19 +20,20 @@ class Rooms extends React.Component {
 //check this...
 
 
-// renderRooms = () => {
-//   return this.state.rooms.map(r => (
-//     <RoomCard key={r.id} {...r}/>
-//     ))
-//   };
+renderRooms = () => {
+  return this.state.rooms.map(r => (
+    <RoomCard key={r.id} {...r}/>
+    ))
+  };
 
   
   render() {
     return (
       <div style={styles.background}>
         <SubHeader> Our Rooms </SubHeader>
-          <RoomBody> When you host a party or family reunion, the special celebrations let </RoomBody>
-          <RoomBody> you strengthen bonds with each other </RoomBody>
+        <hr style={headerLine}/>
+          <RoomBody> When you host a party or family reunion, the special celebrations let <br/>
+           you strengthen bonds with each other </RoomBody>
         
 
        <Card.Group centered itemsPerRow={3} >
@@ -47,7 +48,16 @@ class Rooms extends React.Component {
 const styles = {
   background: {
   backgroundColor: "#F5F5F5",
+  paddingBottom: "50px",
   }
+}
+
+
+const headerLine = {
+  borderTop: '.5px solid black',
+  width: '20%',
+  float: 'center',
+  borderColor: '#826614',
 }
 
 export default Rooms;
