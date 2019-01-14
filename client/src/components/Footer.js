@@ -4,23 +4,6 @@ import Terra_Nova_Cabins_Logo from "../assets/images/Terra_Nova_Cabins_Logo.png"
 import { Link } from "react-router-dom";
 
 const Footer = () => {
-  const styles = {
-    flexbox: {
-      display: "flex",
-      flexDirection: "row",
-      justifyContent: "space-between"
-    },
-    link: {
-      color: "white",
-      display: "flex",
-      marginTop: "5px",
-      marginBottom: "15px"
-    },
-    icon: {
-      marginLeft: "30px"
-    }
-  };
-
   return (
     <Segment inverted style={styles}>
       <Container inverted>
@@ -82,8 +65,7 @@ const Footer = () => {
         <br />
         <div style={styles.flexbox}>
           <p>
-            Copyright &copy; 2017 EngoCreative SkyLine Hotel Theme crafted with
-            love
+            Copyright &copy; 2019 DevPoint Studios.
             {/* not sure this copyright should be here */}
           </p>
           <div>
@@ -99,3 +81,20 @@ const Footer = () => {
 };
 
 export default Footer;
+
+const styles = {
+  flexbox: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between"
+  },
+  link: {
+    color: "white",
+    display: "flex",
+    marginTop: "5px",
+    marginBottom: "15px"
+  },
+  icon: {
+    marginLeft: "30px"
+  }
+};

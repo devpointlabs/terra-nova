@@ -1,61 +1,94 @@
-import React from 'react';
-import { AuthConsumer, } from "../providers/AuthProvider";
-import { Button, Form, Segment, Header, Checkbox, } from 'semantic-ui-react';
-import { SubHeader, NavText } from '../styles/AppStyles';
+import React from "react";
+import { AuthConsumer } from "../providers/AuthProvider";
+import { Button, Form, Segment, Header, Checkbox } from "semantic-ui-react";
+import { SubHeader, NavText } from "../styles/AppStyles";
 
 class Register extends React.Component {
   // Need to put First_name last_name, and phone
-  state = { email: '', password: '', passwordConfirmation: '', first_name: '', last_name: '', phone_number: '', };
+  state = {
+    email: "",
+    password: "",
+    passwordConfirmation: "",
+    first_name: "",
+    last_name: "",
+    phone_number: ""
+  };
 
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     e.preventDefault();
-    const { email, password, passwordConfirmation, first_name, last_name, phone_number, } = this.state;
-    const { auth: { handleRegister, }, history, } = this.props;
+    const {
+      email,
+      password,
+      passwordConfirmation,
+      first_name,
+      last_name,
+      phone_number
+    } = this.state;
+    const {
+      auth: { handleRegister },
+      history
+    } = this.props;
 
     if (password === passwordConfirmation)
-      handleRegister({ email, password, passwordConfirmation, first_name, last_name, phone_number, }, history);
-    else
-      alert('Passwords Do Not Match!')
-  }
+      handleRegister(
+        {
+          email,
+          password,
+          passwordConfirmation,
+          first_name,
+          last_name,
+          phone_number
+        },
+        history
+      );
+    else alert("Passwords Do Not Match!");
+  };
 
-  handleChange = (e) => {
-    const { name, value, } = e.target;
-    this.setState({ [name]: value, });
-  }
+  handleChange = e => {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  };
 
   render() {
-    const { email, password, passwordConfirmation, first_name, last_name, phone_number, } = this.state;
+    const {
+      email,
+      password,
+      passwordConfirmation,
+      first_name,
+      last_name,
+      phone_number
+    } = this.state;
 
     return (
       <Segment basic>
         <SubHeader>Register</SubHeader>
         <Form onSubmit={this.handleSubmit}>
           <NavText>
-            <Form.Group widths='equal'>
-
-
+            <Form.Group widths="equal">
               <Form.Input
-                fluid label="First Name"
+                fluid
+                label="First Name"
                 required
                 autoFocus
-                name='first_name'
+                name="first_name"
                 value={first_name}
-                placeholder='First Name'
+                placeholder="First Name"
                 onChange={this.handleChange}
               />
               <Form.Input
-                fluid label="Last Name"
+                fluid
+                label="Last Name"
                 required
-                name='last_name'
+                name="last_name"
                 value={last_name}
-                placeholder='Last Name'
+                placeholder="Last Name"
                 onChange={this.handleChange}
               />
               <Form.Input
                 label="Phone"
-                name='phone_number'
+                name="phone_number"
                 value={phone_number}
-                placeholder='Phone'
+                placeholder="Phone"
                 type="phone_number"
                 onChange={this.handleChange}
               />
@@ -63,39 +96,41 @@ class Register extends React.Component {
             <Form.Input
               label="Email"
               required
-              name='email'
+              name="email"
               value={email}
-              placeholder='Email'
+              placeholder="Email"
               onChange={this.handleChange}
             />
             <Form.Input
               label="Password"
               required
-              name='password'
+              name="password"
               value={password}
-              placeholder='Password'
-              type='password'
+              placeholder="Password"
+              type="password"
               onChange={this.handleChange}
             />
             <Form.Input
               label="Password Confirmation"
               required
-              name='passwordConfirmation'
+              name="passwordConfirmation"
               value={passwordConfirmation}
-              placeholder='Password Confirmation'
-              type='password'
+              placeholder="Password Confirmation"
+              type="password"
               onChange={this.handleChange}
             />
             <Form.Field>
-              <Checkbox label='I agree to the Terms and Conditions' />
+              <Checkbox label="I agree to the Terms and Conditions" />
             </Form.Field>
-            <Segment textAlign='center' basic>
-              <Button primary type='submit'>Submit</Button>
+            <Segment textAlign="center" basic>
+              <Button primary type="submit">
+                Submit
+              </Button>
             </Segment>
           </NavText>
         </Form>
       </Segment>
-    )
+    );
   }
 }
 
@@ -105,6 +140,6 @@ export default class ConnectedRegister extends React.Component {
       <AuthConsumer>
         {auth => <Register {...this.props} auth={auth} />}
       </AuthConsumer>
-    )
+    );
   }
 }
