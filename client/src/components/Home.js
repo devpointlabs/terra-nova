@@ -2,7 +2,8 @@ import React from 'react';
 import { Title, Title2, WhiteButton } from '../styles/AppStyles';
 import Rooms from './Rooms';
 import Reviews from './Reviews';
-import AboutUs from './AboutUs'
+import AboutUs from './AboutUs';
+import EmailForm from './EmailForm';
 
 const Home = () => (
   <>
@@ -23,6 +24,7 @@ const Home = () => (
     <br/>
     <Reviews/>
     <AboutUs/>
+    <EmailForm/>
  </>
 )
 

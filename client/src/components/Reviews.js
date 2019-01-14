@@ -26,8 +26,8 @@ class Reviews extends React.Component {
 
 const styles = {
     background: {
-        paddingTop: "20px",
-        paddingBottom: "20px",
+        paddingTop: "50px",
+        paddingBottom: "50px",
         paddingRight: "240px",
         paddingLeft: "240px",
         backgroundColor: "#555555",
@@ -38,6 +38,7 @@ const styles = {
         color: "white",
         fontSize: "16px",
         textAlign: "center",
+        fontFamily: "'Poppins', sans-serif",
     }
 }
 export default Reviews;
