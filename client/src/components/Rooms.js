@@ -55,10 +55,10 @@ const styles = {
 
 
 const headerLine = {
-  borderTop: '.5px',
+  borderTop: '.5px solid black',
   width: '20%',
   float: 'center',
-  borderColor: '#bf9b30',
+  borderColor: '#826614',
 }
 
 export default Rooms;

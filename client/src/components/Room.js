@@ -8,8 +8,10 @@ const RoomCard = ({ room_type, cost, max_occupancy }) => (
   <Card>
     <Image src="https://picsum.photos/300?random" alt="" />
     <Card.Content>
-      <Card.Header>
+      <Card.Header style={roomHeader}>
+        
         FAMILY ROOM
+        {room_type}
       </Card.Header>
       <Image />
       <Card.Description> Located in the heart of Aspen with a unique blend of contemporary
@@ -17,13 +19,13 @@ const RoomCard = ({ room_type, cost, max_occupancy }) => (
         and dedicated service for an elevated experience the Rocky Mountains.
       </Card.Description>
       <ul>
-        <li>Max 4 Persons</li>
+        <li>Max 4 Persons {max_occupancy}</li>
         <li>Size 35 m2/ 376 ft</li>
         <li>View: Ocean</li>
         <li>Bed: King-size or Twin Beds</li> 
       </ul>
     </Card.Content>
-    <Card.Content extra> Starting ${cost}/days <GoldButton>View Details</GoldButton></Card.Content> 
+    <Card.Content extra style={cardFooter}> Starting $260{cost}  /days <GoldButton>View Details</GoldButton></Card.Content> 
     
   </Card>
 
@@ -31,4 +33,15 @@ const RoomCard = ({ room_type, cost, max_occupancy }) => (
 
 
 export default RoomCard;
+
+const roomHeader = {
+  fontFamily: "'Poppins', sans-serif",
+  fontSize: '25px',
+  paddingTop: '20px',
+}
+
+const cardFooter = {
+  fontFamily: "'Poppins', sans-serif",
+  fontSize: '18px',
+}
 

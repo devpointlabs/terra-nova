@@ -12,7 +12,7 @@ export const WhiteButton = styled.button`
 `;
 
 export const GoldButton = styled.button `
-  background-color: #bf9b30;
+  background-color: #826614;
   color: white;
   padding: 12px 30px;
   text-align: center;
@@ -20,7 +20,7 @@ export const GoldButton = styled.button `
   display: inline-block;
   font-size: 16px;
   font-family: 'Poppins', sans-serif;
-`
+`;
 
 export const BlackButton = styled.button`
   background-color: #555555;
@@ -87,7 +87,7 @@ export const HeaderLine = styled.hr`
   border-top: .5px solid black ;
   width: 50%;
   float: left;
-  border-color: #bf9b30;
+  border-color: #826614;
 `;
 
 
