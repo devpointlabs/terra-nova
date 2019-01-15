@@ -1,61 +1,49 @@
 import React from "react";
-import { Form, Grid, Icon } from "semantic-ui-react";
+import { Form, Grid, Icon, Container, Segment } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
 const EmailForm = () => (
-  <Grid style={styles.background} columns={2}>
-    <Grid.Column>
-      <Icon name="mail" size="huge" />
-      <Form>
-        <Form.Input
-          name="email"
-          // label="Email"
-          placeholder="Your Email Address"
-        // required
-        // value={title}
-        />
-      </Form>
-    </Grid.Column>
-    <Grid.Column>
-
-    </Grid.Column>
-  </Grid>
+  <Segment style={styles.background} basic>
+    <Container style={styles.flexbox}>
+      <div style={styles.flexbox}>
+        {/* <Icon name="mail" size="huge" /> */}
+        <Form>
+          <Form.Input
+            name="email"
+            placeholder="Your Email Address" logo="paper plane"
+          
+          />
+        </Form>
+      </div>
+      <div>
+        <Icon inverted color="grey" name="instagram" size="big" />
+        <Icon inverted color="grey" name="facebook" size="big" />
+        <Icon inverted color="grey" name="twitter" size="big" />
+      </div>
+    </Container>
+    </Segment>
 
 )
 
 export default EmailForm;
 
-// const background = {
-//   paddingTop: "25px",
-//   paddingBottom: "25px",
-//   paddingRight: "240px",
-//   paddingLeft: "240px",
-//   backgroundColor: "#363636",
-//   width: "100%",
-//   marginLeft: 0
-// }
 
 const styles = {
   flexbox: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: 0,
+    margin: 0,
   },
-  // link: {
-  //   color: "white",
-  //   display: "flex",
-  //   marginTop: "5px",
-  //   marginBottom: "15px"
-  // },
-  // icon: {
-  //   marginLeft: "30px"
-  // },
   background: {
-    paddingTop: "25px",
-    paddingBottom: "25px",
+    paddingTop: "20px",
+    paddingBottom: "20px",
     paddingRight: "240px",
     paddingLeft: "240px",
     backgroundColor: "#363636",
     width: "100%",
-    marginLeft: 0
+    marginBottom: "-15px",
   }
 };

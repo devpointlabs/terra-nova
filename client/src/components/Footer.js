@@ -2,61 +2,64 @@ import React from "react";
 import { Grid, Container, Image, Segment, Icon } from "semantic-ui-react";
 import Terra_Nova_Cabins_Logo from "../assets/images/Terra_Nova_Cabins_Logo.png";
 import { Link } from "react-router-dom";
+import EmailForm from './EmailForm';
 
 const Footer = () => {
   return (
-    <Segment inverted style={styles}>
-      <Container inverted>
-        <Grid columns={4}>
-          <Grid.Column>
-            <Image src={Terra_Nova_Cabins_Logo} size="small" />
-          </Grid.Column>
-          <Grid.Column>
-            <Link to={""} style={styles.link}>
-              Site Map
+    <div>
+      <EmailForm />
+      <Segment inverted style={styles}>
+        <Container inverted>
+          <Grid columns={4}>
+            <Grid.Column>
+              <Image src={Terra_Nova_Cabins_Logo} size="small" />
+            </Grid.Column>
+            <Grid.Column>
+              <Link to={""} style={styles.link}>
+                Site Map
             </Link>
-            <Link to={""} style={styles.link}>
-              Term & Conditions
+              <Link to={""} style={styles.link}>
+                Term & Conditions
             </Link>
-            <Link to={""} style={styles.link}>
-              Privacy Policy
+              <Link to={""} style={styles.link}>
+                Privacy Policy
             </Link>
-            <Link to={""} style={styles.link}>
-              Help
+              <Link to={""} style={styles.link}>
+                Help
             </Link>
-            <Link to={""} style={styles.link}>
-              Affiliate
+              <Link to={""} style={styles.link}>
+                Affiliate
             </Link>
-          </Grid.Column>
-          <Grid.Column>
-            <Link to={""} style={styles.link}>
-              Our Location
+            </Grid.Column>
+            <Grid.Column>
+              <Link to={""} style={styles.link}>
+                Our Location
             </Link>
-            <Link to={""} style={styles.link}>
-              Career
+              <Link to={""} style={styles.link}>
+                Career
             </Link>
-            <Link to={""} style={styles.link}>
-              About Us
+              <Link to={""} style={styles.link}>
+                About Us
             </Link>
-            <Link to={""} style={styles.link}>
-              Contact Us
+              <Link to={""} style={styles.link}>
+                Contact Us
             </Link>
-          </Grid.Column>
-          <Grid.Column>
-            <Link to={""} style={styles.link}>
-              FAQS
+            </Grid.Column>
+            <Grid.Column>
+              <Link to={""} style={styles.link}>
+                FAQS
             </Link>
-            <Link to={""} style={styles.link}>
-              News
+              <Link to={""} style={styles.link}>
+                News
             </Link>
-            <Link to={""} style={styles.link}>
-              Photo & Video
+              <Link to={""} style={styles.link}>
+                Photo & Video
             </Link>
-            <Link to={""} style={styles.link}>
-              Restaurant
+              <Link to={""} style={styles.link}>
+                Restaurant
             </Link>
-            <Link to={""} style={styles.link}>
-              Gift Card
+              <Link to={""} style={styles.link}>
+                Gift Card
             </Link>
           </Grid.Column>
         </Grid>
@@ -67,16 +70,17 @@ const Footer = () => {
           <p>
             Copyright &copy; 2019 DevPoint Studios.
             {/* not sure this copyright should be here */}
-          </p>
-          <div>
-            <Icon name="paypal" size="big" />
-            <Icon name="cc visa" size="big" style={styles.icon} />
-            <Icon name="cc mastercard" size="big" style={styles.icon} />
-            <Icon name="cc discover" size="big" style={styles.icon} />
+            </p>
+            <div>
+              <Icon name="paypal" size="big" />
+              <Icon name="cc visa" size="big" style={styles.icon} />
+              <Icon name="cc mastercard" size="big" style={styles.icon} />
+              <Icon name="cc discover" size="big" style={styles.icon} />
+            </div>
           </div>
-        </div>
-      </Container>
-    </Segment>
+        </Container>
+      </Segment>
+    </div>
   );
 };
 

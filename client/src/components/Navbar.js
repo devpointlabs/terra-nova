@@ -6,29 +6,31 @@ import { Link, withRouter, } from 'react-router-dom';
 import Terra_Nova_Cabins_Logo from '../assets/images/Terra_Nova_Cabins_Logo.png';
 
 class Navbar extends React.Component {
-  state = { user: null, };  
+  state = { user: null, };
 
   rightNavItems = () => {
     const { auth: { user, handleLogout, }, location, } = this.props;
     if (user) {
       return (
-        <Container>
-            <Menu.Menu position='right'>
-              <Menu.Item
-                style={styles.font}
-                name='LOGOUT'
-                onClick={() => handleLogout(this.props.history)}
-              />
-            </Menu.Menu>
-        </Container>
+        <div>
+          <Menu.Menu position='right'>
+            <Menu.Item
+              style={styles.font}
+              name='LOGOUT'
+              onClick={() => handleLogout(this.props.history)}
+            />
+          </Menu.Menu>
+        </div>
       )
     } else {
       return (
-        <Container>
+        <div>
+
+          <Container>
             <Menu.Menu position='right'>
               <Link to='/login'>
                 <Menu.Item
-                style={styles.font}
+                  style={styles.font}
                   id='login'
                   name='LOGIN'
                   active={location.pathname === '/login'}
@@ -36,27 +38,34 @@ class Navbar extends React.Component {
               </Link>
               <Link to='/register'>
                 <Menu.Item
-                style={styles.font}
+                  style={styles.font}
                   id='register'
                   name='REGISTER'
                   active={location.pathname === '/register'}
                 />
               </Link>
             </Menu.Menu>
-        </Container>
+          </Container>
+        </div>
       )
     }
   }
 
+  renderIcon = () => {
+    return (
+      <Menu.Item>
+        <Image src={Terra_Nova_Cabins_Logo} size="small" style={styles.image} />
+      </Menu.Item>
+    )
+  };
+
   render() {
-    const { location, } = this.props;
+    const { auth: location, } = this.props;
     return (
       <div>
-        <Container >
-          <Menu position='center' secondary>
-          <Menu.Item>
-        <Image src={Terra_Nova_Cabins_Logo} size="tiny" style={styles.image}/>
-          </Menu.Item>
+        <Container>
+          <Menu position='right' secondary>
+            {this.renderIcon()}
             <Link to='/'>
               <Menu.Item
                 style={styles.font}
@@ -155,14 +164,10 @@ export const styles = {
   font: {
     fontFamily: "'Poppins', sans-serif",
     color: 'white',
-    display: 'flex',
-    justifyContent: 'space-evenly',
   },
   fontSize: {
     fontFamily: "'Poppins', sans-serif",
     color: 'white',
-    display: 'flex',
-    justifyContent: 'center',
     width: '120px',
   },
   image: {
