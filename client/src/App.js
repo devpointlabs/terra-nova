@@ -16,12 +16,12 @@ import Footer from "./components/Footer";
 import { BackgroundImage } from './styles/AppStyles';
 import MainCarousel from './components/carousel/Carousel';
 import "./App.css"
-import Geobar from "./components/Geobar";
 import ProtectedRoute from './components/ProtectedRoute';
 import ReviewForm from './components/ReviewForm';
 import Careers from './components/Careers';
 import CareerForm from './components/CareerForm';
 import Events from './components/Events';
+import News from './components/News';
 
 const App = () => (
   <Fragment>
@@ -43,6 +43,7 @@ const App = () => (
           <Route exact path="/gallery" component={Gallery} />
           <Route exact path="/reservations" component={Reservations} />
           <Route exact path="/events" component={Events} />
+          <Route exact path="/news" component={News} />
           <Route exact path="/careers" component={Careers} />
           <ProtectedRoute path="/careerapply" component={CareerForm} />
           <ProtectedRoute path="/review" component={ReviewForm} />

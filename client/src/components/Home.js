@@ -4,6 +4,7 @@ import Rooms from './Rooms';
 import Reviews from './Reviews';
 import AboutUs from './AboutUs';
 import EmailForm from './EmailForm';
+import News from './News';
 
 const Home = () => (
   <>
@@ -23,6 +24,7 @@ const Home = () => (
     <br/>
     <Reviews/>
     <AboutUs/>
+    <News />
     <EmailForm/>
  </>
 )
