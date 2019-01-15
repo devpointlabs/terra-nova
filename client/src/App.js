@@ -22,10 +22,10 @@ const App = () => (
   <Fragment>
     <FetchUser>
 
-        {/* <BackgroundImage style={imageStyles.size}> */}
-        {/* <Geobar />
-        <Navbar /> */}
-        <MainCarousel/>
+        <BackgroundImage style={imageStyles.size}>
+        <Geobar />
+        <Navbar />
+        {/* <MainCarousel/> */}
 
       <div style={styles.body}>
         <Switch>
@@ -40,7 +40,7 @@ const App = () => (
           <Route component={NoMatch} />
         </Switch>
       </div>
-        {/* </BackgroundImage> */}
+        </BackgroundImage>
       <Footer style={styles.footer} />
     </FetchUser>
   </Fragment>

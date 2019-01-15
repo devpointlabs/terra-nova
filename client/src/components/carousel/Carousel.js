@@ -30,11 +30,13 @@ class MainCarousel extends React.Component {
 
     return (
       <div>
+      <Container>
+
         <Carousel.Caption>
       <Geobar/>
       <Navbar/>        
-
         </Carousel.Caption>
+      </Container>
       <Carousel
         activeIndex={index}
         direction={direction}
