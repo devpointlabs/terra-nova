@@ -9,12 +9,13 @@ import {
 } from "semantic-ui-react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import Calendar from "react-calendar";
 
 class ResForm extends React.Component {
   state = {
     reservation: {
-      startDate: new Date(),
-      departureDate: new Date(),
+      start_date: new Date(),
+      end_date: new Date(),
       room: "",
       adults: null,
       Children: null
@@ -23,13 +24,13 @@ class ResForm extends React.Component {
 
   handleStartDate = date => {
     this.setState({
-      reservation: { ...this.state.reservation, startDate: date }
+      reservation: { ...this.state.reservation, start_date: date }
     });
   };
 
   handleDepDate = date => {
     this.setState({
-      reservation: { ...this.state.reservation, departureDate: date }
+      reservation: { ...this.state.reservation, end_date: date }
     });
   };
 
@@ -54,26 +55,36 @@ class ResForm extends React.Component {
     });
   };
 
+  handleCalendar = range => {
+    this.setState({
+      reservation: {
+        ...this.state.reservation,
+        start_date: range[0],
+        end_date: range[1]
+      }
+    });
+  };
+
   adults;
   render() {
     const {
-      reservation: { startDate, departureDate }
+      reservation: { start_date, end_date }
     } = this.state;
 
     return (
-      <Container>
+      <Container style={styles.flexTwo}>
         <Segment compact raised>
           <Form>
             <Header>YOUR RESERVATION</Header>
             <Header as="h4">Arrival Date</Header>
             <DatePicker
-              selected={startDate}
+              selected={start_date}
               onChange={this.handleStartDate}
               name="startDate"
             />
             <Header as="h4">Departure</Header>
             <DatePicker
-              selected={departureDate}
+              selected={end_date}
               onChange={this.handleDepDate}
               name="departureDate"
             />
@@ -109,6 +120,11 @@ class ResForm extends React.Component {
           <Button color="brown">Check Availability</Button>
           {/* onClick api call to return available rooms that meet reservation requestes */}
         </Segment>
+        <Calendar
+          onChange={this.handleCalendar}
+          value={[start_date, end_date]}
+          selectRange
+        />
       </Container>
     );
   }
@@ -139,5 +155,12 @@ const styles = {
     alignItems: "baseline",
     marginTop: "30px",
     marginBottom: "30px"
+  },
+
+  flexTwo: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "flex-start"
   }
 };
