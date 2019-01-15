@@ -2,7 +2,14 @@ import React from "react";
 import { Card, Image, Container, Grid, } from "semantic-ui-react";
 import { WhiteButton, HeaderLine, } from "../styles/AppStyles";
 import photogroup from "../assets/images/photogroup.png";
-
+import AIRPORT_TAXI_ICON from "../assets/icons/amenities_icons/AIRPORT_TAXI_ICON.png";
+import AWESOME_PACKAGES_ICON from "../assets/icons/amenities_icons/AWESOME_PACKAGES_ICON.png";
+import BUFFET_BREAKFAST_ICON from "../assets/icons/amenities_icons/BUFFET_BREAKFAST_ICON.png";
+import CLEANING_EVERYDAY_ICON from "../assets/icons/amenities_icons/CLEANING_EVERYDAY_ICON.png";
+import LAKE_VIEW_ICON from "../assets/icons/amenities_icons/LAKE_VIEW_ICON.png";
+import Master_Bedroom_Icon from "../assets/icons/amenities_icons/Master_Bedroom_Icon.png";
+import POOL_SPA_ICON from "../assets/icons/amenities_icons/POOL_SPA_ICON.png";
+import MAKE_EXPORTABLE_ICON from "../assets/icons/amenities_icons/MAKE_EXPORTABLE_ICON.png";
 
 const AboutUs = () => (
   <Container>
@@ -37,35 +44,35 @@ const AboutUs = () => (
 
       <Card.Group centered itemsPerRow={4} style={cardGroup}>
         <Card style={styles.card}>
-          <Image />
+          <Image src={Master_Bedroom_Icon}/>
           <Card.Content>MASTER BEDROOM</Card.Content>
         </Card>
         <Card style={styles.card}>
-          <Image />
-          <Card.Content>SEA VIEW BALCONY</Card.Content>
+          <Image src={LAKE_VIEW_ICON}/>
+          <Card.Content>LAKE VIEW BALCONY</Card.Content>
         </Card>
         <Card style={styles.card}>
-          <Image />
+          <Image src={POOL_SPA_ICON}/>
           <Card.Content>POOL & SPA</Card.Content>
         </Card>
         <Card style={styles.card}>
-          <Image />
+          <Image src={MAKE_EXPORTABLE_ICON}/>
           <Card.Content>WIFI COVERAGE</Card.Content>
         </Card>
         <Card style={styles.card}>
-          <Image />
+          <Image src={AWESOME_PACKAGES_ICON}/>
           <Card.Content>AWESOME PACKAGES</Card.Content>
         </Card>
         <Card style={styles.card}>
-          <Image />
+          <Image SRC={CLEANING_EVERYDAY_ICON} />
           <Card.Content>CLEANING EVERYDAY</Card.Content>
         </Card>
         <Card style={styles.card}>
-          <Image />
+          <Image src={BUFFET_BREAKFAST_ICON}/>
           <Card.Content>BUFFET BREAKFAST</Card.Content>
         </Card>
         <Card style={styles.card}>
-          <Image />
+          <Image src={AIRPORT_TAXI_ICON}/>
           <Card.Content>AIRPORT TAXIS</Card.Content>
         </Card>
       </Card.Group>
