@@ -5,23 +5,6 @@ import { Link } from "react-router-dom";
 import EmailForm from './EmailForm';
 
 const Footer = () => {
-  const styles = {
-    flexbox: {
-      display: "flex",
-      flexDirection: "row",
-      justifyContent: "space-between"
-    },
-    link: {
-      color: "white",
-      display: "flex",
-      marginTop: "5px",
-      marginBottom: "15px"
-    },
-    icon: {
-      marginLeft: "30px"
-    }
-  };
-
   return (
     <div>
       <EmailForm />
@@ -78,15 +61,14 @@ const Footer = () => {
               <Link to={""} style={styles.link}>
                 Gift Card
             </Link>
-            </Grid.Column>
-          </Grid>
-          <br />
-          <hr />
-          <br />
-          <div style={styles.flexbox}>
-            <p>
-              Copyright &copy; 2017 EngoCreative SkyLine Hotel Theme crafted with
-              love
+          </Grid.Column>
+        </Grid>
+        <br />
+        <hr />
+        <br />
+        <div style={styles.flexbox}>
+          <p>
+            Copyright &copy; 2019 DevPoint Studios.
             {/* not sure this copyright should be here */}
             </p>
             <div>
@@ -103,3 +85,20 @@ const Footer = () => {
 };
 
 export default Footer;
+
+const styles = {
+  flexbox: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between"
+  },
+  link: {
+    color: "white",
+    display: "flex",
+    marginTop: "5px",
+    marginBottom: "15px"
+  },
+  icon: {
+    marginLeft: "30px"
+  }
+};
