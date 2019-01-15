@@ -41,14 +41,14 @@ class ResForm extends React.Component {
   };
 
   handleAdults = e => {
-    const value = e.target.outerText;
+    const value = parseInt(e.target.outerText);
     this.setState({
       reservation: { ...this.state.reservation, adults: value }
     });
   };
 
   handleChildren = e => {
-    const value = e.target.outerText;
+    const value = parseInt(e.target.outerText);
     this.setState({
       reservation: { ...this.state.reservation, Children: value }
     });
@@ -84,7 +84,6 @@ class ResForm extends React.Component {
               openOnFocus
               selection
               options={Room}
-              simple
               item
               onChange={this.handleRoom}
             />
@@ -108,6 +107,7 @@ class ResForm extends React.Component {
             </div>
           </Form>
           <Button color="brown">Check Availability</Button>
+          {/* onClick api call to return available rooms that meet reservation requestes */}
         </Segment>
       </Container>
     );
