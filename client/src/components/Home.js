@@ -15,6 +15,7 @@ const Home = () => (
     <Events />
     <AboutUs />
   </>
+
 )
 
 export default Home;
