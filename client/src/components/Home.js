@@ -8,24 +8,13 @@ import EmailForm from './EmailForm';
 const Home = () => (
   <>
     <Title> Welcome to Terra Nova Cabins</Title>
-      <Title2> HOTELS & RESORTS </Title2>
-      <WhiteButton>About Us</WhiteButton>
-    {/* check availability */}
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <Rooms/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <Reviews/>
-    <AboutUs/>
-    <EmailForm/>
- </>
+    <Title2> HOTELS & RESORTS </Title2>
+
+    <Rooms />
+
+    <Reviews />
+    <AboutUs />
+  </>
 )
 
 export default Home;
