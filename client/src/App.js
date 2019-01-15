@@ -8,12 +8,14 @@ import Gallery from "./components/Gallery";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Navbar from "./components/Navbar";
+import Geobar from "./components/Geobar";
 import NoMatch from "./components/NoMatch";
 import FetchUser from "./components/FetchUser";
 import { Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer";
 import { BackgroundImage } from './styles/AppStyles';
-import "./App.css";
+import MainCarousel from './components/carousel/Carousel';
+import "./App.css"
 import Geobar from "./components/Geobar";
 import ProtectedRoute from './components/ProtectedRoute';
 import ReviewForm from './components/ReviewForm';
@@ -24,10 +26,12 @@ import Events from './components/Events';
 const App = () => (
   <Fragment>
     <FetchUser>
+
         <BackgroundImage style={imageStyles.size}>
-      <div>
         <Geobar />
         <Navbar />
+        {/* <MainCarousel/> */}
+
       <div style={styles.body}>
         <Switch>
           <Route exact path="/" component={Home} />
@@ -44,7 +48,6 @@ const App = () => (
           <ProtectedRoute path="/review" component={ReviewForm} />
           <Route component={NoMatch} />
         </Switch>
-      </div>
       </div>
         </BackgroundImage>
       <Footer style={styles.footer} />

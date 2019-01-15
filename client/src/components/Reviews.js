@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { BlackButton } from '../styles/AppStyles';
+// import { Header } from 'semantic-ui-react';
+
 
 class Reviews extends React.Component {
     state = { Reviews: {} };
