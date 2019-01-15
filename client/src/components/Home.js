@@ -1,14 +1,14 @@
 import React from 'react';
-import { Title, Title2, WhiteButton } from '../styles/AppStyles';
+import { Title, Title2, } from '../styles/AppStyles';
 import Rooms from './Rooms';
 import Reviews from './Reviews';
-import AboutUs from './AboutUs'
+import AboutUs from './AboutUs';
+import EmailForm from './EmailForm';
 
 const Home = () => (
   <>
     <Title> Welcome to Terra Nova Cabins</Title>
       <Title2> HOTELS & RESORTS </Title2>
-      <WhiteButton>About Us</WhiteButton>
     {/* check availability */}
     <br/>
     <br/>
@@ -23,6 +23,7 @@ const Home = () => (
     <br/>
     <Reviews/>
     <AboutUs/>
+    <EmailForm/>
  </>
 )
 

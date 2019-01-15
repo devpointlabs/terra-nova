@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { BlackButton } from '../styles/AppStyles';
 // import { Header } from 'semantic-ui-react';
+
 
 class Reviews extends React.Component {
     state = { Reviews: {} };
@@ -15,7 +17,9 @@ class Reviews extends React.Component {
                 <h4>JULIA ROSE</h4>
                 <div>From Los Angeles, California</div>
                 <br />
-                <BlackButton>Write a Review</BlackButton>
+                <Link to={`/review`}>
+                    <BlackButton>Write a Review</BlackButton>
+                </Link>
                 </div>
             </div>
         )
@@ -24,8 +28,8 @@ class Reviews extends React.Component {
 
 const styles = {
     background: {
-        paddingTop: "20px",
-        paddingBottom: "20px",
+        paddingTop: "50px",
+        paddingBottom: "50px",
         paddingRight: "240px",
         paddingLeft: "240px",
         backgroundColor: "#555555",
@@ -36,6 +40,7 @@ const styles = {
         color: "white",
         fontSize: "16px",
         textAlign: "center",
+        fontFamily: "'Poppins', sans-serif",
     }
 }
 export default Reviews;
