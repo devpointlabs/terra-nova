@@ -8,59 +8,32 @@ const News = () => (
         <Grid.Column>
             <Header as='h1' style={subHeader}>
               News
+              <hr />
             </Header>
           </Grid.Column>
-      <Grid columns={3} divided>
+
+      <Grid columns={4}centered divided>
+      {/* Grid 0 */}
+        <Grid>
+        </Grid>
         {/* Grid 1 */}
-          <Grid.Column style={gridPad.column}>
-          <Grid.Row >
-            <Grid.Column width={2} style={style.numDate}>
+          <Grid columns={2} divided style={gridPad.main}>
+          <Grid.Row verticalAlign='top' textAlign='left'>
+            <Grid.Column width={7} style={style.numDate}>
               25
             </Grid.Column>
-            <Grid.Column style={style.date} width={2}>
-              August
-          <br />
-              2017
-          </Grid.Column>
-          </Grid.Row>
-          <br />
-          <Grid.Row style= {gridPad.row}>
-            <Grid.Column style={style.text} width={5}>
-              Update menu food in SKyline Hotel
-            </Grid.Column>
-          </Grid.Row>
-          <NavLink to='/' activeStyle=
-          {{ 
-            color: '#826614',
-            fontFamily: "'Poppins', sans-serif",
-            fontWeight: 'lighter',
-            fontSize: "13px",
-            }}>
-            <Grid.Row>
-              Read More
-          </Grid.Row>
-          </NavLink>
-        </Grid.Column>
-          {/* Grid 2 */}
-        <Grid.Column style={gridPad.column}>
-          <Grid.Row verticalAlign='top' textAlign='left'>
-            <Grid.Column width={5} style={style.numDate}>
-              22
-            </Grid.Column>
-            <Grid.Column style={style.date} width={5}>
+            <Grid.Column width={7} style={style.date}>
             <Grid.Row textAlign='left'>
-              August
-              <br />
+              AUGUST
+            </Grid.Row>
+            <Grid.Row textAlign='left'>
               2017
             </Grid.Row>
           </Grid.Column>
           </Grid.Row>
-          <br />
-          <Grid.Row style= {gridPad.row}>
-            <Grid.Column style={style.text} width={5}>
-              Las Maquinas on Tragamonedas
-            </Grid.Column>
-          </Grid.Row>
+            <Grid.Row style={style.text}>
+              Update menu food in Skyline Hotel
+            </Grid.Row>
           <NavLink to='/' activeStyle=
           {{ 
             color: '#826614',
@@ -68,43 +41,74 @@ const News = () => (
             fontWeight: 'lighter',
             fontSize: "13px",
             }}>
-            <Grid.Row>
+            <Grid.Row style={gridPad.link}>
               Read More
           </Grid.Row>
           </NavLink>
-        </Grid.Column>
-          {/* Grid 3 */}
-        <Grid.Column style={gridPad.column}>
-          <Grid.Row>
-            <Grid.Column width={5} style={style.numDate}>
-              06
+        </Grid>
+          {/* Grid 2 */}
+        <Grid columns={2} divided style={gridPad.main}>
+          <Grid.Row verticalAlign='top' textAlign='left'>
+            <Grid.Column width={7} style={style.numDate}>
+              22
             </Grid.Column>
-            <Grid.Column style={style.date} width={5}>
-              August
-          <br />
+            <Grid.Column width={7} style={style.date}>
+            <Grid.Row textAlign='left'>
+              AUGUST
+            </Grid.Row>
+            <Grid.Row textAlign='left'>
               2017
+            </Grid.Row>
           </Grid.Column>
           </Grid.Row>
-          <br />
-          <Grid.Row style= {gridPad.row}>
-            <Grid.Column style={style.text} width={5}>
-              Mother Earth Hosts Our Travels
-            </Grid.Column>
-          </Grid.Row>
+            <Grid.Row style={style.text}>
+              Las Maquinas on Tragamonedas
+            </Grid.Row>
           <NavLink to='/' activeStyle=
           {{ 
             color: '#826614',
             fontFamily: "'Poppins', sans-serif",
             fontWeight: 'lighter',
-            fontSize: "14px",
-            }}>
-            <Grid.Row>
+            fontSize: "13px",
+          }}>
+            <Grid.Row style={gridPad.link}>
               Read More
           </Grid.Row>
           </NavLink>
-        </Grid.Column>
+        </Grid>
+          {/* Grid 3 */}
+        <Grid columns={2} divided  style={gridPad.main}>
+        <Grid.Row verticalAlign='top' textAlign='left'>
+            <Grid.Column width={7} style={style.numDate}>
+              06
+            </Grid.Column>
+            <Grid.Column width={7} style={style.date}>
+            <Grid.Row textAlign='left'>
+              AUGUST
+            </Grid.Row>
+            <Grid.Row textAlign='left'>
+              2017
+            </Grid.Row>
+          </Grid.Column>
+          </Grid.Row>
+            <Grid.Row style={style.text}>
+              Mother Earth Hosts Our Travels
+            </Grid.Row>
+          <NavLink to='/' activeStyle=
+          {{ 
+            color: '#826614',
+            fontFamily: "'Poppins', sans-serif",
+            fontWeight: 'lighter',
+            fontSize: "13px",
+          }}>
+          <Grid.Column>
+            <Grid.Row style={gridPad.link}>
+              Read More
+          </Grid.Row>
+          </Grid.Column>
+          </NavLink>
+        </Grid>
       </Grid>
-
   </div>
 )
 
@@ -113,31 +117,36 @@ export default News;
 const style = {
   text: {
     color: "black",
-    fontSize: "25px",
+    fontSize: "27px",
     textAlign: "left",
     fontFamily: "'Poppins', sans-serif",
-    letterSpacing: '1px',
+    letterSpacing: '0.5px',
     wordSpacing: '5px',
     lineHeight: '30px',
-    // paddingBottom: '50px',
+    wordWrap: 'break-word',
+
   },
   numDate: {
     color: "grey",
-    fontSize: "40px",
+    fontSize: "45px",
     textAlign: "left",
     fontFamily: "'Playfair Display', serif",
+    // borderRight: '1px solid grey'
   },
   date: {
     color: "grey",
-    fontSize: "15px",
-    textAlign: "center",
+    fontSize: "14px",
+    fontWeight: '550',
+    textAlign: "left",
     fontFamily: "'Poppins', sans-serif",
     letterSpacing: '1px',
+    alignContent: 'left',
+    paddingLeft: '30px',
   }
 }
 
 const subHeader = {
-  fontSize: '3.0em',
+  fontSize: '3.5em',
   fontWeight: 'normal',
   textAlign: 'left',
   fontFamily: "'Playfair Display', serif",
@@ -147,15 +156,27 @@ const subHeader = {
 }
 
 const padding = {
-  paddingBottom: '150px',
+  paddingBottom: '100px',
 }
+
 const gridPad = {
+  main: {
+    paddingLeft: '45px',
+    paddingRight: '100px',
+  },
+
   row: {
     paddingBottom: '20px',
+    // paddingx',
   },
   column: {
-    paddingRight: '70px',
-    paddingLeft: '50px',
+    // paddingRight: '10px',
+    paddingLeft: '20px',
+  },
+  link: {
+    paddingLeft: '15px',
   }
 }
+
+
 
