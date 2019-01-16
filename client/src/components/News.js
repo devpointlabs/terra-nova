@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, } from 'react-router-dom';
-import { Container, Grid, Header, Divider, } from 'semantic-ui-react';
-import { HeaderLine, } from '../styles/AppStyles';
+import { Grid, Header, } from 'semantic-ui-react';
+
 
 const News = () => (
   <div style={padding}>
