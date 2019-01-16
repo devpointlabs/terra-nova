@@ -53,6 +53,7 @@ export const Title2 = styled.h3`
 
 export const SubHeader = styled.h1`
   font-size: 3.0em;
+  font-weight: normal;
   text-align: center;
   font-family: 'Playfair Display', serif;
   padding-top: 110px;

@@ -4,6 +4,7 @@ import { Title, Title2, WhiteLine } from '../styles/AppStyles';
 import Rooms from './Rooms';
 import Reviews from './Reviews';
 import AboutUs from './AboutUs';
+import Events from './Events';
 import { withNamespaces } from 'react-i18next';
 
 class Home extends React.Component {
@@ -16,8 +17,8 @@ class Home extends React.Component {
         <Title2><WhiteLine /> HOTELS & RESORTS </Title2>
         {/* check availability */}
         <Rooms />
-
         <Reviews />
+        <Events />
         <AboutUs />
       </>
     )
