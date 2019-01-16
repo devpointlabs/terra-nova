@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Image, Container } from 'semantic-ui-react';
 import axios from 'axios';
-import { SubHeader, RoomBody, } from '../styles/AppStyles';
+import { SubHeader, RoomBody, HeaderLine } from '../styles/AppStyles';
 // import RoomCard from './Room';
 
 class Rooms extends React.Component {
@@ -15,6 +15,9 @@ class Rooms extends React.Component {
         this.setState({ rooms: res.data })
       })
   };
+
+  //logic to loop through and grab room ids
+  //only display 1st 6th 11th
 
 
   //render rooms function to map through rooms
@@ -40,27 +43,34 @@ class Rooms extends React.Component {
     const { rooms } = this.state;
 
     return (
-      <Container style={styles.background}>
+      <div style={styles.background}>
         <SubHeader> Our Rooms </SubHeader>
-        <hr style={headerLine} />
         <RoomBody> When you host a party or family reunion, the special celebrations let <br />
           you strengthen bonds with each other </RoomBody>
 
-          
+        <Container>
         <Card.Group centered itemsPerRow={3} >
-          {rooms.map(rooms =>
-            <Card>
-              <Image src="https://picsum.photos/300?random" alt="" />
-              <Card.Content>
-                <Card.Header style={roomHeader}>
-                  {rooms.room_type}
-                </Card.Header>
-              </Card.Content>
-              <Card.Content extra style={cardFooter}>Starting {rooms.cost} / Per Night</Card.Content>
-            </Card>
+          {rooms.map(room => {
+            if (room.id === 1 || room.id === 6 || room.id === 11) {
+              return (
+                <Card>
+                  <Image src="https://picsum.photos/300?random" alt="" />
+                  <Card.Content>
+                    <Card.Header style={roomHeader}>
+                      {room.room_type}
+                    </Card.Header>
+                  </Card.Content>
+                  <Card.Content extra style={cardFooter}>Starting at ${room.cost} / Per Night</Card.Content>
+                </Card>
+
+              )
+            }
+          }
+
           )}
         </Card.Group>
-      </Container>
+        </Container>
+      </div>
     )
   }
 }
@@ -69,6 +79,7 @@ const styles = {
   background: {
     backgroundColor: "#F5F5F5",
     paddingBottom: "50px",
+
   }
 }
 
@@ -79,12 +90,12 @@ const roomHeader = {
 }
 
 
-const headerLine = {
-  borderTop: '.5px solid black',
-  width: '20%',
-  float: 'center',
-  borderColor: '#826614',
-}
+// const headerLine = {
+//   borderTop: '.5px solid black',
+//   width: '20%',
+//   float: 'center',
+//   borderColor: '#826614',
+// }
 
 const cardFooter = {
   fontFamily: "'Poppins', sans-serif",
