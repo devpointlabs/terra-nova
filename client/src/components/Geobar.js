@@ -1,16 +1,20 @@
 import React from 'react';
-import { Menu, Container, Dropdown,  } from 'semantic-ui-react';
+import { Menu, Container, Dropdown, Button  } from 'semantic-ui-react';
 import  { AuthConsumer, } from '../providers/AuthProvider';
 import { faCloud, faPhone, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {  withRouter, } from 'react-router-dom';
 // import ReactWeather from 'react-open-weather';
+import i18n from '../i18n';
+
 
 class Geobar extends React.Component {
   state = { user: null, };
 
- 
-
+  changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  }
+  
   render() {
     const { auth: { user, }, location, } = this.props;
     return (
@@ -67,13 +71,7 @@ class Geobar extends React.Component {
                   </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
-              <Dropdown item style={styles.font} text='ENG'>
-                <Dropdown.Menu>
-                  <Dropdown.Item style={styles.font} onClick={this.handleLanguage}>
-                    ZH
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
+              <Button toggle onClick={() => this.changeLanguage('zh')}>ZH</Button>
             </Menu.Item>
           </Menu>
         </Container>
