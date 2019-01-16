@@ -1,12 +1,19 @@
-import React from 'react';
-import { SubHeader } from '../styles/AppStyles';
+import React from "react";
+import { SubHeader } from "../styles/AppStyles";
+import { Container } from "semantic-ui-react";
+import ResForm from "./ResForm";
 
-const Reservations = () => (
-  <div>
+class Reservation extends React.Component {
+  render() {
+    return (
+      <div>
+        <SubHeader>Reservations</SubHeader>
+        <Container>
+          <ResForm />
+        </Container>
+      </div>
+    );
+  }
+}
 
-  <SubHeader>Reservations</SubHeader>
-  Really awesome Reservations stuff will go here.
-  </div>
-)
-
-export default Reservations;
+export default Reservation;

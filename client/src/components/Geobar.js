@@ -26,7 +26,7 @@ class Geobar extends React.Component {
   }
   
   render() {
-    const { auth: { user, }, location, } = this.props;
+    const { auth: { user, }, } = this.props;
     return (
         <Container >
           <Menu secondary size='mini'>

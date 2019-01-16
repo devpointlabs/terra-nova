@@ -88,6 +88,13 @@ export const HeaderLine = styled.hr`
   border-color: #826614;
 `;
 
+export const WhiteLine = styled.hr`
+  border-top: .5px white;
+  width: 20%;
+  border-color: white;
+`;
+
+
 // export const Card1 = styled.div`
 //   height: 100px;
 //   width: 300px;

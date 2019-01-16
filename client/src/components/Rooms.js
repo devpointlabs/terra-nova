@@ -1,45 +1,75 @@
 import React from "react";
-import { Card } from 'semantic-ui-react';
-import { SubHeader, RoomBody, } from '../styles/AppStyles';
-import RoomCard from './Room';
+import { Card, Image, Container } from 'semantic-ui-react';
 import axios from 'axios';
+import { SubHeader, RoomBody, HeaderLine } from '../styles/AppStyles';
+// import RoomCard from './Room';
 
 class Rooms extends React.Component {
-   state = { rooms: {} };
+  state = { rooms: [] };
 
-//componentDidMount to call and set state to it
+  //componentDidMount to call and set state to it
 
-componentDidMount() {
-  axios.get(`api/rooms`)
-    .then(res => {
-      this.setState({ rooms: res.data })
-    })
-}
-
-
-//render rooms function to map through rooms
-//check this...
-
-
-renderRooms = () => {
-  return this.state.rooms.map(r => (
-    <RoomCard key={r.id} {...r}/>
-    ))
+  componentDidMount() {
+    axios.get("/api/rooms")
+      .then(res => {
+        this.setState({ rooms: res.data })
+      })
   };
 
-  
+  //logic to loop through and grab room ids
+  //only display 1st 6th 11th
+
+
+  //render rooms function to map through rooms
+  //check this...
+
+
+  // renderRooms = () => {
+  //   return this.state.rooms.map(r => (
+  //     <Card>
+  //       <Image src="https://picsum.photos/300?random" alt="" />
+  //         <Card.Content>
+  //           <Card.Header style={roomHeader}>
+  //            {room_type}
+  //           </Card.Header>
+  //         </Card.Content>
+  //         <Card.Content extra style={cardFooter}>Starting {cost} / Per Night</Card.Content>
+  //     </Card>
+  //     ))
+  //   };
+
+
   render() {
+    const { rooms } = this.state;
+
     return (
       <div style={styles.background}>
         <SubHeader> Our Rooms </SubHeader>
-        <hr style={headerLine}/>
-          <RoomBody> {("When you host a party or family reunion, the special celebrations let you strengthen bonds with each other")}</RoomBody>
-        
+        <RoomBody> When you host a party or family reunion, the special celebrations let <br />
+          you strengthen bonds with each other </RoomBody>
 
-       <Card.Group centered itemsPerRow={3} >
-        <RoomCard/>
-       </Card.Group>
-   
+        <Container>
+        <Card.Group centered itemsPerRow={3} >
+          {rooms.map(room => {
+            if (room.id === 1 || room.id === 6 || room.id === 11) {
+              return (
+                <Card>
+                  <Image src="https://picsum.photos/300?random" alt="" />
+                  <Card.Content>
+                    <Card.Header style={roomHeader}>
+                      {room.room_type}
+                    </Card.Header>
+                  </Card.Content>
+                  <Card.Content extra style={cardFooter}>Starting at ${room.cost} / Per Night</Card.Content>
+                </Card>
+
+              )
+            }
+          }
+
+          )}
+        </Card.Group>
+        </Container>
       </div>
     )
   }
@@ -47,17 +77,30 @@ renderRooms = () => {
 
 const styles = {
   background: {
-  backgroundColor: "#F5F5F5",
-  paddingBottom: "50px",
+    backgroundColor: "#F5F5F5",
+    paddingBottom: "50px",
+
   }
 }
 
+const roomHeader = {
+  fontFamily: "'Poppins', sans-serif",
+  fontSize: '25px',
+  paddingTop: '20px',
+}
 
-const headerLine = {
-  borderTop: '.5px solid black',
-  width: '20%',
-  float: 'center',
-  borderColor: '#826614',
+
+// const headerLine = {
+//   borderTop: '.5px solid black',
+//   width: '20%',
+//   float: 'center',
+//   borderColor: '#826614',
+// }
+
+const cardFooter = {
+  fontFamily: "'Poppins', sans-serif",
+  fontSize: '18px',
+  color: '#826614',
 }
 
 export default Rooms;

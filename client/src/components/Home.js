@@ -1,20 +1,27 @@
 import React from 'react';
-import { Header,  } from 'semantic-ui-react';
+// import { Header,  } from 'semantic-ui-react';
+import { Title, Title2, WhiteLine } from '../styles/AppStyles';
 import Rooms from './Rooms';
-import { withNamespaces  } from 'react-i18next';
+import Reviews from './Reviews';
+import AboutUs from './AboutUs';
+import { withNamespaces } from 'react-i18next';
 
 class Home extends React.Component {
-  
-  render() { 
+
+  render() {
     const { t } = this.props;
     return (
-      <div>
-                <h1>{t("Welcome to Terra Nova Cabins")}</h1>
-                <h2> {t("HOTELS & RESORTS")} </h2>
-              </div>
-      )
-        }
-      }
-      
-      export default withNamespaces()(Home);
-      
+      <>
+        <Title> {t("Welcome to Terra Nova Cabins")}</Title>
+        <Title2><WhiteLine /> HOTELS & RESORTS </Title2>
+        {/* check availability */}
+        <Rooms />
+
+        <Reviews />
+        <AboutUs />
+      </>
+    )
+  }
+}
+
+export default withNamespaces()(Home);
