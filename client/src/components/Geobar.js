@@ -9,10 +9,20 @@ import i18n from '../i18n';
 
 
 class Geobar extends React.Component {
-  state = { user: null, };
+  state = { user: null, toggled: false,  };
 
   changeLanguage = (lng) => {
+    if (this.state.toggled === true){
+      lng = 'en'
+    } else {
+      lng = 'zh'
+    }
     i18n.changeLanguage(lng);
+  }
+
+  toggleLanguage = () => {
+    this.setState({ toggled: !this.state.toggled}) 
+    this.changeLanguage()
   }
   
   render() {
@@ -71,7 +81,8 @@ class Geobar extends React.Component {
                   </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
-              <Button toggle onClick={() => this.changeLanguage('zh')}>ZH</Button>
+              {/* <Button toggle onClick={() => this.changeLanguage('zh')}>ZH</Button> */}
+              <Button toggle onClick={() => this.toggleLanguage()}>{ this.state.toggled ? 'en' : '中文' }</Button>
             </Menu.Item>
           </Menu>
         </Container>
