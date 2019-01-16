@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.react-calendar__tile--active {
+  background: #9c9736b8 !important;
+}
+
+.react-calendar__tile--hasActive {
+  background: #9c973685 !important;
+}
