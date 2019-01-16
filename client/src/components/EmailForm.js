@@ -1,16 +1,15 @@
 import React from "react";
-import { Form, Grid, Icon, Container, Segment } from "semantic-ui-react";
-import { Link } from "react-router-dom";
+import { Form, Icon, Container, Segment } from "semantic-ui-react";
 
 const EmailForm = () => (
   <Segment style={styles.background} basic>
     <Container style={styles.flexbox}>
       <div style={styles.flexbox}>
-        {/* <Icon name="mail" size="huge" /> */}
+        <Icon name="mail" size="huge" />
         <Form>
           <Form.Input
             name="email"
-            placeholder="Your Email Address" logo="paper plane"
+            placeholder="Your Email Address       " logo="paper plane"
           
           />
         </Form>
