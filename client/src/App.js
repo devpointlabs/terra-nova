@@ -13,6 +13,7 @@ import NoMatch from "./components/NoMatch";
 import FetchUser from "./components/FetchUser";
 import { Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer";
+<<<<<<< HEAD
 import { BackgroundImage } from "./styles/AppStyles";
 import MainCarousel from "./components/carousel/Carousel";
 import "./App.css";
@@ -21,6 +22,16 @@ import ReviewForm from "./components/ReviewForm";
 import Careers from "./components/Careers";
 import CareerForm from "./components/CareerForm";
 import Events from "./components/Events";
+=======
+import { BackgroundImage } from './styles/AppStyles';
+import MainCarousel from './components/carousel/Carousel';
+import "./App.css"
+import ProtectedRoute from './components/ProtectedRoute';
+import ReviewForm from './components/ReviewForm';
+import Careers from './components/Careers';
+import CareerForm from './components/CareerForm';
+import Events from './components/Events';
+>>>>>>> 93ef6437c49645e3d31ca6f85e244765f7993d06
 
 const App = () => (
   <Fragment>
