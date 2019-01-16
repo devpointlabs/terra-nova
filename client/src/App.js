@@ -16,7 +16,6 @@ import Footer from "./components/Footer";
 import { BackgroundImage } from './styles/AppStyles';
 import MainCarousel from './components/carousel/Carousel';
 import "./App.css"
-import Geobar from "./components/Geobar";
 import ProtectedRoute from './components/ProtectedRoute';
 import ReviewForm from './components/ReviewForm';
 import Careers from './components/Careers';
