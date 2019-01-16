@@ -22,9 +22,9 @@ const Home = () => (
     <br/>
     <br/>
     <br/>
-    <Reviews/>
     <AboutUs/>
-    <News />
+    <Reviews/>
+    <News/>
     <EmailForm/>
  </>
 )
