@@ -5,22 +5,21 @@ import { HeaderLine, } from '../styles/AppStyles';
 
 const News = () => (
   <div style={padding}>
-        
         <Grid.Column>
             <Header as='h1' style={subHeader}>
               News
             </Header>
           </Grid.Column>
-
       <Grid columns={3} divided>
         {/* Grid 1 */}
           <Grid.Column style={gridPad.column}>
-          <Grid.Row>
-            <Grid.Column width={5} style={style.numDate}>
+          <Grid.Row >
+            <Grid.Column width={2} style={style.numDate}>
               25
             </Grid.Column>
-            <Grid.Column style={style.date} width={1}>
+            <Grid.Column style={style.date} width={2}>
               August
+          <br />
               2017
           </Grid.Column>
           </Grid.Row>
@@ -30,7 +29,13 @@ const News = () => (
               Update menu food in SKyline Hotel
             </Grid.Column>
           </Grid.Row>
-          <NavLink to='/'>
+          <NavLink to='/' activeStyle=
+          {{ 
+            color: '#826614',
+            fontFamily: "'Poppins', sans-serif",
+            fontWeight: 'lighter',
+            fontSize: "13px",
+            }}>
             <Grid.Row>
               Read More
           </Grid.Row>
@@ -38,13 +43,16 @@ const News = () => (
         </Grid.Column>
           {/* Grid 2 */}
         <Grid.Column style={gridPad.column}>
-          <Grid.Row>
+          <Grid.Row verticalAlign='top' textAlign='left'>
             <Grid.Column width={5} style={style.numDate}>
               22
             </Grid.Column>
             <Grid.Column style={style.date} width={5}>
+            <Grid.Row textAlign='left'>
               August
+              <br />
               2017
+            </Grid.Row>
           </Grid.Column>
           </Grid.Row>
           <br />
@@ -53,7 +61,13 @@ const News = () => (
               Las Maquinas on Tragamonedas
             </Grid.Column>
           </Grid.Row>
-          <NavLink to='/'>
+          <NavLink to='/' activeStyle=
+          {{ 
+            color: '#826614',
+            fontFamily: "'Poppins', sans-serif",
+            fontWeight: 'lighter',
+            fontSize: "13px",
+            }}>
             <Grid.Row>
               Read More
           </Grid.Row>
@@ -67,6 +81,7 @@ const News = () => (
             </Grid.Column>
             <Grid.Column style={style.date} width={5}>
               August
+          <br />
               2017
           </Grid.Column>
           </Grid.Row>
@@ -76,7 +91,13 @@ const News = () => (
               Mother Earth Hosts Our Travels
             </Grid.Column>
           </Grid.Row>
-          <NavLink to='/' activeStyle={{ color: '#826614' }}>
+          <NavLink to='/' activeStyle=
+          {{ 
+            color: '#826614',
+            fontFamily: "'Poppins', sans-serif",
+            fontWeight: 'lighter',
+            fontSize: "14px",
+            }}>
             <Grid.Row>
               Read More
           </Grid.Row>
@@ -97,6 +118,8 @@ const style = {
     fontFamily: "'Poppins', sans-serif",
     letterSpacing: '1px',
     wordSpacing: '5px',
+    lineHeight: '30px',
+    // paddingBottom: '50px',
   },
   numDate: {
     color: "grey",
@@ -106,7 +129,7 @@ const style = {
   },
   date: {
     color: "grey",
-    fontSize: "20px",
+    fontSize: "15px",
     textAlign: "center",
     fontFamily: "'Poppins', sans-serif",
     letterSpacing: '1px',
@@ -131,11 +154,8 @@ const gridPad = {
     paddingBottom: '20px',
   },
   column: {
-    paddingRight: '50px',
+    paddingRight: '70px',
     paddingLeft: '50px',
   }
 }
 
-const link = {
-  color: 'brown'
-}
