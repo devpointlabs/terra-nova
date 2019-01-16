@@ -112,6 +112,7 @@ const cardGroup = {
 
 const subHeader = {
   fontSize: '3.0em',
+  fontWeight: 'lighter',
   textAlign: 'left',
   fontFamily: "'Playfair Display', serif",
   paddingTop: '110px',
