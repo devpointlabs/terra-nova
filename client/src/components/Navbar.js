@@ -54,7 +54,7 @@ class Navbar extends React.Component {
   renderIcon = () => {
     return (
       <Menu.Item>
-        <Image src={Terra_Nova_Cabins_Logo} size="small" style={styles.image} />
+        <Image src={Terra_Nova_Cabins_Logo} size="tiny" style={styles.image} />
       </Menu.Item>
     )
   };
