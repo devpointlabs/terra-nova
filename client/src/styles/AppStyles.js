@@ -88,6 +88,13 @@ export const HeaderLine = styled.hr`
   border-color: #826614;
 `;
 
+export const WhiteLine = styled.hr`
+  border-top: .5px white;
+  width: 20%;
+  border-color: white;
+`;
+
+
 // export const Card1 = styled.div`
 //   height: 100px;
 //   width: 300px;
@@ -99,4 +106,16 @@ export const HeaderLine = styled.hr`
 //   }
 
 // `
+
+export const ToggleButton = styled.button`
+  background-color: #555555;
+  border: 2px solid ##f8f8ff;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif; 
+`;
 
