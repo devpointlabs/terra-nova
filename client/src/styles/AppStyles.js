@@ -100,3 +100,12 @@ export const HeaderLine = styled.hr`
 
 // `
 
+export const LangButton = styled.button`
+  font-size: 3em;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  padding-top: 50px;
+
+
+  `;
+

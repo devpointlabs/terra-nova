@@ -1,31 +1,20 @@
 import React from 'react';
-import { Title, Title2, WhiteButton } from '../styles/AppStyles';
+import { Header, } from 'semantic-ui-react';
 import Rooms from './Rooms';
-import Reviews from './Reviews';
-import AboutUs from './AboutUs';
-import EmailForm from './EmailForm';
 
-const Home = () => (
-  <>
-    <Title> Welcome to Terra Nova Cabins</Title>
-      <Title2> HOTELS & RESORTS </Title2>
-      <WhiteButton>About Us</WhiteButton>
-    {/* check availability */}
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <Rooms/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <Reviews/>
-    <AboutUs/>
-    <EmailForm/>
- </>
-)
+class Home extends React.Component {
+
+  render() { 
+    const { } = this.props;
+    return (
+        <div>
+          <h1>{("Welcome to Terra Nova Cabins")}</h1>
+          <h2> {("HOTELS & RESORTS")} </h2>
+        </div>
+    )
+  }
+
+}
+
 
 export default Home;

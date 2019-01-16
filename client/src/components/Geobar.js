@@ -4,78 +4,79 @@ import  { AuthConsumer, } from '../providers/AuthProvider';
 import { faCloud, faPhone, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {  withRouter, } from 'react-router-dom';
-
 // import ReactWeather from 'react-open-weather';
 
 class Geobar extends React.Component {
   state = { user: null, };
 
+ 
+
   render() {
     const { auth: { user, }, location, } = this.props;
     return (
-      <Container >
-        <Menu secondary size='mini'>
-          <Menu.Item style={styles.font}>
-            <FontAwesomeIcon
-              icon={faCloud}
-              style={{
-                width: '20px'
-              }} />
-            32˚F
-          {/* <ReactWeather
-            forecast="today"
-            apikey="4ad4c95bd36f481697d185313191001"
-            type="city"
-            city="Seattle" /> */}
-            {/* Weather API DOCS
-        {/* https://www.apixu.com/my/ */}
-          </Menu.Item>
+        <Container >
+          <Menu secondary size='mini'>
+            <Menu.Item style={styles.font}>
+              <FontAwesomeIcon
+                icon={faCloud}
+                style={{
+                  width: '20px'
+                }} />
+              32˚F
+            {/* <ReactWeather
+              forecast="today"
+              apikey="4ad4c95bd36f481697d185313191001"
+              type="city"
+              city="Seattle" /> */}
+              {/* Weather API DOCS
+          {/* https://www.apixu.com/my/ */}
+            </Menu.Item>
 
-          <Menu.Item style={styles.font}>
-            <FontAwesomeIcon
-              icon={faMapMarkerAlt}
-              style={{
-                width: '15px'
-              }}
-              />
-            Salt Lake City, UT
-                        </Menu.Item>
+            <Menu.Item style={styles.font}>
+              <FontAwesomeIcon
+                icon={faMapMarkerAlt}
+                style={{
+                  width: '15px'
+                }}
+                />
+              Salt Lake City, UT
+                          </Menu.Item>
 
-          <Menu.Item style={styles.font}>
-            <FontAwesomeIcon
-              icon={faPhone}
-              style={{
-                width: '20px'
-              }} />
-            1-TER-RAN-OVVA
-                          </Menu.Item >
-          <Menu.Item style={styles.font} position='right'>
-            {user ?
-              <Menu.Item style={styles.font}>
-                <i>
-                  Welcome, {user.first_name}
-                </i>
-              </Menu.Item>
-              :
-              null
-            }
-            <Dropdown item style={styles.font} text='$ (USD)'>
-              <Dropdown.Menu>
-                <Dropdown.Item style={styles.font} onClick={this.handleChange}>
-                  ¥ (CYN)
-                              </Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-            <Dropdown item style={styles.font} text='ENG'>
-              <Dropdown.Menu>
-                <Dropdown.Item style={styles.font} onClick={this.handleChange}>
-                  ROC
-                              </Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-          </Menu.Item>
-        </Menu>
-      </Container>
+            <Menu.Item style={styles.font}>
+              <FontAwesomeIcon
+                icon={faPhone}
+                style={{
+                  width: '20px'
+                }} />
+              1-TER-RAN-OVVA
+                            </Menu.Item >
+            <Menu.Item style={styles.font} position='right'>
+              {user ?
+                <Menu.Item style={styles.font}>
+                  <i>
+                    Welcome, {user.first_name}
+                  </i>
+                </Menu.Item>
+                :
+                null
+              }
+              <Dropdown item style={styles.font} text='$ (USD)'>
+                <Dropdown.Menu>
+                  <Dropdown.Item style={styles.font} onClick={this.handleChange}>
+                    ¥ (CYN)
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+              <Dropdown item style={styles.font} text='ENG'>
+                <Dropdown.Menu>
+                  <Dropdown.Item style={styles.font} onClick={this.handleLanguage}>
+                    ZH
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </Menu.Item>
+          </Menu>
+        </Container>
     )
   }
 }

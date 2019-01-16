@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::API
   include DeviseTokenAuth::Concerns::SetUserByToken
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :set_local
 
 protected
   def configure_permitted_parameters
@@ -9,14 +8,6 @@ protected
       :sign_up, 
       keys: [:first_name, :last_name,]
       )
-  end
-
-  def set_locale
-    I18n.locale = params[:locale] || I18n.default_locale
-  end
-
-  def default_url_options(options = {})
-    {locale: I18n.locale }.merge options
   end
 
 end
