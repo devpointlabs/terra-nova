@@ -5,7 +5,7 @@ import Rooms from "./components/Rooms";
 import AboutUs from "./components/AboutUs";
 import Contact from "./components/Contact";
 import Gallery from "./components/Gallery";
-import Login from "./components/Login";
+import Admin from "./components/Admin";
 import Register from "./components/Register";
 import Navbar from "./components/Navbar";
 import Geobar from "./components/Geobar";
@@ -34,8 +34,9 @@ const App = () => (
       <div style={styles.body}>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/register" component={Register} />
+          <Route exact path="/admin" component={Admin} />
+          <ProtectedRoute exact path="/admin/home" component={Admin} />
+          <ProtectedRoute exact path="/register" component={Register} />
           <Route exact path="/rooms" component={Rooms} />
           <Route exact path="/about_us" component={AboutUs} />
           <Route exact path="/contact" component={Contact} />

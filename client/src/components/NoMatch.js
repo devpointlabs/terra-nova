@@ -4,7 +4,7 @@ import { Header, } from 'semantic-ui-react';
 import { withNamespaces } from 'react-i18next';
 
 const NoMatch = ({t}) => (
-  <Header as="h1" inverted color="white" textAlign="center">
+  <Header as="h1" textAlign="center">
     {t("Page not found return")}
     <Link to="/"> {t("Home")}</Link>
   </Header>

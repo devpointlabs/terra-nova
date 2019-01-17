@@ -70,7 +70,7 @@ const Footer = ({t}) => {
         <br />
         <div style={styles.flexbox}>
           <p>
-            {t("Copyright &copy; 2019 DevPoint Studios.")}
+            {t("Copyright")} &copy; 2019 DevPoint Studios.
             {/* not sure this copyright should be here */}
             </p>
             <div>

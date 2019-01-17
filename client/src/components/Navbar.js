@@ -1,13 +1,36 @@
 import React from 'react'
 import { AuthConsumer, } from "../providers/AuthProvider";
-import { Menu, Container, Image, } from 'semantic-ui-react';
+import { Menu, Container, Image, Dropdown } from 'semantic-ui-react';
 import { Link, withRouter, } from 'react-router-dom';
 // import ReactWeather from 'react-open-weather';
 import Terra_Nova_Cabins_Logo from '../assets/images/Terra_Nova_Cabins_Logo.png';
 import { withNamespaces } from 'react-i18next';
 
 class Navbar extends React.Component {
-  state = { user: null, };
+  // state = { user: null, };
+
+  admin = () => {
+    const { user, handleLogout } = this.props.auth
+    if (user.admin) {
+      return (
+        <Dropdown item href="/admin/home" style={styles.font} text='ADMIN MENU'>
+          <Dropdown.Menu>
+          <Link to='/register'>
+            <Dropdown.Item style={styles.font} text='NEW ADMIN'onClick={this.registerAdmin}>
+            </Dropdown.Item></Link>
+            <Dropdown.Item style={styles.font} text='DASHBOARD'onClick={this.handleChange}>
+            </Dropdown.Item>
+            <Dropdown.Item style={styles.font} text='LOGOUT'onClick={() => handleLogout(this.props.history)}>
+            </Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
+      )
+    }
+  }  
+  registerAdmin = () => {
+
+  }
+
 
   rightNavItems = () => {
     const { auth: { user, handleLogout, }, location, } = this.props;
@@ -26,6 +49,7 @@ class Navbar extends React.Component {
     } else {
       return (
         <div>
+          
 
           <Container>
             <Menu.Menu position='right'>
@@ -137,7 +161,6 @@ class Navbar extends React.Component {
                 active={this.props.location.pathname === '/contact'}
               />
             </Link>
-            {this.rightNavItems()}
           </Menu>
           <br />
         </Container>

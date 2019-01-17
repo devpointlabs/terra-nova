@@ -7,6 +7,7 @@ import { BrowserRouter, } from 'react-router-dom';
 import 'semantic-ui-css/semantic.min.css';
 import 'react-bootstrap';
 
+
 import './i18n';
 
 import * as serviceWorker from './serviceWorker';

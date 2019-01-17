@@ -1,24 +1,8 @@
 {
-    "Welcome to Terra Nova Cabins": "Welcome to Terra Nova Cabins",
-   
-    "HOTELS & RESORTS": "HOTELS & RESORTS",
-    
-    "Terra Nova Cabins represents the best in western hospitality and comfort, wrapped in a contemporary expression that will inspire your own unique adventures. Both a haven from the world and a basecamp for adventure, Terra Nova Cabins will be your new southwestern Montana destination rental.": "Terra Nova Cabins represents the best in western hospitality and comfort, wrapped in a contemporary expression that will inspire your own unique adventures. Both a haven from the world and a basecamp for adventure, Terra Nova Cabins will be your new southwestern Montana destination rental.",
-
-    "OPENING SPRING 2019": "OPENING SPRING 2019",
-
-    "Our Rooms": "Our Rooms", 
-    
-    "When you host a party or family reunion, the special celebrations let you strengthen bonds with each other": "When you host a party or family reunion, the special celebrations let you strengthen bonds with each other",
-
-    
-    
     "About Us": "About Us",
     
     "Read More": "Read More",
-    
 
-    
     "FAMILY ROOM": "FAMILY ROOM",
 
     "MASTER BEDROOM": "MASTER BEDROOM",
@@ -37,39 +21,48 @@
 
     "AIRPORT TAXIS": "AIRPORT TAXIS",
 
+    
+    
+    "Admin": "Admin",
 
-   
-    "Your Email Address": "Your Email Address",
+    "Password": "Password",
 
 
-   
+
+    
     "First Name": "First Name",
-
+    
     "Last Name": "Last Name",
     
     "Phone Number": "Phone Number",
-
+    
     "Email": "Email",
-
+    
     "Submit": "Submit",
-
-
-   
+    
+    
+    
     "Careers with Terra Nova": "Careers with Terra Nova",
-
+    
     "Current Job Openings": "Current Job Openings",
-
+    
     "Employee Benefits": "Employee Benefits",
-
-    "If you would like to know more, please contact us": "If you would like to know more, please contact us",
-
-
+    
+    
+    
     "Contact": "Contact",
+    
+    "If you would like to know more, please contact us": "If you would like to know more, please contact us",
+    
+    
+    "Your Email Address": "Your Email Address",
+    
 
 
     "Our Events": "Our Events",
 
     "Wedding Day": "Wedding Day",
+
 
 
     "Site Map": "Site Map",
@@ -97,19 +90,32 @@
     "Restaurant": "Restaurant",
 
     "Gift Card": "Gift Card",
+    
+    
+    "Copyright": "Copyright",
 
 
-    "Copyright &copy; 2019 DevPoint Studios.": "Copyright &copy; 2019 DevPoint Studios.",
-
-
+    
     "Gallery": "Gallery",
-
+    
     "Please Enjoy Our Gallery of our Properties & Commodities.": "Please Enjoy Our Gallery of our Properties & Commodities.",
 
-
+    
+    
     "Salt Lake City, UT": "Salt Lake City, UT",
+    
+    
 
+    "Welcome to Terra Nova Cabins": "Welcome to Terra Nova Cabins",
+    
+    "HOTELS & RESORTS": "HOTELS & RESORTS",
+    
+    "Terra Nova Cabins represents the best in western hospitality and comfort, wrapped in a contemporary expression that will inspire your own unique adventures. Both a haven from the world and a basecamp for adventure, Terra Nova Cabins will be your new southwestern Montana destination rental.": "Terra Nova Cabins represents the best in western hospitality and comfort, wrapped in a contemporary expression that will inspire your own unique adventures. Both a haven from the world and a basecamp for adventure, Terra Nova Cabins will be your new southwestern Montana destination rental.",
+    
+    "OPENING SPRING 2019": "OPENING SPRING 2019",
+    
 
+    
     "HOME": "HOME",
 
     "ROOM & RATE": "ROOM & RATE",
@@ -123,46 +129,71 @@
     "CONTACT": "CONTACT",
 
 
+
     "Page not found return": "Page not found return",
 
     "Home": "Home",
 
 
-    "Reservations": "Reservations",
-
-
+    
     "YOUR RESERVATION": "YOUR RESERVATION",
-
+    
+    
     "Arrival Date": "Arrival Date",
-
+    
     "Departure": "Departure",
-
+    
     "Rooms & Guest": "Rooms & Guest",
-
+    
     "Rooms": "Rooms",
-
+    
     "Select Room": "Select Room",
-
+    
     "Adults": "Adults",
-
+    
     "Children": "Children",
-
+    
     "Check Availability": "Check Availability",
 
 
+    
+    "Reservations": "Reservations",
+
+
+    
     "Leave a Review": "Leave a Review",
-
+    
     "Title": "Title",
-
+    
     "Body": "Body",
-
-
+    
+    
     "Write a Review": "Write a Review",
-
-
-    "View Details": "View Details",
-
+    
+    
+    
     "Family Room": "Family Room",
 
-    "Starting at": "Starting at"
+    "Single Room": "Single Room",
+
+    "Double Room": "Double Room",
+
+    "Starting at": "Starting at",
+
+    "/days": "/days",
+
+
+
+    "Our Rooms": "Our Rooms", 
+    
+    "When you host a party or family reunion, the special celebrations let you strengthen bonds with each other": "When you host a party or family reunion, the special celebrations let you strengthen bonds with each other",
+    
+    
+    "/ Per Night": "/ Per Night",
+    
+    
+    
+    "View Details": "View Details"
+    
+
 }

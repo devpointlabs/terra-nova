@@ -47,7 +47,7 @@ class Rooms extends React.Component {
         
     return (
       <div style={styles.background}>
-        <SubHeader> {t("Our Rooms")} </SubHeader>
+        <SubHeader >{t("Our Rooms")}</SubHeader>
         <RoomBody> {t("When you host a party or family reunion, the special celebrations let you strengthen bonds with each other")} </RoomBody>
 
         <Container>
@@ -59,10 +59,10 @@ class Rooms extends React.Component {
                   <Image src="https://picsum.photos/300?random" alt="" />
                   <Card.Content>
                     <Card.Header style={roomHeader}>
-                      {room.room_type}
+                      {t(room.room_type)}
                     </Card.Header>
                   </Card.Content>
-                  <Card.Content extra style={cardFooter}>{t("Starting at ${room.cost} / Per Night")}</Card.Content>
+                  <Card.Content extra style={cardFooter}>{t("Starting at")} ${room.cost}{t("/ Per Night")}</Card.Content>
                 </Card>
 
               )

@@ -64,19 +64,22 @@ export const SubHeader = styled.h1`
   text-align: center;
   font-family: 'Playfair Display', serif;
   padding-top: 110px;
+  color: black;
 
   `;
 
 export const RoomBody = styled.p`
-
   font-size: 15px;
   font-family: 'Poppins', sans-serif;
   text-align: center;
   padding-top: 25px;
   padding-bottom: 25px;
+  color: black;
+
   `;
+
   
-export const BackgroundImage = styled.div`
+  export const BackgroundImage = styled.div`
   background-image: url('https://www.travelwyoming.com/sites/default/files/u5691/Grand%20Canyon%20of%20the%20Yellowstone.jpg');
   background-position: center;
   background-size: cover;

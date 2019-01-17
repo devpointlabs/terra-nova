@@ -91,7 +91,9 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     fontFamily: "'Poppins', sans-serif",
-    padding: '20px 20px'
+    padding: '20px 20px',
+    color: 'black'
+
   }
 }
 
@@ -100,7 +102,8 @@ const text = {
   fontFamily: "'Poppins', sans-serif",
   fontSize: '16px',
   paddingTop: '50px',
-  paddingBottom: '50px'
+  paddingBottom: '50px',
+  color: 'black'
 }
 
 const background = {
@@ -117,6 +120,7 @@ const subHeader = {
   textAlign: 'left',
   fontFamily: "'Playfair Display', serif",
   paddingTop: '110px',
+  color: 'black',
   // paddingBottom: '50px'
 }
 
