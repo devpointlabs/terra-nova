@@ -1,13 +1,13 @@
 import React from "react";
 import { Card, Image, Container, } from 'semantic-ui-react';
 import axios from 'axios';
-import { SubHeader, RoomBody, GoldButton } from '../styles/AppStyles';
+import { SubHeader, RoomBody, GoldButton, AmenitiesButton } from '../styles/AppStyles';
 import { Link, withRouter } from 'react-router-dom';
 
 // import RoomCard from './Room';
 
 class Rooms extends React.Component {
-  state = { rooms: [] };
+  state = { rooms: [], showDesc: false };
 
   //componentDidMount to call and set state to it
 
@@ -18,8 +18,24 @@ class Rooms extends React.Component {
       })
   };
 
+  toggleDescription = () => {
+    this.setState({ showDesc: !this.state.showDesc })
+  }
+
+  // we need these in the database to pull in??
+  // help me Alex
+  showAmenities = (r) => {
+    return (
+      <Card.Description>
+        <ul>
+          <li>{r.max_occupancy}</li>
+        </ul>
+      </Card.Description>
+    )
+  };
+
   render() {
-    const { rooms } = this.state;
+    const { rooms, showDesc } = this.state;
 
     return (
       <div style={styles.background}>
@@ -42,14 +58,16 @@ class Rooms extends React.Component {
                     </Card.Content>
                     <Card.Content extra style={cardFooter}>Starting at ${room.cost} / Per Night</Card.Content>
                     <Card.Meta textAlign="center">
-
-                    <Link to="/room"
-                      active={this.props.location.pathname === "/room"}
+                      <AmenitiesButton onClick={() => this.toggleDescription()}> Amenities </AmenitiesButton>
+                      <hr /> 
+                        { showDesc ? this.showAmenities(room) :null}
+                      <Link to="/room"
+                        active={this.props.location.pathname === "/room"}
                       >
-                    <GoldButton style={{marginBottom:"10px"}}> View Details
+                        <GoldButton style={{ marginBottom: "10px" }}> Book Now
                     </GoldButton>
-                    </Link>
-                      </Card.Meta>
+                      </Link>
+                    </Card.Meta>
                   </Card>
 
                 )
@@ -95,6 +113,7 @@ const cardFooter = {
   textAlign: "center",
 
 }
+
 
 
 export default withRouter(Rooms);

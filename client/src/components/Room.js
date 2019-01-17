@@ -3,24 +3,26 @@ import { Card, Image, } from "semantic-ui-react";
 import { GoldButton } from '../styles/AppStyles';
 import { withNamespaces } from 'react-i18next';
 import exterior1 from "../assets/images/exterior1.jpg";
-import interior from "../assets/images/interior.jpg"
+import interior from "../assets/images/interior.jpg";
+import { SubHeader } from '../styles/AppStyles';
 
 
 
 const RoomCard = ({ room_type, cost, max_occupancy, t }) => (
   //loop through to display
   <div>
-
+   <SubHeader>Family Room</SubHeader>
+    <Card.Group centered itemsPerRow={3}>
     <Card>
       <Image src={exterior1} />
-    </Card>
+      </Card>
     <Card>
       <Image src={interior} />
     </Card>
+    </Card.Group>
 
 
     <Card>
-      <Image src="https://picsum.photos/300?random" alt="" />
       <Card.Content>
         <Card.Header style={roomHeader}>
 
