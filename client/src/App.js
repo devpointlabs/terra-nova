@@ -13,7 +13,7 @@ import NoMatch from "./components/NoMatch";
 import FetchUser from "./components/FetchUser";
 import { Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer";
-import { BackgroundImage } from './styles/AppStyles';
+// import { BackgroundImage } from './styles/AppStyles';
 // import MainCarousel from './components/carousel/Carousel';
 import "./App.css"
 import ProtectedRoute from './components/ProtectedRoute';
@@ -27,15 +27,13 @@ const App = () => (
   <Fragment>
     <FetchUser>
 
-        <BackgroundImage style={imageStyles.size}>
         <Geobar />
         <Navbar />
-        {/* <MainCarousel/> */}
 
       <div style={styles.body}>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/login" component={Login} />
+          <Route exact path="/admin" component={Login} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/rooms" component={Rooms} />
           <Route exact path="/about_us" component={AboutUs} />
@@ -50,7 +48,6 @@ const App = () => (
           <Route component={NoMatch} />
         </Switch>
       </div>
-        </BackgroundImage>
       <Footer style={styles.footer} />
     </FetchUser>
   </Fragment>
@@ -69,15 +66,15 @@ const styles = {
   }
 };
 
-const imageStyles = {
-  size: {
-      backgroundPosition: 'center top',
-      backgroundSize: '100% 50%',
+// const imageStyles = {
+//   size: {
+//       backgroundPosition: 'center top',
+//       backgroundSize: '100% 50%',
       // width: '1500px',
       // height: '20%',
       // display: 'flex',
       // flex: '1',
       // resizeMode: 'cover',
 
-  }
-};
+//   }
+// };
