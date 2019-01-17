@@ -10,6 +10,8 @@ import {
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Calendar from "react-calendar";
+import { connect } from "react-redux";
+import { setReservation } from "../reducers/reservation";
 
 class ResForm extends React.Component {
   state = {
@@ -18,7 +20,7 @@ class ResForm extends React.Component {
       end_date: new Date(),
       room: "",
       adults: null,
-      Children: null
+      children: null
     }
   };
 
@@ -65,7 +67,11 @@ class ResForm extends React.Component {
     });
   };
 
-  adults;
+  handleSubmit = e => {
+    e.preventDefault();
+    this.props.dispatch(setReservation(this.state.reservation));
+  };
+
   render() {
     const {
       reservation: { start_date, end_date }
@@ -74,7 +80,7 @@ class ResForm extends React.Component {
     return (
       <Container style={styles.flexTwo}>
         <Segment compact raised>
-          <Form>
+          <Form onSubmit={this.handleSubmit}>
             <Header>YOUR RESERVATION</Header>
             <Header as="h4">Arrival Date</Header>
             <DatePicker
@@ -116,8 +122,8 @@ class ResForm extends React.Component {
                 onChange={this.handleChildren}
               />
             </div>
+            <Button color="brown">Check Availability</Button>
           </Form>
-          <Button color="brown">Check Availability</Button>
           {/* onClick api call to return available rooms that meet reservation requestes */}
         </Segment>
         <Calendar
@@ -130,7 +136,7 @@ class ResForm extends React.Component {
   }
 }
 
-export default ResForm;
+export default connect()(ResForm);
 
 const dropDown = [
   { key: 1, text: "0", value: 0 },

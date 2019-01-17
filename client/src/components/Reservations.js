@@ -2,15 +2,14 @@ import React from "react";
 import { SubHeader } from "../styles/AppStyles";
 import { Container } from "semantic-ui-react";
 import ResForm from "./ResForm";
-import axios from "axios";
+import { getRooms } from "../reducers/rooms";
+import { connect } from "react-redux";
 
 class Reservation extends React.Component {
   state = { room: "" };
 
   componentDidMount() {
-    axios.get("api/rooms").then(res => {
-      this.setState({ room: res.data });
-    });
+    this.props.dispatch(getRooms());
   }
 
   render() {
@@ -25,4 +24,4 @@ class Reservation extends React.Component {
   }
 }
 
-export default Reservation;
+export default connect()(Reservation);
