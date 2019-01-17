@@ -10,6 +10,17 @@ export const WhiteButton = styled.button`
   font-size: 16px;
   font-family: 'Poppins', sans-serif;
 `;
+export const GalleryWhiteButton = styled.button`
+  border: 2px solid white;
+  background-color: rgb(35, 35, 35);
+  color: white;
+  padding: 12px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+`;
 
 export const GoldButton = styled.button`
   background-color: #826614;
@@ -25,7 +36,7 @@ export const GalleryGoldButton = styled.button`
   background-color: rgb(35, 35, 35);
   border-color: #826614; 
   color: #826614;
-  padding: 10px 20px;
+  padding: 9px 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
