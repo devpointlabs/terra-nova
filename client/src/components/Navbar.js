@@ -1,6 +1,6 @@
 import React from 'react'
 import { AuthConsumer, } from "../providers/AuthProvider";
-import { Menu, Container, Image, } from 'semantic-ui-react';
+import { Menu, Container, Image, Dropdown } from 'semantic-ui-react';
 import { Link, withRouter, } from 'react-router-dom';
 // import ReactWeather from 'react-open-weather';
 import Terra_Nova_Cabins_Logo from '../assets/images/Terra_Nova_Cabins_Logo.png';
@@ -66,7 +66,7 @@ class Navbar extends React.Component {
         /> */}
       </Menu.Item>
     )
-  };
+  }; 
 
   render() {
     const { auth: location, } = this.props;
@@ -110,24 +110,22 @@ class Navbar extends React.Component {
             </Link>
 
             {/* Not quite sure what page is for */}
-            {/* <Menu.Item>
-            <Dropdown style={styles.fontSize} item text='Page'>
+            {/* <Dropdown style={styles.font} item text='PAGE'>
               <Dropdown.Menu >
-                <Link to={} />
+                <Link  />
                 <Dropdown.Item basic>
                   Test1
                </Dropdown.Item>
                 <Dropdown.Item basic>
-                  <Link to={} />
+                  <Link />
                   Test2
                </Dropdown.Item>
                 <Dropdown.Item basic>
-                  <Link to={} />
+                  <Link />
                   Test3
                </Dropdown.Item>
               </Dropdown.Menu>
-            </Dropdown>
-            </Menu.Item> */}
+            </Dropdown> */}
 
             <Link to='/about_us'>
               <Menu.Item
@@ -177,12 +175,14 @@ export const styles = {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-evenly',
-    alignItems: 'baseline',
+    alignItems: 'center',
     alignContent: 'center',
+    marginTop: '35px',
   },
   image: {
     padding: '0.5px',
-    margin: '0.5px',
+    marginBottom: '-40px',
+    marginTop: '-10px',
     height: '100px',
     width: 'auto',
   },

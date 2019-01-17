@@ -6,8 +6,9 @@ import Rooms from './Rooms';
 import Reviews from './Reviews';
 import AboutUs from './AboutUs';
 import Carousel from './carousel/Carousel';
-import EmailForm from './EmailForm';
+// import EmailForm from './EmailForm';
 import News from './News';
+import Gallery from './Gallery';
 
 class Home extends React.Component {
 
@@ -26,6 +27,7 @@ class Home extends React.Component {
         <AboutUs />
         <Reviews />
         <News/>
+        <Gallery/>
       </>
     )
   }

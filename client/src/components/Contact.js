@@ -5,19 +5,10 @@ import { SubHeader, RoomBody } from '../styles/AppStyles';
 const Contact = () => (
   <div styles={styles.background}>
     <Container>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
       <SubHeader>
         Contact
   </SubHeader>
       <RoomBody>If you would like to know more, please reach out to us: </RoomBody>
-      <br />
-      <br />
-      <br />
       <Card.Group centered itemsPerRow={2}>
         <Card raised centered textAlign fluid style={cardStyles.card}>
           <Card.Content>

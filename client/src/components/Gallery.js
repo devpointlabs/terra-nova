@@ -1,6 +1,7 @@
 import React from 'react';
-import { Card, Container, Image, } from 'semantic-ui-react';
-import { SubHeader, RoomBody, } from '../styles/AppStyles';
+import { Card, Container, Image, Menu, } from 'semantic-ui-react';
+import { SubHeader, GalleryIconLine, GalleryGoldButton, } from '../styles/AppStyles';
+import FLEUR_ICON from '../assets/icons/miscellaneous_icons/FLEUR_ICON.png';
 
 class Gallery extends React.Component {
   state = { cards: [], };
@@ -9,7 +10,7 @@ class Gallery extends React.Component {
     return this.state.cards.map( content => (
       <Card raised centered textAlign fluid style={cardStyles.card}>
         <Card.Content>
-          <Card.Header style={fontColor.font}>
+          <Card.Header style={styles.font}>
             <i>{content}TITLE</i>
           </Card.Header>
           <br />
@@ -27,22 +28,29 @@ class Gallery extends React.Component {
 
   render() {
     return (
-      <div styles={styles.background} >
+      <div style={styles.background} >
         <Container>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <SubHeader>Gallery</SubHeader>
-          <RoomBody>Please Enjoy Our Gallery of our Properties & Commodities.</RoomBody>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
+          <SubHeader style={styles.font}>Our Gallery</SubHeader>
+          <GalleryIconLine />
+          <Image centered style={styles.icon} src={FLEUR_ICON}/>
+          <div style={styles.button}>
+          <Menu secondary>
+
+          <Menu.Item fitted='horizontally'>
+          <GalleryGoldButton>HOTEL & GROUND</GalleryGoldButton>
+          </Menu.Item>
+
+          <Menu.Item>
+          <GalleryGoldButton>ROOM/CABIN</GalleryGoldButton>
+          </Menu.Item>
+          <Menu.Item>
+          <GalleryGoldButton>BATHROOM</GalleryGoldButton>
+          </Menu.Item>
+          <Menu.Item>
+          <GalleryGoldButton>DINING</GalleryGoldButton>
+          </Menu.Item>
+          </Menu>
+          </div>
           <Card.Group centered itemsPerRow={4}>
             {this.renderCards()}
           </Card.Group>
@@ -57,7 +65,28 @@ export default Gallery;
 
 const styles = {
   background: {
-    backgroundColor: "#F5F5F5",
+    backgroundColor: "rgb(35, 35, 35)",
+    paddingBottom: '100px',
+  },
+  font: {
+    color: 'white',
+    fontFamily: "'Playfair Display', serif",
+    fontSize: "50px",
+    fontWeight: 'lighter',
+  }, 
+  icon: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  button: {
+    display: 'flex',
+    padding: '50px',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    alignContent: 'center'
   }
 }
 
@@ -73,9 +102,5 @@ const cardStyles = {
   }
 }
 
-const fontColor = {
-  font: {
-    color: '#666666'
-  }
-}
+
 
