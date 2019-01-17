@@ -7,7 +7,7 @@ import { Link, withRouter } from 'react-router-dom';
 // import RoomCard from './Room';
 
 class Rooms extends React.Component {
-  state = { rooms: [], showDesc: false };
+  state = { rooms: [], showDesc: false, roomId: null };
 
   //componentDidMount to call and set state to it
 
@@ -18,8 +18,9 @@ class Rooms extends React.Component {
       })
   };
 
-  toggleDescription = () => {
+  toggleDescription = (id) => {
     this.setState({ showDesc: !this.state.showDesc })
+    this.setState({roomId: id})
   }
 
   // we need these in the database to pull in??
@@ -28,7 +29,10 @@ class Rooms extends React.Component {
     return (
       <Card.Description>
         <ul>
-          <li>{r.max_occupancy}</li>
+          <ul>Max {r.max_occupancy} Persons </ul>
+          <ul>Size 35 m2/ 376 ft</ul>
+          <ul>View: Ocean</ul>
+          <ul>Bed: King-size or Twin Beds</ul>
         </ul>
       </Card.Description>
     )
@@ -58,9 +62,9 @@ class Rooms extends React.Component {
                     </Card.Content>
                     <Card.Content extra style={cardFooter}>Starting at ${room.cost} / Per Night</Card.Content>
                     <Card.Meta textAlign="center">
-                      <AmenitiesButton onClick={() => this.toggleDescription()}> Amenities </AmenitiesButton>
+                      <AmenitiesButton onClick={() => this.toggleDescription(room.id)}> Amenities </AmenitiesButton>
                       <hr /> 
-                        { showDesc ? this.showAmenities(room) :null}
+                        { showDesc && room.id === this.state.roomId ? this.showAmenities(room) :null}
                       <Link to="/room"
                         active={this.props.location.pathname === "/room"}
                       >
@@ -85,7 +89,7 @@ class Rooms extends React.Component {
 const styles = {
   background: {
     backgroundColor: "#F5F5F5",
-    paddingBottom: "50px",
+    paddingBottom: "150px",
 
   }
 }

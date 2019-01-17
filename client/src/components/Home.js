@@ -6,7 +6,6 @@ import Rooms from './Rooms';
 import Reviews from './Reviews';
 import AboutUs from './AboutUs';
 import Events from './Events';
-import { withNamespaces } from 'react-i18next';
 import Carousel from './carousel/Carousel';
 import News from './News';
 
