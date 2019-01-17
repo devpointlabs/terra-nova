@@ -11,7 +11,7 @@ export const WhiteButton = styled.button`
   font-family: 'Poppins', sans-serif;
 `;
 
-export const GoldButton = styled.button `
+export const GoldButton = styled.button`
   background-color: #826614;
   color: white;
   padding: 12px 30px;
@@ -21,7 +21,7 @@ export const GoldButton = styled.button `
   font-size: 16px;
   font-family: 'Poppins', sans-serif;
 `;
-export const GalleryGoldButton = styled.button `
+export const GalleryGoldButton = styled.button`
   background-color: rgb(35, 35, 35);
   border-color: #826614; 
   color: #826614;
@@ -78,7 +78,7 @@ export const RoomBody = styled.p`
   padding-top: 25px;
   padding-bottom: 25px;
   `;
-  
+
 export const BackgroundImage = styled.div`
   background-image: url('https://www.travelwyoming.com/sites/default/files/u5691/Grand%20Canyon%20of%20the%20Yellowstone.jpg');
   background-position: center;
@@ -106,10 +106,29 @@ export const WhiteLine = styled.hr`
 `;
 
 export const GalleryIconLine = styled.hr`
-  border-top: .5px #826614;
-  width: 20%;
+  border: 0.5px solid #826614;
+  width: 48%;
   border-color: #826614;
+
 `;
+
+// hr.style - eight {
+//   overflow: visible; /* For IE */
+//   padding: 0;
+//   border: none;
+//   border - top: medium double #333;
+//   color: #333;
+//   text - align: center;
+// }
+// hr.style - eight: after {
+//   content: "§";
+//   display: inline - block;
+//   position: relative;
+//   top: -0.7em;
+//   font - size: 1.5em;
+//   padding: 0 0.25em;
+//   background: white;
+// }
 
 
 // export const Card1 = styled.div`

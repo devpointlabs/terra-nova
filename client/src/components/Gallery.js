@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Container, Image, Menu, } from 'semantic-ui-react';
+import { Card, Container, Image, Menu, Item, } from 'semantic-ui-react';
 import { SubHeader, GalleryIconLine, GalleryGoldButton, } from '../styles/AppStyles';
 import FLEUR_ICON from '../assets/icons/miscellaneous_icons/FLEUR_ICON.png';
 
@@ -31,8 +31,14 @@ class Gallery extends React.Component {
       <div style={styles.background} >
         <Container>
           <SubHeader style={styles.font}>Our Gallery</SubHeader>
-          <GalleryIconLine />
-          <Image centered style={styles.icon} src={FLEUR_ICON}/>
+            <div style={styles.line}>
+            <GalleryIconLine />
+          <Image centered 
+          style={styles.icon} 
+          src={FLEUR_ICON}
+          />
+            <GalleryIconLine />
+          </div>
           <div style={styles.button}>
           <Menu secondary>
 
@@ -40,13 +46,13 @@ class Gallery extends React.Component {
           <GalleryGoldButton>HOTEL & GROUND</GalleryGoldButton>
           </Menu.Item>
 
-          <Menu.Item>
+          <Menu.Item fitted='horizontally'>
           <GalleryGoldButton>ROOM/CABIN</GalleryGoldButton>
           </Menu.Item>
-          <Menu.Item>
+          <Menu.Item fitted='horizontally'>
           <GalleryGoldButton>BATHROOM</GalleryGoldButton>
           </Menu.Item>
-          <Menu.Item>
+          <Menu.Item fitted='horizontally'>
           <GalleryGoldButton>DINING</GalleryGoldButton>
           </Menu.Item>
           </Menu>
@@ -75,10 +81,10 @@ const styles = {
     fontWeight: 'lighter',
   }, 
   icon: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+    // display: 'flex',
+    // flexDirection: 'row',
+    // justifyContent: 'center',
+    // alignItems: 'center',
   },
   button: {
     display: 'flex',
@@ -87,6 +93,13 @@ const styles = {
     justifyContent: 'space-evenly',
     alignItems: 'center',
     alignContent: 'center'
+  },
+  line: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    marginBottom: '-40px',
   }
 }
 
