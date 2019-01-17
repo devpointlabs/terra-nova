@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, Container, Image, } from 'semantic-ui-react';
 import { SubHeader, RoomBody, } from '../styles/AppStyles';
+import { withNamespaces } from 'react-i18next';
 
 class Gallery extends React.Component {
   state = { cards: [], };
@@ -26,6 +27,8 @@ class Gallery extends React.Component {
   };
 
   render() {
+    const { t } = this.props;
+
     return (
       <div styles={styles.background} >
         <Container>
@@ -35,8 +38,8 @@ class Gallery extends React.Component {
           <br />
           <br />
           <br />
-          <SubHeader>Gallery</SubHeader>
-          <RoomBody>Please Enjoy Our Gallery of our Properties & Commodities.</RoomBody>
+          <SubHeader>{t("Gallery")}</SubHeader>
+          <RoomBody>{t("Please Enjoy Our Gallery of our Properties & Commodities.")}</RoomBody>
           <br />
           <br />
           <br />
@@ -52,7 +55,7 @@ class Gallery extends React.Component {
   }
 }
 
-export default Gallery;
+export default withNamespaces()(Gallery);
 
 
 const styles = {

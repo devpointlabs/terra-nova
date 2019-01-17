@@ -1,7 +1,8 @@
 import React from "react";
 import { Form, Icon, Container, Segment } from "semantic-ui-react";
+import { withNamespaces } from 'react-i18next';
 
-const EmailForm = () => (
+const EmailForm = ({t}) => (
   <Segment style={styles.background} basic>
     <Container style={styles.flexbox}>
       <div style={styles.flexbox}>
@@ -9,7 +10,7 @@ const EmailForm = () => (
         <Form>
           <Form.Input
             name="email"
-            placeholder="Your Email Address       " logo="paper plane"
+            placeholder={t("Your Email Address")} logo="paper plane"
           
           />
         </Form>
@@ -24,7 +25,7 @@ const EmailForm = () => (
 
 )
 
-export default EmailForm;
+export default withNamespaces()(EmailForm);
 
 
 const styles = {

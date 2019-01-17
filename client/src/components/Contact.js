@@ -1,8 +1,9 @@
 import React from 'react';
 import { Icon, Card, Container, } from 'semantic-ui-react';
 import { SubHeader, RoomBody } from '../styles/AppStyles';
+import { withNamespaces } from 'react-i18next';
 
-const Contact = () => (
+const Contact = ({t}) => (
   <div styles={styles.background}>
     <Container>
       <br />
@@ -12,9 +13,9 @@ const Contact = () => (
       <br />
       <br />
       <SubHeader>
-        Contact
+        {t("Contact")}
   </SubHeader>
-      <RoomBody>If you would like to know more, please reach out to us: </RoomBody>
+      <RoomBody>{t("If you would like to know more, please contact us")}</RoomBody>
       <br />
       <br />
       <br />
@@ -52,7 +53,7 @@ const Contact = () => (
   </div>
 )
 
-export default Contact;
+export default withNamespaces()(Contact);
 
 const styles = {
   background: {

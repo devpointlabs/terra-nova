@@ -2,14 +2,16 @@ import React from 'react';
 import axios from 'axios';
 import { Form, Rating, Container, Header } from 'semantic-ui-react';
 import { AuthConsumer } from '../providers/AuthProvider';
+import { withNamespaces } from 'react-i18next';
+
 
 class ReviewForm extends React.Component {
     state = { title:"", body:"", rating: 0 , user_id: ""};
     // can we get the user name from the user_id??
 
-    componentDidMount() {
-        this.setState({ user_id: this.props.auth.user.id })
-    };//end of componentDidMount
+    // componentDidMount() {
+    //     this.setState({ user_id: this.props.auth.user.id })
+    // };//end of componentDidMount
     
     handleSubmit = (e) => {
         const review = this.state;
@@ -28,23 +30,25 @@ class ReviewForm extends React.Component {
 
     render() {
         const { title, body, rating } = this.state;
+        const { t } = this.props;
+
         return(
             <Container>
                 <Form onSubmit={this.handleSubmit}>
-                <Header>Leave a Review</Header>
+                <Header>{t("Leave a Review")}</Header>
                     <Form.Group width="equal">
                         <Form.Input
                             name="title"
-                            label="Title"
-                            placeholder="Title"
+                            label={t("Title")}
+                            placeholder={t("Title")}
                             required
                             value={title}
                             onChange={this.handleChange}
                         />
                         <Form.Input 
                             name="body"
-                            label="Body"
-                            placeholder="Body"
+                            label={t("Body")}
+                            placeholder={t("Body")}
                             required
                             value={body}
                             onChange={this.handleChange}
@@ -59,14 +63,14 @@ class ReviewForm extends React.Component {
                             clearable
                         />
                     </Form.Group>
-                    <Form.Button>Submit</Form.Button>
+                    <Form.Button>{t("Submit")}</Form.Button>
                 </Form>
             </Container>
         )
     }
 };
 
-export default class ConnectedReviewForm extends React.Component {
+class ConnectedReviewForm extends React.Component {
     render(){
       return(
         <AuthConsumer>
@@ -75,3 +79,5 @@ export default class ConnectedReviewForm extends React.Component {
       )
     }
 };
+
+export default withNamespaces()(ConnectedReviewForm);

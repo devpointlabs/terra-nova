@@ -4,6 +4,7 @@ import { Menu, Container, Image, } from 'semantic-ui-react';
 import { Link, withRouter, } from 'react-router-dom';
 // import ReactWeather from 'react-open-weather';
 import Terra_Nova_Cabins_Logo from '../assets/images/Terra_Nova_Cabins_Logo.png';
+import { withNamespaces } from 'react-i18next';
 
 class Navbar extends React.Component {
   state = { user: null, };
@@ -60,7 +61,7 @@ class Navbar extends React.Component {
   };
 
   render() {
-    const { auth: location, } = this.props;
+    const { auth: location, t } = this.props;
     return (
       <div>
         <Container>
@@ -69,7 +70,7 @@ class Navbar extends React.Component {
             <Link to='/'>
               <Menu.Item
                 style={styles.font}
-                name='HOME'
+                name={t("HOME")}
                 id='home'
                 active={location.pathname === '/'}
               />
@@ -80,21 +81,21 @@ class Navbar extends React.Component {
                 id='Room & Rate'
                 style={styles.fontSize}
                 active={location.pathname === '/rooms'}
-              > ROOM & RATE
+              > {t("ROOM & RATE")}
                 </Menu.Item>
             </Link>
             <Link to='/reservations'>
               <Menu.Item
-                style={styles.font}
-                name='RESERVATIONS'
+                style={styles.fontSize}
+                name={t("RESERVATIONS")}
                 id='reservations'
                 active={this.props.location.pathname === '/reservations'}
               />
             </Link>
             <Link to='/gallery'>
               <Menu.Item
-                style={styles.font}
-                name='GALLERY'
+                style={styles.fontSize}
+                name={t("GALLERY")}
                 id='gallery'
                 active={this.props.location.pathname === '/gallery'}
               />
@@ -122,16 +123,16 @@ class Navbar extends React.Component {
 
             <Link to='/about_us'>
               <Menu.Item
-                style={styles.font}
-                name='ABOUT'
+                style={styles.fontSize}
+                name={t("ABOUT")}
                 id='about'
                 active={this.props.location.pathname === '/about_us'}
               />
             </Link>
             <Link to='/contact'>
               <Menu.Item
-                style={styles.font}
-                name='CONTACT'
+                style={styles.fontSize}
+                name={t("CONTACT")}
                 id='contact'
                 active={this.props.location.pathname === '/contact'}
               />
@@ -158,7 +159,7 @@ export class ConnectedNavbar extends React.Component {
   }
 }
 
-export default withRouter(ConnectedNavbar);
+export default withNamespaces()(withRouter(ConnectedNavbar));
 
 export const styles = {
   font: {

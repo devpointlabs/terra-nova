@@ -10,14 +10,16 @@ import LAKE_VIEW_ICON from "../assets/icons/amenities_icons/LAKE_VIEW_ICON.png";
 import Master_Bedroom_Icon from "../assets/icons/amenities_icons/Master_Bedroom_Icon.png";
 import POOL_SPA_ICON from "../assets/icons/amenities_icons/POOL_SPA_ICON.png";
 import MAKE_EXPORTABLE_ICON from "../assets/icons/amenities_icons/MAKE_EXPORTABLE_ICON.png";
+import { withNamespaces } from 'react-i18next';
 
-const AboutUs = () => (
+
+const AboutUs = ({ t }) => (
   <Container>
     <div style={background}>
       <div>
         <Grid columns={2} padded='vertically'>
           <Grid.Column>
-            <h1 style={subHeader}>About Us</h1>
+            <h1 style={subHeader}>{t("About Us")}</h1>
             <HeaderLine/>
             <p style={text}> Contrary to popular belief, Lorem isn't simply random text. It has roots in classical literature 
               from 45 BC, making it over 2000 years old. Avalon's leading hotels with gracious island hospitality,
@@ -27,7 +29,7 @@ const AboutUs = () => (
               Richard Mcklintock, a professor at Hampton-Sydney College in Virginia, looked up some of the more
               obscure words in Latin. Consecteteur from a more obscure Latin text...
             </p>
-            <WhiteButton>Read More</WhiteButton>
+            <WhiteButton>{t("Read More")}</WhiteButton>
           </Grid.Column>
           <Grid.Column>
             <br/>
@@ -45,42 +47,42 @@ const AboutUs = () => (
       <Card.Group centered itemsPerRow={4} style={cardGroup}>
         <Card style={styles.card}>
           <Image src={Master_Bedroom_Icon}/>
-          <Card.Content>MASTER BEDROOM</Card.Content>
+          <Card.Content>{t("MASTER BEDROOM")}</Card.Content>
         </Card>
         <Card style={styles.card}>
           <Image src={LAKE_VIEW_ICON}/>
-          <Card.Content>LAKE VIEW BALCONY</Card.Content>
+          <Card.Content>{t("LAKE VIEW BALCONY")}</Card.Content>
         </Card>
         <Card style={styles.card}>
           <Image src={POOL_SPA_ICON}/>
-          <Card.Content>POOL & SPA</Card.Content>
+      <Card.Content>{t("POOL & SPA")}</Card.Content>
         </Card>
         <Card style={styles.card}>
           <Image src={MAKE_EXPORTABLE_ICON}/>
-          <Card.Content>WIFI COVERAGE</Card.Content>
+          <Card.Content>{t("WIFI COVERAGE")}</Card.Content>
         </Card>
         <Card style={styles.card}>
           <Image src={AWESOME_PACKAGES_ICON}/>
-          <Card.Content>AWESOME PACKAGES</Card.Content>
+          <Card.Content>{t("AWESOME PACKAGES")}</Card.Content>
         </Card>
         <Card style={styles.card}>
           <Image SRC={CLEANING_EVERYDAY_ICON} />
-          <Card.Content>CLEANING EVERYDAY</Card.Content>
+          <Card.Content>{t("CLEANING EVERYDAY")}</Card.Content>
         </Card>
         <Card style={styles.card}>
           <Image src={BUFFET_BREAKFAST_ICON}/>
-          <Card.Content>BUFFET BREAKFAST</Card.Content>
+          <Card.Content>{t("BUFFET BREAKFAST")}</Card.Content>
         </Card>
         <Card style={styles.card}>
           <Image src={AIRPORT_TAXI_ICON}/>
-          <Card.Content>AIRPORT TAXIS</Card.Content>
+          <Card.Content>{t("AIRPORT TAXIS")}</Card.Content>
         </Card>
       </Card.Group>
     </div>
   </Container>
 )
 
-export default AboutUs;
+export default withNamespaces()(AboutUs);
 
 const styles = {
   card: {

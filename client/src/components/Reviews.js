@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { BlackButton } from '../styles/AppStyles';
-// import { Header } from 'semantic-ui-react';
+import { withNamespaces } from 'react-i18next';
 
 
 class Reviews extends React.Component {
     state = { Reviews: {} };
-
+    
+    
     render() {
+        const { t } = this.props;
         return (
             <div style={styles.background}>
                 <div style={styles.body}>"This is the only place to stay in Catalina! I have stayed in cheaper hotels and they were fine, 
@@ -18,7 +20,7 @@ class Reviews extends React.Component {
                 <div>From Los Angeles, California</div>
                 <br />
                 <Link to={`/review`}>
-                    <BlackButton>Write a Review</BlackButton>
+                    <BlackButton>{t("Write a Review")}</BlackButton>
                 </Link>
                 </div>
             </div>
@@ -43,4 +45,4 @@ const styles = {
         fontFamily: "'Poppins', sans-serif",
     }
 }
-export default Reviews;
+export default withNamespaces()(Reviews);

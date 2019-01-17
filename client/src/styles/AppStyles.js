@@ -48,7 +48,15 @@ export const Title2 = styled.h3`
   color: white;
   text-align: center;
   font-family: 'Poppins', sans-serif;
-  padding-bottom: 200px;
+  padding-bottom: 30px;
+  `;
+
+  export const Title3 = styled.h4`
+  font-size: 1.7em;
+  color: white;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  padding-bottom: 50px;
   `;
 
 export const SubHeader = styled.h1`
@@ -73,7 +81,7 @@ export const BackgroundImage = styled.div`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat
-  color: rgba(0, 0, 0, ,0);
+  color: rgba(0, 0, 0, 0);
 `;
 
 export const NavText = styled.div`
@@ -106,16 +114,4 @@ export const WhiteLine = styled.hr`
 //   }
 
 // `
-
-export const ToggleButton = styled.button`
-  background-color: #555555;
-  border: 2px solid ##f8f8ff;
-  color: white;
-  padding: 10px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  font-family: 'Poppins', sans-serif; 
-`;
 

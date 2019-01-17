@@ -10,6 +10,8 @@ import {
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Calendar from "react-calendar";
+import { withNamespaces } from 'react-i18next';
+
 
 class ResForm extends React.Component {
   state = {
@@ -71,27 +73,29 @@ class ResForm extends React.Component {
       reservation: { start_date, end_date }
     } = this.state;
 
+    const { t } = this.props;
+
     return (
       <Container style={styles.flexTwo}>
         <Segment compact raised>
           <Form>
-            <Header>YOUR RESERVATION</Header>
-            <Header as="h4">Arrival Date</Header>
+            <Header>{t("YOUR RESERVATION")}</Header>
+            <Header as="h4">{t("Arrival Date")}</Header>
             <DatePicker
               selected={start_date}
               onChange={this.handleStartDate}
               name="startDate"
             />
-            <Header as="h4">Departure</Header>
+            <Header as="h4">{t("Departure")}</Header>
             <DatePicker
               selected={end_date}
               onChange={this.handleDepDate}
               name="departureDate"
             />
-            <Header>Rooms & Guest</Header>
-            <Header as="h4">Rooms</Header>
+            <Header>{t("Rooms & Guest")}</Header>
+            <Header as="h4">{t("Rooms")}</Header>
             <Dropdown
-              placeholder="Select Room"
+              placeholder={t("Select Room")}
               openOnFocus
               selection
               options={Room}
@@ -99,7 +103,7 @@ class ResForm extends React.Component {
               onChange={this.handleRoom}
             />
             <div style={styles.flex}>
-              <Header as="h4">Adults: </Header>
+              <Header as="h4">{t("Adults")} </Header>
               <Dropdown
                 placeholder="-"
                 fluid
@@ -107,7 +111,7 @@ class ResForm extends React.Component {
                 options={dropDown}
                 onChange={this.handleAdults}
               />
-              <Header as="h4">Children: </Header>
+              <Header as="h4">{t("Children")}</Header>
               <Dropdown
                 placeholder="-"
                 fluid
@@ -117,7 +121,7 @@ class ResForm extends React.Component {
               />
             </div>
           </Form>
-          <Button color="brown">Check Availability</Button>
+          <Button color="brown">{t("Check Availability")}</Button>
           {/* onClick api call to return available rooms that meet reservation requestes */}
         </Segment>
         <Calendar
@@ -130,7 +134,7 @@ class ResForm extends React.Component {
   }
 }
 
-export default ResForm;
+export default withNamespaces()(ResForm);
 
 const dropDown = [
   { key: 1, text: "0", value: 0 },

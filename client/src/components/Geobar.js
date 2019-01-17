@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {  withRouter, } from 'react-router-dom';
 // import ReactWeather from 'react-open-weather';
 import i18n from '../i18n';
+import { withNamespaces } from 'react-i18next';
+
 
 
 class Geobar extends React.Component {
@@ -26,7 +28,7 @@ class Geobar extends React.Component {
   }
   
   render() {
-    const { auth: { user, }, } = this.props;
+    const { auth: { user, }, t } = this.props;
     return (
         <Container >
           <Menu secondary size='mini'>
@@ -53,7 +55,7 @@ class Geobar extends React.Component {
                   width: '15px'
                 }}
                 />
-              Salt Lake City, UT
+              {t("Salt Lake City, UT")}
                           </Menu.Item>
 
             <Menu.Item style={styles.font}>
@@ -103,7 +105,7 @@ export class ConnectedGeobar extends React.Component {
   }
 }
 
-export default withRouter(ConnectedGeobar);
+export default withNamespaces()(withRouter(ConnectedGeobar));
 
 const styles = {
   font: {

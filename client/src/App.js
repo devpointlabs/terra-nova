@@ -43,7 +43,7 @@ const App = () => (
           <Route exact path="/reservations" component={Reservations} />
           <Route exact path="/events" component={Events} />
           <Route exact path="/careers" component={Careers} />
-          <ProtectedRoute path="/careerapply" component={CareerForm} />
+          <Route path="/careerapply" component={CareerForm} />
           <ProtectedRoute path="/review" component={ReviewForm} />
           <Route component={NoMatch} />
         </Switch>
