@@ -5,12 +5,13 @@ import { withNamespaces } from 'react-i18next';
 import Rooms from './Rooms';
 import Reviews from './Reviews';
 import AboutUs from './AboutUs';
+import Events from './Events';
+import { withNamespaces } from 'react-i18next';
 import Carousel from './carousel/Carousel';
-import EmailForm from './EmailForm';
 import News from './News';
 
-class Home extends React.Component {
 
+class Home extends React.Component {
 
   render() {
     const { t } = this.props;
@@ -20,9 +21,8 @@ class Home extends React.Component {
         {/* <Title> {t("Welcome to Terra Nova Cabins")}</Title>
         <Title2><WhiteLine/> HOTELS & RESORTS </Title2> */}
         {/* check availability */}
-
         <Rooms />
-
+        <Events />
         <AboutUs />
         <Reviews />
         <News/>
