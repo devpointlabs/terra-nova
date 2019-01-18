@@ -52,7 +52,7 @@ class Gallery extends React.Component {
           <Menu secondary>
 
           <Menu.Item fitted='horizontally'>
-          <GalleryGoldButton>HOTEL & GROUND</GalleryGoldButton>
+          <GalleryGoldButton>HOTEL & GROUNDS</GalleryGoldButton>
           </Menu.Item>
 
           <Menu.Item fitted='horizontally'>
@@ -127,6 +127,7 @@ const styles = {
     fontWeight: 'lighter',
   }, 
   icon: {
+    padding: '7px',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',

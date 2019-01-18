@@ -10,33 +10,11 @@ export const WhiteButton = styled.button`
   font-size: 16px;
   font-family: 'Poppins', sans-serif;
 `;
-export const GalleryWhiteButton = styled.button`
-  border: 2px solid white;
-  background-color: rgb(35, 35, 35);
-  color: white;
-  padding: 12px 30px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  font-family: 'Poppins', sans-serif;
-`;
 
 export const GoldButton = styled.button`
   background-color: #826614;
   color: white;
   padding: 12px 30px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  font-family: 'Poppins', sans-serif;
-`;
-export const GalleryGoldButton = styled.button`
-  background-color: rgb(35, 35, 35);
-  border-color: #826614; 
-  color: #826614;
-  padding: 9px 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -111,37 +89,49 @@ export const HeaderLine = styled.hr`
 `;
 
 export const WhiteLine = styled.hr`
-  border-top: .5px white;
-  width: 20%;
+  border: 1px solid white;
+  width: 25%;
   border-color: white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: no-wrap;
+  justify-content: space-around;
+  align-content: center;
+  margin-bottom: -20px;
+  margin-top: 20px;
+  margin-right: 100px;
+  margin-left: 100px;
 `;
 
 export const GalleryIconLine = styled.hr`
   border: 0.5px solid #826614;
   width: 48%;
   border-color: #826614;
-
 `;
 
-// hr.style - eight {
-//   overflow: visible; /* For IE */
-//   padding: 0;
-//   border: none;
-//   border - top: medium double #333;
-//   color: #333;
-//   text - align: center;
-// }
-// hr.style - eight: after {
-//   content: "§";
-//   display: inline - block;
-//   position: relative;
-//   top: -0.7em;
-//   font - size: 1.5em;
-//   padding: 0 0.25em;
-//   background: white;
-// }
+export const GalleryWhiteButton = styled.button`
+  border: 2px solid white;
+  background-color: rgb(35, 35, 35);
+  color: white;
+  padding: 12px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+`;
 
-
+export const GalleryGoldButton = styled.button`
+  background-color: rgb(35, 35, 35);
+  border-color: #826614; 
+  color: #826614;
+  padding: 9px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+`;
 // export const Card1 = styled.div`
 //   height: 100px;
 //   width: 300px;
