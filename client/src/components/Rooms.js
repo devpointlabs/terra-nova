@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Image, Container, } from 'semantic-ui-react';
 import axios from 'axios';
-import { SubHeader, RoomBody, GoldButton, AmenitiesButton, HeaderLine2 } from '../styles/AppStyles';
+import { SubHeader, RoomBody, GoldButton, HeaderLine2 } from '../styles/AppStyles';
 import { Link, withRouter } from 'react-router-dom';
 import Room from "./Room";
 import { withNamespaces } from "react-i18next";
@@ -41,8 +41,8 @@ class Rooms extends React.Component {
                     <Room max={room.max_occupancy} />
                   </Card.Meta>
                   <Card.Meta textAlign="center">
-                    <Link to="/room"
-                      active={this.props.location.pathname === "/room"}
+                    <Link to="/reservations"
+                      active={this.props.location.pathname === "/reservations"}
                     >
                       <GoldButton style={{ marginBottom: "10px" }}> Book Now
                     </GoldButton>
