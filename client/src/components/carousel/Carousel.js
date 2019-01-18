@@ -1,6 +1,6 @@
 import React from 'react';
 import { Carousel, } from 'react-bootstrap';
-import { Image, } from 'semantic-ui-react';
+import { Image, Item, } from 'semantic-ui-react';
 import Yellowstone from '../../assets/images/Yellowstone.png';
 import YellowstoneGeysers from '../../assets/images/YellowstoneGeysers.png';
 import GrandCanyonoftheYellowstone from '../../assets/images/GrandCanyonoftheYellowstone.png';
@@ -47,13 +47,14 @@ class MainCarousel extends React.Component {
               <Title> {t("Welcome to Terra Nova Cabins")}</Title>
               <div style={styles.line}>
               <Title2>
-                <WhiteLine /> 
+                {/* <WhiteLine />  */}
+                <hr style={styles.line}/>
                 HOTELS & RESORTS
-                <WhiteLine /> 
                 </Title2>
               </div>
             </Carousel.Caption>
           </Carousel.Item>
+          
           <Carousel.Item>
             <Image
               width='10000'
@@ -62,12 +63,16 @@ class MainCarousel extends React.Component {
               src={Yellowstone} />
             <Carousel.Caption>
               <Title> {t("Welcome to Terra Nova Cabins")}</Title>
+              <div style={styles.line}>
               <Title2>
-                <WhiteLine /> 
+                {/* <WhiteLine />  */}
+                <hr style={styles.line}/>
                 HOTELS & RESORTS 
                 </Title2>
+              </div>
             </Carousel.Caption>
           </Carousel.Item>
+
           <Carousel.Item>
             <Image
               width='10000'
@@ -76,10 +81,12 @@ class MainCarousel extends React.Component {
               src={YellowstoneGeysers} />
             <Carousel.Caption>
               <Title> {t("Welcome to Terra Nova Cabins")}</Title>
+              <div style={styles.line}>
               <Title2>
-                <WhiteLine /> 
+              <hr style={styles.line}/>
               HOTELS & RESORTS 
               </Title2>
+              </div>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
@@ -96,7 +103,8 @@ const styles = {
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    // marginRight: '50px',
-    // marginLeft: '50px',
+    marginRight: '50px',
+    marginLeft: '50px',
+    margineTop: '500px',
   }
 }

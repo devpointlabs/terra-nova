@@ -90,7 +90,7 @@ export const HeaderLine = styled.hr`
 
 export const WhiteLine = styled.hr`
   border: 1px solid white;
-  width: 25%;
+  width: 100%;
   border-color: white;
   display: flex;
   flex-direction: row;
@@ -101,6 +101,7 @@ export const WhiteLine = styled.hr`
   margin-top: 20px;
   margin-right: 100px;
   margin-left: 100px;
+  }
 `;
 
 export const GalleryIconLine = styled.hr`
