@@ -22,11 +22,10 @@ class Rooms extends React.Component {
 
   renderCard = () => {
     // const { t } = this.props;
-    return (
-      this.state.rooms.map(room => {
+    return  this.state.rooms.map(room => {
 
-          if (room.id === 1 || room.id === 6 || room.id === 11) {
-            return (
+        if (room.id === 1 || room.id === 6 || room.id === 11) {
+          return (
               <div>
                 <Card raised style={{ margin: '30px',}}>
                   <Image size="large" src={room.image} alt="room"/>
@@ -52,9 +51,11 @@ class Rooms extends React.Component {
                 </Card>
               </div>
             )
+          } else {
+            return null
           }
         })
-      )
+      
   } //ends renderCard
 
   render() {
