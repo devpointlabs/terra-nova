@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Image, Container, } from 'semantic-ui-react';
 import axios from 'axios';
-import { SubHeader, RoomBody, GoldButton, AmenitiesButton } from '../styles/AppStyles';
+import { SubHeader, RoomBody, GoldButton, AmenitiesButton, HeaderLine2 } from '../styles/AppStyles';
 import { Link, withRouter } from 'react-router-dom';
 
 // import RoomCard from './Room';
@@ -44,7 +44,7 @@ class Rooms extends React.Component {
     return (
       <div style={styles.background}>
         <SubHeader> Our Rooms </SubHeader>
-
+        <HeaderLine2/>
         <RoomBody> When you host a party or family reunion, the special celebrations let <br />
           you strengthen bonds with each other </RoomBody>
 

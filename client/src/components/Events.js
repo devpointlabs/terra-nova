@@ -1,5 +1,5 @@
 import React from 'react';
-import { SubHeader, HeaderLine } from "../styles/AppStyles";
+import { SubHeader, HeaderLine2 } from "../styles/AppStyles";
 import { Card, Image, Container, } from "semantic-ui-react";
 
 const Events = () => {
@@ -8,7 +8,7 @@ const Events = () => {
             <Container>
                 <div>
                 <SubHeader>Our Events</SubHeader>
-                {/* <hr style={}></hr> */}
+                <HeaderLine2/>
                 </div>
                 <Card.Group centered itemsPerRow={3}>
                     <Card style={styles.card}>
