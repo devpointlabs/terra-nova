@@ -21,7 +21,7 @@ import ReviewForm from './components/ReviewForm';
 import Careers from './components/Careers';
 import CareerForm from './components/CareerForm';
 import Events from './components/Events';
-
+import Reviews from './components/Reviews';
 import Room from './components/Room';
 
 import News from './components/News';
@@ -48,7 +48,8 @@ const App = () => (
           <Route exact path="/careers" component={Careers} />
           <Route exact path="/room" component={Room} />
           <ProtectedRoute path="/careerapply" component={CareerForm} />
-          <ProtectedRoute path="/review" component={ReviewForm} />
+          <Route path="/reviewform" component={ReviewForm} />
+          <Route path="/reviews" component={Reviews} />
           <Route component={NoMatch} />
         </Switch>
       </div>
