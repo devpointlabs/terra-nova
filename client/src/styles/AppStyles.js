@@ -11,7 +11,7 @@ export const WhiteButton = styled.button`
   font-family: 'Poppins', sans-serif;
 `;
 
-export const GoldButton = styled.button `
+export const GoldButton = styled.button`
   background-color: #826614;
   color: white;
   padding: 12px 30px;
@@ -21,6 +21,16 @@ export const GoldButton = styled.button `
   font-size: 16px;
   font-family: 'Poppins', sans-serif;
 `;
+export const AmenitiesButton = styled.button `
+  border: 2px solid #555555,
+  color: black,
+  padding: 12px 30px,
+  textAlign: center,
+  textDecoration: none,
+  display: inline-block,
+  fontSize: 16px,
+  fontFamily: 'Poppins', sans-serif,
+ `;
 
 export const BlackButton = styled.button`
   background-color: #555555;
@@ -53,6 +63,7 @@ export const Title2 = styled.h3`
 
 export const SubHeader = styled.h1`
   font-size: 3.0em;
+  font-weight: normal;
   text-align: center;
   font-family: 'Playfair Display', serif;
   padding-top: 110px;
@@ -67,7 +78,7 @@ export const RoomBody = styled.p`
   padding-top: 25px;
   padding-bottom: 25px;
   `;
-  
+
 export const BackgroundImage = styled.div`
   background-image: url('https://www.travelwyoming.com/sites/default/files/u5691/Grand%20Canyon%20of%20the%20Yellowstone.jpg');
   background-position: center;
@@ -89,12 +100,50 @@ export const HeaderLine = styled.hr`
 `;
 
 export const WhiteLine = styled.hr`
-  border-top: .5px white;
-  width: 20%;
+  border: 1px solid white;
+  width: 100%;
   border-color: white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: no-wrap;
+  justify-content: space-around;
+  align-content: center;
+  margin-bottom: -20px;
+  margin-top: 20px;
+  margin-right: 100px;
+  margin-left: 100px;
+  }
 `;
 
+export const GalleryIconLine = styled.hr`
+  border: 0.5px solid #826614;
+  width: 48%;
+  border-color: #826614;
+`;
 
+export const GalleryWhiteButton = styled.button`
+  border: 2px solid white;
+  background-color: rgb(35, 35, 35);
+  color: white;
+  padding: 12px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+`;
+
+export const GalleryGoldButton = styled.button`
+  background-color: rgb(35, 35, 35);
+  border-color: #826614; 
+  color: #826614;
+  padding: 9px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+`;
 // export const Card1 = styled.div`
 //   height: 100px;
 //   width: 300px;

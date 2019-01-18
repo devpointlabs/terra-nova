@@ -1,6 +1,6 @@
 import React from 'react'
 import { AuthConsumer, } from "../providers/AuthProvider";
-import { Menu, Container, Image, } from 'semantic-ui-react';
+import { Menu, Container, Image, Dropdown } from 'semantic-ui-react';
 import { Link, withRouter, } from 'react-router-dom';
 // import ReactWeather from 'react-open-weather';
 import Terra_Nova_Cabins_Logo from '../assets/images/Terra_Nova_Cabins_Logo.png';
@@ -8,63 +8,72 @@ import Terra_Nova_Cabins_Logo from '../assets/images/Terra_Nova_Cabins_Logo.png'
 class Navbar extends React.Component {
   state = { user: null, };
 
-  rightNavItems = () => {
-    const { auth: { user, handleLogout, }, location, } = this.props;
-    if (user) {
-      return (
-        <div>
-          <Menu.Menu position='right'>
-            <Menu.Item
-              style={styles.font}
-              name='LOGOUT'
-              onClick={() => handleLogout(this.props.history)}
-            />
-          </Menu.Menu>
-        </div>
-      )
-    } else {
-      return (
-        <div>
+  // rightNavItems = () => {
+  //   const { auth: { user, handleLogout, }, location, } = this.props;
+  //   if (user) {
+  //     return (
+  //       <div>
+  //         <Menu.Menu position='right'>
+  //           <Menu.Item
+  //             style={styles.font}
+  //             name='LOGOUT'
+  //             onClick={() => handleLogout(this.props.history)}
+  //           />
+  //         </Menu.Menu>
+  //       </div>
+  //     )
+  //   } else {
+  //     return (
+  //       <div>
 
-          <Container>
-            <Menu.Menu position='right'>
-              <Link to='/login'>
-                <Menu.Item
-                  style={styles.font}
-                  id='login'
-                  name='LOGIN'
-                  active={location.pathname === '/login'}
-                />
-              </Link>
-              <Link to='/register'>
-                <Menu.Item
-                  style={styles.font}
-                  id='register'
-                  name='REGISTER'
-                  active={location.pathname === '/register'}
-                />
-              </Link>
-            </Menu.Menu>
-          </Container>
-        </div>
-      )
-    }
-  }
+  //         <Container>
+  //           <Menu.Menu position='right'>
+  //             <Link to='/login'>
+  //               <Menu.Item
+  //                 style={styles.font}
+  //                 id='login'
+  //                 name='LOGIN'
+  //                 active={location.pathname === '/login'}
+  //               />
+  //             </Link>
+  //             <Link to='/register'>
+  //               <Menu.Item
+  //                 style={styles.font}
+  //                 id='register'
+  //                 name='REGISTER'
+  //                 active={location.pathname === '/register'}
+  //               />
+  //             </Link>
+  //           </Menu.Menu>
+  //         </Container>
+  //       </div>
+  //     )
+  //   }
+  // }
 
   renderIcon = () => {
     return (
-      <Menu.Item>
-        <Image src={Terra_Nova_Cabins_Logo} size="small" style={styles.image} />
+      <Menu.Item position='left'>
+        <Image src={Terra_Nova_Cabins_Logo} 
+        size="tiny" 
+        style={styles.image} 
+        position='left' 
+        floated='left'
+        verticalAlign='top'
+        />
+        {/* <img src={Terra_Nova_Cabins_Logo}
+        style={styles.image}
+        /> */}
       </Menu.Item>
     )
-  };
+  }; 
 
   render() {
     const { auth: location, } = this.props;
     return (
-      <div>
+      <div style={styles.background}>
         <Container>
-          <Menu position='right' secondary>
+          <Menu position='center' secondary>
             {this.renderIcon()}
             <Link to='/'>
               <Menu.Item
@@ -78,7 +87,7 @@ class Navbar extends React.Component {
               <Menu.Item
                 name='Room & Rate'
                 id='Room & Rate'
-                style={styles.fontSize}
+                style={styles.font}
                 active={location.pathname === '/rooms'}
               > ROOM & RATE
                 </Menu.Item>
@@ -101,24 +110,22 @@ class Navbar extends React.Component {
             </Link>
 
             {/* Not quite sure what page is for */}
-            {/* <Menu.Item>
-            <Dropdown style={styles.fontSize} item text='Page'>
+            {/* <Dropdown style={styles.font} item text='PAGE'>
               <Dropdown.Menu >
-                <Link to={} />
+                <Link  />
                 <Dropdown.Item basic>
                   Test1
                </Dropdown.Item>
                 <Dropdown.Item basic>
-                  <Link to={} />
+                  <Link />
                   Test2
                </Dropdown.Item>
                 <Dropdown.Item basic>
-                  <Link to={} />
+                  <Link />
                   Test3
                </Dropdown.Item>
               </Dropdown.Menu>
-            </Dropdown>
-            </Menu.Item> */}
+            </Dropdown> */}
 
             <Link to='/about_us'>
               <Menu.Item
@@ -136,7 +143,7 @@ class Navbar extends React.Component {
                 active={this.props.location.pathname === '/contact'}
               />
             </Link>
-            {this.rightNavItems()}
+            {/* {this.rightNavItems()} */}
           </Menu>
           <br />
         </Container>
@@ -164,14 +171,28 @@ export const styles = {
   font: {
     fontFamily: "'Poppins', sans-serif",
     color: 'white',
-  },
-  fontSize: {
-    fontFamily: "'Poppins', sans-serif",
-    color: 'white',
-    width: '120px',
+    fontWeight: 'bold',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    alignContent: 'center',
+    marginTop: '35px',
   },
   image: {
-    padding: '5px',
-    margin: '5px',
+    padding: '0.5px',
+    marginBottom: '-40px',
+    marginTop: '-10px',
+    height: '100px',
+    width: 'auto',
+  },
+  background: {
+    backgroundColor: 'rgb(35, 35, 35)',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    alignContent: 'center',
+    // padding: '0px'
   }
 }
