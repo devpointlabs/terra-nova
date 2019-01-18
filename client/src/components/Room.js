@@ -14,14 +14,14 @@ class Room extends React.Component {
   }
 
   showAmenities = () => {
-    const { max } = this.props
+    const { max, size, view, bed } = this.props
     return (
       <Card.Description textAlign="center">
         <Segment basic centered textAlign="center">
            <p> Max {max} Persons </p>
-            <p>Size 35 m2/ 376 ft </p>
-            <p>View: Ocean </p>
-            <p>Bed: King-size or Twin Beds</p>
+            <p>Size {size} </p>
+            <p>View: {view} </p>
+            <p>Bed: {bed}</p>
           
         </Segment>
       </Card.Description>
@@ -32,7 +32,7 @@ class Room extends React.Component {
     if (this.state.toggle === false) {
       return (
         <div style={styles.amenitiesDiv}>
-          Amenities
+          Room Details
             <Icon style={{ cursor: 'pointer' }} size="large" name="angle down" onClick={() => this.toggle()}></Icon>
           {this.state.toggle ? this.showAmenities() : null}
         </div>

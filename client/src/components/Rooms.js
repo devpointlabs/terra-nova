@@ -24,21 +24,22 @@ class Rooms extends React.Component {
     const { t } = this.props;
     return (
       this.state.rooms.map(room => {
+
           if (room.id === 1 || room.id === 6 || room.id === 11) {
             return (
               <div>
-                <Card raised style={{ margin: '10px'}}>
-                  <Image src="https://picsum.photos/300?random" alt="" />
+                <Card raised style={{ margin: '30px',}}>
+                  <Image src={room.image} alt="room"/>
                   <Card.Content>
                     <Card.Header style={roomHeader}>
                       {room.room_type}
                     </Card.Header>
-                    <Card.Description textAlign="center"> {t("Located in the heart of Aspen with a unique blend of contemporary luxury and historic heritage, deluxe accomodations supurb amenities, genuine hospitality and dedicated service for an elevated experience in the Rocky Mountains.")}
+                    <Card.Description textAlign="center"> {room.description}
                     </Card.Description>
                   </Card.Content>
                   <Card.Content extra style={cardFooter}>Starting at ${room.cost} / Per Night</Card.Content>
                   <Card.Meta textAlign="center">
-                    <Room max={room.max_occupancy} />
+                    <Room max={room.max_occupancy} bed={room.bed_type} size={room.size} view={room.view} />
                   </Card.Meta>
                   <Card.Meta textAlign="center">
                     <Link to="/reservations"
@@ -77,7 +78,7 @@ class Rooms extends React.Component {
 const styles = {
   background: {
     backgroundColor: "#F5F5F5",
-    paddingBottom: "150px",
+    paddingBottom: "100px",
 
   }
 }
@@ -88,6 +89,7 @@ const roomHeader = {
   paddingTop: '20px',
   textTransform: 'uppercase',
   textAlign: "center",
+
 }
 
 const cardFooter = {
