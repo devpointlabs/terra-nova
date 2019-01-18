@@ -3,6 +3,7 @@ import { NavLink, } from 'react-router-dom';
 import { Grid, Header, } from 'semantic-ui-react';
 
 
+
 const News = () => (
   <div style={padding}>
         <Grid.Column>
