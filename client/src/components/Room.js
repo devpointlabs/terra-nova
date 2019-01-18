@@ -18,8 +18,8 @@ class Room extends React.Component {
     return (
       <Card.Description textAlign="center">
         <Segment basic centered textAlign="center">
-           <p> Max {max} Persons </p>
-            <p>Size {size} </p>
+           <p> Accommodates {max} Persons </p>
+            <p>Size: {size} </p>
             <p>View: {view} </p>
             <p>Bed: {bed}</p>
           

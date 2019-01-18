@@ -21,7 +21,7 @@ class Rooms extends React.Component {
   };
 
   renderCard = () => {
-    const { t } = this.props;
+    // const { t } = this.props;
     return (
       this.state.rooms.map(room => {
 
@@ -29,7 +29,7 @@ class Rooms extends React.Component {
             return (
               <div>
                 <Card raised style={{ margin: '30px',}}>
-                  <Image src={room.image} alt="room"/>
+                  <Image size="large" src={room.image} alt="room"/>
                   <Card.Content>
                     <Card.Header style={roomHeader}>
                       {room.room_type}

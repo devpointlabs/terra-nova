@@ -45,13 +45,13 @@ const styles = {
         textAlign: "center",
         fontFamily: "'Poppins', sans-serif",
     },
-    dot: {
-        height: "25px",
-        width: "25px",
-        backgroundColor: "black",
-        borderRadius: "50%",
-        display: "inline-bock",
-    }
+    // dot: {
+    //     height: "25px",
+    //     width: "25px",
+    //     backgroundColor: "black",
+    //     borderRadius: "50%",
+    //     display: "inline-bock",
+    // }
 }
 
 
