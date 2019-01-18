@@ -21,6 +21,16 @@ export const GoldButton = styled.button`
   font-size: 16px;
   font-family: 'Poppins', sans-serif;
 `;
+export const AmenitiesButton = styled.button `
+  border: 2px solid #555555,
+  color: black,
+  padding: 12px 30px,
+  textAlign: center,
+  textDecoration: none,
+  display: inline-block,
+  fontSize: 16px,
+  fontFamily: 'Poppins', sans-serif,
+ `;
 
 export const BlackButton = styled.button`
   background-color: #555555;
@@ -53,6 +63,7 @@ export const Title2 = styled.h3`
 
 export const SubHeader = styled.h1`
   font-size: 3.0em;
+  font-weight: normal;
   text-align: center;
   font-family: 'Playfair Display', serif;
   padding-top: 110px;
