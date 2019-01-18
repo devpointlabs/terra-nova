@@ -3,11 +3,13 @@ import { Card, Image, Container, } from 'semantic-ui-react';
 import axios from 'axios';
 import { SubHeader, RoomBody, GoldButton, AmenitiesButton, HeaderLine2 } from '../styles/AppStyles';
 import { Link, withRouter } from 'react-router-dom';
+import Room from "./Room";
+import { withNamespaces } from "react-i18next";
 
-// import RoomCard from './Room';
+
 
 class Rooms extends React.Component {
-  state = { rooms: [], showDesc: false, roomId: null };
+  state = { rooms: [], };
 
   //componentDidMount to call and set state to it
 
@@ -18,67 +20,53 @@ class Rooms extends React.Component {
       })
   };
 
-  toggleDescription = (id) => {
-    this.setState({ showDesc: !this.state.showDesc })
-    this.setState({roomId: id})
-  }
-
-  // we need these in the database to pull in??
-  // help me Alex
-  showAmenities = (r) => {
+  renderCard = () => {
+    const { t } = this.props;
     return (
-      <Card.Description>
-        <ul>
-          <ul>Max {r.max_occupancy} Persons </ul>
-          <ul>Size 35 m2/ 376 ft</ul>
-          <ul>View: Ocean</ul>
-          <ul>Bed: King-size or Twin Beds</ul>
-        </ul>
-      </Card.Description>
-    )
-  };
+      this.state.rooms.map(room => {
+          if (room.id === 1 || room.id === 6 || room.id === 11) {
+            return (
+              <div>
+                <Card raised style={{ margin: '10px'}}>
+                  <Image src="https://picsum.photos/300?random" alt="" />
+                  <Card.Content>
+                    <Card.Header style={roomHeader}>
+                      {room.room_type}
+                    </Card.Header>
+                    <Card.Description textAlign="center"> {t("Located in the heart of Aspen with a unique blend of contemporary luxury and historic heritage, deluxe accomodations supurb amenities, genuine hospitality and dedicated service for an elevated experience in the Rocky Mountains.")}
+                    </Card.Description>
+                  </Card.Content>
+                  <Card.Content extra style={cardFooter}>Starting at ${room.cost} / Per Night</Card.Content>
+                  <Card.Meta textAlign="center">
+                    <Room max={room.max_occupancy} />
+                  </Card.Meta>
+                  <Card.Meta textAlign="center">
+                    <Link to="/room"
+                      active={this.props.location.pathname === "/room"}
+                    >
+                      <GoldButton style={{ marginBottom: "10px" }}> Book Now
+                    </GoldButton>
+                    </Link>
+                  </Card.Meta>
+                </Card>
+              </div>
+            )
+          }
+        })
+      )
+  } //ends renderCard
 
   render() {
-    const { rooms, showDesc } = this.state;
-
     return (
       <div style={styles.background}>
         <SubHeader> Our Rooms </SubHeader>
-        <HeaderLine2/>
+        <HeaderLine2 />
         <RoomBody> When you host a party or family reunion, the special celebrations let <br />
           you strengthen bonds with each other </RoomBody>
 
         <Container>
           <Card.Group centered itemsPerRow={3} >
-            {rooms.map(room => {
-              if (room.id === 1 || room.id === 6 || room.id === 11) {
-                return (
-                  <Card>
-                    <Image src="https://picsum.photos/300?random" alt="" />
-                    <Card.Content>
-                      <Card.Header style={roomHeader}>
-                        {room.room_type}
-                      </Card.Header>
-                    </Card.Content>
-                    <Card.Content extra style={cardFooter}>Starting at ${room.cost} / Per Night</Card.Content>
-                    <Card.Meta textAlign="center">
-                      <AmenitiesButton onClick={() => this.toggleDescription(room.id)}> Amenities </AmenitiesButton>
-                      <hr /> 
-                        { showDesc && room.id === this.state.roomId ? this.showAmenities(room) :null}
-                      <Link to="/room"
-                        active={this.props.location.pathname === "/room"}
-                      >
-                        <GoldButton style={{ marginBottom: "10px" }}> Book Now
-                    </GoldButton>
-                      </Link>
-                    </Card.Meta>
-                  </Card>
-
-                )
-              }
-            }
-
-            )}
+            {this.renderCard()}
           </Card.Group>
         </Container>
       </div>
@@ -102,22 +90,18 @@ const roomHeader = {
   textAlign: "center",
 }
 
-
-// const headerLine = {
-//   borderTop: '.5px solid black',
-//   width: '20%',
-//   float: 'center',
-//   borderColor: '#826614',
-// }
-
 const cardFooter = {
   fontFamily: "'Poppins', sans-serif",
   fontSize: '18px',
   color: '#826614',
   textAlign: "center",
+  paddingLeft: '10px',
+  paddingRight: '10px',
 
 }
 
 
 
-export default withRouter(Rooms);
+
+
+export default withNamespaces()(withRouter(Rooms));

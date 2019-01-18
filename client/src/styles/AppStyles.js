@@ -102,7 +102,7 @@ export const HeaderLine = styled.hr`
 
 export const HeaderLine2 = styled.hr`
   border-top: 1px solid black;
-  width: 20%;
+  width: 25%;
   float: center;
   border-color: #826614;
 `
