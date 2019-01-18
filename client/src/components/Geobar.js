@@ -121,6 +121,7 @@ const styles = {
     color: 'white',
     display: 'flex',
     justifyContent: 'space-evenly',
+    fontSize: '12px',
   },
   fontSize: {
     fontFamily: "'Poppins', sans-serif",
@@ -137,6 +138,7 @@ const styles = {
     background: 'blue, !important',
   },
   background: {
-    backgroundColor: 'grey'
+    backgroundColor: 'grey',
+    marginBottom: '-10px',
   }
 }
