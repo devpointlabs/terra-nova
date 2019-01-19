@@ -5,6 +5,10 @@ class Api::ReservationsController < ApplicationController
     render json: current_user.reservations.all
   end
 
+  def get_reservations
+    render json: Reservation.date_range(params[:start_date],params[:end_date], params[:room])
+  end
+
   def show
     render json: current_user.reservation
   end
@@ -23,6 +27,7 @@ class Api::ReservationsController < ApplicationController
       render json: @reservation
     else 
       render json: @reservation.error
+    end
   end
 
   def destroy

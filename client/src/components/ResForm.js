@@ -12,6 +12,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import Calendar from "react-calendar";
 import { connect } from "react-redux";
 import { setReservation } from "../reducers/reservation";
+import axios from "axios";
+import { get } from "http";
 
 class ResForm extends React.Component {
   state = {
@@ -21,7 +23,8 @@ class ResForm extends React.Component {
       room: "",
       adults: null,
       children: null
-    }
+    },
+    reserved: []
   };
 
   handleStartDate = date => {
@@ -69,7 +72,13 @@ class ResForm extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    const {
+      reservation: { start_date, end_date, room }
+    } = this.state;
     this.props.dispatch(setReservation(this.state.reservation));
+    axios
+      .get(`/api/get_reservations/${start_date}/${end_date}/${room}`)
+      .then(res => this.setState({ reserved: res.data }));
   };
 
   render() {
@@ -147,10 +156,9 @@ const dropDown = [
 ];
 
 const Room = [
-  { key: 1, text: "Family", value: "family", name: "room" },
-  { key: 2, text: "Couple Room", value: "couple_room", name: "room" },
-  { key: 3, text: "Standard Room", value: "standard_room", name: "room" },
-  { key: 4, text: "Luxury Room", value: "luxury_room", name: "room" }
+  { key: 1, text: "Family Room", value: "family", name: "room" },
+  { key: 2, text: "Single Room", value: "single room", name: "room" },
+  { key: 3, text: "Double Room", value: "double room", name: "room" }
 ];
 
 const styles = {
