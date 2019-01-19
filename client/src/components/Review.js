@@ -6,6 +6,7 @@ import { Button, Icon, } from 'semantic-ui-react';
 const Review = () => (
     (
         <div style={styles.background}>
+        <div style={styles.circle}></div>
             <div style={styles.body}>"This is the only place to stay in Catalina! I have stayed in cheaper hotels and they were fine,
                 but this is just the icing on the cake! After spending the day bike riding and hiking to come back and enjoy a glass
                 of wine while looking out your ocean view window and then to top it all of..."
@@ -40,6 +41,15 @@ const styles = {
         backgroundColor: "#555555",
         width: "100%",
         marginLeft: 0
+    },
+    circle: {
+        height: "115px",
+        width: "115px",
+        backgroundColor: "black",
+        borderRadius: "50%",
+        display: "inline-block",
+        marginLeft: '345px',
+        marginBottom: '50px',
     },
     body: {
         color: "white",
