@@ -8,9 +8,9 @@ class Reservation < ApplicationRecord
 
     select('reservations.id, reservations.start_date as start_date, reservations.end_date as end_date, r.room_type as room, reservations.room_id as room_id')
     .joins('LEFT JOIN rooms r ON r.id = reservations.room_id')
-    .where('reservations.start_date BETWEEN ? AND ? 
-    OR reservations.end_date BETWEEN ? AND ? 
-    OR reservations.start_date <= ? AND reservations.end_date >= ?', start_date, end_date, start_date, end_date, start_date, end_date
+    .where('reservations.start_date BETWEEN ? AND ? AND r.room_type = ?
+    OR reservations.end_date BETWEEN ? AND ? AND r.room_type = ?
+    OR reservations.start_date <= ? AND reservations.end_date >= ? AND r.room_type = ?', start_date, end_date, room, start_date, end_date, room, start_date, end_date, room
     )
   end
 
