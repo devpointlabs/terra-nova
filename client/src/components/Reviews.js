@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { NavLink, } from 'react-router-dom';
-import { Container, Header, Rating, Grid, Divider, Card, Button } from 'semantic-ui-react';
+import { Container, Rating, Divider, Card, Button } from 'semantic-ui-react';
 import { SubHeaderTwo } from '../styles/AppStyles';
 
 class Reviews extends React.Component {

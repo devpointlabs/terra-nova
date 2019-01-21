@@ -1,11 +1,11 @@
 import React from 'react';
 import { Carousel, } from 'react-bootstrap';
-import { Image, Item, } from 'semantic-ui-react';
+import { Image,  } from 'semantic-ui-react';
 import Yellowstone from '../../assets/images/Yellowstone.png';
 import YellowstoneGeysers from '../../assets/images/YellowstoneGeysers.png';
 import GrandCanyonoftheYellowstone from '../../assets/images/GrandCanyonoftheYellowstone.png';
 import { withNamespaces } from 'react-i18next';
-import { Title, Title2, WhiteLine, } from '../../styles/AppStyles';
+import { Title, Title2, } from '../../styles/AppStyles';
 
 class MainCarousel extends React.Component {
   constructor(props, context) {
