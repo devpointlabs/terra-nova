@@ -27,14 +27,14 @@ const Events = ({t}) => {
 };
 
 const styles = {
-  card: {
-    display: 'flex',
-    fontSize: '16px',
-    justifyContent: 'center',
-    alignItems: 'center',
-    fontFamily: "'Poppins', sans-serif",
-    padding: '20px 20px'
-  }
+    card: {
+        display: 'flex',
+        fontSize: '16px',
+        justifyContent: 'center',
+        alignItems: 'center',
+        fontFamily: "'Poppins', sans-serif",
+        padding: '20px 20px',
+    }
 }
 
 export default withNamespaces()(Events);

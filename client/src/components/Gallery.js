@@ -1,7 +1,18 @@
 import React from 'react';
-import { Card, Container, Image, } from 'semantic-ui-react';
-import { SubHeader, RoomBody, } from '../styles/AppStyles';
+import { Card, Container, Image, Menu, Item, Grid,} from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import { SubHeader, GalleryIconLine, GalleryGoldButton, GalleryWhiteButton} from '../styles/AppStyles';
+import FLEUR_ICON from '../assets/icons/miscellaneous_icons/FLEUR_ICON.png';
+import IMGone from '../assets/images/GalleryImages/HotelandGrounds/IMGone.jpg';
+import IMGeight from '../assets/images/GalleryImages/HotelandGrounds/IMGeight.jpg';
+import IMGfive from '../assets/images/GalleryImages/HotelandGrounds/IMGfive.jpg';
+import IMGfour from '../assets/images/GalleryImages/HotelandGrounds/IMGfour.jpg';
+import IMGthree from '../assets/images/GalleryImages/HotelandGrounds/IMGthree.jpg';
+import IMGtwo from '../assets/images/GalleryImages/HotelandGrounds/IMGtwo.jpg';
+import IMGseven from '../assets/images/GalleryImages/HotelandGrounds/IMGseven.jpg';
+import IMGsix from '../assets/images/GalleryImages/HotelandGrounds/IMGsix.jpg';
 import { withNamespaces } from 'react-i18next';
+
 
 class Gallery extends React.Component {
   state = { cards: [], };
@@ -10,7 +21,7 @@ class Gallery extends React.Component {
     return this.state.cards.map( content => (
       <Card raised centered textAlign fluid style={cardStyles.card}>
         <Card.Content>
-          <Card.Header style={fontColor.font}>
+          <Card.Header style={styles.font}>
             <i>{content}TITLE</i>
           </Card.Header>
           <br />
@@ -30,25 +41,75 @@ class Gallery extends React.Component {
     const { t } = this.props;
 
     return (
-      <div styles={styles.background} >
+      <div style={styles.background} >
         <Container>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <SubHeader>{t("Gallery")}</SubHeader>
-          <RoomBody>{t("Please Enjoy Our Gallery of our Properties & Commodities.")}</RoomBody>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <Card.Group centered itemsPerRow={4}>
+          <SubHeader style={styles.font}>Our Gallery</SubHeader>
+            <div style={styles.line}>
+            <GalleryIconLine />
+          <Image centered 
+          style={styles.icon} 
+          src={FLEUR_ICON}
+          />
+            <GalleryIconLine />
+          </div>
+          <div style={styles.button}>
+          <Menu secondary>
+
+          <Menu.Item fitted='horizontally'>
+          <GalleryGoldButton>HOTEL & GROUNDS</GalleryGoldButton>
+          </Menu.Item>
+
+          <Menu.Item fitted='horizontally'>
+          <GalleryGoldButton>ROOM/CABIN</GalleryGoldButton>
+          </Menu.Item>
+          <Menu.Item fitted='horizontally'>
+          <GalleryGoldButton>BATHROOM</GalleryGoldButton>
+          </Menu.Item>
+          <Menu.Item fitted='horizontally'>
+          <GalleryGoldButton>DINING</GalleryGoldButton>
+          </Menu.Item>
+          </Menu>
+          </div>
+          {/* <Card.Group centered itemsPerRow={4}>
             {this.renderCards()}
-          </Card.Group>
+          </Card.Group> */}
+          <Grid>
+            <Grid.Row columns={4}> 
+              <Grid.Column stretched>
+                <Image src={IMGone}/>
+              </Grid.Column>
+              <Grid.Column stretched>
+                <Image src={IMGtwo}/>
+              </Grid.Column >
+              <Grid.Column stretched>
+                <Image src={IMGthree}/>
+              </Grid.Column>
+              <Grid.Column stretched>
+                <Image src={IMGfour}/>
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row columns={4}> 
+              <Grid.Column stretched>
+                <Image src={IMGfive}/>
+              </Grid.Column>
+              <Grid.Column stretched>
+                <Image src={IMGsix}/>
+              </Grid.Column>
+              <Grid.Column stretched>
+                <Image src={IMGseven}/>
+              </Grid.Column>
+              <Grid.Column stretched>
+                <Image src={IMGeight}/>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+
+
+          <Item style={styles.button}>
+          <a href={'https://www.google.com/imghp'}>
+          <GalleryWhiteButton>VIEW MORE</GalleryWhiteButton>
+          </a>
+          </Item>
         </Container>
       </div>
     )
@@ -60,7 +121,38 @@ export default withNamespaces()(Gallery);
 
 const styles = {
   background: {
-    backgroundColor: "#F5F5F5",
+    backgroundColor: "rgb(35, 35, 35)",
+    paddingBottom: '100px',
+  },
+  font: {
+    color: 'white',
+    fontFamily: "'Playfair Display', serif",
+    fontSize: "50px",
+    fontWeight: 'lighter',
+  }, 
+  icon: {
+    padding: '7px',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  button: {
+    display: 'flex',
+    padding: '50px',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    alignContent: 'center'
+  },
+  line: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    marginBottom: '-40px',
+    marginRight: '475px',
+    marginLeft: '475px',
   }
 }
 
@@ -76,9 +168,5 @@ const cardStyles = {
   }
 }
 
-const fontColor = {
-  font: {
-    color: '#666666'
-  }
-}
+
 

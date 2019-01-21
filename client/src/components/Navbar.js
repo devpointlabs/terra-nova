@@ -37,7 +37,7 @@ class Navbar extends React.Component {
         />
       </Menu.Item>
     )
-  };
+  }; 
 
   adminNav = () => {
     const { auth: { user, handleLogout, location, }, t } = this.props;
@@ -157,12 +157,14 @@ export const styles = {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-evenly',
-    alignItems: 'baseline',
+    alignItems: 'center',
     alignContent: 'center',
+    marginTop: '35px',
   },
   image: {
     padding: '0.5px',
-    margin: '0.5px',
+    marginBottom: '-40px',
+    marginTop: '-10px',
     height: '100px',
     width: 'auto',
   },

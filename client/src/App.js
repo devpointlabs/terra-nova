@@ -12,7 +12,6 @@ import NoMatch from "./components/NoMatch";
 import FetchUser from "./components/FetchUser";
 import { Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer";
-
 import "./App.css"
 import ProtectedRoute from './components/ProtectedRoute';
 import ReviewForm from './components/ReviewForm';

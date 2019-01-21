@@ -1,20 +1,17 @@
 import React from 'react';
 import { Title, Title2, Title3, WhiteLine } from '../styles/AppStyles';
-// import { Header,  } from 'semantic-ui-react';
-// import { Title, Title2, WhiteLine, } from '../styles/AppStyles';
 import Rooms from './Rooms';
 import Reviews from './Reviews';
 import AboutUs from './AboutUs';
 import Events from './Events';
-import { withNamespaces } from 'react-i18next';
 import Carousel from './carousel/Carousel';
 import News from './News';
+import Gallery from './Gallery';
 
 
 class Home extends React.Component {
 
   render() {
-    const { t } = this.props;
     return (
       <>
       <Carousel/>
@@ -27,6 +24,7 @@ class Home extends React.Component {
         <AboutUs />
         <Reviews />
         <News/>
+        <Gallery/>
       </>
     )
   }

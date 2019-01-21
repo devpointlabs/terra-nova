@@ -6,12 +6,6 @@ import { withNamespaces } from 'react-i18next';
 const Contact = ({t}) => (
   <div styles={styles.background}>
     <Container>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
       <SubHeader>
         {t("Contact")}
   </SubHeader>

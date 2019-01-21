@@ -12,6 +12,9 @@ class Reviews extends React.Component {
         const { t } = this.props;
         return (
             <div style={styles.background}>
+            <div style={styles.dot}>
+
+            </div>
                 <div style={styles.body}>"This is the only place to stay in Catalina! I have stayed in cheaper hotels and they were fine, 
                     but this is just the icing on the cake! After spending the day bike riding and hiking to come back and enjoy a glass 
                     of wine while looking out your ocean view window and then to top it all of..."
@@ -43,6 +46,13 @@ const styles = {
         fontSize: "16px",
         textAlign: "center",
         fontFamily: "'Poppins', sans-serif",
-    }
+    },
+    // dot: {
+    //     height: "25px",
+    //     width: "25px",
+    //     backgroundColor: "black",
+    //     borderRadius: "50%",
+    //     display: "inline-bock",
+    // }
 }
 export default withNamespaces()(Reviews);

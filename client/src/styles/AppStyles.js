@@ -11,7 +11,7 @@ export const WhiteButton = styled.button`
   font-family: 'Poppins', sans-serif;
 `;
 
-export const GoldButton = styled.button `
+export const GoldButton = styled.button`
   background-color: #826614;
   color: white;
   padding: 12px 30px;
@@ -89,8 +89,7 @@ export const RoomBody = styled.p`
 
   `;
 
-  
-  export const BackgroundImage = styled.div`
+export const BackgroundImage = styled.div`
   background-image: url('https://www.travelwyoming.com/sites/default/files/u5691/Grand%20Canyon%20of%20the%20Yellowstone.jpg');
   background-position: center;
   background-size: cover;
@@ -104,19 +103,64 @@ export const NavText = styled.div`
 `;
 
 export const HeaderLine = styled.hr`
-  border-top: .5px solid black ;
+  border-top: 1px solid black ;
   width: 50%;
   float: left;
   border-color: #826614;
 `;
 
+export const HeaderLine2 = styled.hr`
+  border-top: 1px solid black;
+  width: 25%;
+  float: center;
+  border-color: #826614;
+`
+
 export const WhiteLine = styled.hr`
-  border-top: .5px white;
-  width: 20%;
+  border: 1px solid white;
+  width: 100%;
   border-color: white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: no-wrap;
+  justify-content: space-around;
+  align-content: center;
+  margin-bottom: -20px;
+  margin-top: 20px;
+  margin-right: 100px;
+  margin-left: 100px;
+  }
 `;
 
+export const GalleryIconLine = styled.hr`
+  border: 0.5px solid #826614;
+  width: 48%;
+  border-color: #826614;
+`;
 
+export const GalleryWhiteButton = styled.button`
+  border: 2px solid white;
+  background-color: rgb(35, 35, 35);
+  color: white;
+  padding: 12px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+`;
+
+export const GalleryGoldButton = styled.button`
+  background-color: rgb(35, 35, 35);
+  border-color: #826614; 
+  color: #826614;
+  padding: 9px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+`;
 // export const Card1 = styled.div`
 //   height: 100px;
 //   width: 300px;
