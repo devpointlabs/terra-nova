@@ -8,6 +8,7 @@ import News from './News';
 import Gallery from './Gallery';
 
 
+
 class Home extends React.Component {
 
   render() {
@@ -15,9 +16,9 @@ class Home extends React.Component {
       <>
       <Carousel/>
         <Rooms />
-        <Events />
         <AboutUs />
         <Reviews />
+        <Events />
         <News/>
         <Gallery/>
       </>

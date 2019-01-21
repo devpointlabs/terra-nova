@@ -128,6 +128,11 @@ export const GalleryIconLine = styled.hr`
   width: 48%;
   border-color: #826614;
 `;
+export const GalleryIconLine2 = styled.hr`
+  border: 0.5px solid #826614;
+  width: 20%;
+  border-color: #826614;
+`;
 
 export const GalleryWhiteButton = styled.button`
   border: 2px solid white;
