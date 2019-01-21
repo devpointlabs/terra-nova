@@ -13,8 +13,7 @@ import NoMatch from "./components/NoMatch";
 import FetchUser from "./components/FetchUser";
 import { Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer";
-// import { BackgroundImage } from './styles/AppStyles';
-// import MainCarousel from './components/carousel/Carousel';
+
 import "./App.css"
 import ProtectedRoute from './components/ProtectedRoute';
 import ReviewForm from './components/ReviewForm';
