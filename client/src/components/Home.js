@@ -1,5 +1,5 @@
 import React from 'react';
-import { withNamespaces } from 'react-i18next';
+// import { withNamespaces } from 'react-i18next';
 // import { Header,  } from 'semantic-ui-react';
 // import { Title, Title2, WhiteLine, } from '../styles/AppStyles';
 import Rooms from './Rooms';

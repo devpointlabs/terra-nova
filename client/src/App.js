@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import Home from "./components/Home";
 import Reservations from "./components/Reservations";
-import Rooms from "./components/Rooms";
+// import Rooms from "./components/Rooms";
 import AboutUs from "./components/AboutUs";
 import Contact from "./components/Contact";
 import Gallery from "./components/Gallery";
@@ -21,11 +21,9 @@ import ReviewForm from './components/ReviewForm';
 import Careers from './components/Careers';
 import CareerForm from './components/CareerForm';
 import Events from './components/Events';
-
 import Room from './components/Room';
-
 import News from './components/News';
-
+import Profile from './components/Profile';
 
 const App = () => (
   <Fragment>
@@ -39,6 +37,7 @@ const App = () => (
           <Route exact path="/" component={Home} />
           <Route exact path="/admin" component={Login} />
           <Route exact path="/register" component={Register} />
+          <Route exact path="/profile" component={Profile} />
           <Route exact path="/about_us" component={AboutUs} />
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/gallery" component={Gallery} />
