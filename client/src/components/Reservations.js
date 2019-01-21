@@ -15,22 +15,11 @@ class Reservation extends React.Component {
     return (
       <div>
         <SubHeader>Reservations</SubHeader>
-        <Container style={styles.flex}>
-          <ResForm />
-          <RenderReserved />
-        </Container>
+        <ResForm />
+        <RenderReserved />
       </div>
     );
   }
 }
 
 export default connect()(Reservation);
-
-const styles = {
-  flex: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-around",
-    alignItems: "flex-start"
-  }
-};
