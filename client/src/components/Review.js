@@ -9,7 +9,7 @@ const Review = () => (
         <div style={styles.circle}></div>
             <div style={styles.body}>"This is the only place to stay in Catalina! I have stayed in cheaper hotels and they were fine,
                 but this is just the icing on the cake! After spending the day bike riding and hiking to come back and enjoy a glass
-                of wine while looking out your ocean view window and then to top it all of..."
+                of wine while looking out your ocean view window and then to top it all off..."
                 <br />
                 <h4>- JULIA ROSE</h4>
                 <div style={styles.stars}>

@@ -46,6 +46,7 @@ const App = () => (
           <Route exact path="/events" component={Events} />
           <Route exact path="/news" component={News} />
           <Route exact path="/careers" component={Careers} />
+          <Route exact path="/rooms" component={Rooms} />
           <Route exact path="/room" component={Room} />
           <ProtectedRoute path="/careerapply" component={CareerForm} />
           <Route path="/reviewform" component={ReviewForm} />

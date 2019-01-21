@@ -1,13 +1,14 @@
 import React from 'react';
 import { Icon, Card, Container, } from 'semantic-ui-react';
-import { SubHeader, RoomBody } from '../styles/AppStyles';
+import { RoomBody, SubHeaderTwo } from '../styles/AppStyles';
 
 const Contact = () => (
   <div styles={styles.background}>
     <Container>
-      <SubHeader>
+      <SubHeaderTwo>
         Contact
-  </SubHeader>
+        <div style={styles.hr}></div>
+  </SubHeaderTwo>
       <RoomBody>If you would like to know more, please reach out to us: </RoomBody>
       <Card.Group centered itemsPerRow={2}>
         <Card raised centered textAlign fluid style={cardStyles.card}>
@@ -48,6 +49,13 @@ export default Contact;
 const styles = {
   background: {
     backgroundColor: "#F5F5F5",
+  },
+  hr: {
+    borderBottom: "1px solid black",
+    width: '20%',
+    marginLeft: '435px',
+    paddingTop: '3px',
+  
   }
 }
 

@@ -22,9 +22,9 @@ class Home extends React.Component {
         <Title2><WhiteLine/> HOTELS & RESORTS </Title2> */}
         {/* check availability */}
         <Rooms />
-        <Events />
         <AboutUs />
         <Review />
+        <Events />
         <News/>
         <Gallery/>
       </>
