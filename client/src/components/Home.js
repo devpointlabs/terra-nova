@@ -1,6 +1,6 @@
 import React from 'react';
 import Rooms from './Rooms';
-import Reviews from './Reviews';
+import Review from './Review';
 import AboutUs from './AboutUs';
 import Events from './Events';
 import Carousel from './carousel/Carousel';
@@ -17,6 +17,7 @@ class Home extends React.Component {
       <Carousel/>
         <Rooms />
         <AboutUs />
+        <Review />
         <Reviews />
         <Events />
         <News/>
