@@ -1,6 +1,6 @@
 import React from 'react';
 import { Carousel, } from 'react-bootstrap';
-import { Image,  } from 'semantic-ui-react';
+import { Image, } from 'semantic-ui-react';
 import Yellowstone from '../../assets/images/Yellowstone.png';
 import YellowstoneGeysers from '../../assets/images/YellowstoneGeysers.png';
 import GrandCanyonoftheYellowstone from '../../assets/images/GrandCanyonoftheYellowstone.png';

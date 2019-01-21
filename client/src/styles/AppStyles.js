@@ -99,11 +99,18 @@ export const NavText = styled.div`
 `;
 
 export const HeaderLine = styled.hr`
-  border-top: .5px solid black ;
+  border-top: 1px solid black ;
   width: 50%;
   float: left;
   border-color: #826614;
 `;
+
+export const HeaderLine2 = styled.hr`
+  border-top: 1px solid black;
+  width: 25%;
+  float: center;
+  border-color: #826614;
+`
 
 export const WhiteLine = styled.hr`
   border: 1px solid white;
@@ -124,6 +131,11 @@ export const WhiteLine = styled.hr`
 export const GalleryIconLine = styled.hr`
   border: 0.5px solid #826614;
   width: 48%;
+  border-color: #826614;
+`;
+export const GalleryIconLine2 = styled.hr`
+  border: 0.5px solid #826614;
+  width: 20%;
   border-color: #826614;
 `;
 
