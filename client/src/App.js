@@ -12,16 +12,13 @@ import NoMatch from "./components/NoMatch";
 import FetchUser from "./components/FetchUser";
 import { Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer";
-
 import "./App.css"
 import ProtectedRoute from './components/ProtectedRoute';
 import ReviewForm from './components/ReviewForm';
 import Careers from './components/Careers';
 import CareerForm from './components/CareerForm';
 import Events from './components/Events';
-
-import Room from './components/Room';
-
+import Rooms from './components/Rooms';
 import News from './components/News';
 
 
@@ -44,7 +41,7 @@ const App = () => (
           <Route exact path="/events" component={Events} />
           <Route exact path="/news" component={News} />
           <Route exact path="/careers" component={Careers} />
-          <Route exact path="/room" component={Room} />
+          <Route exact path="/rooms" component={Rooms} />
           <ProtectedRoute path="/careerapply" component={CareerForm} />
           <ProtectedRoute path="/review" component={ReviewForm} />
           <Route component={NoMatch} />
