@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import Home from "./components/Home";
 import Reservations from "./components/Reservations";
-import Rooms from "./components/Rooms";
 import AboutUs from "./components/AboutUs";
 import Contact from "./components/Contact";
 import Gallery from "./components/Gallery";
@@ -13,8 +12,7 @@ import NoMatch from "./components/NoMatch";
 import FetchUser from "./components/FetchUser";
 import { Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer";
-// import { BackgroundImage } from './styles/AppStyles';
-// import MainCarousel from './components/carousel/Carousel';
+
 import "./App.css"
 import ProtectedRoute from './components/ProtectedRoute';
 import ReviewForm from './components/ReviewForm';
