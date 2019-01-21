@@ -12,8 +12,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import Calendar from "react-calendar";
 import { connect } from "react-redux";
 import { setReservation } from "../reducers/reservation";
+import { setReserved } from "../reducers/reserved";
 import axios from "axios";
-import { get } from "http";
 
 class ResForm extends React.Component {
   state = {
@@ -23,8 +23,7 @@ class ResForm extends React.Component {
       room: "",
       adults: null,
       children: null
-    },
-    reserved: []
+    }
   };
 
   handleStartDate = date => {
@@ -78,7 +77,7 @@ class ResForm extends React.Component {
     this.props.dispatch(setReservation(this.state.reservation));
     axios
       .get(`/api/get_reservations/${start_date}/${end_date}/${room}`)
-      .then(res => this.setState({ reserved: res.data }));
+      .then(res => this.props.dispatch(setReserved(res.data)));
   };
 
   render() {
@@ -176,6 +175,6 @@ const styles = {
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "flex-start",
-    marginTop: "20em"
+    marginTop: "10em"
   }
 };
