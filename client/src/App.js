@@ -21,6 +21,7 @@ import CareerForm from './components/CareerForm';
 import Events from './components/Events';
 import Reviews from './components/Reviews';
 import Room from './components/Room';
+import Rooms from './components/Rooms';
 
 import News from './components/News';
 

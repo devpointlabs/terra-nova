@@ -18,7 +18,6 @@ class Home extends React.Component {
         <Rooms />
         <AboutUs />
         <Review />
-        <Reviews />
         <Events />
         <News/>
         <Gallery/>
