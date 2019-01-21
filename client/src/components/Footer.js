@@ -63,7 +63,7 @@ const Footer = ({t}) => {
               <Link to={""} style={styles.link}>
                 {t("Gift Card")}
             </Link>
-          </Grid.Column>
+          </Grid.Column >
         </Grid>
         <br />
         <hr />

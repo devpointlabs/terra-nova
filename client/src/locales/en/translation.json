@@ -27,8 +27,11 @@
 
     "Password": "Password",
 
+    "Password Confirmation": "Password Confirmation",
 
+    "I agree to the Terms and Conditions": "I agree to the Terms and Conditions",
 
+    
     
     "First Name": "First Name",
     
@@ -128,8 +131,16 @@
 
     "CONTACT": "CONTACT",
 
+    "Welcome": "Welcome",
+
+    "NEW ADMIN": "NEW ADMIN",
+
+    "NEW EVENT": "NEW EVENT",
+
+    "LOGOUT": "LOGOUT",
 
 
+    
     "Page not found return": "Page not found return",
 
     "Home": "Home",

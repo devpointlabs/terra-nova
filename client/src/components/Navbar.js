@@ -9,87 +9,72 @@ import { withNamespaces } from 'react-i18next';
 class Navbar extends React.Component {
   // state = { user: null, };
 
-  admin = () => {
-    const { user, handleLogout } = this.props.auth
-    if (user.admin) {
-      return (
-        <Dropdown item href="/admin/home" style={styles.font} text='ADMIN MENU'>
-          <Dropdown.Menu>
-          <Link to='/register'>
-            <Dropdown.Item style={styles.font} text='NEW ADMIN'onClick={this.registerAdmin}>
-            </Dropdown.Item></Link>
-            <Dropdown.Item style={styles.font} text='DASHBOARD'onClick={this.handleChange}>
-            </Dropdown.Item>
-            <Dropdown.Item style={styles.font} text='LOGOUT'onClick={() => handleLogout(this.props.history)}>
-            </Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
-      )
-    }
-  }  
-  registerAdmin = () => {
-
-  }
-
-
-  rightNavItems = () => {
-    const { auth: { user, handleLogout, }, location, } = this.props;
-    if (user) {
-      return (
-        <div>
-          <Menu.Menu position='right'>
-            <Menu.Item
-              style={styles.font}
-              name='LOGOUT'
-              onClick={() => handleLogout(this.props.history)}
-            />
-          </Menu.Menu>
-        </div>
-      )
-    } else {
-      return (
-        <div>
-          
-
-          <Container>
-            <Menu.Menu position='right'>
-              <Link to='/login'>
-                <Menu.Item
-                  style={styles.font}
-                  id='login'
-                  name='LOGIN'
-                  active={location.pathname === '/login'}
-                />
-              </Link>
-              <Link to='/register'>
-                <Menu.Item
-                  style={styles.font}
-                  id='register'
-                  name='REGISTER'
-                  active={location.pathname === '/register'}
-                />
-              </Link>
-            </Menu.Menu>
-          </Container>
-        </div>
-      )
-    }
-  }
+  // admin = () => {
+  //   const { auth: { user, handleLogout, }, location, t } = this.props;
+  //   if (user.admin) {
+  //     return (
+  //       <Dropdown item href="/events" style={styles.font} text='NEW EVENTd'>
+  //         <Dropdown.Menu>
+  //           <Link to='/register'>
+  //             <Dropdown.Item style={styles.font} text='NEW ADMIN' active={location.pathname === '/register'}>
+  //             </Dropdown.Item></Link>
+  //           </Dropdown.Item>
+  //         </Dropdown.Menu>
+  //       </Dropdown>
+  //     )
+  //   }
+  // }
 
   renderIcon = () => {
     return (
-      <Menu.Item>
-        <Image src={Terra_Nova_Cabins_Logo} size="small" style={styles.image} />
+      <Menu.Item position='left'>
+        <Image src={Terra_Nova_Cabins_Logo}
+          size="tiny"
+          style={styles.image}
+          position='left'
+          floated='left'
+          verticalAlign='top'
+        />
       </Menu.Item>
     )
   };
 
-  render() {
-    const { auth: location, t } = this.props;
+  adminNav = () => {
+    const { auth: { user, handleLogout, location, }, t } = this.props;
+
     return (
-      <div>
+      // <Container>
+        <Dropdown.Menu style={styles.font} position='right'>
+          {user ?
+            <div style={styles.background}>
+
+              <Dropdown item style={styles.font}text={t("Welcome")} >
+              <Link to='/register'>
+                <Dropdown.Item style={styles.font} position='right' text={t("NEW ADMIN")}>
+                </Dropdown.Item></Link>
+              <Dropdown.Item href="/events" style={styles.font} text={t("NEW EVENT")}>
+              </Dropdown.Item>
+              <Dropdown.Item style={styles.font} text={t("LOGOUT")} onClick={() => handleLogout(this.props.history)}>
+              </Dropdown.Item>
+     </Dropdown>
+            </div>
+            :
+            null
+          }
+        </Dropdown.Menu>
+      // </Container>
+    )
+  }
+
+
+
+  render() {
+    const { auth: { user, handleLogout, }, location, t } = this.props;
+
+    return (
+      <div style={styles.background}>
         <Container>
-          <Menu position='right' secondary>
+          <Menu position='center' secondary>
             {this.renderIcon()}
             <Link to='/'>
               <Menu.Item
@@ -103,10 +88,10 @@ class Navbar extends React.Component {
               <Menu.Item
                 name='Room & Rate'
                 id='Room & Rate'
-                style={styles.fontSize}
+                style={styles.font}
                 active={location.pathname === '/rooms'}
               > {t("ROOM & RATE")}
-                </Menu.Item>
+              </Menu.Item>
             </Link>
             <Link to='/reservations'>
               <Menu.Item
@@ -124,27 +109,6 @@ class Navbar extends React.Component {
                 active={this.props.location.pathname === '/gallery'}
               />
             </Link>
-
-            {/* Not quite sure what page is for */}
-            {/* <Menu.Item>
-            <Dropdown style={styles.fontSize} item text='Page'>
-              <Dropdown.Menu >
-                <Link to={} />
-                <Dropdown.Item basic>
-                  Test1
-               </Dropdown.Item>
-                <Dropdown.Item basic>
-                  <Link to={} />
-                  Test2
-               </Dropdown.Item>
-                <Dropdown.Item basic>
-                  <Link to={} />
-                  Test3
-               </Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-            </Menu.Item> */}
-
             <Link to='/about_us'>
               <Menu.Item
                 style={styles.fontSize}
@@ -161,6 +125,7 @@ class Navbar extends React.Component {
                 active={this.props.location.pathname === '/contact'}
               />
             </Link>
+            {this.adminNav()}
           </Menu>
           <br />
         </Container>
@@ -169,6 +134,7 @@ class Navbar extends React.Component {
   }
 }
 
+
 export class ConnectedNavbar extends React.Component {
   render() {
     return (
@@ -176,7 +142,6 @@ export class ConnectedNavbar extends React.Component {
         {auth =>
           <Navbar {...this.props} auth={auth} />
         }
-
       </AuthConsumer>
     )
   }
@@ -188,14 +153,26 @@ export const styles = {
   font: {
     fontFamily: "'Poppins', sans-serif",
     color: 'white',
-  },
-  fontSize: {
-    fontFamily: "'Poppins', sans-serif",
-    color: 'white',
-    width: '120px',
+    fontWeight: 'bold',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'baseline',
+    alignContent: 'center',
   },
   image: {
-    padding: '5px',
-    margin: '5px',
+    padding: '0.5px',
+    margin: '0.5px',
+    height: '100px',
+    width: 'auto',
+  },
+  background: {
+    backgroundColor: 'rgb(35, 35, 35)',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    alignContent: 'center',
+    // padding: '0px'
   }
 }

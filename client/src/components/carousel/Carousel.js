@@ -1,10 +1,11 @@
 import React from 'react';
 import { Carousel, } from 'react-bootstrap';
-import { Container, Image,  } from 'semantic-ui-react';
+import { Image,  } from 'semantic-ui-react';
 import Yellowstone from '../../assets/images/Yellowstone.png';
+import YellowstoneGeysers from '../../assets/images/YellowstoneGeysers.png';
 import GrandCanyonoftheYellowstone from '../../assets/images/GrandCanyonoftheYellowstone.png';
-import Navbar from '../Navbar';
-import Geobar from '../Geobar';
+import { withNamespaces } from 'react-i18next';
+import {   Title, Title2, WhiteLine, } from '../../styles/AppStyles';
 
 class MainCarousel extends React.Component {
   constructor(props, context) {
@@ -14,7 +15,7 @@ class MainCarousel extends React.Component {
 
     this.state = {
       index: 0,
-      direction: null
+      direction: 'next',
     };
   }
 
@@ -27,17 +28,11 @@ class MainCarousel extends React.Component {
 
   render() {
     const { index, direction } = this.state;
-
+    const { t } = this.props;
     return (
       <div>
-      <Container>
-
-        <Carousel.Caption>
-      <Geobar/>
-      <Navbar/>        
-        </Carousel.Caption>
-      </Container>
       <Carousel
+      slide='true'
         activeIndex={index}
         direction={direction}
         onSelect={this.handleSelect}
@@ -47,14 +42,11 @@ class MainCarousel extends React.Component {
             width='10000'
             height={500}
             alt="900x500"
-            src={Yellowstone} />
-        </Carousel.Item>
-        <Carousel.Item>
-          <Image
-            width='10000'
-            height={500}
-            alt="900x500"
-            src={GrandCanyonoftheYellowstone} />
+          src={GrandCanyonoftheYellowstone} />
+            <Carousel.Caption>
+            <Title> {t("Welcome to Terra Nova Cabins")}</Title>
+            <Title2><WhiteLine/> HOTELS & RESORTS </Title2>
+            </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <Image
@@ -62,6 +54,21 @@ class MainCarousel extends React.Component {
             height={500}
             alt="900x500"
             src={Yellowstone} />
+            <Carousel.Caption>
+            <Title> {t("Welcome to Terra Nova Cabins")}</Title>
+            <Title2><WhiteLine/> HOTELS & RESORTS </Title2>
+            </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <Image
+            width='10000'
+            height={500}
+            alt="900x500"
+            src={YellowstoneGeysers} />
+            <Carousel.Caption>
+            <Title> {t("Welcome to Terra Nova Cabins")}</Title>
+            <Title2><WhiteLine/> HOTELS & RESORTS </Title2>
+            </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
           </div>
@@ -69,4 +76,4 @@ class MainCarousel extends React.Component {
   }
 }
 
-export default MainCarousel;
+export default withNamespaces()(MainCarousel);

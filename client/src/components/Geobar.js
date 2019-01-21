@@ -1,9 +1,9 @@
 import React from 'react';
-import { Menu, Container, Dropdown, Button  } from 'semantic-ui-react';
-import  { AuthConsumer, } from '../providers/AuthProvider';
+import { Menu, Container, Dropdown, } from 'semantic-ui-react';
+import { AuthConsumer, } from '../providers/AuthProvider';
 import { faCloud, faPhone, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {  withRouter, } from 'react-router-dom';
+import { withRouter, } from 'react-router-dom';
 // import ReactWeather from 'react-open-weather';
 import i18n from '../i18n';
 import { withNamespaces } from 'react-i18next';
@@ -11,10 +11,10 @@ import { withNamespaces } from 'react-i18next';
 
 
 class Geobar extends React.Component {
-  state = { user: null, toggled: false,  };
+  state = { user: null, toggled: false, };
 
   changeLanguage = (lng) => {
-    if (this.state.toggled === true){
+    if (this.state.toggled === true) {
       lng = 'en'
     } else {
       lng = 'zh'
@@ -23,13 +23,15 @@ class Geobar extends React.Component {
   }
 
   toggleLanguage = () => {
-    this.setState({ toggled: !this.state.toggled}) 
+    this.setState({ toggled: !this.state.toggled })
     this.changeLanguage()
   }
-  
+
   render() {
     const { auth: { user, }, t } = this.props;
     return (
+      <div style={styles.background}>
+
         <Container >
           <Menu secondary size='mini'>
             <Menu.Item style={styles.font}>
@@ -67,15 +69,6 @@ class Geobar extends React.Component {
               1-TER-RAN-OVVA
                             </Menu.Item >
             <Menu.Item style={styles.font} position='right'>
-              {user ?
-                <Menu.Item style={styles.font}>
-                  <i>
-                    Welcome, {user.first_name}
-                  </i>
-                </Menu.Item>
-                :
-                null
-              }
               <Dropdown item style={styles.font} text='$ (USD)'>
                 <Dropdown.Menu>
                   <Dropdown.Item style={styles.font} onClick={this.handleChange}>
@@ -83,11 +76,17 @@ class Geobar extends React.Component {
                   </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
-              {/* <Button toggle onClick={() => this.changeLanguage('zh')}>ZH</Button> */}
-              <Button toggle onClick={() => this.toggleLanguage()}>{ this.state.toggled ? 'en' : '中文' }</Button>
+              <Dropdown item style={styles.font} text={t("Language")}>
+                <Dropdown.Menu>
+                  <Dropdown.Item style={styles.font} onClick={() => this.toggleLanguage()}>
+                  {this.state.toggled ? 'English' : '中文'}
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
             </Menu.Item>
           </Menu>
         </Container>
+      </div>
     )
   }
 }
@@ -122,9 +121,13 @@ const styles = {
     width: '115px',
   },
   border: {
-    border: '15px solid white',
+    borderBottom: '15px solid white',
     borderStyle: 'solid',
-    borderWidth: '5px', 
+    borderWidth: '5px',
     borderColor: 'white',
+    background: 'blue, !important',
+  },
+  background: {
+    backgroundColor: 'grey'
   }
 }

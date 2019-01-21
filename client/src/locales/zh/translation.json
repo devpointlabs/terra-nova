@@ -28,7 +28,11 @@
 
     "Password": "密码",
 
+    "Password Confirmation": "确认密码",
 
+    "I agree to the Terms and Conditions": "我同意这条款和条件",
+
+    
 
     "First Name": "名字",
 
@@ -128,6 +132,15 @@
     "ABOUT": "关于",
 
     "CONTACT": "联系",
+
+    "Welcome": "欢迎",
+
+    "NEW ADMIN": "新管理员",
+
+    "NEW EVENT": "新事件",
+    
+    "LOGOUT": "登出",
+
     
     
     "Page not found return": "找不到页面返回",
