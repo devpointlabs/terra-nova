@@ -15,7 +15,7 @@ import Gallery from './Gallery';
 class Home extends React.Component {
 
   render() {
-    const { t } = this.props;
+    // const { t } = this.props;
     return (
       <>
       <Carousel/>
