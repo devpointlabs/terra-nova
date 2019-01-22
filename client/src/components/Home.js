@@ -23,4 +23,4 @@ class Home extends React.Component {
   }
 }
 
-export default withNamespaces()(Home);
+export default Home;

@@ -20,8 +20,7 @@ import CareerForm from "./components/CareerForm";
 import Events from "./components/Events";
 import Rooms from "./components/Rooms";
 import News from "./components/News";
-
-import News from "./components/News";
+import Reviews from "./components/Reviews";
 import ResCheckout from "./components/ResCheckout";
 
 const App = () => (
