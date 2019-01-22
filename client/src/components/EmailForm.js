@@ -1,30 +1,49 @@
 import React from "react";
-import { Form, Icon, Container, Segment, Button, Modal } from "semantic-ui-react";
+import { Form, Icon, Container, Segment, Button, Modal, Image, Header } from "semantic-ui-react";
+import Terra_Nova_Cabins_Logo from '../assets/images/Terra_Nova_Cabins_Logo.png';
 import axios from "axios";
 
 // create links for social
 class EmailForm extends React.Component {
-  state = { email:"", showModal:false }
-  
+  state = { email: "", showModal: false }
+
   handleSubmit = (e) => {
     e.preventDefault();
-    const email = {...this.state};
+    const email = { ...this.state };
     axios.post('/api/mailers', email)
-    this.setState({ email: ""})
-    {this.emailModal()}
-}
+    this.setState({ email: "" })
+    {this.emailModal()};
+  }
 
-handleChange = ({ target: { name, value } }) => {
-  this.setState({ [name]: value });
-}
+  handleChange = ({ target: { name, value } }) => {
+    this.setState({ [name]: value });
+  }
 
-emailModal = () => {
+  handleOpen = () => this.setState({ showModal: true})
+
+  emailModal = () => (
+    <Modal trigger={<Button onClick={this.handleOpen}>Submit</Button>}
+     open={this.state.modalOpen}
+     size='tiny'
+     centered={false}
+    >
+      <Modal.Header> Terra Nova Cabins</Modal.Header>
+      <Modal.Content image>
+        <Image wrapped 
+          size='tiny' 
+          src={Terra_Nova_Cabins_Logo}/>
+        <Modal.Description>
+          <Header>Success!</Header>
+            <p> You have been signed up for the Terra Nova Newsletter.</p>
+        </Modal.Description>
+      </Modal.Content>
+    </Modal>
   
-}
+  )
 
-showModal = () => {
-  this.setState({showModal: !this.state.showModal})
-}
+  showModal = () => {
+    this.setState({ showModal: !this.state.showModal })
+  }
 
   render() {
     return (
@@ -40,10 +59,10 @@ showModal = () => {
                 value={this.state.email}
                 onChange={this.handleChange}
               />
-              <Button>Submit</Button>
             </Form>
-            
+
           </div>
+              {this.emailModal()}
           <div>
             <Icon inverted color="grey" name="instagram" size="big" />
             <Icon inverted color="grey" name="facebook" size="big" />
