@@ -10,7 +10,7 @@ const Footer = ({t}) => {
   return (
     <div>
       <EmailForm />
-      <Segment inverted style={styles}>
+      <Segment inverted style={styles} basic>
         <Container inverted>
           <Grid columns={4}>
             <Grid.Column>

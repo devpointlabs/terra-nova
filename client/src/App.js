@@ -12,24 +12,23 @@ import NoMatch from "./components/NoMatch";
 import FetchUser from "./components/FetchUser";
 import { Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer";
-import "./App.css"
-import ProtectedRoute from './components/ProtectedRoute';
-import ReviewForm from './components/ReviewForm';
-import Careers from './components/Careers';
-import CareerForm from './components/CareerForm';
-import Events from './components/Events';
-
 import Room from './components/Room';
-
-import News from './components/News';
-
+import "./App.css";
+import ProtectedRoute from "./components/ProtectedRoute";
+import ReviewForm from "./components/ReviewForm";
+import Careers from "./components/Careers";
+import CareerForm from "./components/CareerForm";
+import Events from "./components/Events";
+import Rooms from "./components/Rooms";
+import News from "./components/News";
+import Reviews from "./components/Reviews";
+import ResCheckout from "./components/ResCheckout";
 
 const App = () => (
   <Fragment>
     <FetchUser>
-
-        <Geobar />
-        <Navbar />
+      <Geobar />
+      <Navbar />
 
       <div style={styles.body}>
         <Switch>
@@ -42,11 +41,14 @@ const App = () => (
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/gallery" component={Gallery} />
           <Route exact path="/reservations" component={Reservations} />
+          <Route exact path="/checkout" component={ResCheckout} />
           <Route exact path="/events" component={Events} />
           <Route exact path="/news" component={News} />
           <Route exact path="/careers" component={Careers} />
-          <Route path="/careerapply" component={CareerForm} />
-          <ProtectedRoute path="/review" component={ReviewForm} />
+          <Route exact path="/rooms" component={Rooms} />
+          <ProtectedRoute path="/careerapply" component={CareerForm} />
+          <Route path="/reviewform" component={ReviewForm} />
+          <Route path="/reviews" component={Reviews} />
           <Route component={NoMatch} />
         </Switch>
       </div>
@@ -72,11 +74,11 @@ const styles = {
 //   size: {
 //       backgroundPosition: 'center top',
 //       backgroundSize: '100% 50%',
-      // width: '1500px',
-      // height: '20%',
-      // display: 'flex',
-      // flex: '1',
-      // resizeMode: 'cover',
+// width: '1500px',
+// height: '20%',
+// display: 'flex',
+// flex: '1',
+// resizeMode: 'cover',
 
 //   }
 // };

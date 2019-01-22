@@ -11,6 +11,10 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Calendar from "react-calendar";
 import { withNamespaces } from 'react-i18next';
+import { connect } from "react-redux";
+import { setReservation } from "../reducers/reservation";
+import { setReserved } from "../reducers/reserved";
+import axios from "axios";
 
 
 class ResForm extends React.Component {
@@ -20,7 +24,7 @@ class ResForm extends React.Component {
       end_date: new Date(),
       room: "",
       adults: null,
-      Children: null
+      children: null
     }
   };
 
@@ -67,7 +71,17 @@ class ResForm extends React.Component {
     });
   };
 
-  adults;
+  handleSubmit = e => {
+    e.preventDefault();
+    const {
+      reservation: { start_date, end_date, room }
+    } = this.state;
+    this.props.dispatch(setReservation(this.state.reservation));
+    axios
+      .get(`/api/get_reservations/${start_date}/${end_date}/${room}`)
+      .then(res => this.props.dispatch(setReserved(res.data)));
+  };
+
   render() {
     const {
       reservation: { start_date, end_date }
@@ -120,8 +134,10 @@ class ResForm extends React.Component {
                 onChange={this.handleChildren}
               />
             </div>
+            <Button color="brown">Check Availability</Button>
           </Form>
           <Button color="brown">{t("Check Availability")}</Button>
+
           {/* onClick api call to return available rooms that meet reservation requestes */}
         </Segment>
         <Calendar
@@ -134,7 +150,8 @@ class ResForm extends React.Component {
   }
 }
 
-export default withNamespaces()(ResForm);
+export default withNamespaces()(connect()(ResForm));
+
 
 const dropDown = [
   { key: 1, text: "0", value: 0 },
@@ -145,10 +162,9 @@ const dropDown = [
 ];
 
 const Room = [
-  { key: 1, text: "Family", value: "family", name: "room" },
-  { key: 2, text: "Couple Room", value: "couple_room", name: "room" },
-  { key: 3, text: "Standard Room", value: "standard_room", name: "room" },
-  { key: 4, text: "Luxury Room", value: "luxury_room", name: "room" }
+  { key: 1, text: "Family Room", value: "family", name: "room" },
+  { key: 2, text: "Single Room", value: "single room", name: "room" },
+  { key: 3, text: "Double Room", value: "double room", name: "room" }
 ];
 
 const styles = {
@@ -166,6 +182,6 @@ const styles = {
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "flex-start",
-    marginTop: "20em"
+    marginTop: "10em"
   }
 };

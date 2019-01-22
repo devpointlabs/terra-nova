@@ -85,8 +85,8 @@ class Room extends React.Component {
     const { max, size, view, bed } = this.props
     return (
       <Card.Description textAlign="center">
-        <Segment basic centered textAlign="center">
-           <p> Accommodates {max} Persons </p>
+        <Segment basic centered textAlign="center" style={styles.amenitiesFont}>
+           <p> Accommodates {max} People </p>
             <p>Size: {size} </p>
             <p>View: {view} </p>
             <p>Bed: {bed}</p>
@@ -130,5 +130,10 @@ const styles = {
     paddingBottom: '15px',
     paddingTop: '15px',
   },
+  amenitiesFont: {
+    fontFamily: "'Poppins', sans-serif",
+    fontSize: '15px',
+    
+  }
 
 }

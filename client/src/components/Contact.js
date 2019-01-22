@@ -1,18 +1,13 @@
 import React from 'react';
 import { Icon, Card, Container, } from 'semantic-ui-react';
-import { SubHeader, RoomBody } from '../styles/AppStyles';
 import { withNamespaces } from 'react-i18next';
 
+import { RoomBody, SubHeaderTwo } from '../styles/AppStyles';
 const Contact = ({t}) => (
   <div styles={styles.background}>
     <Container>
-      <SubHeader>
-        {t("Contact")}
-  </SubHeader>
+  </SubHeaderTwo>
       <RoomBody>{t("If you would like to know more, please contact us")}</RoomBody>
-      <br />
-      <br />
-      <br />
       <Card.Group centered itemsPerRow={2}>
         <Card raised centered textAlign fluid style={cardStyles.card}>
           <Card.Content>
@@ -52,6 +47,13 @@ export default withNamespaces()(Contact);
 const styles = {
   background: {
     backgroundColor: "#F5F5F5",
+  },
+  hr: {
+    borderBottom: "1px solid black",
+    width: '20%',
+    marginLeft: '435px',
+    paddingTop: '3px',
+  
   }
 }
 
