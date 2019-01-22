@@ -1,29 +1,59 @@
 import React from "react";
-import { Form, Icon, Container, Segment,  } from "semantic-ui-react";
+import { Form, Icon, Container, Segment, Button, Modal } from "semantic-ui-react";
+import axios from "axios";
 
 // create links for social
-const EmailForm = () => (
-  <Segment style={styles.background} basic>
-    <Container style={styles.flexbox}>
-      <div style={styles.flexbox}>
-        <Icon name="mail" size="huge" />
-        <Form fluid>
-          <Form.Input
-            name="email"
-            placeholder="Your Email Address "
-            icon="paper plane"
-          />
-        </Form>
-        </div>
-        <div>
-          <Icon inverted color="grey" name="instagram" size="big" />
-          <Icon inverted color="grey" name="facebook" size="big" />
-          <Icon inverted color="grey" name="twitter" size="big" />
-      </div>
-    </Container>
-  </Segment>
+class EmailForm extends React.Component {
+  state = { email:"", showModal:false }
+  
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const email = {...this.state};
+    axios.post('/api/mailers', email)
+    this.setState({ email: ""})
+    {this.emailModal()}
+}
 
-)
+handleChange = ({ target: { name, value } }) => {
+  this.setState({ [name]: value });
+}
+
+emailModal = () => {
+  
+}
+
+showModal = () => {
+  this.setState({showModal: !this.state.showModal})
+}
+
+  render() {
+    return (
+      <Segment style={styles.background} basic>
+        <Container style={styles.flexbox}>
+          <div style={styles.flexbox}>
+            <Icon name="mail" size="huge" />
+            <Form fluid onSubmit={this.handleSubmit}>
+              <Form.Input
+                name="email"
+                placeholder="Your Email Address "
+                icon="paper plane"
+                value={this.state.email}
+                onChange={this.handleChange}
+              />
+              <Button>Submit</Button>
+            </Form>
+            
+          </div>
+          <div>
+            <Icon inverted color="grey" name="instagram" size="big" />
+            <Icon inverted color="grey" name="facebook" size="big" />
+            <Icon inverted color="grey" name="twitter" size="big" />
+          </div>
+        </Container>
+      </Segment>
+    )
+  }
+}
 
 export default EmailForm;
 
@@ -94,7 +124,7 @@ const styles = {
 //     backgroundColor: "#363636",
 //     width: "100%",
 //     marginBottom: "-15px",
-    
+
 //   },
 //   icons: {
 //     marginLeft: "30px"

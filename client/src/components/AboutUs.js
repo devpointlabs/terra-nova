@@ -19,13 +19,12 @@ const AboutUs = () => (
           <Grid.Column>
             <h1 style={subHeader}>About Us</h1>
             <HeaderLine/>
-            <p style={text}> Contrary to popular belief, Lorem isn't simply random text. It has roots in classical literature 
-              from 45 BC, making it over 2000 years old. Avalon's leading hotels with gracious island hospitality,
-              thoughtful amentities and distinctive.
+            <p style={text}> Terra Nova Cabins represents the best in western hospitality and comfort, wrapped in contemporary
+              expression that will inspire your own unique adventures. 
               <br/>
               <br/>
-              Richard Mcklintock, a professor at Hampton-Sydney College in Virginia, looked up some of the more
-              obscure words in Latin. Consecteteur from a more obscure Latin text...
+              Both a haven from the world and a basecamp for adventure, Terra Nova Cabins will be your new southwestern
+              Montana destination rental.
             </p>
             <WhiteButton>Read More</WhiteButton>
           </Grid.Column>
