@@ -12,7 +12,7 @@ import POOL_SPA_ICON from "../assets/icons/amenities_icons/POOL_SPA_ICON.png";
 import MAKE_EXPORTABLE_ICON from "../assets/icons/amenities_icons/MAKE_EXPORTABLE_ICON.png";
 
 const AboutUs = () => (
-  <Container>
+  <Container> 
     <div style={background}>
       <div>
         <Grid columns={2} padded='vertically'>

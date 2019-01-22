@@ -61,6 +61,15 @@ export const Title2 = styled.h3`
   padding-bottom: 200px;
   `;
 
+  export const Title3 = styled.h5`
+  font-size: 2em;
+  text-align: center;
+  color: black;
+  font-family: 'Playfair Display', serif !important;
+  padding-top: 300px;
+  padding-bottom: 40px;
+`;
+
 export const SubHeader = styled.h1`
   font-size: 3.0em;
   font-weight: normal;
@@ -77,7 +86,6 @@ export const SubHeaderTwo = styled.h1`
   `;
 
 export const RoomBody = styled.p`
-
   font-size: 15px;
   font-family: 'Poppins', sans-serif;
   text-align: center;

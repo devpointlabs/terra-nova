@@ -1,27 +1,29 @@
 import React from 'react';
-import { SubHeader, HeaderLine2 } from "../styles/AppStyles";
-import { Card, Image, Container, } from "semantic-ui-react";
+import { SubHeader, HeaderLine, Title3, } from "../styles/AppStyles";
+import { Card, Image, Container, Grid } from "semantic-ui-react";
 
 const Events = () => {
     return (
         <div>
             <Container>
                 <div>
+                <Grid columns={2} padded='vertically'>    
                 <SubHeader>Our Events</SubHeader>
-                <HeaderLine2/>
+                {/* <HeaderLine/> */}
+                </Grid>
                 </div>
                 <Card.Group centered itemsPerRow={3}>
                     <Card style={styles.card}>
                         <Image />
-                        <Card.Content>Wedding Day</Card.Content>
+                        <Title3>Wedding Day</Title3>
                     </Card>
                     <Card style={styles.card}>
                         <Image />
-                        <Card.Content>Gold Club 2017</Card.Content>
+                        <Title3>Golf Cup 2017</Title3>
                     </Card>
                     <Card style={styles.card}>
                         <Image />
-                        <Card.Content>Beach Sports</Card.Content>
+                        <Title3>Beach Sports</Title3>
                     </Card>
                 </Card.Group>
             </Container>
@@ -37,6 +39,7 @@ const styles = {
         alignItems: 'center',
         fontFamily: "'Poppins', sans-serif",
         padding: '20px 20px',
+        height: '400px',
     }
 }
 

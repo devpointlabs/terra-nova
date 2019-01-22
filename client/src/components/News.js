@@ -1,16 +1,14 @@
 import React from 'react';
 import { NavLink, } from 'react-router-dom';
-import { Grid, Header, } from 'semantic-ui-react';
-
+import { Grid, } from 'semantic-ui-react';
+import { SubHeader, HeaderLine2,} from "../styles/AppStyles";
 
 
 const News = () => (
   <div style={padding}>
         <Grid.Column>
-            <Header as='h1' style={subHeader}>
-              News
-              <hr />
-            </Header>
+          <SubHeader>News</SubHeader>
+          <HeaderLine2/>
           </Grid.Column>
 
       <Grid columns={4}centered divided>
