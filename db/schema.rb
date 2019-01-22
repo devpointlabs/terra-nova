@@ -29,13 +29,11 @@ ActiveRecord::Schema.define(version: 2019_01_18_214902) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.bigint "user_id"
     t.integer "rating"
     t.string "title"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "rooms", force: :cascade do |t|
@@ -84,5 +82,4 @@ ActiveRecord::Schema.define(version: 2019_01_18_214902) do
 
   add_foreign_key "reservations", "rooms"
   add_foreign_key "reservations", "users"
-  add_foreign_key "reviews", "users"
 end

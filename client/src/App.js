@@ -43,7 +43,8 @@ const App = () => (
           <Route exact path="/careers" component={Careers} />
           <Route exact path="/rooms" component={Rooms} />
           <ProtectedRoute path="/careerapply" component={CareerForm} />
-          <ProtectedRoute path="/review" component={ReviewForm} />
+          <Route path="/reviewform" component={ReviewForm} />
+          <Route path="/reviews" component={Reviews} />
           <Route component={NoMatch} />
         </Switch>
       </div>
