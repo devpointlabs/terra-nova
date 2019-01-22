@@ -4,7 +4,7 @@ import { Card, Image, Container } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { GoldButton, AmenitiesButton } from "../styles/AppStyles";
 
-class RenderReserved extends React.Component {
+class RenderAvailable extends React.Component {
   state = { rooms: [], showDesc: false };
 
   toggleDescription = () => {
@@ -19,6 +19,17 @@ class RenderReserved extends React.Component {
         </ul>
       </Card.Description>
     );
+  };
+
+  confirm = room => {
+    const proceed = window.confirm(
+      "are you sure you want to continue with this room?"
+    );
+    if (proceed)
+      this.props.history.push({
+        pathname: "/checkout",
+        state: { room: room, userSpecs: this.props.userSpecs }
+      });
   };
 
   findAvailable = () => {
@@ -40,9 +51,15 @@ class RenderReserved extends React.Component {
           </AmenitiesButton>
           <hr />
           {showDesc ? this.showAmenities(r) : null}
-          <Link to={""}>
-            <GoldButton style={{ marginBottom: "10px" }}> Book Now</GoldButton>
-          </Link>
+          {/* <Link to={""}> */}
+          <GoldButton
+            style={{ marginBottom: "10px" }}
+            onClick={() => this.confirm(r)}
+          >
+            {" "}
+            Book Now
+          </GoldButton>
+          {/* </Link> */}
         </Card.Meta>
       </Card>
     ));
@@ -62,11 +79,11 @@ class RenderReserved extends React.Component {
 const mapStateToProps = state => {
   return {
     availableRoom: state.reserved,
-    rooms: state.rooms
+    userSpecs: state.reservation
   };
 };
 
-export default connect(mapStateToProps)(RenderReserved);
+export default connect(mapStateToProps)(RenderAvailable);
 
 const styles = {
   roomHeader: {

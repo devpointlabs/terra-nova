@@ -25,6 +25,7 @@ import Events from "./components/Events";
 import Room from "./components/Room";
 
 import News from "./components/News";
+import ResCheckout from "./components/ResCheckout";
 
 const App = () => (
   <Fragment>
@@ -41,6 +42,7 @@ const App = () => (
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/gallery" component={Gallery} />
           <Route exact path="/reservations" component={Reservations} />
+          <Route exact path="/checkout" component={ResCheckout} />
           <Route exact path="/events" component={Events} />
           <Route exact path="/news" component={News} />
           <Route exact path="/careers" component={Careers} />

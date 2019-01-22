@@ -1,10 +1,9 @@
 import React from "react";
 import { SubHeader } from "../styles/AppStyles";
-import { Container } from "semantic-ui-react";
 import ResForm from "./ResForm";
 import { getRooms } from "../reducers/rooms";
 import { connect } from "react-redux";
-import RenderReserved from "./RenderReserved";
+import RenderAvailable from "./RenderAvailable";
 
 class Reservation extends React.Component {
   componentDidMount() {
@@ -16,7 +15,7 @@ class Reservation extends React.Component {
       <div>
         <SubHeader>Reservations</SubHeader>
         <ResForm />
-        <RenderReserved />
+        <RenderAvailable history={this.props.history} />
       </div>
     );
   }
