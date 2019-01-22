@@ -1,10 +1,11 @@
 import React from "react";
 import { Card, Image, Container, } from 'semantic-ui-react';
 import axios from 'axios';
-import { SubHeader, RoomBody, GoldButton, HeaderLine2 } from '../styles/AppStyles';
+import { SubHeader, RoomBody, GoldButton, GalleryIconLine } from '../styles/AppStyles';
 import { Link, withRouter } from 'react-router-dom';
 import Room from "./Room";
 import { withNamespaces } from "react-i18next";
+import FLEUR_ICON from '../assets/icons/miscellaneous_icons/FLEUR_ICON.png';
 
 
 
@@ -27,7 +28,7 @@ class Rooms extends React.Component {
         if (room.id === 1 || room.id === 6 || room.id === 11) {
           return (
               <div>
-                <Card raised style={{ margin: '30px',}}>
+                <Card raised style={{ margin: '30px',}} >
                   <Image size="large" src={room.image} alt="room"/>
                   <Card.Content>
                     <Card.Header style={roomHeader}>
@@ -62,7 +63,14 @@ class Rooms extends React.Component {
     return (
       <div style={styles.background}>
         <SubHeader> Our Rooms </SubHeader>
-        <HeaderLine2 />
+        <div style={styles.line}>
+            <GalleryIconLine />
+          <Image centered 
+          style={styles.icon} 
+          src={FLEUR_ICON}
+          />
+            <GalleryIconLine />
+          </div>
         <RoomBody> When you host a party or family reunion, the special celebrations let <br />
           you strengthen bonds with each other </RoomBody>
 
@@ -80,9 +88,25 @@ const styles = {
   background: {
     backgroundColor: "#F5F5F5",
     paddingBottom: "100px",
-
+  },
+  line:   {
+    display: 'flex',
+    flexDirection: 'row',
+    // justifyContent: 'space-around',
+    // alignItems: 'center',
+    marginBottom: '-40px',
+    marginRight: '640px',
+    marginLeft: '640px',
+    },
+    icon: {
+      padding: '7px',
+      // display: 'flex',
+      // flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginBottom: '30px'
+    }
   }
-}
 
 const roomHeader = {
   fontFamily: "'Poppins', sans-serif",
@@ -102,6 +126,8 @@ const cardFooter = {
   paddingRight: '10px',
 
 }
+
+
 
 
 

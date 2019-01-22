@@ -1,6 +1,6 @@
 import React from 'react'
 import { AuthConsumer, } from "../providers/AuthProvider";
-import { Menu, Container, Image, } from 'semantic-ui-react';
+import { Menu, Container, Image,} from 'semantic-ui-react';
 import { Link, withRouter, } from 'react-router-dom';
 // import ReactWeather from 'react-open-weather';
 import Terra_Nova_Cabins_Logo from '../assets/images/Terra_Nova_Cabins_Logo.png';
