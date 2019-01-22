@@ -5,7 +5,7 @@ import { Form, Rating, Container, Button } from 'semantic-ui-react';
 import { SubHeaderTwo } from '../styles/AppStyles';
 
 class ReviewForm extends React.Component {
-    state = { title: "", body: "", rating: 0,  };
+    state = { name: "", title: "", body: "", rating: 0,  };
     // can we get the user name from the user_id??
 
     handleSubmit = (e) => {
@@ -24,7 +24,7 @@ class ReviewForm extends React.Component {
     };//end of handleRating
 
     render() {
-        const { title, body, rating } = this.state;
+        const { name, title, body, rating } = this.state;
         return (
             <Container>
                 <Form style={styles.text}
@@ -36,8 +36,18 @@ class ReviewForm extends React.Component {
                         <Button style={styles.button}>Back to Reviews</Button>
                     </NavLink>
                     </div>
-                    <div style={styles.rating}>
 
+                    <Form.Input
+                        name="name"
+                        label="Name"
+                        placeholder="Name"
+                        autofocus
+                        required
+                        value={name}
+                        width='3'
+                        onChange={this.handleChange}
+                        /> 
+                    <div style={styles.rating}>
                     <Form.Input
                         name="title"
                         label="Title"
@@ -87,7 +97,7 @@ const styles = {
         padding: '10px 40px',
         textAlign: "center",
         textDecoration: 'none',
-        display: 'inline-block',
+        display: 'flex',
         fontSize: '14px',
         fontFamily: "'Poppins', sans-serif",
         marginTop: '10px',

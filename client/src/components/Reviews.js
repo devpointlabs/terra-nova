@@ -22,6 +22,7 @@ class Reviews extends React.Component {
             })
     }
 
+// Need to add name and location to review form
 
     renderReviews = () => {
         const { reviews } = this.state;
