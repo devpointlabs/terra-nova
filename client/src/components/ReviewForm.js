@@ -1,30 +1,28 @@
 import React from 'react';
 import axios from 'axios';
-import { Form, Rating, Container, Header, Button } from 'semantic-ui-react';
+import { Form, Rating, Container, Button } from 'semantic-ui-react';
 import { AuthConsumer } from '../providers/AuthProvider';
 import { withNamespaces } from 'react-i18next';
 import { withRouter, NavLink} from 'react-router-dom';
-import { Form, Rating, Container, Button } from 'semantic-ui-react';
 import { SubHeaderTwo } from '../styles/AppStyles';
 
 class ReviewForm extends React.Component {
     state = { title: "", body: "", rating: 0,  };
-    // can we get the user name from the user_id??
 
     handleSubmit = (e) => {
         e.preventDefault();
         const review = {...this.state};
         axios.post('/api/reviews', review)
             .then(res => this.props.history.push('/reviews'))
-    };//end of handleSubmit
+    };
 
     handleChange = ({ target: { name, value } }) => {
         this.setState({ [name]: value });
-    };//end of handleChange
+    };
 
     handleRating = (e, { rating }) => {
         this.setState({ rating });
-    };//end of handleRating
+    };
 
     render() {
         const { title, body, rating } = this.state;

@@ -48,8 +48,8 @@ export const Title = styled.h1`
   font-size: 5.75em;
   text-align: center;
   color: white;
+  margin-top: -600px;
   font-family: 'Playfair Display', serif !important;
-  padding-top: 200px;
   padding-bottom: 20px;
 `;
 

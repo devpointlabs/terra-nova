@@ -5,6 +5,7 @@ import { withNamespaces } from 'react-i18next';
 import { getRooms } from "../reducers/rooms";
 import { connect } from "react-redux";
 import RenderAvailable from "./RenderAvailable";
+import { Container } from 'semantic-ui-react';
 
 class Reservation extends React.Component {
   componentDidMount() {
@@ -19,7 +20,6 @@ class Reservation extends React.Component {
         <Container>
           <ResForm />
           <RenderAvailable history={this.props.history} />
-
         </Container>
       </div>
     );

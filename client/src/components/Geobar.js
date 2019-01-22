@@ -28,7 +28,7 @@ class Geobar extends React.Component {
   }
 
   render() {
-    const { auth: { user, }, t } = this.props;
+    const { t } = this.props;
     return (
       <div style={styles.background}>
 
@@ -56,9 +56,9 @@ class Geobar extends React.Component {
                 style={{
                   width: '15px'
                 }}
-                />
+              />
               {t("Salt Lake City, UT")}
-                          </Menu.Item>
+            </Menu.Item>
 
             <Menu.Item style={styles.font}>
               <FontAwesomeIcon
@@ -67,7 +67,7 @@ class Geobar extends React.Component {
                   width: '20px'
                 }} />
               1-TER-RAN-OVVA
-                            </Menu.Item >
+            </Menu.Item >
             <Menu.Item style={styles.font} position='right'>
               <Dropdown item style={styles.font} text='$ (USD)'>
                 <Dropdown.Menu>
@@ -79,7 +79,7 @@ class Geobar extends React.Component {
               <Dropdown item style={styles.font} text={t("Language")}>
                 <Dropdown.Menu>
                   <Dropdown.Item style={styles.font} onClick={() => this.toggleLanguage()}>
-                  {this.state.toggled ? 'English' : '中文'}
+                    {this.state.toggled ? 'English' : '中文'}
                   </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>

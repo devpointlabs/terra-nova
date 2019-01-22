@@ -1,29 +1,13 @@
 import React from 'react'
 import { AuthConsumer, } from "../providers/AuthProvider";
-import { Menu, Container, Image,} from 'semantic-ui-react';
+import { Menu, Container, Image, Dropdown, } from 'semantic-ui-react';
 import { Link, withRouter, } from 'react-router-dom';
 // import ReactWeather from 'react-open-weather';
 import Terra_Nova_Cabins_Logo from '../assets/images/Terra_Nova_Cabins_Logo.png';
 import { withNamespaces } from 'react-i18next';
 
 class Navbar extends React.Component {
-  // state = { user: null, };
-
-  // admin = () => {
-  //   const { auth: { user, handleLogout, }, location, t } = this.props;
-  //   if (user.admin) {
-  //     return (
-  //       <Dropdown item href="/events" style={styles.font} text='NEW EVENTd'>
-  //         <Dropdown.Menu>
-  //           <Link to='/register'>
-  //             <Dropdown.Item style={styles.font} text='NEW ADMIN' active={location.pathname === '/register'}>
-  //             </Dropdown.Item></Link>
-  //           </Dropdown.Item>
-  //         </Dropdown.Menu>
-  //       </Dropdown>
-  //     )
-  //   }
-  // }
+  state = { user: null, };
 
   renderIcon = () => {
     return (
@@ -66,8 +50,6 @@ class Navbar extends React.Component {
     )
   }
 
-
-
   render() {
     const { auth: { user, handleLogout, }, location, t } = this.props;
 
@@ -95,7 +77,7 @@ class Navbar extends React.Component {
             </Link>
             <Link to='/reservations'>
               <Menu.Item
-                style={styles.fontSize}
+                style={styles.font}
                 name={t("RESERVATIONS")}
                 id='reservations'
                 active={this.props.location.pathname === '/reservations'}
@@ -103,7 +85,7 @@ class Navbar extends React.Component {
             </Link>
             <Link to='/gallery'>
               <Menu.Item
-                style={styles.fontSize}
+                style={styles.font}
                 name={t("GALLERY")}
                 id='gallery'
                 active={this.props.location.pathname === '/gallery'}
@@ -111,7 +93,7 @@ class Navbar extends React.Component {
             </Link>
             <Link to='/about_us'>
               <Menu.Item
-                style={styles.fontSize}
+                style={styles.font}
                 name={t("ABOUT")}
                 id='about'
                 active={this.props.location.pathname === '/about_us'}
@@ -119,7 +101,7 @@ class Navbar extends React.Component {
             </Link>
             <Link to='/contact'>
               <Menu.Item
-                style={styles.fontSize}
+                style={styles.font}
                 name={t("CONTACT")}
                 id='contact'
                 active={this.props.location.pathname === '/contact'}

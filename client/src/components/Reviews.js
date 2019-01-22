@@ -1,9 +1,9 @@
 import React from 'react';
 import { withNamespaces } from 'react-i18next';
 import axios from 'axios';
-import { NavLink, Link, } from 'react-router-dom';
+import { NavLink,} from 'react-router-dom';
 import { Container, Rating, Divider, Card, Button } from 'semantic-ui-react';
-import { SubHeaderTwo, BlackButton } from '../styles/AppStyles';
+import { SubHeaderTwo, } from '../styles/AppStyles';
 
 class Reviews extends React.Component {
     state = { reviews: [] };
@@ -59,6 +59,7 @@ class Reviews extends React.Component {
     }
 
     render() {
+        const { t } = this.props
         return (
             <div>
                 <Container>
@@ -77,7 +78,7 @@ class Reviews extends React.Component {
     }
 };
 
-export default Reviews;
+export default withNamespaces()(Reviews);
 
 
 const styles = {
@@ -95,9 +96,7 @@ const styles = {
         fontSize: "16px",
         textAlign: "center",
         fontFamily: "'Poppins', sans-serif",
-}
-export default withNamespaces()(Reviews);
-
+    },
     button: {
         backgroundColor: '#555555',
         border: '2px solid #f8f8ff',

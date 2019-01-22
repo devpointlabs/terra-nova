@@ -11,7 +11,7 @@ import { withNamespaces } from 'react-i18next';
 
 class Home extends React.Component {
   render() {
-    // const { t } = this.props;
+    const { t } = this.props;
     return (
       <>
       <Carousel/>
@@ -21,7 +21,7 @@ class Home extends React.Component {
         <Title3> {t("OPENING SPRING 2019")}</Title3>
         <Rooms />
         <AboutUs />
-        <Review />
+        <Reviews />
         <Events />
         <News />
         <Gallery />
