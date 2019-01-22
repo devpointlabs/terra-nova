@@ -134,9 +134,8 @@ class ResForm extends React.Component {
                 onChange={this.handleChildren}
               />
             </div>
-            <Button color="brown">Check Availability</Button>
+            <Button onClick={this.handleSubmit} color="brown">{t("Check Availability")}</Button>
           </Form>
-          <Button color="brown">{t("Check Availability")}</Button>
 
           {/* onClick api call to return available rooms that meet reservation requestes */}
         </Segment>
