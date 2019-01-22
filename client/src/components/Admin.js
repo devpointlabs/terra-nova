@@ -2,8 +2,10 @@ import React from 'react';
 import { AuthConsumer, } from "../providers/AuthProvider";
 import { Button, Form, Segment, } from 'semantic-ui-react';
 import { SubHeader, NavText } from '../styles/AppStyles';
+import { withNamespaces } from 'react-i18next';
 
-class Login extends React.Component {
+
+class Admin extends React.Component {
   state = { email: '', password: '' }
   
   handleSubmit = (e) => {
@@ -19,33 +21,35 @@ class Login extends React.Component {
 
   render() {
     const { email, password, } = this.state;
+    const { t } = this.props;
+
   
     return (
       <Segment basic>
-        <SubHeader>Login</SubHeader>
+        <SubHeader>{t("Admin")}</SubHeader>
         <NavText>
 
         <Form onSubmit={this.handleSubmit}>
           <Form.Input
-            label="Email"
+            label={t("Email")}
             autoFocus
             required         
             name='email'
             value={email}
-            placeholder='Email'
+            placeholder={t("Email")}
             onChange={this.handleChange}
             />
           <Form.Input
-            label="Password"
+            label={t("Password")}
             required
             name='password'
             value={password}
-            placeholder='Password'
+            placeholder={t("Password")}
             type='password'
             onChange={this.handleChange}
             />
           <Segment textAlign='center' basic>
-            <Button primary type='submit'>Submit</Button>
+            <Button primary type='submit'>{t("Submit")}</Button>
           </Segment>
         </Form>
             </NavText>
@@ -54,12 +58,15 @@ class Login extends React.Component {
   }
 }
 
-export default class ConnectedLogin extends React.Component {
+
+class ConnectedAdmin extends React.Component {
   render() {
     return (
       <AuthConsumer>
-        { auth => <Login {...this.props} auth={auth} />}
+        { auth => <Admin {...this.props} auth={auth} />}
       </AuthConsumer>
     )
   }
 }
+
+export default withNamespaces()(ConnectedAdmin);

@@ -10,6 +10,8 @@ import IMGthree from '../assets/images/GalleryImages/HotelandGrounds/IMGthree.jp
 import IMGtwo from '../assets/images/GalleryImages/HotelandGrounds/IMGtwo.jpg';
 import IMGseven from '../assets/images/GalleryImages/HotelandGrounds/IMGseven.jpg';
 import IMGsix from '../assets/images/GalleryImages/HotelandGrounds/IMGsix.jpg';
+import { withNamespaces } from 'react-i18next';
+
 
 class Gallery extends React.Component {
   state = { cards: [], };
@@ -35,6 +37,8 @@ class Gallery extends React.Component {
   };
 
   render() {
+    const { t } = this.props;
+
     return (
       <div style={styles.background} >
         <Container>
@@ -111,7 +115,7 @@ class Gallery extends React.Component {
   }
 }
 
-export default Gallery;
+export default withNamespaces()(Gallery);
 
 
 const styles = {

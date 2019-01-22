@@ -4,7 +4,7 @@ import Reservations from "./components/Reservations";
 import AboutUs from "./components/AboutUs";
 import Contact from "./components/Contact";
 import Gallery from "./components/Gallery";
-import Login from "./components/Login";
+import Admin from "./components/Admin";
 import Register from "./components/Register";
 import Navbar from "./components/Navbar";
 import Geobar from "./components/Geobar";
@@ -12,6 +12,7 @@ import NoMatch from "./components/NoMatch";
 import FetchUser from "./components/FetchUser";
 import { Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer";
+import Room from './components/Room';
 import "./App.css";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ReviewForm from "./components/ReviewForm";
@@ -32,8 +33,10 @@ const App = () => (
       <div style={styles.body}>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/admin" component={Login} />
-          <Route exact path="/register" component={Register} />
+          <ProtectedRoute exact path="admin/home" component={Home} />
+          <Route exact path="/admin" component={Admin} />
+          <ProtectedRoute exact path="/register" component={Register} />
+          <Route exact path="/rooms" component={Rooms} />
           <Route exact path="/about_us" component={AboutUs} />
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/gallery" component={Gallery} />

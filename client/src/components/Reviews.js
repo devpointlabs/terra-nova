@@ -1,4 +1,5 @@
 import React from 'react';
+import { withNamespaces } from 'react-i18next';
 import axios from 'axios';
 import { NavLink, Link, } from 'react-router-dom';
 import { Container, Rating, Divider, Card, Button } from 'semantic-ui-react';
@@ -25,9 +26,10 @@ class Reviews extends React.Component {
 
     renderReviews = () => {
         const { reviews } = this.state;
+        const { t } = this.props;
+
         return (
             reviews.map(r => (
-
                 <Card centered style={styles.MainText}>
                     <Card.Content>
                         <div style={styles.cardTop}>
@@ -63,7 +65,7 @@ class Reviews extends React.Component {
                     <div style={styles.top}>
                         <SubHeaderTwo style={styles.hr}>Our Reviews</SubHeaderTwo>
                         <NavLink to='/reviewform'>
-                            <Button style={styles.buttonTwo}>Write a Review</Button>
+                            <Button style={styles.buttonTwo}>{t("Write a Review")}</Button>
                         </NavLink>
                     </div>
                     <Card.Group>
@@ -93,7 +95,9 @@ const styles = {
         fontSize: "16px",
         textAlign: "center",
         fontFamily: "'Poppins', sans-serif",
-    },
+}
+export default withNamespaces()(Reviews);
+
     button: {
         backgroundColor: '#555555',
         border: '2px solid #f8f8ff',
