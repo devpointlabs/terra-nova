@@ -1,13 +1,16 @@
 import React from "react";
 import { Card, Image, Container, } from 'semantic-ui-react';
 import axios from 'axios';
-import { SubHeader, RoomBody, GoldButton, AmenitiesButton } from '../styles/AppStyles';
+import { SubHeader, RoomBody, GoldButton, GalleryIconLine } from '../styles/AppStyles';
 import { Link, withRouter } from 'react-router-dom';
+import Room from "./Room";
+import { withNamespaces } from "react-i18next";
+import FLEUR_ICON from '../assets/icons/miscellaneous_icons/FLEUR_ICON.png';
 
-// import RoomCard from './Room';
+
 
 class Rooms extends React.Component {
-  state = { rooms: [], showDesc: false };
+  state = { rooms: [], };
 
   //componentDidMount to call and set state to it
 
@@ -18,63 +21,62 @@ class Rooms extends React.Component {
       })
   };
 
-  toggleDescription = () => {
-    this.setState({ showDesc: !this.state.showDesc })
-  }
+  renderCard = () => {
+    // const { t } = this.props;
+    return  this.state.rooms.map(room => {
 
-  // we need these in the database to pull in??
-  // help me Alex
-  showAmenities = (r) => {
-    return (
-      <Card.Description>
-        <ul>
-          <li>{r.max_occupancy}</li>
-        </ul>
-      </Card.Description>
-    )
-  };
+        if (room.id === 1 || room.id === 6 || room.id === 11) {
+          return (
+              <div>
+                <Card raised style={{ margin: '30px',}} >
+                  <Image size="large" src={room.image} alt="room"/>
+                  <Card.Content>
+                    <Card.Header style={roomHeader}>
+                      {room.room_type}
+                    </Card.Header>
+                    <Card.Description textAlign="center"> {room.description}
+                    </Card.Description>
+                  </Card.Content>
+                  <Card.Content extra style={cardFooter}>Starting at ${room.cost} / Per Night</Card.Content>
+                  <Card.Meta textAlign="center">
+                    <Room max={room.max_occupancy} bed={room.bed_type} size={room.size} view={room.view} />
+                  </Card.Meta>
+                  <Card.Meta textAlign="center">
+                    <Link to="/reservations"
+                      active={this.props.location.pathname === "/reservations"}
+                    >
+                      <GoldButton style={{ marginBottom: "10px" }}> Book Now
+                    </GoldButton>
+                    </Link>
+                  </Card.Meta>
+                </Card>
+              </div>
+            )
+          } else {
+            return null
+          }
+        })
+      
+  } //ends renderCard
 
   render() {
-    const { rooms, showDesc } = this.state;
-
     return (
       <div style={styles.background}>
         <SubHeader> Our Rooms </SubHeader>
-
+        <div style={styles.line}>
+            <GalleryIconLine />
+          <Image centered 
+          style={styles.icon} 
+          src={FLEUR_ICON}
+          />
+            <GalleryIconLine />
+          </div>
         <RoomBody> When you host a party or family reunion, the special celebrations let <br />
           you strengthen bonds with each other </RoomBody>
 
         <Container>
           <Card.Group centered itemsPerRow={3} >
-            {rooms.map(room => {
-              if (room.id === 1 || room.id === 6 || room.id === 11) {
-                return (
-                  <Card>
-                    <Image src="https://picsum.photos/300?random" alt="" />
-                    <Card.Content>
-                      <Card.Header style={roomHeader}>
-                        {room.room_type}
-                      </Card.Header>
-                    </Card.Content>
-                    <Card.Content extra style={cardFooter}>Starting at ${room.cost} / Per Night</Card.Content>
-                    <Card.Meta textAlign="center">
-                      <AmenitiesButton onClick={() => this.toggleDescription()}> Amenities </AmenitiesButton>
-                      <hr /> 
-                        { showDesc ? this.showAmenities(room) :null}
-                      <Link to="/room"
-                        active={this.props.location.pathname === "/room"}
-                      >
-                        <GoldButton style={{ marginBottom: "10px" }}> Book Now
-                    </GoldButton>
-                      </Link>
-                    </Card.Meta>
-                  </Card>
-
-                )
-              }
-            }
-
-            )}
+            {this.renderCard()}
           </Card.Group>
         </Container>
       </div>
@@ -85,10 +87,26 @@ class Rooms extends React.Component {
 const styles = {
   background: {
     backgroundColor: "#F5F5F5",
-    paddingBottom: "50px",
-
+    paddingBottom: "100px",
+  },
+  line:   {
+    display: 'flex',
+    flexDirection: 'row',
+    // justifyContent: 'space-around',
+    // alignItems: 'center',
+    marginBottom: '-40px',
+    marginRight: '640px',
+    marginLeft: '640px',
+    },
+    icon: {
+      padding: '7px',
+      // display: 'flex',
+      // flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginBottom: '30px'
+    }
   }
-}
 
 const roomHeader = {
   fontFamily: "'Poppins', sans-serif",
@@ -96,24 +114,23 @@ const roomHeader = {
   paddingTop: '20px',
   textTransform: 'uppercase',
   textAlign: "center",
+
 }
-
-
-// const headerLine = {
-//   borderTop: '.5px solid black',
-//   width: '20%',
-//   float: 'center',
-//   borderColor: '#826614',
-// }
 
 const cardFooter = {
   fontFamily: "'Poppins', sans-serif",
   fontSize: '18px',
   color: '#826614',
   textAlign: "center",
+  paddingLeft: '10px',
+  paddingRight: '10px',
 
 }
 
 
 
-export default withRouter(Rooms);
+
+
+
+
+export default withNamespaces()(withRouter(Rooms));

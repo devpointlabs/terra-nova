@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Container, Image, Menu, Item, Grid,} from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { SubHeader, GalleryIconLine, GalleryGoldButton, GalleryWhiteButton} from '../styles/AppStyles';
 import FLEUR_ICON from '../assets/icons/miscellaneous_icons/FLEUR_ICON.png';
 import IMGone from '../assets/images/GalleryImages/HotelandGrounds/IMGone.jpg';
