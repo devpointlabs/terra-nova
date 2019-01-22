@@ -172,15 +172,3 @@ export const GalleryGoldButton = styled.button`
   font-size: 16px;
   font-family: 'Poppins', sans-serif;
 `;
-// export const Card1 = styled.div`
-//   height: 100px;
-//   width: 300px;
-//   border: 1px solid blue;
-//   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)
-//   transition: 0.3s;
-//   .card:hover {
-//     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-//   }
-
-// `
-

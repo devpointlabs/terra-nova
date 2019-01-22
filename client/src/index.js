@@ -11,8 +11,6 @@ import { Provider } from "react-redux";
 import store from "./store";
 import './i18n';
 import * as serviceWorker from './serviceWorker';
-// import { initMiddleware, } from "devise-axios";
-// initMiddleware();
 
 ReactDOM.render(
   <Provider store={store}>
