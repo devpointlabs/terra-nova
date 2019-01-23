@@ -26,7 +26,7 @@ class Reviews extends React.Component {
 
     renderReviews = () => {
         const { reviews } = this.state;
-        // const { t } = this.props;
+        const { t } = this.props;
 
         return (
             reviews.map(r => (
@@ -35,13 +35,13 @@ class Reviews extends React.Component {
                         centered
                         style={styles.mainText}
                         raised
-                        >
+                    >
                         <div style={styles.cardTop}>
                             <Header>
-                        <Icon 
-                        name='user circle' 
-                        size='mini' 
-                        />
+                                <Icon
+                                    name='user circle'
+                                    size='mini'
+                                />
                                 {r.name}
                             </Header>
                             <div textAlign='right' style={styles.stars}>
@@ -50,19 +50,19 @@ class Reviews extends React.Component {
                             </div>
                         </div>
                         <p style={styles.location}>
-                            From {r.location}
+                            {t("From")} {r.location}
                         </p>
                         <Header as='h3' style={styles.title}>
-                            {r.title}
+                            {t(r.title)}
                         </Header>
                         <div style={styles.description}>
-                            "{r.body}"
+                            "{t(r.body)}"
                         </div>
                         <br />
                         <Button
                             style={styles.deleteButton}
                             onClick={(() => this.deleteReview(r.id))}>
-                            Delete Review
+                            {t("Delete Review")}
                         </Button>
                     </Segment>
                     <br />
@@ -77,7 +77,7 @@ class Reviews extends React.Component {
             <div>
                 <Container>
                     <div style={styles.top}>
-                        <SubHeaderTwo style={styles.hr}>Our Reviews</SubHeaderTwo>
+                        <SubHeaderTwo style={styles.hr}>{t("Our Reviews")}</SubHeaderTwo>
                         <NavLink to='/reviewform'>
                             <Button style={styles.buttonTwo}>{t("Write a Review")}</Button>
                         </NavLink>
@@ -106,7 +106,7 @@ const styles = {
     },
     mainText: {
         color: "black",
-        fontSize: "16px",
+        fontSize: "14px",
         // textAlign: "center",
         fontFamily: "'Poppins', sans-serif",
     },

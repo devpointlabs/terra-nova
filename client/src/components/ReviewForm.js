@@ -36,15 +36,15 @@ class ReviewForm extends React.Component {
 
                     <SubHeaderTwo style={styles.header}>{t("Leave a Review")}</SubHeaderTwo>
                     <NavLink to="/reviews">
-                        <Button style={styles.button}>Back to Reviews</Button>
+                        <Button style={styles.button}>{t("Back to Reviews")}</Button>
                     </NavLink>
                     </div>
                     <Form.Group style={styles.topForm}>
 
                     <Form.Input
                         name="name"
-                        label="Name"
-                        placeholder="Name"
+                        label={t("Name")}
+                        placeholder={t("Name")}
                         autofocus
                         required
                         value={name}
@@ -53,8 +53,8 @@ class ReviewForm extends React.Component {
                         /> 
                     <Form.Input
                         name="location"
-                        label="Location"
-                        placeholder="City & State"
+                        label={t("Location")}
+                        placeholder={t("City & State")}
                         required
                         value={location}
                         width='4'

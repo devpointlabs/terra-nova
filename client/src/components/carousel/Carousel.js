@@ -13,13 +13,14 @@ import { Title, Title3, WhiteLine } from '../../styles/AppStyles';
 
 
 const MainCarousel = ({ t }) => (
-  <div  >
+  <div>
     <Carousel
       slide={true}
       indicators={false}
       interval={3000}
       controls={false}
     >
+
       <Carousel.Item>
         <img
           width={1400}
@@ -27,14 +28,14 @@ const MainCarousel = ({ t }) => (
           alt="1400x400"
           src={LPI1}
           style={styles.image}
-        />
+          />
         <Carousel.Caption>
           <Title style={styles.title}> {t("Welcome to Terra Nova Cabins")}</Title>
           <div style={styles.subtitle}>
             <div style={styles.topLine}>
               <WhiteLine />
               <Title3>
-                HOTELS & RESORTS
+                {t("HOTELS & RESORTS")}
               </Title3>
               <WhiteLine />
             </div>
@@ -56,7 +57,7 @@ const MainCarousel = ({ t }) => (
             <div style={styles.topLine}>
               <WhiteLine />
               <Title3>
-                HOTELS & RESORTS
+              {t("HOTELS & RESORTS")}
               </Title3>
               <WhiteLine />
             </div>
@@ -78,7 +79,7 @@ const MainCarousel = ({ t }) => (
             <div style={styles.topLine}>
               <WhiteLine />
               <Title3>
-                HOTELS & RESORTS
+              {t("HOTELS & RESORTS")}
               </Title3>
               <WhiteLine />
             </div>
@@ -114,10 +115,11 @@ const styles = {
     justifyContent: 'center',
   },
   image: {
-    height: '600px'
+    height: '600px',
+    width: '100%'
   },
   title: {
-    height: '100px',
+    height: '100%',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
@@ -128,7 +130,9 @@ const styles = {
     marginRight: '-200px',
   },
   subtitle: {
-    height: '275px',
-
+    height: '250px',
+  },
+  caption: {
+    height: '550px',
   }
 }
