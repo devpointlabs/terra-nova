@@ -10,12 +10,11 @@ import {
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Calendar from "react-calendar";
-import { withNamespaces } from 'react-i18next';
+import { withNamespaces } from "react-i18next";
 import { connect } from "react-redux";
 import { setReservation } from "../reducers/reservation";
 import { setReserved } from "../reducers/reserved";
 import axios from "axios";
-
 
 class ResForm extends React.Component {
   state = {
@@ -24,7 +23,7 @@ class ResForm extends React.Component {
       end_date: new Date(),
       room: "",
       adults: 1,
-      children: null
+      children: 0
     }
   };
 
@@ -136,7 +135,9 @@ class ResForm extends React.Component {
                 onChange={this.handleChildren}
               />
             </div>
-            <Button onClick={this.handleSubmit} color="brown">{t("Check Availability")}</Button>
+            <Button onClick={this.handleSubmit} color="brown">
+              {t("Check Availability")}
+            </Button>
           </Form>
 
           {/* onClick api call to return available rooms that meet reservation requestes */}
@@ -153,7 +154,6 @@ class ResForm extends React.Component {
 }
 
 export default withNamespaces()(connect()(ResForm));
-
 
 const dropDown = [
   { key: 1, text: "0", value: 0 },

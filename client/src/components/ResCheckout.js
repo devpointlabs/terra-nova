@@ -36,7 +36,10 @@ class ResCheckout extends React.Component {
       <Container>
         <SubHeader>Reservation Checkout</SubHeader>
         <hr />
-        <ResCheckoutForm />
+        <ResCheckoutForm
+          userSpecs={this.props.history.location.state.userSpecs}
+          room={this.props.history.location.state.room}
+        />
         <hr />
         {this.renderRoomDetails()}
       </Container>

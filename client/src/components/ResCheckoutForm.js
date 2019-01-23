@@ -1,20 +1,41 @@
 import React from "react";
 import { Form, Button } from "semantic-ui-react";
+import axios from "axios";
 
 class ResCheckoutForm extends React.Component {
-  state = { first_name: "", last_name: "", phone_number: "" };
+  state = {
+    reservation: {
+      first_name: "",
+      last_name: "",
+      phone: "",
+      email: "",
+      adults: this.props.userSpecs.adults,
+      children: this.props.userSpecs.children,
+      start_date: this.props.userSpecs.start_date,
+      end_date: this.props.userSpecs.end_date
+    }
+  };
 
   handleChange = ({ target: { name, value } }) => {
-    this.setState({ [name]: value });
+    this.setState({
+      reservation: { ...this.state.reservation, [name]: value }
+    });
   };
 
   handleSubmit = () => {
+    const { id } = this.props.room;
+    let roomId = parseInt(id);
     const confirm = window.confirm("Are you sure you want to checkout?");
-    if (confirm) alert("Booked!");
+    if (confirm)
+      axios
+        .post(`/api/rooms/${roomId}/reservations`, this.state.reservation)
+        .then(window.confirm("Booked"));
   };
 
   render() {
-    const { first_name, last_name, phone_number } = this.state;
+    const {
+      reservation: { first_name, last_name, phone, email }
+    } = this.state;
     return (
       <Form onSubmit={this.handleSubmit} style={styles.flex}>
         <Form.Group>
@@ -35,12 +56,20 @@ class ResCheckoutForm extends React.Component {
             required
           />
           <Form.Input
-            name="phone_number"
+            name="phone"
             placeholder="Phone #"
-            value={phone_number}
+            value={phone}
             onChange={this.handleChange}
             required
             label="Phone"
+          />
+          <Form.Input
+            name="email"
+            placeholder="email"
+            value={email}
+            onChange={this.handleChange}
+            required
+            label="email"
           />
         </Form.Group>
         <Button color="brown">Checkout Room</Button>

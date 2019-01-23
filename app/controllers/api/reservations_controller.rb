@@ -1,5 +1,6 @@
 class Api::ReservationsController < ApplicationController
   before_action :set_reservation, only: [:update, :destroy]
+  before_action :set_room, only: :create
 
   def index
     render json: current_user.reservations.all
@@ -14,11 +15,11 @@ class Api::ReservationsController < ApplicationController
   end
 
   def create
-    reservation = current_user.reservations.new(reservation_params)
+    reservation = @room.reservations.new(reservation_params)
     if reservation.save
       render json: reservation
     else
-      render json: reservation.error
+      render json: reservation.errors
     end
   end
 
@@ -39,7 +40,11 @@ class Api::ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
   end
 
+  def set_room
+    @room = Room.find(params[:room_id])
+  end
+
   def reservation_params
-      params.require(:reservation).permit(:start_date, :end_date, :room_id, :adults, :children)
+      params.require(:reservation).permit(:start_date, :end_date, :adults, :children, :first_name, :last_name, :phone, :email)
   end
 end
