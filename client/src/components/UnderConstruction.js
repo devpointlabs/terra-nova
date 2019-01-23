@@ -19,23 +19,32 @@ export default UnderConstruction;
 
 const styles = {
   title: {
+    paddingTop: "15px",
     fontSize: "6em",
     color: "white",
     fontFamily: "'Playfair Display', serif !important",
     fontWeight: "300",
-    textShadow: "0.5px 0.5px #000000"
+    textShadow: "0.5px 0.5px #000000",
+    textAlign: "center"
   },
   title2: {
-    fontSize: "2em",
+    paddingTop: "150px",
+    fontSize: "2.5em",
     // color: "white",
     fontFamily: "'Playfair Display', serif !important",
     fontWeight: "300",
+    textAlign: "center"
   },
   body: {
+    paddingTop: "15px",
     fontSize: "1.5em",
     // color: "white",
     fontFamily: "'Playfair Display', serif !important",
     fontWeight: "300",
     // textShadow: "0.5px 0.5px #000000",
+    textAlign: "center",
+  },
+  background: {
+
   }
 }
