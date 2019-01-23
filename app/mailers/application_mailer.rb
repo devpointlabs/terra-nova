@@ -11,4 +11,5 @@ class ApplicationMailer < ActionMailer::Base
   def reservation_email(user)
     @user = user
     mail(to: @user.email, subject: 'Your Reservation with Terra Nova Cabins')
+  end
 end
