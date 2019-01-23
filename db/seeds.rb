@@ -42,6 +42,32 @@ end
     bed_type: "King or Queen and two Twin Beds",
     )
 end   
+
+Review.create(
+  name: 'Tyler Cook',
+  location: 'New York City, NY',
+  title: "Best stay I've had in YellowStone.",
+  rating: 5,
+  body: "I was hesitant at first to stay in a cabin for our trip, rather than a hotel. I am so glad I didn't choose a regualr ol' hotel. 
+  The rooms are so relaxing, the views are beatiful and the neighbors and staff are wonderful. Will stay here again."
+)
+Review.create(
+  name: 'Brittany Jones',
+  location: 'Birmingham, AL',
+  title: "Want to stay cozy in the mountains?",
+  rating: 5,
+  body: "Then this is where you should stay. Want to feel like you're in the wilderness without feeling lost? 
+  Then this IS the place! Thank you to Terra Nova cabins for our amazing getaway this year."
+)
+Review.create(
+  name: 'Meghan Higgins',
+  location: 'Greenwhich, CT',
+  title: "Honeymoon well spent.",
+  rating: 5,
+  body: "After looking for a few weeks on where we wanted to go for our honeymoon, we were overwhelmed. Too many places, too much money, to many things to do,
+    and after awhile, we stopped enjoying the process. Until we found Terra Nova. It was perfect for us in their One Bedroom, and with their amentities and so many
+    beautiful hikes and lakes nearby, we thouroughly enjoyed our stay here. 10/10"
+)
     
-puts 'seeded email: terra@nova.com pw: password, 15 rooms created'
+puts 'seeded admin: terra@nova.com pw: password, 15 rooms created, 3 reviews made'
       

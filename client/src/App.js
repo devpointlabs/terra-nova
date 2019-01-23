@@ -21,12 +21,15 @@ import Rooms from "./components/Rooms";
 import News from "./components/News";
 import Reviews from "./components/Reviews";
 import ResCheckout from "./components/ResCheckout";
+import ScrollToTop from './components/ScrollToTop';
 
 const App = () => (
   <Fragment>
     <FetchUser>
       <Geobar />
       <Navbar />
+      <ScrollToTop>
+
       <div style={styles.body}>
         <Switch>
           <Route exact path="/" component={Home} />
@@ -49,6 +52,7 @@ const App = () => (
           <Route component={NoMatch} />
         </Switch>
       </div>
+      </ScrollToTop>
       <Footer style={styles.footer} />
     </FetchUser>
   </Fragment>
