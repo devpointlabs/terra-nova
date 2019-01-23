@@ -18,7 +18,7 @@ class Rooms extends React.Component {
   };
 
   renderCard = () => {
-    // const { t } = this.props;
+    const { t } = this.props;
     return this.state.rooms.map(room => {
 
       if (room.id === 1 || room.id === 6 || room.id === 11) {
@@ -28,12 +28,12 @@ class Rooms extends React.Component {
               <Image size="large" src={room.image} alt="room" />
               <Card.Content>
                 <Card.Header style={roomHeader}>
-                  {room.room_type}
+                  {t(room.room_type)}
                 </Card.Header>
-                <Card.Description textAlign="center"> {room.description}
+                <Card.Description textAlign="center"> {t(room.description)}
                 </Card.Description>
               </Card.Content>
-              <Card.Content extra style={cardFooter}>Starting at ${room.cost} / Per Night</Card.Content>
+              <Card.Content extra style={cardFooter}>{t("Starting at")} ${room.cost} {t("/ Per Night")}</Card.Content>
               <Card.Meta textAlign="center">
                 <Room max={room.max_occupancy} bed={room.bed_type} size={room.size} view={room.view} />
               </Card.Meta>
@@ -41,7 +41,7 @@ class Rooms extends React.Component {
                 <Link to="/reservations"
                   active={this.props.location.pathname === "/reservations"}
                 >
-                  <GoldButton style={{ marginBottom: "10px" }}> Book Now
+                  <GoldButton style={{ marginBottom: "10px" }}> {t("Book Now")}
                     </GoldButton>
                 </Link>
               </Card.Meta>
@@ -55,9 +55,10 @@ class Rooms extends React.Component {
   }
 
   render() {
+    const { t } = this.props;
     return (
       <div style={styles.background}>
-        <SubHeader> Our Rooms </SubHeader>
+        <SubHeader> {t("Our Rooms")} </SubHeader>
         <div style={styles.line}>
           <GalleryIconLine />
           <Image centered
@@ -66,8 +67,8 @@ class Rooms extends React.Component {
           />
           <GalleryIconLine />
         </div>
-        <RoomBody> When you host a party or family reunion, the special celebrations let <br />
-          you strengthen bonds with each other </RoomBody>
+        <RoomBody> {t("When you host a party or family reunion, the special celebrations let")} <br />
+          {t("you strengthen bonds with each other")} </RoomBody>
 
         <Container>
           <Card.Group centered itemsPerRow={3} >

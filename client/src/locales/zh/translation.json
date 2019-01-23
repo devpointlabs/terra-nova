@@ -187,9 +187,9 @@
 
     "Family Room": "家庭间",
 
-    "Single Room": "单人房",
+    "SINGLE ROOM": "单人房",
 
-    "Double Room": "双人间,",
+    "DOUBLE ROOM": "双人间",
 
     "Starting at": "开始于",
 
@@ -204,10 +204,54 @@
     "/ Per Night": "/ 每晚",
 
 
-    "View Details": "查看详情"
+    "View Details": "查看详情",
 
+    "Room Details": "房间详情",
 
+    "Accommodates": "容纳",
 
+    "People": "人",
 
+    "Size": "尺寸",
+
+    "View": "视图",
+
+    "Bed": "床",
+
+    "Book Now": "现在预订",
+
+    "600 Square Feet": "600 平方英尺",
+
+    "300 Square Feet": "300 平方英尺",
+
+    "Lake View": "湖景",
+
+    "Forest View": "森林景观",
+
+    "Park View": "森林景观",
+
+    "King or Queen and two Twin Beds": "特大号床或大号床和两张单人床",
+
+    "King or Queen": "国王或王后",
+
+    "Sign Up": "注册",
+
+    "Located in the heart of Aspen with a unique blend of contemporary luxury and historic heritage, deluxe accomodations supurb amenities, genuine hospitality and dedicated service for an elevated experience in the beautiful Rocky Mountains.":"酒店位于阿斯彭（Aspen）的中心地带，融合了现代奢华和历史遗产，提供豪华的住宿设施，真诚的款待和热情的服务，让您在美丽的落基山脉享受更高的体验。",
+
+    "Units built in modules of four or six. Each cabin is spacious and modernly furnished two queen beds with private bathrooms equipped with shower or tub/shower, toilet and sink. Typically includes two beds. Televisions, radios, and air conditioning are not available in park lodging.":"单元内置四个或六个模块。每间小屋均宽敞且布置现代，配有两张大号床，私人浴室配有淋浴或浴缸/淋浴，卫生间和水槽。通常包括两张床。公园住宿不提供电视，收音机和空调。",
+
+    "Historic, simple and plain multi-plex units built in the 1920’s. Furnished with one or two double beds, bathrooms include shower, toilet and sink. Coffee makers are not included in the cabins. Televisions, radios, and air conditioning are not available in park lodging.":"历史悠久，简约而朴素的多重单元建于1920年代。配有一张或两张双人床，浴室配有淋浴，卫生间和水槽。小木屋不包括咖啡机。公园住宿不提供电视，收音机和空调。",
+
+    "When you host a party or family reunion, the special celebrations let":"当您举办派对或家庭聚会时，特别庆祝会举行",
+
+    "you strengthen bonds with each other":"你加强了彼此的联系",
+
+    "Terra Nova Cabins represents the best in western hospitality and comfort, wrapped in contemporary":"Terra Nova Cabins 代表着西方最好的热情好客和舒适，融入当代风格",
+
+    "expression that will inspire your own unique adventures.":"表达将激发您自己独特的冒险经历。",
+    
+    "Both a haven from the world and a basecamp for adventure, Terra Nova Cabins will be your new southwestern":"无论是来自世界的避风港还是冒险的大本营，Terra Nova Cabins 都将是您的新西南",
+
+    "Montana destination rental.":"无论是来自世界的避风港还是冒险的大本营，Terra Nova Cabins 都将是您的新西南"
 }
 
