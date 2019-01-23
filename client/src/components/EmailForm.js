@@ -12,7 +12,6 @@ import {
 import Terra_Nova_Cabins_Logo from "../assets/images/Terra_Nova_Cabins_Logo.png";
 import { withNamespaces } from "react-i18next";
 import axios from "axios";
-import { withNamespaces } from "react-i18next";
 
 // create links for social
 class EmailForm extends React.Component {
