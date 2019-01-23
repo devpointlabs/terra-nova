@@ -10,12 +10,11 @@ import {
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Calendar from "react-calendar";
-import { withNamespaces } from 'react-i18next';
+import { withNamespaces } from "react-i18next";
 import { connect } from "react-redux";
 import { setReservation } from "../reducers/reservation";
 import { setReserved } from "../reducers/reserved";
 import axios from "axios";
-
 
 class ResForm extends React.Component {
   state = {
@@ -23,8 +22,8 @@ class ResForm extends React.Component {
       start_date: new Date(),
       end_date: new Date(),
       room: "",
-      adults: null,
-      children: null
+      adults: 1,
+      children: 0
     }
   };
 
@@ -57,7 +56,7 @@ class ResForm extends React.Component {
   handleChildren = e => {
     const value = parseInt(e.target.outerText);
     this.setState({
-      reservation: { ...this.state.reservation, Children: value }
+      reservation: { ...this.state.reservation, children: value }
     });
   };
 
@@ -96,6 +95,7 @@ class ResForm extends React.Component {
             <Header>{t("YOUR RESERVATION")}</Header>
             <Header as="h4">{t("Arrival Date")}</Header>
             <DatePicker
+              minDate={new Date()}
               selected={start_date}
               onChange={this.handleStartDate}
               name="startDate"
@@ -122,19 +122,22 @@ class ResForm extends React.Component {
                 placeholder="-"
                 fluid
                 selection
+                defaultValue={1}
                 options={dropDown}
                 onChange={this.handleAdults}
               />
               <Header as="h4">{t("Children")}</Header>
               <Dropdown
-                placeholder="-"
+                placeholder="0"
                 fluid
                 selection
                 options={dropDown}
                 onChange={this.handleChildren}
               />
             </div>
-            <Button onClick={this.handleSubmit} color="brown">{t("Check Availability")}</Button>
+            <Button onClick={this.handleSubmit} color="brown">
+              {t("Check Availability")}
+            </Button>
           </Form>
 
           {/* onClick api call to return available rooms that meet reservation requestes */}
@@ -143,6 +146,7 @@ class ResForm extends React.Component {
           onChange={this.handleCalendar}
           value={[start_date, end_date]}
           selectRange
+          minDate={new Date()}
         />
       </Container>
     );
@@ -150,7 +154,6 @@ class ResForm extends React.Component {
 }
 
 export default withNamespaces()(connect()(ResForm));
-
 
 const dropDown = [
   { key: 1, text: "0", value: 0 },
@@ -161,9 +164,9 @@ const dropDown = [
 ];
 
 const Room = [
-  { key: 1, text: "Family Room", value: "family", name: "room" },
-  { key: 2, text: "Single Room", value: "single room", name: "room" },
-  { key: 3, text: "Double Room", value: "double room", name: "room" }
+  { key: 1, text: "Single Room", value: "single room", name: "room" },
+  { key: 2, text: "Double Room", value: "double room", name: "room" },
+  { key: 3, text: "Family Room", value: "family", name: "room" }
 ];
 
 const styles = {
