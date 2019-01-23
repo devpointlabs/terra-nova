@@ -43,6 +43,17 @@ export const BlackButton = styled.button`
   font-size: 14px;
   font-family: 'Poppins', sans-serif; 
 `;
+export const BlackButton2 = styled.button`
+  background-color: #363636;
+  border: 2px solid ##f8f8ff;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif; 
+`;
 
 export const Title = styled.h1`
   font-size: 6em;

@@ -15,4 +15,6 @@ Rails.application.routes.draw do
       resources :reviews
       resources :mailers, only: [:index, :create]
     end
+
+    get '*other', to: 'static#index'
 end

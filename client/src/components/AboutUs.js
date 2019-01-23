@@ -1,7 +1,8 @@
 import React from "react";
 import { Card, Image, Container, Grid, } from "semantic-ui-react";
 import { WhiteButton, HeaderLine, } from "../styles/AppStyles";
-import photogroup from "../assets/images/photogroup.png";
+import montana from "../assets/images/montana.jpg";
+// import photogroup from "../assets/images/photogroup.png";
 import AIRPORT_TAXI_ICON from "../assets/icons/amenities_icons/AIRPORT_TAXI_ICON.png";
 import AWESOME_PACKAGES_ICON from "../assets/icons/amenities_icons/AWESOME_PACKAGES_ICON.png";
 import BUFFET_BREAKFAST_ICON from "../assets/icons/amenities_icons/BUFFET_BREAKFAST_ICON.png";
@@ -21,12 +22,12 @@ const AboutUs = ({ t }) => (
           <Grid.Column>
             <h1 style={subHeader}>{t("About Us")}</h1>
             <HeaderLine/>
-            <p style={text}> Terra Nova Cabins represents the best in western hospitality and comfort, wrapped in contemporary
-              expression that will inspire your own unique adventures. 
+            <p style={text}> {t("Terra Nova Cabins represents the best in western hospitality and comfort, wrapped in contemporary")}
+              {t("expression that will inspire your own unique adventures.")}
               <br/>
               <br/>
-              Both a haven from the world and a basecamp for adventure, Terra Nova Cabins will be your new southwestern
-              Montana destination rental.
+              {t("Both a haven from the world and a basecamp for adventure, Terra Nova Cabins will be your new southwestern")}
+              {t("Montana destination rental.")}
             </p>
             <WhiteButton>{t("Read More")}</WhiteButton>
           </Grid.Column>
@@ -38,7 +39,7 @@ const AboutUs = ({ t }) => (
             <br/>
             <br/>
             <br/>
-            <Image src={photogroup} size="large"/>
+            <Image src={montana} size="large"/>
           </Grid.Column>
         </Grid>
       </div>

@@ -1,15 +1,7 @@
 import i18n from "i18next";
 import { reactI18nextModule, } from 'react-i18next';
-// import { room_type } from './components/Room.js'
-
 import translationEN from './locales/en/translation.json';
 import translationZH from './locales/zh/translation.json';
-
-
-const room_type = {
-    name: 'FAMILY ROOM',
-}
-
 
 // the translations
 const resources = {
@@ -27,8 +19,6 @@ i18n
         resources,
         lng: "en",
 
-        key: {room_type},
-
         keySeparator: false, 
 
         interpolation: {
@@ -36,4 +26,4 @@ i18n
         }
     });
 
-    export default (i18n);
+    export default i18n;

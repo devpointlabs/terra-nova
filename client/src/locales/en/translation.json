@@ -260,9 +260,9 @@
     
     "Family Room": "Family Room",
 
-    "Single Room": "Single Room",
+    "SINGLE ROOM": "SINGLE ROOM",
 
-    "Double Room": "Double Room",
+    "DOUBLE ROOM": "DOUBLE ROOM",
 
     "Starting at": "Starting at",
 
@@ -279,7 +279,51 @@
     
     
     
-    "View Details": "View Details"
+    "View Details": "View Details",
     
+    "Room Details": "Room Details",
 
+    "Accomodates": "Accomodates",
+
+    "People": "People",
+
+    "Size": "Size",
+
+    "View": "View",
+
+    "Bed": "Bed",
+
+    "Book Now": "Book Now",
+
+    "600 Square Feet": "600 Square Feet",
+
+    "300 Square Feet": "300 Square Feet",
+
+    "Lake View": "Lake View",
+
+    "Forest View": "Forest View",
+
+    "King or Queen and two Twin Beds": "King or Queen and two Twin Beds",
+
+    "King or Queen":"King or Queen",
+
+    "Sign Up": "Sign Up",
+
+    "Located in the heart of Aspen with a unique blend of contemporary luxury and historic heritage, deluxe accomodations supurb amenities, genuine hospitality and dedicated service for an elevated experience in the beautiful Rocky Mountains.":"Located in the heart of Aspen with a unique blend of contemporary luxury and historic heritage, deluxe accomodations supurb amenities, genuine hospitality and dedicated service for an elevated experience in the beautiful Rocky Mountains.",
+
+    "Units built in modules of four or six. Each cabin is spacious and modernly furnished two queen beds with private bathrooms equipped with shower or tub/shower, toilet and sink. Typically includes two beds. Televisions, radios, and air conditioning are not available in park lodging.":"Units built in modules of four or six. Each cabin is spacious and modernly furnished two queen beds with private bathrooms equipped with shower or tub/shower, toilet and sink. Typically includes two beds. Televisions, radios, and air conditioning are not available in park lodging.",
+
+    "When you host a party or family reunion, the special celebrations let":"When you host a party or family reunion, the special celebrations let",
+
+    "you strengthen bonds with each other": "you strengthen bonds with each other",
+
+    "Terra Nova Cabins represents the best in western hospitality and comfort, wrapped in contemporary": "Terra Nova Cabins represents the best in western hospitality and comfort, wrapped in contemporary",
+
+    "expression that will inspire your own unique adventures.":"expression that will inspire your own unique adventures.",
+
+    "Both a haven from the world and a basecamp for adventure, Terra Nova Cabins will be your new southwestern":"Both a haven from the world and a basecamp for adventure, Terra Nova Cabins will be your new southwestern",
+
+    "Montana destination rental.":"Montana destination rental."
+
+    
 }
