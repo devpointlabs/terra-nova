@@ -37,7 +37,7 @@ class Reviews extends React.Component {
                             <Header>
                         <Icon 
                         name='user circle' 
-                        size='small' 
+                        size='mini' 
                         />
                                 {r.name}
                             </Header>
