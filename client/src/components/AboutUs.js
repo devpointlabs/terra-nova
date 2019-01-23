@@ -1,7 +1,8 @@
 import React from "react";
 import { Card, Image, Container, Grid, } from "semantic-ui-react";
 import { WhiteButton, HeaderLine, } from "../styles/AppStyles";
-import photogroup from "../assets/images/photogroup.png";
+import montana from "../assets/images/montana.jpg";
+// import photogroup from "../assets/images/photogroup.png";
 import AIRPORT_TAXI_ICON from "../assets/icons/amenities_icons/AIRPORT_TAXI_ICON.png";
 import AWESOME_PACKAGES_ICON from "../assets/icons/amenities_icons/AWESOME_PACKAGES_ICON.png";
 import BUFFET_BREAKFAST_ICON from "../assets/icons/amenities_icons/BUFFET_BREAKFAST_ICON.png";
@@ -38,7 +39,7 @@ const AboutUs = ({ t }) => (
             <br/>
             <br/>
             <br/>
-            <Image src={photogroup} size="large"/>
+            <Image src={montana} size="large"/>
           </Grid.Column>
         </Grid>
       </div>
