@@ -7,12 +7,8 @@ import Room from "./Room";
 import { withNamespaces } from "react-i18next";
 import FLEUR_ICON from '../assets/icons/miscellaneous_icons/FLEUR_ICON.png';
 
-
-
 class Rooms extends React.Component {
   state = { rooms: [], };
-
-  //componentDidMount to call and set state to it
 
   componentDidMount() {
     axios.get("/api/rooms")
@@ -23,54 +19,53 @@ class Rooms extends React.Component {
 
   renderCard = () => {
     // const { t } = this.props;
-    return  this.state.rooms.map(room => {
+    return this.state.rooms.map(room => {
 
-        if (room.id === 1 || room.id === 6 || room.id === 11) {
-          return (
-              <div>
-                <Card raised style={{ margin: '30px',}} >
-                  <Image size="large" src={room.image} alt="room"/>
-                  <Card.Content>
-                    <Card.Header style={roomHeader}>
-                      {room.room_type}
-                    </Card.Header>
-                    <Card.Description textAlign="center"> {room.description}
-                    </Card.Description>
-                  </Card.Content>
-                  <Card.Content extra style={cardFooter}>Starting at ${room.cost} / Per Night</Card.Content>
-                  <Card.Meta textAlign="center">
-                    <Room max={room.max_occupancy} bed={room.bed_type} size={room.size} view={room.view} />
-                  </Card.Meta>
-                  <Card.Meta textAlign="center">
-                    <Link to="/reservations"
-                      active={this.props.location.pathname === "/reservations"}
-                    >
-                      <GoldButton style={{ marginBottom: "10px" }}> Book Now
+      if (room.id === 1 || room.id === 6 || room.id === 11) {
+        return (
+          <div>
+            <Card raised style={{ margin: '30px', }} >
+              <Image size="large" src={room.image} alt="room" />
+              <Card.Content>
+                <Card.Header style={roomHeader}>
+                  {room.room_type}
+                </Card.Header>
+                <Card.Description textAlign="center"> {room.description}
+                </Card.Description>
+              </Card.Content>
+              <Card.Content extra style={cardFooter}>Starting at ${room.cost} / Per Night</Card.Content>
+              <Card.Meta textAlign="center">
+                <Room max={room.max_occupancy} bed={room.bed_type} size={room.size} view={room.view} />
+              </Card.Meta>
+              <Card.Meta textAlign="center">
+                <Link to="/reservations"
+                  active={this.props.location.pathname === "/reservations"}
+                >
+                  <GoldButton style={{ marginBottom: "10px" }}> Book Now
                     </GoldButton>
-                    </Link>
-                  </Card.Meta>
-                </Card>
-              </div>
-            )
-          } else {
-            return null
-          }
-        })
-      
-  } //ends renderCard
+                </Link>
+              </Card.Meta>
+            </Card>
+          </div>
+        )
+      } else {
+        return null
+      }
+    })
+  }
 
   render() {
     return (
       <div style={styles.background}>
         <SubHeader> Our Rooms </SubHeader>
         <div style={styles.line}>
-            <GalleryIconLine />
-          <Image centered 
-          style={styles.icon} 
-          src={FLEUR_ICON}
+          <GalleryIconLine />
+          <Image centered
+            style={styles.icon}
+            src={FLEUR_ICON}
           />
-            <GalleryIconLine />
-          </div>
+          <GalleryIconLine />
+        </div>
         <RoomBody> When you host a party or family reunion, the special celebrations let <br />
           you strengthen bonds with each other </RoomBody>
 
@@ -89,7 +84,7 @@ const styles = {
     backgroundColor: "#F5F5F5",
     paddingBottom: "100px",
   },
-  line:   {
+  line: {
     display: 'flex',
     flexDirection: 'row',
     // justifyContent: 'space-around',
@@ -97,16 +92,16 @@ const styles = {
     marginBottom: '-40px',
     marginRight: '640px',
     marginLeft: '640px',
-    },
-    icon: {
-      padding: '7px',
-      // display: 'flex',
-      // flexDirection: 'row',
-      justifyContent: 'center',
-      alignItems: 'center',
-      marginBottom: '30px'
-    }
+  },
+  icon: {
+    padding: '7px',
+    // display: 'flex',
+    // flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: '30px'
   }
+}
 
 const roomHeader = {
   fontFamily: "'Poppins', sans-serif",
@@ -126,11 +121,5 @@ const cardFooter = {
   paddingRight: '10px',
 
 }
-
-
-
-
-
-
 
 export default withNamespaces()(withRouter(Rooms));

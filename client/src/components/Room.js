@@ -2,10 +2,6 @@ import React from 'react';
 import { Card, Icon, Segment } from "semantic-ui-react";
 import { withNamespaces } from 'react-i18next';
 
-
-
-
-
 class Room extends React.Component {
   state = { toggle: false }
 
