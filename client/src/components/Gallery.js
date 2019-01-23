@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card, Container, Image, Menu, Item, Grid,} from 'semantic-ui-react';
-// import { Link } from 'react-router-dom';
 import { SubHeader, GalleryIconLine, GalleryGoldButton, GalleryWhiteButton} from '../styles/AppStyles';
 import FLEUR_ICON from '../assets/icons/miscellaneous_icons/FLEUR_ICON.png';
 import IMGone from '../assets/images/GalleryImages/HotelandGrounds/IMGone.jpg';
@@ -11,6 +10,8 @@ import IMGthree from '../assets/images/GalleryImages/HotelandGrounds/IMGthree.jp
 import IMGtwo from '../assets/images/GalleryImages/HotelandGrounds/IMGtwo.jpg';
 import IMGseven from '../assets/images/GalleryImages/HotelandGrounds/IMGseven.jpg';
 import IMGsix from '../assets/images/GalleryImages/HotelandGrounds/IMGsix.jpg';
+import { withNamespaces } from 'react-i18next';
+
 
 class Gallery extends React.Component {
   state = { cards: [], };
@@ -36,6 +37,8 @@ class Gallery extends React.Component {
   };
 
   render() {
+    const { t } = this.props;
+
     return (
       <div style={styles.background} >
         <Container>
@@ -112,7 +115,7 @@ class Gallery extends React.Component {
   }
 }
 
-export default Gallery;
+export default withNamespaces()(Gallery);
 
 
 const styles = {

@@ -1,75 +1,58 @@
 import React from 'react'
 import { AuthConsumer, } from "../providers/AuthProvider";
-import { Menu, Container, Image, } from 'semantic-ui-react';
+import { Menu, Container, Image, Dropdown, } from 'semantic-ui-react';
 import { Link, withRouter, } from 'react-router-dom';
 // import ReactWeather from 'react-open-weather';
 import Terra_Nova_Cabins_Logo from '../assets/images/Terra_Nova_Cabins_Logo.png';
+import { withNamespaces } from 'react-i18next';
 
 class Navbar extends React.Component {
   state = { user: null, };
 
-  // rightNavItems = () => {
-  //   const { auth: { user, handleLogout, }, location, } = this.props;
-  //   if (user) {
-  //     return (
-  //       <div>
-  //         <Menu.Menu position='right'>
-  //           <Menu.Item
-  //             style={styles.font}
-  //             name='LOGOUT'
-  //             onClick={() => handleLogout(this.props.history)}
-  //           />
-  //         </Menu.Menu>
-  //       </div>
-  //     )
-  //   } else {
-  //     return (
-  //       <div>
-
-  //         <Container>
-  //           <Menu.Menu position='right'>
-  //             <Link to='/login'>
-  //               <Menu.Item
-  //                 style={styles.font}
-  //                 id='login'
-  //                 name='LOGIN'
-  //                 active={location.pathname === '/login'}
-  //               />
-  //             </Link>
-  //             <Link to='/register'>
-  //               <Menu.Item
-  //                 style={styles.font}
-  //                 id='register'
-  //                 name='REGISTER'
-  //                 active={location.pathname === '/register'}
-  //               />
-  //             </Link>
-  //           </Menu.Menu>
-  //         </Container>
-  //       </div>
-  //     )
-  //   }
-  // }
-
   renderIcon = () => {
     return (
       <Menu.Item position='left'>
-        <Image src={Terra_Nova_Cabins_Logo} 
-        size="tiny" 
-        style={styles.image} 
-        position='left' 
-        floated='left'
-        verticalAlign='top'
+        <Image src={Terra_Nova_Cabins_Logo}
+          size="tiny"
+          style={styles.image}
+          position='left'
+          floated='left'
+          verticalAlign='top'
         />
-        {/* <img src={Terra_Nova_Cabins_Logo}
-        style={styles.image}
-        /> */}
       </Menu.Item>
     )
   }; 
 
+  adminNav = () => {
+    const { auth: { user, handleLogout, location, }, t } = this.props;
+
+    return (
+      // <Container>
+        <Dropdown.Menu style={styles.font} position='right'>
+          {user ?
+            <div style={styles.background}>
+
+              <Dropdown item style={styles.font}text={t("Welcome")} >
+              <Link to='/register'>
+                <Dropdown.Item style={styles.font} position='right' text={t("NEW ADMIN")}>
+                </Dropdown.Item></Link>
+              <Dropdown.Item href="/events" style={styles.font} text={t("NEW EVENT")}>
+              </Dropdown.Item>
+              <Dropdown.Item style={styles.font} text={t("LOGOUT")} onClick={() => handleLogout(this.props.history)}>
+              </Dropdown.Item>
+     </Dropdown>
+            </div>
+            :
+            null
+          }
+        </Dropdown.Menu>
+      // </Container>
+    )
+  }
+
   render() {
-    const { auth: location, } = this.props;
+    const { auth: { user, handleLogout, }, location, t } = this.props;
+
     return (
       <div style={styles.background}>
         <Container>
@@ -78,7 +61,7 @@ class Navbar extends React.Component {
             <Link to='/'>
               <Menu.Item
                 style={styles.font}
-                name='HOME'
+                name={t("HOME")}
                 id='home'
                 active={location.pathname === '/'}
               />
@@ -89,13 +72,13 @@ class Navbar extends React.Component {
                 id='Room & Rate'
                 style={styles.font}
                 active={location.pathname === '/rooms'}
-              > ROOM & RATE
-                </Menu.Item>
+              > {t("ROOM & RATE")}
+              </Menu.Item>
             </Link>
             <Link to='/reservations'>
               <Menu.Item
                 style={styles.font}
-                name='RESERVATIONS'
+                name={t("RESERVATIONS")}
                 id='reservations'
                 active={this.props.location.pathname === '/reservations'}
               />
@@ -103,34 +86,15 @@ class Navbar extends React.Component {
             <Link to='/gallery'>
               <Menu.Item
                 style={styles.font}
-                name='GALLERY'
+                name={t("GALLERY")}
                 id='gallery'
                 active={this.props.location.pathname === '/gallery'}
               />
             </Link>
-
-            {/* Not quite sure what page is for */}
-            {/* <Dropdown style={styles.font} item text='PAGE'>
-              <Dropdown.Menu >
-                <Link  />
-                <Dropdown.Item basic>
-                  Test1
-               </Dropdown.Item>
-                <Dropdown.Item basic>
-                  <Link />
-                  Test2
-               </Dropdown.Item>
-                <Dropdown.Item basic>
-                  <Link />
-                  Test3
-               </Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown> */}
-
             <Link to='/about_us'>
               <Menu.Item
                 style={styles.font}
-                name='ABOUT'
+                name={t("ABOUT")}
                 id='about'
                 active={this.props.location.pathname === '/about_us'}
               />
@@ -138,12 +102,12 @@ class Navbar extends React.Component {
             <Link to='/contact'>
               <Menu.Item
                 style={styles.font}
-                name='CONTACT'
+                name={t("CONTACT")}
                 id='contact'
                 active={this.props.location.pathname === '/contact'}
               />
             </Link>
-            {/* {this.rightNavItems()} */}
+            {this.adminNav()}
           </Menu>
           <br />
         </Container>
@@ -152,6 +116,7 @@ class Navbar extends React.Component {
   }
 }
 
+
 export class ConnectedNavbar extends React.Component {
   render() {
     return (
@@ -159,13 +124,12 @@ export class ConnectedNavbar extends React.Component {
         {auth =>
           <Navbar {...this.props} auth={auth} />
         }
-
       </AuthConsumer>
     )
   }
 }
 
-export default withRouter(ConnectedNavbar);
+export default withNamespaces()(withRouter(ConnectedNavbar));
 
 export const styles = {
   font: {

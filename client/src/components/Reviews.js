@@ -1,6 +1,7 @@
 import React from 'react';
+import { withNamespaces } from 'react-i18next';
 import axios from 'axios';
-import { NavLink, Link, } from 'react-router-dom';
+import { NavLink, } from 'react-router-dom';
 import { Container, Rating, Segment, Button, Header, Icon } from 'semantic-ui-react';
 import { SubHeaderTwo, } from '../styles/AppStyles';
 
@@ -25,6 +26,8 @@ class Reviews extends React.Component {
 
     renderReviews = () => {
         const { reviews } = this.state;
+        const { t } = this.props;
+
         return (
             reviews.map(r => (
                 <div>
@@ -69,13 +72,14 @@ class Reviews extends React.Component {
     }
 
     render() {
+        const { t } = this.props
         return (
             <div>
                 <Container>
                     <div style={styles.top}>
                         <SubHeaderTwo style={styles.hr}>Our Reviews</SubHeaderTwo>
                         <NavLink to='/reviewform'>
-                            <Button style={styles.buttonTwo}>Write a Review</Button>
+                            <Button style={styles.buttonTwo}>{t("Write a Review")}</Button>
                         </NavLink>
                     </div>
                     <div>
@@ -87,7 +91,7 @@ class Reviews extends React.Component {
     }
 };
 
-export default Reviews;
+export default withNamespaces()(Reviews);
 
 
 const styles = {
