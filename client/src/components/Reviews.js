@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import { NavLink, Link, } from 'react-router-dom';
-import { Container, Rating, Segment, Button, Header } from 'semantic-ui-react';
-import { SubHeaderTwo, BlackButton } from '../styles/AppStyles';
+import { Container, Rating, Segment, Button, Header, Icon } from 'semantic-ui-react';
+import { SubHeaderTwo, } from '../styles/AppStyles';
 
 class Reviews extends React.Component {
     state = { reviews: [] };
@@ -22,7 +22,6 @@ class Reviews extends React.Component {
             })
     }
 
-    // Need to add name and location to review form
 
     renderReviews = () => {
         const { reviews } = this.state;
@@ -35,10 +34,14 @@ class Reviews extends React.Component {
                         raised
                         >
                         <div style={styles.cardTop}>
-                            <Header style={styles.hr}>
+                            <Header>
+                        <Icon 
+                        name='user circle' 
+                        size='small' 
+                        />
                                 {r.name}
                             </Header>
-                            <div basic textAlign='right' style={styles.stars}>
+                            <div textAlign='right' style={styles.stars}>
                                 <Rating defaultRating={r.rating} maxRating={5} disabled>
                                 </Rating>
                             </div>
@@ -155,10 +158,10 @@ const styles = {
         color: 'white',
         padding: '10px 30px',
         display: 'flex',
-        justif: 'center',
+        justifyContent: 'flex-end',
         fontSize: '14px',
         fontFamily: "'Poppins', sans-serif",
-        marginLeft: '50px',
+        // marginLeft: '50px',
     },
     description: {
         fontWeight: '100',
@@ -166,6 +169,7 @@ const styles = {
     location: {
         color: 'grey',
     },
-    title: {
+    icon: {
+        // paddingRight: '10px',
     }
 }
