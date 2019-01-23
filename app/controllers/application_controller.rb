@@ -1,10 +1,10 @@
 require 'rails/application_controller'
 
-class ApplicationController < Rails::ActionController::API
+class ApplicationController < ActionController::API
   include DeviseTokenAuth::Concerns::SetUserByToken
   before_action :configure_permitted_parameters, if: :devise_controller?
   
-  layout false
+  # layout false
 
   def index
     render file: Rails.root.join('public', 'index.html')
