@@ -49,12 +49,8 @@ export const Title = styled.h1`
   color: white;
   margin-top: -600px;
   font-family: 'Playfair Display', serif !important;
-<<<<<<< HEAD
   font-weight: 300;
   text-shadow: 0.5px 0.5px #000000
-=======
-  padding-bottom: 20px;
->>>>>>> c9f3bdc8bf75b5a68168ced48bdc67958fb8299b
 `;
 
 export const Title2 = styled.h3`
@@ -62,7 +58,6 @@ export const Title2 = styled.h3`
   color: white;
   text-align: center;
   font-family: 'Poppins', sans-serif;
-<<<<<<< HEAD
   padding-bottom: 200px;
   text-shadow: 1px 1px #000000
   `;
@@ -74,17 +69,6 @@ export const Title3 = styled.h3`
   letter-spacing: 4px;
   font-weight: 200;
   text-shadow: 1px 1px #000000
-=======
-  padding-bottom: 30px;
-  `;
-
-  export const Title3 = styled.h4`
-  font-size: 1.7em;
-  color: white;
-  text-align: center;
-  font-family: 'Poppins', sans-serif;
-  padding-bottom: 50px;
->>>>>>> c9f3bdc8bf75b5a68168ced48bdc67958fb8299b
   `;
 
 export const SubHeader = styled.h1`

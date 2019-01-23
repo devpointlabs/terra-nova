@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Card, Image, Container } from "semantic-ui-react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { GoldButton, AmenitiesButton } from "../styles/AppStyles";
 
 class RenderAvailable extends React.Component {

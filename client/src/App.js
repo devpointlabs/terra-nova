@@ -12,20 +12,6 @@ import Geobar from "./components/Geobar";
 import NoMatch from "./components/NoMatch";
 import FetchUser from "./components/FetchUser";
 import Footer from "./components/Footer";
-<<<<<<< HEAD
-
-import "./App.css"
-import ProtectedRoute from './components/ProtectedRoute';
-import ReviewForm from './components/ReviewForm';
-import Careers from './components/Careers';
-import CareerForm from './components/CareerForm';
-import Events from './components/Events';
-import Reviews from './components/Reviews';
-import Rooms from './components/Rooms';
-
-import News from './components/News';
-
-=======
 import ProtectedRoute from "./components/ProtectedRoute";
 import ReviewForm from "./components/ReviewForm";
 import Careers from "./components/Careers";
@@ -35,7 +21,6 @@ import Rooms from "./components/Rooms";
 import News from "./components/News";
 import Reviews from "./components/Reviews";
 import ResCheckout from "./components/ResCheckout";
->>>>>>> c9f3bdc8bf75b5a68168ced48bdc67958fb8299b
 
 const App = () => (
   <Fragment>

@@ -1,14 +1,14 @@
 import React from 'react';
 import { Carousel, } from 'react-bootstrap';
-import { Header, } from 'semantic-ui-react';
+// import { Header, } from 'semantic-ui-react';
 // import Yellowstone from '../../assets/images/Yellowstone.png';
 // import YellowstoneGeysers from '../../assets/images/YellowstoneGeysers.png';
 // import GrandCanyonoftheYellowstone from '../../assets/images/GrandCanyonoftheYellowstone.png';
 import { withNamespaces } from 'react-i18next';
-import LPI1 from '../../assets/images/LandingPage/LPI1.jpg'
-import LPI2 from '../../assets/images/LandingPage/LPI2.jpg'
-import LPI3 from '../../assets/images/LandingPage/LPI3.jpg'
-import LPI4 from '../../assets/images/LandingPage/LPI4.jpg'
+import LPI1 from '../../assets/images/LandingPage/LPI1.jpg';
+import LPI2 from '../../assets/images/LandingPage/LPI2.jpg';
+import LPI3 from '../../assets/images/LandingPage/LPI3.jpg';
+// import LPI4 from '../../assets/images/LandingPage/LPI4.jpg';
 import { Title, Title3, WhiteLine } from '../../styles/AppStyles';
 
 

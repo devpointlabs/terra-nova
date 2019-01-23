@@ -27,6 +27,7 @@ class ReviewForm extends React.Component {
 
     render() {
         const { title, body, rating, name, location, } = this.state;
+        const { t } = this.props;
         return (
             <Container>
                 <Form style={styles.text}

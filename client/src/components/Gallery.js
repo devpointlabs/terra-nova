@@ -148,7 +148,6 @@ const styles = {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-around',
-    justifyContent: 'space-around',
     alignItems: 'center',
     marginBottom: '-40px',
     marginRight: '475px',
