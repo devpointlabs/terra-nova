@@ -13,7 +13,7 @@ import { Title, Title3, WhiteLine } from '../../styles/AppStyles';
 
 
 const MainCarousel = ({ t }) => (
-  <div  >
+  <div>
     <Carousel
       slide={true}
       indicators={false}

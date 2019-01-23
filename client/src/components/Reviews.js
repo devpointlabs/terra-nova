@@ -35,13 +35,13 @@ class Reviews extends React.Component {
                         centered
                         style={styles.mainText}
                         raised
-                        >
+                    >
                         <div style={styles.cardTop}>
                             <Header>
-                        <Icon 
-                        name='user circle' 
-                        size='mini' 
-                        />
+                                <Icon
+                                    name='user circle'
+                                    size='mini'
+                                />
                                 {r.name}
                             </Header>
                             <div textAlign='right' style={styles.stars}>

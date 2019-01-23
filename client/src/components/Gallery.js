@@ -42,7 +42,7 @@ class Gallery extends React.Component {
     return (
       <div style={styles.background} >
         <Container>
-          <SubHeader style={styles.font}>Our Gallery</SubHeader>
+          <SubHeader style={styles.font}>{t("Our Gallery")}</SubHeader>
             <div style={styles.line}>
             <GalleryIconLine />
           <Image centered 
@@ -55,17 +55,17 @@ class Gallery extends React.Component {
           <Menu secondary>
 
           <Menu.Item fitted='horizontally'>
-          <GalleryGoldButton>HOTEL & GROUNDS</GalleryGoldButton>
+          <GalleryGoldButton>{t("HOTEL & GROUNDS")}</GalleryGoldButton>
           </Menu.Item>
 
           <Menu.Item fitted='horizontally'>
-          <GalleryGoldButton>ROOM/CABIN</GalleryGoldButton>
+          <GalleryGoldButton>{t("ROOM/CABIN")}</GalleryGoldButton>
           </Menu.Item>
           <Menu.Item fitted='horizontally'>
-          <GalleryGoldButton>BATHROOM</GalleryGoldButton>
+          <GalleryGoldButton>{t("BATHROOM")}</GalleryGoldButton>
           </Menu.Item>
           <Menu.Item fitted='horizontally'>
-          <GalleryGoldButton>DINING</GalleryGoldButton>
+          <GalleryGoldButton>{t("DINING")}</GalleryGoldButton>
           </Menu.Item>
           </Menu>
           </div>
@@ -106,7 +106,7 @@ class Gallery extends React.Component {
 
           <Item style={styles.button}>
           <a href={'https://www.google.com/imghp'}>
-          <GalleryWhiteButton>VIEW MORE</GalleryWhiteButton>
+          <GalleryWhiteButton>{t("VIEW MORE")}</GalleryWhiteButton>
           </a>
           </Item>
         </Container>
