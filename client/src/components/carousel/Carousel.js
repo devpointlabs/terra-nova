@@ -114,7 +114,8 @@ const styles = {
     justifyContent: 'center',
   },
   image: {
-    height: '600px'
+    height: '600px',g
+    width: '100%'
   },
   title: {
     height: '100px',
