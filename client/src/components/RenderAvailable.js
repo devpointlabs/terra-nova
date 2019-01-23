@@ -22,7 +22,7 @@ class RenderAvailable extends React.Component {
 
   confirm = room => {
     const proceed = window.confirm(
-      "are you sure you want to continue with this room?"
+      "Are you sure you want to continue checkout with this room?"
     );
     if (proceed)
       this.props.history.push({

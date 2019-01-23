@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Header, Segment, Image } from "semantic-ui-react";
+import { SubHeader } from "../styles/AppStyles";
 import ResCheckoutForm from "./ResCheckoutForm";
 
 class ResCheckout extends React.Component {
@@ -16,7 +17,8 @@ class ResCheckout extends React.Component {
       <Segment raised style={styles.flex}>
         <Image src="https://picsum.photos/300?random" alt="" />
         <div>
-          <Header as="h3">{room_type}</Header>
+          <Header as="h2">{room_type}</Header>
+          <hr />
           <p>Price: ${cost}</p>
           <p>Start Date: {startDate}</p>
           <p>End Date: {endDate}</p>
@@ -30,8 +32,10 @@ class ResCheckout extends React.Component {
   render() {
     return (
       <Container>
-        <Header as="h1">Reservation Checkout</Header>
+        <SubHeader>Reservation Checkout</SubHeader>
+        <hr />
         <ResCheckoutForm />
+        <hr />
         {this.renderRoomDetails()}
       </Container>
     );
@@ -43,6 +47,7 @@ export default ResCheckout;
 const styles = {
   flex: {
     display: "flex",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
+    marginTop: "4em"
   }
 };

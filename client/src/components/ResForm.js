@@ -21,7 +21,7 @@ class ResForm extends React.Component {
       start_date: new Date(),
       end_date: new Date(),
       room: "",
-      adults: null,
+      adults: 1,
       children: null
     }
   };
@@ -92,6 +92,7 @@ class ResForm extends React.Component {
             <Header>YOUR RESERVATION</Header>
             <Header as="h4">Arrival Date</Header>
             <DatePicker
+              minDate={new Date()}
               selected={start_date}
               onChange={this.handleStartDate}
               name="startDate"
@@ -118,12 +119,13 @@ class ResForm extends React.Component {
                 placeholder="-"
                 fluid
                 selection
+                defaultValue={1}
                 options={dropDown}
                 onChange={this.handleAdults}
               />
               <Header as="h4">Children: </Header>
               <Dropdown
-                placeholder="-"
+                placeholder="0"
                 fluid
                 selection
                 options={dropDown}
@@ -138,6 +140,7 @@ class ResForm extends React.Component {
           onChange={this.handleCalendar}
           value={[start_date, end_date]}
           selectRange
+          minDate={new Date()}
         />
       </Container>
     );
@@ -155,9 +158,9 @@ const dropDown = [
 ];
 
 const Room = [
-  { key: 1, text: "Family Room", value: "family", name: "room" },
-  { key: 2, text: "Single Room", value: "single room", name: "room" },
-  { key: 3, text: "Double Room", value: "double room", name: "room" }
+  { key: 1, text: "Single Room", value: "single room", name: "room" },
+  { key: 2, text: "Double Room", value: "double room", name: "room" },
+  { key: 3, text: "Family Room", value: "family", name: "room" }
 ];
 
 const styles = {
