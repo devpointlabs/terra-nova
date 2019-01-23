@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link, } from 'react-router-dom';
 import { Header, } from 'semantic-ui-react';
+import { withNamespaces } from 'react-i18next';
 
-const NoMatch = () => (
-  <Header as="h3" textAlign="center">
-    Page not found return
-    <Link to="/"> Home</Link>
+const NoMatch = ({t}) => (
+  <Header as="h1" textAlign="center">
+    {t("Page not found return")}
+    <Link to="/"> {t("Home")}</Link>
   </Header>
 )
 
-export default NoMatch;
+export default withNamespaces()(NoMatch);

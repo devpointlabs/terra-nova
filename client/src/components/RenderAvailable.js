@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Card, Image, Container } from "semantic-ui-react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { GoldButton, AmenitiesButton } from "../styles/AppStyles";
 
 class RenderAvailable extends React.Component {
@@ -23,7 +23,7 @@ class RenderAvailable extends React.Component {
 
   confirm = room => {
     const proceed = window.confirm(
-      "are you sure you want to continue with this room?"
+      "Are you sure you want to continue checkout with this room?"
     );
     if (proceed)
       this.props.history.push({
@@ -51,7 +51,6 @@ class RenderAvailable extends React.Component {
           </AmenitiesButton>
           <hr />
           {showDesc ? this.showAmenities(r) : null}
-          {/* <Link to={""}> */}
           <GoldButton
             style={{ marginBottom: "10px" }}
             onClick={() => this.confirm(r)}
@@ -59,7 +58,6 @@ class RenderAvailable extends React.Component {
             {" "}
             Book Now
           </GoldButton>
-          {/* </Link> */}
         </Card.Meta>
       </Card>
     ));

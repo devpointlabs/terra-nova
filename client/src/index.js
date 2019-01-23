@@ -9,10 +9,7 @@ import "react-bootstrap";
 import "./i18n";
 import { Provider } from "react-redux";
 import store from "./store";
-
-import * as serviceWorker from "./serviceWorker";
-// import { initMiddleware, } from "devise-axios";
-// initMiddleware();
+import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <Provider store={store}>

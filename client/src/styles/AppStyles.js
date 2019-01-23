@@ -21,7 +21,7 @@ export const GoldButton = styled.button`
   font-size: 16px;
   font-family: 'Poppins', sans-serif;
 `;
-export const AmenitiesButton = styled.button `
+export const AmenitiesButton = styled.button`
   border: 2px solid #555555,
   color: black,
   padding: 12px 30px,
@@ -43,14 +43,25 @@ export const BlackButton = styled.button`
   font-size: 14px;
   font-family: 'Poppins', sans-serif; 
 `;
+export const BlackButton2 = styled.button`
+  background-color: #363636;
+  border: 2px solid ##f8f8ff;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif; 
+`;
 
 export const Title = styled.h1`
-  font-size: 5.75em;
-  text-align: center;
+  font-size: 6em;
   color: white;
+  margin-top: -600px;
   font-family: 'Playfair Display', serif !important;
-  padding-top: 200px;
-  padding-bottom: 20px;
+  font-weight: 300;
+  text-shadow: 0.5px 0.5px #000000
 `;
 
 export const Title2 = styled.h3`
@@ -59,6 +70,16 @@ export const Title2 = styled.h3`
   text-align: center;
   font-family: 'Poppins', sans-serif;
   padding-bottom: 200px;
+  text-shadow: 1px 1px #000000
+  `;
+
+export const Title3 = styled.h3`
+  font-size: 2em;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 4px;
+  font-weight: 200;
+  text-shadow: 1px 1px #000000
   `;
 
   export const Title3 = styled.h5`
@@ -76,6 +97,7 @@ export const SubHeader = styled.h1`
   text-align: center;
   font-family: 'Playfair Display', serif;
   padding-top: 110px;
+  color: black;
   `;
 export const SubHeaderTwo = styled.h1`
   font-size: 3.0em;
@@ -91,6 +113,8 @@ export const RoomBody = styled.p`
   text-align: center;
   padding-top: 25px;
   padding-bottom: 25px;
+  color: black;
+
   `;
 
 export const BackgroundImage = styled.div`
@@ -98,7 +122,7 @@ export const BackgroundImage = styled.div`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat
-  color: rgba(0, 0, 0, ,0);
+  color: rgba(0, 0, 0, 0);
 `;
 
 export const NavText = styled.div`
@@ -122,17 +146,9 @@ export const HeaderLine2 = styled.hr`
 
 export const WhiteLine = styled.hr`
   border: 1px solid white;
-  width: 100%;
   border-color: white;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: no-wrap;
-  justify-content: space-around;
-  align-content: center;
-  margin-bottom: -20px;
-  margin-top: 20px;
-  margin-right: 100px;
-  margin-left: 100px;
+  width: 75px;
+  text-shadow: 1px 1px #000000
   }
 `;
 
@@ -143,8 +159,9 @@ export const GalleryIconLine = styled.hr`
 `;
 export const GalleryIconLine2 = styled.hr`
   border: 0.5px solid #826614;
-  width: 20%;
+  width: 13%;
   border-color: #826614;
+  
 `;
 
 export const GalleryWhiteButton = styled.button`
@@ -170,27 +187,3 @@ export const GalleryGoldButton = styled.button`
   font-size: 16px;
   font-family: 'Poppins', sans-serif;
 `;
-// export const Card1 = styled.div`
-//   height: 100px;
-//   width: 300px;
-//   border: 1px solid blue;
-//   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)
-//   transition: 0.3s;
-//   .card:hover {
-//     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-//   }
-
-// `
-
-export const ToggleButton = styled.button`
-  background-color: #555555;
-  border: 2px solid ##f8f8ff;
-  color: white;
-  padding: 10px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  font-family: 'Poppins', sans-serif; 
-`;
-

@@ -10,6 +10,7 @@ import {
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Calendar from "react-calendar";
+import { withNamespaces } from "react-i18next";
 import { connect } from "react-redux";
 import { setReservation } from "../reducers/reservation";
 import { setReserved } from "../reducers/reserved";
@@ -21,8 +22,8 @@ class ResForm extends React.Component {
       start_date: new Date(),
       end_date: new Date(),
       room: "",
-      adults: null,
-      children: null
+      adults: 1,
+      children: 0
     }
   };
 
@@ -55,7 +56,7 @@ class ResForm extends React.Component {
   handleChildren = e => {
     const value = parseInt(e.target.outerText);
     this.setState({
-      reservation: { ...this.state.reservation, Children: value }
+      reservation: { ...this.state.reservation, children: value }
     });
   };
 
@@ -85,27 +86,30 @@ class ResForm extends React.Component {
       reservation: { start_date, end_date }
     } = this.state;
 
+    const { t } = this.props;
+
     return (
       <Container style={styles.flexTwo}>
         <Segment compact raised>
-          <Form onSubmit={this.handleSubmit}>
-            <Header>YOUR RESERVATION</Header>
-            <Header as="h4">Arrival Date</Header>
+          <Form>
+            <Header>{t("YOUR RESERVATION")}</Header>
+            <Header as="h4">{t("Arrival Date")}</Header>
             <DatePicker
+              minDate={new Date()}
               selected={start_date}
               onChange={this.handleStartDate}
               name="startDate"
             />
-            <Header as="h4">Departure</Header>
+            <Header as="h4">{t("Departure")}</Header>
             <DatePicker
               selected={end_date}
               onChange={this.handleDepDate}
               name="departureDate"
             />
-            <Header>Rooms & Guest</Header>
-            <Header as="h4">Rooms</Header>
+            <Header>{t("Rooms & Guest")}</Header>
+            <Header as="h4">{t("Rooms")}</Header>
             <Dropdown
-              placeholder="Select Room"
+              placeholder={t("Select Room")}
               openOnFocus
               selection
               options={Room}
@@ -113,38 +117,43 @@ class ResForm extends React.Component {
               onChange={this.handleRoom}
             />
             <div style={styles.flex}>
-              <Header as="h4">Adults: </Header>
+              <Header as="h4">{t("Adults")} </Header>
               <Dropdown
                 placeholder="-"
                 fluid
                 selection
+                defaultValue={1}
                 options={dropDown}
                 onChange={this.handleAdults}
               />
-              <Header as="h4">Children: </Header>
+              <Header as="h4">{t("Children")}</Header>
               <Dropdown
-                placeholder="-"
+                placeholder="0"
                 fluid
                 selection
                 options={dropDown}
                 onChange={this.handleChildren}
               />
             </div>
-            <Button color="brown">Check Availability</Button>
+            <Button onClick={this.handleSubmit} color="brown">
+              {t("Check Availability")}
+            </Button>
           </Form>
+
           {/* onClick api call to return available rooms that meet reservation requestes */}
         </Segment>
         <Calendar
           onChange={this.handleCalendar}
           value={[start_date, end_date]}
           selectRange
+          minDate={new Date()}
         />
       </Container>
     );
   }
 }
 
-export default connect()(ResForm);
+export default withNamespaces()(connect()(ResForm));
 
 const dropDown = [
   { key: 1, text: "0", value: 0 },
@@ -155,9 +164,9 @@ const dropDown = [
 ];
 
 const Room = [
-  { key: 1, text: "Family Room", value: "family", name: "room" },
-  { key: 2, text: "Single Room", value: "single room", name: "room" },
-  { key: 3, text: "Double Room", value: "double room", name: "room" }
+  { key: 1, text: "Single Room", value: "single room", name: "room" },
+  { key: 2, text: "Double Room", value: "double room", name: "room" },
+  { key: 3, text: "Family Room", value: "family", name: "room" }
 ];
 
 const styles = {

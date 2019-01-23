@@ -10,6 +10,8 @@ import IMGthree from '../assets/images/GalleryImages/HotelandGrounds/IMGthree.jp
 import IMGtwo from '../assets/images/GalleryImages/HotelandGrounds/IMGtwo.jpg';
 import IMGseven from '../assets/images/GalleryImages/HotelandGrounds/IMGseven.jpg';
 import IMGsix from '../assets/images/GalleryImages/HotelandGrounds/IMGsix.jpg';
+import { withNamespaces } from 'react-i18next';
+
 
 class Gallery extends React.Component {
   state = { cards: [], };
@@ -35,10 +37,12 @@ class Gallery extends React.Component {
   };
 
   render() {
+    const { t } = this.props;
+
     return (
       <div style={styles.background} >
         <Container>
-          <SubHeader style={styles.font}>Our Gallery</SubHeader>
+          <SubHeader style={styles.font}>{t("Our Gallery")}</SubHeader>
             <div style={styles.line}>
             <GalleryIconLine />
           <Image centered 
@@ -51,17 +55,17 @@ class Gallery extends React.Component {
           <Menu secondary>
 
           <Menu.Item fitted='horizontally'>
-          <GalleryGoldButton>HOTEL & GROUNDS</GalleryGoldButton>
+          <GalleryGoldButton>{t("HOTEL & GROUNDS")}</GalleryGoldButton>
           </Menu.Item>
 
           <Menu.Item fitted='horizontally'>
-          <GalleryGoldButton>ROOM/CABIN</GalleryGoldButton>
+          <GalleryGoldButton>{t("ROOM/CABIN")}</GalleryGoldButton>
           </Menu.Item>
           <Menu.Item fitted='horizontally'>
-          <GalleryGoldButton>BATHROOM</GalleryGoldButton>
+          <GalleryGoldButton>{t("BATHROOM")}</GalleryGoldButton>
           </Menu.Item>
           <Menu.Item fitted='horizontally'>
-          <GalleryGoldButton>DINING</GalleryGoldButton>
+          <GalleryGoldButton>{t("DINING")}</GalleryGoldButton>
           </Menu.Item>
           </Menu>
           </div>
@@ -102,7 +106,7 @@ class Gallery extends React.Component {
 
           <Item style={styles.button}>
           <a href={'https://www.google.com/imghp'}>
-          <GalleryWhiteButton>VIEW MORE</GalleryWhiteButton>
+          <GalleryWhiteButton>{t("VIEW MORE")}</GalleryWhiteButton>
           </a>
           </Item>
         </Container>
@@ -111,7 +115,7 @@ class Gallery extends React.Component {
   }
 }
 
-export default Gallery;
+export default withNamespaces()(Gallery);
 
 
 const styles = {
@@ -126,7 +130,7 @@ const styles = {
     fontWeight: 'lighter',
   }, 
   icon: {
-    padding: '7px',
+    padding: '10px',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',

@@ -1,15 +1,15 @@
 import React from 'react';
 import { SubHeader, HeaderLine, Title3, } from "../styles/AppStyles";
 import { Card, Image, Container, Grid } from "semantic-ui-react";
+import { withNamespaces } from 'react-i18next';
 
-const Events = () => {
+const Events = ({t}) => {
     return (
         <div>
             <Container>
                 <div>
                 <Grid columns={2} padded='vertically'>    
-                <SubHeader>Our Events</SubHeader>
-                {/* <HeaderLine/> */}
+                <SubHeader><u>{t("Our Events")}</u></SubHeader>
                 </Grid>
                 </div>
                 <Card.Group centered itemsPerRow={3}>
@@ -28,8 +28,6 @@ const Events = () => {
                 </Card.Group>
             </Container>
         </div>
-    )
-};
 
 const styles = {
     card: {
@@ -43,12 +41,4 @@ const styles = {
     }
 }
 
-// const subHeader = {
-//     fontSize: '3.0em',
-//     fontWeight: 'lighter',
-//     textAlign: 'left',
-//     fontFamily: "'Playfair Display', serif",
-//     paddingTop: '110px',
-// }
-
-export default Events;
+export default withNamespaces()(Events);

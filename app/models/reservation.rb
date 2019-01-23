@@ -1,5 +1,4 @@
 class Reservation < ApplicationRecord
-  belongs_to :user
   belongs_to :room
   
   def self.date_range(start_date, end_date, room )

@@ -1,4 +1,329 @@
 {
+    "About Us": "About Us",
+    
+    "FAMILY ROOM": "FAMILY ROOM",
+
+    "MASTER BEDROOM": "MASTER BEDROOM",
+
+    "LAKE VIEW BALCONY": "LAKE VIEW BALCONY",
+
+    "POOL & SPA": "POOL & SPA",
+
+    "WIFI COVERAGE": "WIFI COVERAGE",
+
+    "AWESOME PACKAGES": "AWESOME PACKAGES",
+
+    "CLEANING EVERYDAY": "CLEANING EVERYDAY",
+
+    "BUFFET BREAKFAST": "BUFFET BREAKFAST",
+
+    "AIRPORT TAXIS": "AIRPORT TAXIS",
+
+    
+    
+    "Admin": "Admin",
+
+    "Password": "Password",
+
+    "Password Confirmation": "Password Confirmation",
+
+    "I agree to the Terms and Conditions": "I agree to the Terms and Conditions",
+
+    
+    
+    "First Name": "First Name",
+    
+    "Last Name": "Last Name",
+    
+    "Phone Number": "Phone Number",
+    
+    "Email": "Email",
+    
+    "Submit": "Submit",
+    
+    
+    
+    "Careers with Terra Nova": "Careers with Terra Nova",
+    
+    "Current Job Openings": "Current Job Openings",
+    
+    "Employee Benefits": "Employee Benefits",
+    
+    
+    
+    "Contact": "Contact",
+    
+    "If you would like to know more, please contact us": "If you would like to know more, please contact us",
+    
+    
+    "Your Email Address": "Your Email Address",
+    
+
+
+    "Our Events": "Our Events",
+
+    "Wedding Day": "Wedding Day",
+
+
+
+    "News": "News",
+
+    "Read More": "Read More",
+    
+    "Update menu in Skyline Hotel": "Update menu food in Skyline Hotel",
+
+    "New Hikes Available for Spring": "New Hikes Available for Spring",
+
+    "Mother Earth Hosts Our Travels": "Mother Earth Hosts Our Travels",
+
+
+
+
+
+    "Site Map": "Site Map",
+
+    "Term & Conditions": "Term & Conditions",
+
+    "Privacy Policy": "Privacy Policy",
+
+    "Help": "Help",
+
+    "Affiliate": "Affiliate",
+
+    "Our Location": "Our Location",
+
+    "Career": "Career",
+
+    "Contact Us": "Contact Us",
+
+    "FAQS": "FAQS",
+
+    "Photo & Video": "Photo & Video",
+
+    "Restaurant": "Restaurant",
+
+    "Gift Card": "Gift Card",
+    
+    
+    "Copyright": "Copyright",
+
+
+    
+    "Our Gallery": "Our Gallery",
+    
+    "Please Enjoy Our Gallery of our Properties & Commodities.": "Please Enjoy Our Gallery of our Properties & Commodities.",
+    
+    "HOTEL & GROUNDS": "HOTEL & GROUND",
+
+    "ROOM/CABIN": "ROOM/CABIN",
+
+    "BATHROOM": "BATHROOM",
+
+    "DINING": "DINING",
+
+    "VIEW MORE": "VIEW MORE",
+    
+    
+    "Salt Lake City, UT": "Salt Lake City, UT",
+    
+    
+
     "Welcome to Terra Nova Cabins": "Welcome to Terra Nova Cabins",
-    "HOTELS & RESORTS": "HOTELS & RESORTS"
+    
+    "HOTELS & RESORTS": "HOTELS & RESORTS",
+    
+    "Terra Nova Cabins represents the best in western hospitality and comfort, wrapped in a contemporary expression that will inspire your own unique adventures. Both a haven from the world and a basecamp for adventure, Terra Nova Cabins will be your new southwestern Montana destination rental.": "Terra Nova Cabins represents the best in western hospitality and comfort, wrapped in a contemporary expression that will inspire your own unique adventures. Both a haven from the world and a basecamp for adventure, Terra Nova Cabins will be your new southwestern Montana destination rental.",
+    
+    "OPENING SPRING 2019": "OPENING SPRING 2019",
+    
+
+    
+    "HOME": "HOME",
+
+    "ROOM & RATE": "ROOM & RATE",
+
+    "RESERVATIONS": "RESERVATIONS",
+
+    "GALLERY": "GALLERY",
+
+    "ABOUT": "ABOUT",
+
+    "CONTACT": "CONTACT",
+
+    "Welcome": "Welcome",
+
+    "NEW ADMIN": "NEW ADMIN",
+
+    "NEW EVENT": "NEW EVENT",
+
+    "LOGOUT": "LOGOUT",
+
+
+    
+    "Page not found return": "Page not found return",
+
+    "Home": "Home",
+
+
+    
+    "YOUR RESERVATION": "YOUR RESERVATION",
+    
+    
+    "Arrival Date": "Arrival Date",
+    
+    "Departure": "Departure",
+    
+    "Rooms & Guest": "Rooms & Guest",
+    
+    "Rooms": "Rooms",
+    
+    "Select Room": "Select Room",
+    
+    "Adults": "Adults",
+    
+    "Children": "Children",
+    
+    "Check Availability": "Check Availability",
+
+
+    
+    "Reservations": "Reservations",
+
+
+    
+    "Leave a Review": "Leave a Review",
+
+    "Back to Reviews": "Back to Reviews",
+    
+    "City & State": "City & State",
+
+    "Location": "Location",
+
+    "Name": "Name",
+
+    "Title": "Title",
+    
+    "Body": "Body",
+
+    "From": "From",
+    
+    "Delete Review": "Delete Review",
+
+    "Our Reviews": "Our Reviews",
+    
+    "Write a Review": "Write a Review",
+
+    "More Reviews": "More Reviews",
+
+
+
+    "This is the only place to stay in Catalina! I have stayed in cheaper hotels and they were fine,": "This is the only place to stay in Catalina! I have stayed in cheaper hotels and they were fine,",
+
+    "but this is just the icing on the cake! After spending the day bike riding and hiking to come back and enjoy a glass": "but this is just the icing on the cake! After spending the day bike riding and hiking to come back and enjoy a glass",
+
+    "of wine while looking out your ocean view window and then to top it all off...": "of wine while looking out your ocean view window and then to top it all off...",
+
+    "When I first decided to visit Yellowstone I was completely overwhelmed with the choices of hotels.": "When I first decided to visit Yellowstone I was completely overwhelmed with the choices of hotels.",
+
+    "I'm so glad we chose Terra Nova as our stay in Yellowstone. The staff was kind, punctual and we didn't have": "I'm so glad we chose Terra Nova as our stay in Yellowstone. The staff was kind, punctual and we didn't have",
+
+    "to worry about anything but our trip. I can't wait for our next...": "to worry about anything but our trip. I can't wait for our next...",
+
+    "Don't even bother with other hotels. For the price you get at other places, you'd expect a cheap motel, with a cheap environment. With Terra Nova": "Don't even bother with other hotels. For the price you get at other places, you'd expect a cheap motel, with a cheap environment. With Terra Nova",
+
+    "Cabins, it felt like we were coming home to our very own cabin.": "Cabins, it felt like we were coming home to our very own cabin.",
+
+    "One thing I would suggest is...": "One thing I would suggest is...",
+
+
+    "Best stay I've had in YellowStone.": "Best stay I've had in YellowStone.",
+
+    "I was hesitant at first to stay in a cabin for our trip, rather than a hotel. I am so glad I didn't choose a regular old hotel. The rooms are so relaxing, the views are beatiful and the neighbors and staff are wonderful. Will stay here again.": "I was hesitant at first to stay in a cabin for our trip, rather than a hotel. I am so glad I didn't choose a regular old hotel. The rooms are so relaxing, the views are beatiful and the neighbors and staff are wonderful. Will stay here again.",
+
+
+    "Want to stay cozy in the mountains?": "Want to stay cozy in the mountains?",
+
+    "Then this is where you should stay. Want to feel like you're in the wilderness without feeling lost?": "Then this is where you should stay. Want to feel like you're in the wilderness without feeling lost?",
+
+    "Then this IS the place! Thank you to Terra Nova cabins for our amazing getaway this year.": "Then this IS the place! Thank you to Terra Nova cabins for our amazing getaway this year.",
+
+
+    "Honeymoon well spent.": "Honeymoon well spent.",
+
+    "After looking for a few weeks on where we wanted to go for our honeymoon, we were overwhelmed. Too many places, too much money, to many things to do,": "After looking for a few weeks on where we wanted to go for our honeymoon, we were overwhelmed. Too many places, too much money, to many things to do,",
+
+    "and after awhile, we stopped enjoying the process. Until we found Terra Nova. It was perfect for us in their One Bedroom, and with their amentities and so many": "and after awhile, we stopped enjoying the process. Until we found Terra Nova. It was perfect for us in their One Bedroom, and with their amentities and so many",
+
+    "beautiful hikes and lakes nearby, we thouroughly enjoyed our stay here. 10/10": "beautiful hikes and lakes nearby, we thouroughly enjoyed our stay here. 10/10",
+    
+    
+    
+    "Family Room": "Family Room",
+
+    "SINGLE ROOM": "SINGLE ROOM",
+
+    "DOUBLE ROOM": "DOUBLE ROOM",
+
+    "Starting at": "Starting at",
+
+    "/days": "/days",
+
+
+
+    "Our Rooms": "Our Rooms", 
+    
+    "When you host a party or family reunion, the special celebrations let you strengthen bonds with each other": "When you host a party or family reunion, the special celebrations let you strengthen bonds with each other",
+    
+    
+    "/ Per Night": "/ Per Night",
+    
+    
+    
+    "View Details": "View Details",
+    
+    "Room Details": "Room Details",
+
+    "Accomodates": "Accomodates",
+
+    "People": "People",
+
+    "Size": "Size",
+
+    "View": "View",
+
+    "Bed": "Bed",
+
+    "Book Now": "Book Now",
+
+    "600 Square Feet": "600 Square Feet",
+
+    "300 Square Feet": "300 Square Feet",
+
+    "Lake View": "Lake View",
+
+    "Forest View": "Forest View",
+
+    "King or Queen and two Twin Beds": "King or Queen and two Twin Beds",
+
+    "King or Queen":"King or Queen",
+
+    "Sign Up": "Sign Up",
+
+    "Located in the heart of Aspen with a unique blend of contemporary luxury and historic heritage, deluxe accomodations supurb amenities, genuine hospitality and dedicated service for an elevated experience in the beautiful Rocky Mountains.":"Located in the heart of Aspen with a unique blend of contemporary luxury and historic heritage, deluxe accomodations supurb amenities, genuine hospitality and dedicated service for an elevated experience in the beautiful Rocky Mountains.",
+
+    "Units built in modules of four or six. Each cabin is spacious and modernly furnished two queen beds with private bathrooms equipped with shower or tub/shower, toilet and sink. Typically includes two beds. Televisions, radios, and air conditioning are not available in park lodging.":"Units built in modules of four or six. Each cabin is spacious and modernly furnished two queen beds with private bathrooms equipped with shower or tub/shower, toilet and sink. Typically includes two beds. Televisions, radios, and air conditioning are not available in park lodging.",
+
+    "When you host a party or family reunion, the special celebrations let":"When you host a party or family reunion, the special celebrations let",
+
+    "you strengthen bonds with each other": "you strengthen bonds with each other",
+
+    "Terra Nova Cabins represents the best in western hospitality and comfort, wrapped in contemporary": "Terra Nova Cabins represents the best in western hospitality and comfort, wrapped in contemporary",
+
+    "expression that will inspire your own unique adventures.":"expression that will inspire your own unique adventures.",
+
+    "Both a haven from the world and a basecamp for adventure, Terra Nova Cabins will be your new southwestern":"Both a haven from the world and a basecamp for adventure, Terra Nova Cabins will be your new southwestern",
+
+    "Montana destination rental.":"Montana destination rental."
+
+    
 }

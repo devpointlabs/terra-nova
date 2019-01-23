@@ -13,5 +13,8 @@ Rails.application.routes.draw do
 
     namespace :api do 
       resources :reviews
+      resources :mailers, only: [:index, :create]
     end
+
+    get '*other', to: 'static#index'
 end
