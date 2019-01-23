@@ -12,33 +12,44 @@ class EmailForm extends React.Component {
     const email = { ...this.state };
     axios.post('/api/mailers', email)
     this.setState({ email: "" })
-    {this.emailModal()};
+    { this.emailModal() };
   }
 
   handleChange = ({ target: { name, value } }) => {
     this.setState({ [name]: value });
   }
 
-  handleOpen = () => this.setState({ showModal: true})
+  handleOpen = () => this.setState({ showModal: true })
+
+  handleClose = () => this.setState({ showModal: false })
+
+
 
   emailModal = () => (
     <Modal trigger={<Button onClick={this.handleOpen}>Submit</Button>}
-     open={this.state.modalOpen}
-     size='tiny'
-     centered={false}
+      open={this.state.showModal}
+      close={this.handleClose}
+      size='small'
+      centered={false}
+      basic
     >
       <Modal.Header> Terra Nova Cabins</Modal.Header>
       <Modal.Content image>
-        <Image wrapped 
-          size='tiny' 
-          src={Terra_Nova_Cabins_Logo}/>
+        <Image wrapped
+          size='small'
+          src={Terra_Nova_Cabins_Logo} />
         <Modal.Description>
           <Header>Success!</Header>
-            <p> You have been signed up for the Terra Nova Newsletter.</p>
+          <p> You have been signed up for the Terra Nova Newsletter.</p>
         </Modal.Description>
       </Modal.Content>
+      <Modal.Actions>
+        <Button color="white" onClick={this.handleClose}>
+          <Icon name="checkmark"/> Got it!
+          </Button>
+        </Modal.Actions>
     </Modal>
-  
+
   )
 
   showModal = () => {
@@ -62,7 +73,7 @@ class EmailForm extends React.Component {
             </Form>
 
           </div>
-              {this.emailModal()}
+          {this.emailModal()}
           <div>
             <Icon inverted color="grey" name="instagram" size="big" />
             <Icon inverted color="grey" name="facebook" size="big" />
