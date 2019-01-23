@@ -24,7 +24,7 @@ class Navbar extends React.Component {
   }; 
 
   adminNav = () => {
-    const { auth: { user, handleLogout, location, }, t } = this.props;
+    const { auth: { user, handleLogout, }, t } = this.props;
 
     return (
       // <Container>
@@ -51,7 +51,7 @@ class Navbar extends React.Component {
   }
 
   render() {
-    const { auth: { user, handleLogout, }, location, t } = this.props;
+    const { location, t } = this.props;
 
     return (
       <div style={styles.background}>

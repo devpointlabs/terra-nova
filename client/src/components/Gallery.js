@@ -130,7 +130,7 @@ const styles = {
     fontWeight: 'lighter',
   }, 
   icon: {
-    padding: '7px',
+    padding: '10px',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
