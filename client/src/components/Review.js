@@ -10,7 +10,7 @@ const Review = () => (
         prevLabel={null}
         nextIcon={null}
         nextLabel={null}
-
+        controls={false}
     >
         <Carousel.Item>
             <div style={styles.background}>
@@ -39,7 +39,7 @@ const Review = () => (
         </Carousel.Item>
         <Carousel.Item>
             <div style={styles.background}>
-                <div style={styles.triangle}></div>
+                <div style={styles.circle}></div>
                 <div style={styles.stars}>
                     <Icon name='star' />
                     <Icon name='star' />
@@ -64,7 +64,7 @@ const Review = () => (
         </Carousel.Item>
         <Carousel.Item>
             <div style={styles.background}>
-                <div style={styles.sqaure}></div>
+                <div style={styles.circle}></div>
                 <div style={styles.stars}>
                     <Icon name='star' />
                     <Icon name='star' />
