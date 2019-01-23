@@ -21,6 +21,7 @@ import Rooms from "./components/Rooms";
 import News from "./components/News";
 import Reviews from "./components/Reviews";
 import ResCheckout from "./components/ResCheckout";
+import UnderConstruction from "./components/UnderConstruction";
 
 const App = () => (
   <Fragment>
@@ -46,6 +47,7 @@ const App = () => (
           <ProtectedRoute path="/careerapply" component={CareerForm} />
           <Route path="/reviewform" component={ReviewForm} />
           <Route path="/reviews" component={Reviews} />
+          <Route path="/underconstruction" component={UnderConstruction} />
           <Route component={NoMatch} />
         </Switch>
       </div>
