@@ -21,7 +21,7 @@ export const GoldButton = styled.button`
   font-size: 16px;
   font-family: 'Poppins', sans-serif;
 `;
-export const AmenitiesButton = styled.button `
+export const AmenitiesButton = styled.button`
   border: 2px solid #555555,
   color: black,
   padding: 12px 30px,
@@ -45,12 +45,16 @@ export const BlackButton = styled.button`
 `;
 
 export const Title = styled.h1`
-  font-size: 5.75em;
-  text-align: center;
+  font-size: 6em;
   color: white;
   margin-top: -600px;
   font-family: 'Playfair Display', serif !important;
+<<<<<<< HEAD
+  font-weight: 300;
+  text-shadow: 0.5px 0.5px #000000
+=======
   padding-bottom: 20px;
+>>>>>>> c9f3bdc8bf75b5a68168ced48bdc67958fb8299b
 `;
 
 export const Title2 = styled.h3`
@@ -58,6 +62,19 @@ export const Title2 = styled.h3`
   color: white;
   text-align: center;
   font-family: 'Poppins', sans-serif;
+<<<<<<< HEAD
+  padding-bottom: 200px;
+  text-shadow: 1px 1px #000000
+  `;
+
+export const Title3 = styled.h3`
+  font-size: 2em;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 4px;
+  font-weight: 200;
+  text-shadow: 1px 1px #000000
+=======
   padding-bottom: 30px;
   `;
 
@@ -67,6 +84,7 @@ export const Title2 = styled.h3`
   text-align: center;
   font-family: 'Poppins', sans-serif;
   padding-bottom: 50px;
+>>>>>>> c9f3bdc8bf75b5a68168ced48bdc67958fb8299b
   `;
 
 export const SubHeader = styled.h1`
@@ -124,17 +142,9 @@ export const HeaderLine2 = styled.hr`
 
 export const WhiteLine = styled.hr`
   border: 1px solid white;
-  width: 100%;
   border-color: white;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: no-wrap;
-  justify-content: space-around;
-  align-content: center;
-  margin-bottom: -20px;
-  margin-top: 20px;
-  margin-right: 100px;
-  margin-left: 100px;
+  width: 75px;
+  text-shadow: 1px 1px #000000
   }
 `;
 

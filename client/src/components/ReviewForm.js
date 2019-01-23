@@ -7,7 +7,8 @@ import { withRouter, NavLink} from 'react-router-dom';
 import { SubHeaderTwo } from '../styles/AppStyles';
 
 class ReviewForm extends React.Component {
-    state = { title: "", body: "", rating: 0,  };
+    state = {  title: "", body: "", rating: 0, name: "", location: "",  };
+    // can we get the user name from the user_id??
 
     handleSubmit = (e) => {
         e.preventDefault();
@@ -25,9 +26,7 @@ class ReviewForm extends React.Component {
     };
 
     render() {
-        const { title, body, rating } = this.state;
-        const { t } = this.props;
-      
+        const { title, body, rating, name, location, } = this.state;
         return (
             <Container>
                 <Form style={styles.text}
@@ -39,8 +38,29 @@ class ReviewForm extends React.Component {
                         <Button style={styles.button}>Back to Reviews</Button>
                     </NavLink>
                     </div>
-                    <div style={styles.rating}>
+                    <Form.Group style={styles.topForm}>
 
+                    <Form.Input
+                        name="name"
+                        label="Name"
+                        placeholder="Name"
+                        autofocus
+                        required
+                        value={name}
+                        width='4'
+                        onChange={this.handleChange}
+                        /> 
+                    <Form.Input
+                        name="location"
+                        label="Location"
+                        placeholder="City & State"
+                        required
+                        value={location}
+                        width='4'
+                        onChange={this.handleChange}
+                        /> 
+                        </Form.Group>
+                    <div style={styles.rating}>
                     <Form.Input
                         name="title"
                         label={t("Title")}
@@ -102,7 +122,7 @@ const styles = {
         padding: '10px 40px',
         textAlign: "center",
         textDecoration: 'none',
-        display: 'inline-block',
+        display: 'flex',
         fontSize: '14px',
         fontFamily: "'Poppins', sans-serif",
         marginTop: '10px',
@@ -126,5 +146,11 @@ const styles = {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
+    },
+    topForm: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        // alignItems: 'center',
     }
 }

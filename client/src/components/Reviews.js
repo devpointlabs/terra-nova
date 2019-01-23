@@ -1,8 +1,8 @@
 import React from 'react';
 import { withNamespaces } from 'react-i18next';
 import axios from 'axios';
-import { NavLink,} from 'react-router-dom';
-import { Container, Rating, Divider, Card, Button } from 'semantic-ui-react';
+import { NavLink, } from 'react-router-dom';
+import { Container, Rating, Segment, Button, Header, Icon } from 'semantic-ui-react';
 import { SubHeaderTwo, } from '../styles/AppStyles';
 
 class Reviews extends React.Component {
@@ -30,30 +30,43 @@ class Reviews extends React.Component {
 
         return (
             reviews.map(r => (
-                <Card centered style={styles.MainText}>
-                    <Card.Content>
+                <div>
+                    <Segment
+                        centered
+                        style={styles.mainText}
+                        raised
+                        >
                         <div style={styles.cardTop}>
-                            <Card.Header>
-                                Title: {r.title}
-                            </Card.Header>
-                            <Card.Content textAlign='right' style={styles.stars}>
+                            <Header>
+                        <Icon 
+                        name='user circle' 
+                        size='mini' 
+                        />
+                                {r.name}
+                            </Header>
+                            <div textAlign='right' style={styles.stars}>
                                 <Rating defaultRating={r.rating} maxRating={5} disabled>
-
                                 </Rating>
-                            </Card.Content>
+                            </div>
                         </div>
-                    </Card.Content>
-                    <Divider></Divider>
-                    <Card.Description style={styles.cardDes}>
-                        "{r.body}"
-                        </Card.Description>
-                    <br />
-                    <Card.Content extra>
-                        <Button style={styles.deleteButton}
+                        <p style={styles.location}>
+                            From {r.location}
+                        </p>
+                        <Header as='h3' style={styles.title}>
+                            {r.title}
+                        </Header>
+                        <div style={styles.description}>
+                            "{r.body}"
+                        </div>
+                        <br />
+                        <Button
+                            style={styles.deleteButton}
                             onClick={(() => this.deleteReview(r.id))}>
-                            Delete Review</Button>
-                    </Card.Content>
-                </Card>
+                            Delete Review
+                        </Button>
+                    </Segment>
+                    <br />
+                </div>
             ))
         )
     }
@@ -69,9 +82,9 @@ class Reviews extends React.Component {
                             <Button style={styles.buttonTwo}>{t("Write a Review")}</Button>
                         </NavLink>
                     </div>
-                    <Card.Group>
+                    <div>
                         {this.renderReviews()}
-                    </Card.Group>
+                    </div>
                 </Container>
             </div>
         )
@@ -94,7 +107,7 @@ const styles = {
     mainText: {
         color: "black",
         fontSize: "16px",
-        textAlign: "center",
+        // textAlign: "center",
         fontFamily: "'Poppins', sans-serif",
     },
     button: {
@@ -124,7 +137,7 @@ const styles = {
         textDecoration: 'none',
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'center',
+        justif: 'center',
         fontSize: '14px',
         fontFamily: "'Poppins', sans-serif",
         marginTop: '50px',
@@ -132,7 +145,7 @@ const styles = {
     stars: {
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'flex-end',
+        justif: 'flex-end',
         color: 'black',
     },
     hr: {
@@ -149,17 +162,18 @@ const styles = {
         color: 'white',
         padding: '10px 30px',
         display: 'flex',
-        justifyContent: 'center',
+        justifyContent: 'flex-end',
         fontSize: '14px',
         fontFamily: "'Poppins', sans-serif",
-        marginLeft: '50px',
+        // marginLeft: '50px',
     },
-    cardDes: {
-        // display: 'flex',
-        // flexDirection: 'row',
-        // flexWrap: 'wrap',
-        // justifyContent: 'flex-start',
-        marginLeft: '15px',
-        marginRight: '15px'
+    description: {
+        fontWeight: '100',
+    },
+    location: {
+        color: 'grey',
+    },
+    icon: {
+        // paddingRight: '10px',
     }
 }
