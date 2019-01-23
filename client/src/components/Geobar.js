@@ -131,5 +131,6 @@ const styles = {
   background: {
     backgroundColor: 'grey',
     marginBottom: '-10px',
+    marginTop: '-10px',
   }
 }
