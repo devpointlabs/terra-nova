@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { NavLink, Link, } from 'react-router-dom';
-import { Container, Rating, Divider, Segment, Button, div, Header } from 'semantic-ui-react';
+import { Container, Rating, Segment, Button, Header } from 'semantic-ui-react';
 import { SubHeaderTwo, BlackButton } from '../styles/AppStyles';
 
 class Reviews extends React.Component {
@@ -29,28 +29,34 @@ class Reviews extends React.Component {
         return (
             reviews.map(r => (
                 <div>
-                    <Segment 
-                    centered 
-                    style={styles.MainText}
-                    raised
-                    >
+                    <Segment
+                        centered
+                        style={styles.mainText}
+                        raised
+                        >
                         <div style={styles.cardTop}>
-                            <Header>
-                                Title: {r.title}
+                            <Header style={styles.hr}>
+                                {r.name}
                             </Header>
                             <div basic textAlign='right' style={styles.stars}>
                                 <Rating defaultRating={r.rating} maxRating={5} disabled>
                                 </Rating>
                             </div>
                         </div>
-                        <div style={styles.cardDes}>
+                        <p style={styles.location}>
+                            From {r.location}
+                        </p>
+                        <Header as='h3' style={styles.title}>
+                            {r.title}
+                        </Header>
+                        <div style={styles.description}>
                             "{r.body}"
                         </div>
                         <br />
-                        <Button 
-                        style={styles.deleteButton}
-                        onClick={(() => this.deleteReview(r.id))}>
-                        Delete Review
+                        <Button
+                            style={styles.deleteButton}
+                            onClick={(() => this.deleteReview(r.id))}>
+                            Delete Review
                         </Button>
                     </Segment>
                     <br />
@@ -94,7 +100,7 @@ const styles = {
     mainText: {
         color: "black",
         fontSize: "16px",
-        textAlign: "center",
+        // textAlign: "center",
         fontFamily: "'Poppins', sans-serif",
     },
     button: {
@@ -112,7 +118,7 @@ const styles = {
     top: {
         display: 'flex',
         flexDirection: 'row',
-        justif: 'space-between',
+        justifyContent: 'space-between',
         marginBottom: '50px',
     },
     buttonTwo: {
@@ -141,7 +147,7 @@ const styles = {
     cardTop: {
         display: 'flex',
         flexDirection: 'row',
-        justif: 'space-between',
+        justifyContent: 'space-between',
     },
     deleteButton: {
         backgroundColor: '#555555',
@@ -154,12 +160,12 @@ const styles = {
         fontFamily: "'Poppins', sans-serif",
         marginLeft: '50px',
     },
-    cardDes: {
-        // display: 'flex',
-        // flexDirection: 'row',
-        // flexWrap: 'wrap',
-        // justif: 'flex-start',
-        marginLeft: '15px',
-        marginRight: '15px'
+    description: {
+        fontWeight: '100',
+    },
+    location: {
+        color: 'grey',
+    },
+    title: {
     }
 }

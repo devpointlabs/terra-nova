@@ -5,7 +5,7 @@ import { Form, Rating, Container, Button } from 'semantic-ui-react';
 import { SubHeaderTwo } from '../styles/AppStyles';
 
 class ReviewForm extends React.Component {
-    state = { name: "", title: "", body: "", rating: 0,  };
+    state = {  title: "", body: "", rating: 0, name: "", location: "",  };
     // can we get the user name from the user_id??
 
     handleSubmit = (e) => {
@@ -24,7 +24,7 @@ class ReviewForm extends React.Component {
     };//end of handleRating
 
     render() {
-        const { name, title, body, rating } = this.state;
+        const { title, body, rating, name, location, } = this.state;
         return (
             <Container>
                 <Form style={styles.text}
@@ -36,6 +36,7 @@ class ReviewForm extends React.Component {
                         <Button style={styles.button}>Back to Reviews</Button>
                     </NavLink>
                     </div>
+                    <Form.Group style={styles.topForm}>
 
                     <Form.Input
                         name="name"
@@ -44,9 +45,19 @@ class ReviewForm extends React.Component {
                         autofocus
                         required
                         value={name}
-                        width='3'
+                        width='4'
                         onChange={this.handleChange}
                         /> 
+                    <Form.Input
+                        name="location"
+                        label="Location"
+                        placeholder="City & State"
+                        required
+                        value={location}
+                        width='4'
+                        onChange={this.handleChange}
+                        /> 
+                        </Form.Group>
                     <div style={styles.rating}>
                     <Form.Input
                         name="title"
@@ -121,5 +132,11 @@ const styles = {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
+    },
+    topForm: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        // alignItems: 'center',
     }
 }
