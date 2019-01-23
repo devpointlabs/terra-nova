@@ -9,7 +9,7 @@ import LPI1 from '../../assets/images/LandingPage/LPI1.jpg'
 import LPI2 from '../../assets/images/LandingPage/LPI2.jpg'
 import LPI3 from '../../assets/images/LandingPage/LPI3.jpg'
 import LPI4 from '../../assets/images/LandingPage/LPI4.jpg'
-import { Title, Title2, } from '../../styles/AppStyles';
+import { Title, Title3, WhiteLine } from '../../styles/AppStyles';
 
 
 const MainCarousel = ({ t }) => (
@@ -22,59 +22,66 @@ const MainCarousel = ({ t }) => (
     >
       <Carousel.Item>
         <img
-          width={1500}
+          width={1400}
           height={400}
-          alt="1500x400"
+          alt="1400x400"
           src={LPI1}
           style={styles.image}
         />
         <Carousel.Caption>
-          <Header style={styles.title}> {t("Welcome to Terra Nova Cabins")}</Header>
-          <div style={styles.line}>
-            <Title2>
-              {/* <WhiteLine />  */}
-              <hr style={styles.line} />
-              HOTELS & RESORTS
-                </Title2>
+          <Title style={styles.title}> {t("Welcome to Terra Nova Cabins")}</Title>
+          <div style={styles.subtitle}>
+            <div style={styles.topLine}>
+              <WhiteLine />
+              <Title3>
+                HOTELS & RESORTS
+              </Title3>
+              <WhiteLine />
+            </div>
           </div>
         </Carousel.Caption>
       </Carousel.Item>
 
       <Carousel.Item>
         <img
-          width={1500}
+          width={1400}
           height={400}
-          alt="1500x400"
+          alt="1400x400"
           src={LPI2}
           style={styles.image}
         />
         <Carousel.Caption>
           <Title style={styles.title}> {t("Welcome to Terra Nova Cabins")}</Title>
-          <div style={styles.line}>
-            <Title2>
-              {/* <WhiteLine />  */}
-              <hr style={styles.line} />
-              HOTELS & RESORTS
-                </Title2>
+          <div style={styles.subtitle}>
+            <div style={styles.topLine}>
+              <WhiteLine />
+              <Title3>
+                HOTELS & RESORTS
+              </Title3>
+              <WhiteLine />
+            </div>
           </div>
         </Carousel.Caption>
       </Carousel.Item>
 
       <Carousel.Item>
         <img
-          width={1500}
+          width={1400}
           height={400}
-          alt="1500x400"
+          alt="1400x400"
           src={LPI3}
           style={styles.image}
         />
         <Carousel.Caption>
           <Title style={styles.title}> {t("Welcome to Terra Nova Cabins")}</Title>
-          <div style={styles.line}>
-            <Title2>
-              <hr style={styles.line} />
-              HOTELS & RESORTS
-              </Title2>
+          <div style={styles.subtitle}>
+            <div style={styles.topLine}>
+              <WhiteLine />
+              <Title3>
+                HOTELS & RESORTS
+              </Title3>
+              <WhiteLine />
+            </div>
           </div>
         </Carousel.Caption>
       </Carousel.Item>
@@ -85,14 +92,21 @@ const MainCarousel = ({ t }) => (
 export default withNamespaces()(MainCarousel);
 
 const styles = {
-  line: {
+  topLine: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    marginRight: '50px',
-    marginLeft: '50px',
-    margineTop: '400px',
+    alignContent: 'space-evenly',
+    marginLeft: '125px',
+    marginRight: '125px',
+  },
+  bottomLine: {
+    width: '25%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center'
   },
   center: {
     display: 'flex',
@@ -103,15 +117,18 @@ const styles = {
     height: '600px'
   },
   title: {
-    fontSize: '6em',
-    color: 'white',
-    fontFamily: "'Playfair Display', serif",
+    height: '100px',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
     flexWrap: 'nowrap',
-    alignContent: 'center',
+    alignItems: 'flex-start',
+    alignContent: 'flex-start',
     marginLeft: '-200px',
     marginRight: '-200px',
+  },
+  subtitle: {
+    height: '275px',
+
   }
 }
