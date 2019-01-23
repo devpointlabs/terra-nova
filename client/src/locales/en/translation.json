@@ -185,9 +185,9 @@
     
     "Family Room": "Family Room",
 
-    "Single Room": "Single Room",
+    "SINGLE ROOM": "SINGLE ROOM",
 
-    "Double Room": "Double Room",
+    "DOUBLE ROOM": "DOUBLE ROOM",
 
     "Starting at": "Starting at",
 
@@ -204,7 +204,33 @@
     
     
     
-    "View Details": "View Details"
+    "View Details": "View Details",
     
+    "Room Details": "Room Details",
+
+    "Accomodates": "Accomodates",
+
+    "People": "People",
+
+    "Size": "Size",
+
+    "View": "View",
+
+    "Bed": "Bed",
+
+    "Book Now": "Book Now",
+
+    "600 Square Feet": "600 Square Feet",
+
+    "300 Square Feet": "300 Square Feet",
+
+    "Lake View": "Lake View",
+
+    "Forest View": "Forest View",
+
+    "King or Queen and two Twin Beds": "King or Queen and two Twin Beds",
+
+    "King or Queen":"King or Queen"
+
 
 }

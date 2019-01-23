@@ -2,6 +2,8 @@ import React from "react";
 import { Form, Icon, Container, Segment, Button, Modal, Image, } from "semantic-ui-react";
 import Terra_Nova_Cabins_Logo from '../assets/images/Terra_Nova_Cabins_Logo.png';
 import axios from "axios";
+import { BlackButton } from "../styles/AppStyles";
+import { withNamespaces } from "react-i18next";
 
 // create links for social
 class EmailForm extends React.Component {
@@ -26,7 +28,7 @@ class EmailForm extends React.Component {
 
 
   emailModal = () => (
-    <Modal trigger={<Button onClick={this.handleOpen}>Submit</Button>}
+    <Modal trigger={<BlackButton onClick={this.handleOpen}>Sign Up</BlackButton>}
       open={this.state.showModal}
       close={this.handleClose}
       size='small'
@@ -61,6 +63,7 @@ class EmailForm extends React.Component {
   }
 
   render() {
+    const {t} = this.props;
     return (
       <Segment style={styles.background} basic>
         <Container style={styles.flexbox}>
@@ -71,7 +74,7 @@ class EmailForm extends React.Component {
                 <Form.Input
                   icon="paper plane"
                   name="email"
-                  placeholder="Your Email Address "
+                  placeholder={t("Your Email Address")}
                   value={this.state.email}
                   onChange={this.handleChange}
                 />
@@ -91,7 +94,7 @@ class EmailForm extends React.Component {
   }
 }
 
-export default EmailForm;
+export default withNamespaces()(EmailForm);
 
 
 const styles = {
@@ -136,6 +139,10 @@ const styles = {
     fontSize: "20px",
     display: "flex",
     alignItems: "center",
+  },
+
+  button: {
+
   }
 };
 
