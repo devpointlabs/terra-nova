@@ -55,7 +55,7 @@ class ResForm extends React.Component {
   handleChildren = e => {
     const value = parseInt(e.target.outerText);
     this.setState({
-      reservation: { ...this.state.reservation, Children: value }
+      reservation: { ...this.state.reservation, children: value }
     });
   };
 
