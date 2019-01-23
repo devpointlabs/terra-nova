@@ -30,7 +30,7 @@ class Rooms extends React.Component {
                 <Card.Header style={roomHeader}>
                   {t(room.room_type)}
                 </Card.Header>
-                <Card.Description textAlign="center"> {room.description}
+                <Card.Description textAlign="center"> {t(room.description)}
                 </Card.Description>
               </Card.Content>
               <Card.Content extra style={cardFooter}>{t("Starting at")} ${room.cost} {t("/ Per Night")}</Card.Content>
@@ -67,8 +67,8 @@ class Rooms extends React.Component {
           />
           <GalleryIconLine />
         </div>
-        <RoomBody> When you host a party or family reunion, the special celebrations let <br />
-          you strengthen bonds with each other </RoomBody>
+        <RoomBody> {t("When you host a party or family reunion, the special celebrations let")} <br />
+          {t("you strengthen bonds with each other")} </RoomBody>
 
         <Container>
           <Card.Group centered itemsPerRow={3} >

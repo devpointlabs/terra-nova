@@ -22,12 +22,12 @@ const AboutUs = ({ t }) => (
           <Grid.Column>
             <h1 style={subHeader}>{t("About Us")}</h1>
             <HeaderLine/>
-            <p style={text}> Terra Nova Cabins represents the best in western hospitality and comfort, wrapped in contemporary
-              expression that will inspire your own unique adventures. 
+            <p style={text}> {t("Terra Nova Cabins represents the best in western hospitality and comfort, wrapped in contemporary")}
+              {t("expression that will inspire your own unique adventures.")}
               <br/>
               <br/>
-              Both a haven from the world and a basecamp for adventure, Terra Nova Cabins will be your new southwestern
-              Montana destination rental.
+              {t("Both a haven from the world and a basecamp for adventure, Terra Nova Cabins will be your new southwestern")}
+              {t("Montana destination rental.")}
             </p>
             <WhiteButton>{t("Read More")}</WhiteButton>
           </Grid.Column>
