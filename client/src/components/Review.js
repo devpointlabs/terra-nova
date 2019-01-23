@@ -2,9 +2,10 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Button, Icon, } from 'semantic-ui-react';
 import { Carousel, } from 'react-bootstrap';
+import { withNamespaces } from 'react-i18next';
 
 
-const Review = () => (
+const Review = ({t}) => (
     <Carousel
         prevIcon={null}
         prevLabel={null}
@@ -24,15 +25,17 @@ const Review = () => (
                 </div>
                 <br />
                 <div style={styles.body}>
-                    "This is the only place to stay in Catalina! I have stayed in cheaper hotels and they were fine,
-                        but this is just the icing on the cake! After spending the day bike riding and hiking to come back and enjoy a glass
-                        of wine while looking out your ocean view window and then to top it all off..."
+                    {t("This is the only place to stay in Catalina! I have stayed in cheaper hotels and they were fine,")}
+
+                        {t("but this is just the icing on the cake! After spending the day bike riding and hiking to come back and enjoy a glass")}
+                        
+                        {t("of wine while looking out your ocean view window and then to top it all off...")}
                 <br />
                     <h3 style={styles.name}>JULIA ROSE</h3>
                     <div style={styles.from}>From Los Angeles, California</div>
                     <br />
                     <NavLink style={styles.link} to='/reviews'>
-                        <Button style={styles.button}>More Reviews</Button>
+                        <Button style={styles.button}>{t("More Reviews")}</Button>
                     </NavLink>
                 </div>
             </div>
@@ -49,15 +52,17 @@ const Review = () => (
                 </div>
                 <br />
                 <div style={styles.body}>
-                    "When I first decided to visit Yellowstone I was completely overwhelmed with the choices of hotels.
-                     I'm so glad we chose Terra Nova as our stay in Yellowstone. The staff was kind, punctual and we didn't have
-                    to worry about anything but our trip. I can't wait for our next..."
+                    {t("When I first decided to visit Yellowstone I was completely overwhelmed with the choices of hotels.")}
+
+                     {t("I'm so glad we chose Terra Nova as our stay in Yellowstone. The staff was kind, punctual and we didn't have")}
+
+                    {t("to worry about anything but our trip. I can't wait for our next...")}
                 <br />
                     <h3 style={styles.name}>JON CARSON</h3>
                     <div style={styles.from}>From Seattle, Washington</div>
                     <br />
                     <NavLink style={styles.link} to='/reviews'>
-                        <Button style={styles.button}>More Reviews</Button>
+                        <Button style={styles.button}>{t("More Reviews")}</Button>
                     </NavLink>
                 </div>
             </div>
@@ -73,15 +78,17 @@ const Review = () => (
                 </div>
                 <br />
                 <div style={styles.body}>
-                    "Don't even bother with other hotels. For the price you get at other places, you'd expect a cheap motel, with a cheap environment. With Terra Nova
-                    Cabins, it felt like we were coming home to our very own cabin.
-                    One thing I would suggest is..."
+                    {t("Don't even bother with other hotels. For the price you get at other places, you'd expect a cheap motel, with a cheap environment. With Terra Nova")}
+                    
+                    {t("Cabins, it felt like we were coming home to our very own cabin.")}
+                    
+                    {t("One thing I would suggest is...")}
                 <br />
                     <h3 style={styles.name}>ALEX WINIZTKY</h3>
                     <div style={styles.from}>From Salt Lake City, Utah</div>
                     <br />
                     <NavLink style={styles.link} to='/reviews'>
-                        <Button style={styles.button}>More Reviews</Button>
+                        <Button style={styles.button}>{t("More Reviews")}</Button>
                     </NavLink>
                 </div>
             </div>
@@ -89,7 +96,7 @@ const Review = () => (
     </Carousel>
 
 );
-export default Review;
+export default withNamespaces()(Review);
 
 
 const styles = {

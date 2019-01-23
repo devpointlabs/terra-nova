@@ -53,10 +53,10 @@ class Reviews extends React.Component {
                             {t("From")} {r.location}
                         </p>
                         <Header as='h3' style={styles.title}>
-                            {r.title}
+                            {t(r.title)}
                         </Header>
                         <div style={styles.description}>
-                            "{r.body}"
+                            "{t(r.body)}"
                         </div>
                         <br />
                         <Button

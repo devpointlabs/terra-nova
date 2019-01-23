@@ -48,7 +48,7 @@ Review.create(
   location: 'New York City, NY',
   title: "Best stay I've had in YellowStone.",
   rating: 5,
-  body: "I was hesitant at first to stay in a cabin for our trip, rather than a hotel. I am so glad I didn't choose a regualr ol' hotel. 
+  body: "I was hesitant at first to stay in a cabin for our trip, rather than a hotel. I am so glad I didn't choose a regular old hotel. 
   The rooms are so relaxing, the views are beatiful and the neighbors and staff are wonderful. Will stay here again."
 )
 Review.create(
