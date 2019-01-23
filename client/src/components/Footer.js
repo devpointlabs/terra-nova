@@ -2,9 +2,11 @@ import React from "react";
 import { Grid, Container, Image, Segment, Icon } from "semantic-ui-react";
 import Terra_Nova_Cabins_Logo from "../assets/images/Terra_Nova_Cabins_Logo.png";
 import { Link } from "react-router-dom";
-import EmailForm from "./EmailForm";
+import EmailForm from './EmailForm';
+import { withNamespaces } from 'react-i18next';
 
-const Footer = () => {
+
+const Footer = ({t}) => {
   return (
     <div>
       <EmailForm />
@@ -16,60 +18,60 @@ const Footer = () => {
             </Grid.Column>
             <Grid.Column>
               <Link to={""} style={styles.link}>
-                Site Map
-              </Link>
+                {t("Site Map")}
+            </Link>
               <Link to={""} style={styles.link}>
-                Term & Conditions
-              </Link>
+                {t("Term & Conditions")}
+            </Link>
               <Link to={""} style={styles.link}>
-                Privacy Policy
-              </Link>
+                {t("Privacy Policy")}
+            </Link>
               <Link to={""} style={styles.link}>
-                Help
-              </Link>
+              {t("Help")}
+            </Link>
               <Link to={""} style={styles.link}>
-                Affiliate
-              </Link>
+                {t("Affiliate")}
+            </Link>
             </Grid.Column>
             <Grid.Column>
               <Link to={""} style={styles.link}>
-                Our Location
-              </Link>
+                {t("Our Location")}
+            </Link>
               <Link to={""} style={styles.link}>
-                Career
-              </Link>
+                {t("Career")}
+            </Link>
               <Link to={""} style={styles.link}>
-                About Us
-              </Link>
+                {t("About Us")}
+            </Link>
               <Link to={""} style={styles.link}>
-                Contact Us
-              </Link>
+                {t("Contact Us")}
+            </Link>
             </Grid.Column>
             <Grid.Column>
               <Link to={""} style={styles.link}>
-                FAQS
-              </Link>
+                {t("FAQS")}
+            </Link>
               <Link to={""} style={styles.link}>
-                News
-              </Link>
+                {t("News")}
+            </Link>
               <Link to={""} style={styles.link}>
-                Photo & Video
-              </Link>
+                {t("Photo & Video")}
+            </Link>
               <Link to={""} style={styles.link}>
-                Restaurant
-              </Link>
+                {t("Restaurant")}
+            </Link>
               <Link to={""} style={styles.link}>
-                Gift Card
-              </Link>
-            </Grid.Column>
-          </Grid>
-          <br />
-          <hr />
-          <br />
-          <div style={styles.flexbox}>
-            <p>
-              Copyright &copy; 2019 DevPoint Studios.
-              {/* not sure this copyright should be here */}
+                {t("Gift Card")}
+            </Link>
+          </Grid.Column >
+        </Grid>
+        <br />
+        <hr />
+        <br />
+        <div style={styles.flexbox}>
+          <p>
+            {t("Copyright")} &copy; 2019 DevPoint Studios.
+            {/* not sure this copyright should be here */}
             </p>
             <div>
               <Icon name="paypal" size="big" />
@@ -84,7 +86,7 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default withNamespaces()(Footer);
 
 const styles = {
   flexbox: {

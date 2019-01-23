@@ -10,14 +10,16 @@ import LAKE_VIEW_ICON from "../assets/icons/amenities_icons/LAKE_VIEW_ICON.png";
 import Master_Bedroom_Icon from "../assets/icons/amenities_icons/Master_Bedroom_Icon.png";
 import POOL_SPA_ICON from "../assets/icons/amenities_icons/POOL_SPA_ICON.png";
 import MAKE_EXPORTABLE_ICON from "../assets/icons/amenities_icons/MAKE_EXPORTABLE_ICON.png";
+import { withNamespaces } from 'react-i18next';
 
-const AboutUs = () => (
+
+const AboutUs = ({ t }) => (
   <Container>
     <div style={background}>
       <div>
         <Grid columns={2} padded='vertically'>
           <Grid.Column>
-            <h1 style={subHeader}>About Us</h1>
+            <h1 style={subHeader}>{t("About Us")}</h1>
             <HeaderLine/>
             <p style={text}> Terra Nova Cabins represents the best in western hospitality and comfort, wrapped in contemporary
               expression that will inspire your own unique adventures. 
@@ -26,7 +28,7 @@ const AboutUs = () => (
               Both a haven from the world and a basecamp for adventure, Terra Nova Cabins will be your new southwestern
               Montana destination rental.
             </p>
-            <WhiteButton>Read More</WhiteButton>
+            <WhiteButton>{t("Read More")}</WhiteButton>
           </Grid.Column>
           <Grid.Column>
             <br/>
@@ -44,42 +46,42 @@ const AboutUs = () => (
       <Card.Group centered itemsPerRow={4} style={cardGroup}>
         <Card style={styles.card}>
           <Image src={Master_Bedroom_Icon}/>
-          <Card.Content>MASTER BEDROOM</Card.Content>
+          <Card.Content>{t("MASTER BEDROOM")}</Card.Content>
         </Card>
         <Card style={styles.card}>
           <Image src={LAKE_VIEW_ICON}/>
-          <Card.Content>LAKE VIEW BALCONY</Card.Content>
+          <Card.Content>{t("LAKE VIEW BALCONY")}</Card.Content>
         </Card>
         <Card style={styles.card}>
           <Image src={POOL_SPA_ICON}/>
-          <Card.Content>POOL & SPA</Card.Content>
+      <Card.Content>{t("POOL & SPA")}</Card.Content>
         </Card>
         <Card style={styles.card}>
           <Image src={MAKE_EXPORTABLE_ICON}/>
-          <Card.Content>WIFI COVERAGE</Card.Content>
+          <Card.Content>{t("WIFI COVERAGE")}</Card.Content>
         </Card>
         <Card style={styles.card}>
           <Image src={AWESOME_PACKAGES_ICON}/>
-          <Card.Content>AWESOME PACKAGES</Card.Content>
+          <Card.Content>{t("AWESOME PACKAGES")}</Card.Content>
         </Card>
         <Card style={styles.card}>
           <Image SRC={CLEANING_EVERYDAY_ICON} />
-          <Card.Content>CLEANING EVERYDAY</Card.Content>
+          <Card.Content>{t("CLEANING EVERYDAY")}</Card.Content>
         </Card>
         <Card style={styles.card}>
           <Image src={BUFFET_BREAKFAST_ICON}/>
-          <Card.Content>BUFFET BREAKFAST</Card.Content>
+          <Card.Content>{t("BUFFET BREAKFAST")}</Card.Content>
         </Card>
         <Card style={styles.card}>
           <Image src={AIRPORT_TAXI_ICON}/>
-          <Card.Content>AIRPORT TAXIS</Card.Content>
+          <Card.Content>{t("AIRPORT TAXIS")}</Card.Content>
         </Card>
       </Card.Group>
     </div>
   </Container>
 )
 
-export default AboutUs;
+export default withNamespaces()(AboutUs);
 
 const styles = {
   card: {
@@ -88,7 +90,9 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     fontFamily: "'Poppins', sans-serif",
-    padding: '20px 20px'
+    padding: '20px 20px',
+    color: 'black'
+
   }
 }
 
@@ -97,7 +101,8 @@ const text = {
   fontFamily: "'Poppins', sans-serif",
   fontSize: '16px',
   paddingTop: '50px',
-  paddingBottom: '50px'
+  paddingBottom: '50px',
+  color: 'black'
 }
 
 const background = {
@@ -115,6 +120,7 @@ const subHeader = {
   textAlign: 'left',
   fontFamily: "'Playfair Display', serif",
   paddingTop: '110px',
+  color: 'black',
   // paddingBottom: '50px'
 }
 

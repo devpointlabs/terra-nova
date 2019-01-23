@@ -85,7 +85,8 @@ class EmailForm extends React.Component {
   }
 }
 
-export default EmailForm;
+
+export default withNamespaces()(EmailForm);
 
 
 const styles = {
@@ -114,8 +115,5 @@ const styles = {
     marginBottom: "-15px",
   }
 };
-
-
-
 
 
