@@ -1,110 +1,134 @@
 import React from 'react';
 import { Carousel, } from 'react-bootstrap';
-import { Image, } from 'semantic-ui-react';
-import Yellowstone from '../../assets/images/Yellowstone.png';
-import YellowstoneGeysers from '../../assets/images/YellowstoneGeysers.png';
-import GrandCanyonoftheYellowstone from '../../assets/images/GrandCanyonoftheYellowstone.png';
+// import { Header, } from 'semantic-ui-react';
+// import Yellowstone from '../../assets/images/Yellowstone.png';
+// import YellowstoneGeysers from '../../assets/images/YellowstoneGeysers.png';
+// import GrandCanyonoftheYellowstone from '../../assets/images/GrandCanyonoftheYellowstone.png';
 import { withNamespaces } from 'react-i18next';
-import { Title, Title2, } from '../../styles/AppStyles';
+import LPI1 from '../../assets/images/LandingPage/LPI1.jpg';
+import LPI2 from '../../assets/images/LandingPage/LPI2.jpg';
+import LPI3 from '../../assets/images/LandingPage/LPI3.jpg';
+// import LPI4 from '../../assets/images/LandingPage/LPI4.jpg';
+import { Title, Title3, WhiteLine } from '../../styles/AppStyles';
 
-class MainCarousel extends React.Component {
-  constructor(props, context) {
-    super(props, context);
 
-    this.handleSelect = this.handleSelect.bind(this);
-
-    this.state = {
-      index: 0,
-      direction: 'next',
-    };
-  }
-
-  handleSelect(selectedIndex, e) {
-    this.setState({
-      index: selectedIndex,
-      direction: e.direction
-    });
-  }
-
-  render() {
-    const { index, direction } = this.state;
-    const { t } = this.props;
-    return (
-      <div>
-        <Carousel
-          slide='true'
-          activeIndex={index}
-          direction={direction}
-          onSelect={this.handleSelect}
-        >
-          <Carousel.Item>
-            <Image
-              width='10000'
-              height={500}
-              alt="900x500"
-              src={GrandCanyonoftheYellowstone} />
-            <Carousel.Caption>
-              <Title> {t("Welcome to Terra Nova Cabins")}</Title>
-              <div style={styles.line}>
-              <Title2>
-                {/* <WhiteLine />  */}
-                <hr style={styles.line}/>
+const MainCarousel = ({ t }) => (
+  <div  >
+    <Carousel
+      slide={true}
+      indicators={false}
+      interval={3000}
+      controls={false}
+    >
+      <Carousel.Item>
+        <img
+          width={1400}
+          height={400}
+          alt="1400x400"
+          src={LPI1}
+          style={styles.image}
+        />
+        <Carousel.Caption>
+          <Title style={styles.title}> {t("Welcome to Terra Nova Cabins")}</Title>
+          <div style={styles.subtitle}>
+            <div style={styles.topLine}>
+              <WhiteLine />
+              <Title3>
                 HOTELS & RESORTS
-                </Title2>
-              </div>
-            </Carousel.Caption>
-          </Carousel.Item>
-          
-          <Carousel.Item>
-            <Image
-              width='10000'
-              height={500}
-              alt="900x500"
-              src={Yellowstone} />
-            <Carousel.Caption>
-              <Title> {t("Welcome to Terra Nova Cabins")}</Title>
-              <div style={styles.line}>
-              <Title2>
-                {/* <WhiteLine />  */}
-                <hr style={styles.line}/>
-                HOTELS & RESORTS 
-                </Title2>
-              </div>
-            </Carousel.Caption>
-          </Carousel.Item>
+              </Title3>
+              <WhiteLine />
+            </div>
+          </div>
+        </Carousel.Caption>
+      </Carousel.Item>
 
-          <Carousel.Item>
-            <Image
-              width='10000'
-              height={500}
-              alt="900x500"
-              src={YellowstoneGeysers} />
-            <Carousel.Caption>
-              <Title> {t("Welcome to Terra Nova Cabins")}</Title>
-              <div style={styles.line}>
-              <Title2>
-              <hr style={styles.line}/>
-              HOTELS & RESORTS 
-              </Title2>
-              </div>
-            </Carousel.Caption>
-          </Carousel.Item>
-        </Carousel>
-      </div>
-    );
-  }
-}
+      <Carousel.Item>
+        <img
+          width={1400}
+          height={400}
+          alt="1400x400"
+          src={LPI2}
+          style={styles.image}
+        />
+        <Carousel.Caption>
+          <Title style={styles.title}> {t("Welcome to Terra Nova Cabins")}</Title>
+          <div style={styles.subtitle}>
+            <div style={styles.topLine}>
+              <WhiteLine />
+              <Title3>
+                HOTELS & RESORTS
+              </Title3>
+              <WhiteLine />
+            </div>
+          </div>
+        </Carousel.Caption>
+      </Carousel.Item>
+
+      <Carousel.Item>
+        <img
+          width={1400}
+          height={400}
+          alt="1400x400"
+          src={LPI3}
+          style={styles.image}
+        />
+        <Carousel.Caption>
+          <Title style={styles.title}> {t("Welcome to Terra Nova Cabins")}</Title>
+          <div style={styles.subtitle}>
+            <div style={styles.topLine}>
+              <WhiteLine />
+              <Title3>
+                HOTELS & RESORTS
+              </Title3>
+              <WhiteLine />
+            </div>
+          </div>
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
+  </div>
+);
 
 export default withNamespaces()(MainCarousel);
 
 const styles = {
-  line: {
+  topLine: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    marginRight: '50px',
-    marginLeft: '50px',
-    margineTop: '500px',
+    alignContent: 'space-evenly',
+    marginLeft: '125px',
+    marginRight: '125px',
+  },
+  bottomLine: {
+    width: '25%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center'
+  },
+  center: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  image: {
+    height: '600px'
+  },
+  title: {
+    height: '100px',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    flexWrap: 'nowrap',
+    alignItems: 'flex-start',
+    alignContent: 'flex-start',
+    marginLeft: '-200px',
+    marginRight: '-200px',
+  },
+  subtitle: {
+    height: '275px',
+
   }
 }

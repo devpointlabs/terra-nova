@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 2019_01_23_175845) do
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "location"
   end
 
   create_table "rooms", force: :cascade do |t|

@@ -10,6 +10,7 @@ import {
   Header
 } from "semantic-ui-react";
 import Terra_Nova_Cabins_Logo from "../assets/images/Terra_Nova_Cabins_Logo.png";
+import { withNamespaces } from "react-i18next";
 import axios from "axios";
 import { withNamespaces } from "react-i18next";
 
@@ -22,9 +23,6 @@ class EmailForm extends React.Component {
     const email = { ...this.state };
     axios.post("/api/mailers", email);
     this.setState({ email: "" });
-    {
-      this.emailModal();
-    }
   };
 
   handleChange = ({ target: { name, value } }) => {
