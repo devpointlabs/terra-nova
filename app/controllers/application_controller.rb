@@ -1,6 +1,6 @@
 require 'rails/application_controller'
 
-class ApplicationController < ActionController::API
+class ApplicationController < Rails::ActionController::API
   include DeviseTokenAuth::Concerns::SetUserByToken
   before_action :configure_permitted_parameters, if: :devise_controller?
   
