@@ -2,7 +2,7 @@ import React from "react";
 import { Form, Icon, Container, Segment, Button, Modal, Image, } from "semantic-ui-react";
 import Terra_Nova_Cabins_Logo from '../assets/images/Terra_Nova_Cabins_Logo.png';
 import axios from "axios";
-import { BlackButton } from "../styles/AppStyles";
+import { BlackButton2, WhiteButton } from "../styles/AppStyles";
 import { withNamespaces } from "react-i18next";
 
 // create links for social
@@ -28,7 +28,7 @@ class EmailForm extends React.Component {
 
 
   emailModal = () => (
-    <Modal trigger={<BlackButton onClick={this.handleOpen}>Sign Up</BlackButton>}
+    <Modal trigger={<BlackButton2 onClick={this.handleOpen}>Sign Up</BlackButton2>}
       open={this.state.showModal}
       close={this.handleClose}
       size='small'
@@ -46,13 +46,13 @@ class EmailForm extends React.Component {
         </Modal.Description>
       </Modal.Content>
       <Modal.Actions>
-        <Button
+        <WhiteButton
           color="white"
           onClick={this.handleClose}
           centered
         >
           <Icon name="checkmark" /> Got it!
-          </Button>
+          </WhiteButton>
       </Modal.Actions>
     </Modal>
 
@@ -71,7 +71,7 @@ class EmailForm extends React.Component {
             {/* <Icon name="mail" size="huge" centered /> */}
             <Form onSubmit={this.handleSubmit}>
               <Form.Group>
-                <Form.Input
+                <Form.Input style={styles.body2}
                   icon="paper plane"
                   name="email"
                   placeholder={t("Your Email Address")}
@@ -140,10 +140,14 @@ const styles = {
     display: "flex",
     alignItems: "center",
   },
+  body2: {
+    fontFamily: "'Playfair Display', serif",
+    fontSize: "15px",
+    display: "flex",
+    alignItems: "center",
+  },
 
-  button: {
 
-  }
 };
 
 
