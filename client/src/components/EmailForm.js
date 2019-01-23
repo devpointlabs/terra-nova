@@ -27,8 +27,10 @@ class EmailForm extends React.Component {
 
 
 
-  emailModal = () => (
-    <Modal trigger={<BlackButton2 onClick={this.handleOpen}>Sign Up</BlackButton2>}
+  emailModal = () => {
+    const { t } = this.props;
+    return(
+    <Modal trigger={<BlackButton2 onClick={this.handleOpen}>{t("Sign Up")}</BlackButton2>}
       open={this.state.showModal}
       close={this.handleClose}
       size='small'
@@ -55,8 +57,8 @@ class EmailForm extends React.Component {
           </WhiteButton>
       </Modal.Actions>
     </Modal>
-
-  )
+    )
+  }
 
   showModal = () => {
     this.setState({ showModal: !this.state.showModal })
