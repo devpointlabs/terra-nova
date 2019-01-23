@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink, } from 'react-router-dom';
 import { Grid, Header, } from 'semantic-ui-react';
 import { withNamespaces, } from 'react-i18next';
-import { GalleryIconLine2 } from '../styles/AppStyles';
+// import { GalleryIconLine2 } from '../styles/AppStyles';
 
 
 
