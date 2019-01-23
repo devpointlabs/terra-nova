@@ -1,6 +1,7 @@
 import React from "react";
 import { Form, Icon, Container, Segment, Button, Modal, Image, } from "semantic-ui-react";
 import Terra_Nova_Cabins_Logo from '../assets/images/Terra_Nova_Cabins_Logo.png';
+import { withNamespaces } from 'react-i18next';
 import axios from "axios";
 import { BlackButton2, WhiteButton } from "../styles/AppStyles";
 import { withNamespaces } from "react-i18next";
@@ -14,7 +15,6 @@ class EmailForm extends React.Component {
     const email = { ...this.state };
     axios.post('/api/mailers', email)
     this.setState({ email: "" })
-    { this.emailModal() };
   }
 
   handleChange = ({ target: { name, value } }) => {
