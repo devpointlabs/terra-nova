@@ -29,8 +29,8 @@ const styles = {
     textAlign: "center"
   },
   title2: {
-    paddingTop: "150px",
-    fontSize: "2.5em",
+    paddingTop: "100px",
+    fontSize: "3em",
     // color: "white",
     fontFamily: "'Playfair Display', serif !important",
     fontWeight: "300",
@@ -38,10 +38,10 @@ const styles = {
   },
   body: {
     paddingTop: "15px",
-    fontSize: "1.5em",
+    fontSize: "2em",
     // color: "white",
     fontFamily: "'Playfair Display', serif !important",
-    fontWeight: "300",
+    fontWeight: "400",
     // textShadow: "0.5px 0.5px #000000",
     textAlign: "center",
   },
@@ -49,5 +49,11 @@ const styles = {
       backgroundImage: "url(" + LPI4 + ")",
       minHeight: "100vh",
       minWidth: "100%",
+      backgroundSize: "cover",
+      backgroundPosition: "center center",
+      // backgrounColor: "black",
+      // backgroundBlendMode: "screen",
+      // opacity: "0.2",
+      // filter: "blur(8px)"
     }
 }
