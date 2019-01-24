@@ -1,6 +1,6 @@
 import React from 'react';
-import { Card, Container, Image, Menu, Item, Grid,} from 'semantic-ui-react';
-import { SubHeader, GalleryIconLine, GalleryGoldButton, GalleryWhiteButton} from '../styles/AppStyles';
+import { Card, Container, Image, Menu, Item, Grid, } from 'semantic-ui-react';
+import { SubHeader, GalleryIconLine, GalleryGoldButton, GalleryWhiteButton } from '../styles/AppStyles';
 import FLEUR_ICON from '../assets/icons/miscellaneous_icons/FLEUR_ICON.png';
 import IMGone from '../assets/images/GalleryImages/HotelandGrounds/IMGone.jpg';
 import IMGeight from '../assets/images/GalleryImages/HotelandGrounds/IMGeight.jpg';
@@ -10,6 +10,7 @@ import IMGthree from '../assets/images/GalleryImages/HotelandGrounds/IMGthree.jp
 import IMGtwo from '../assets/images/GalleryImages/HotelandGrounds/IMGtwo.jpg';
 import IMGseven from '../assets/images/GalleryImages/HotelandGrounds/IMGseven.jpg';
 import IMGsix from '../assets/images/GalleryImages/HotelandGrounds/IMGsix.jpg';
+import { Link } from "react-router-dom";
 import { withNamespaces } from 'react-i18next';
 
 
@@ -17,7 +18,7 @@ class Gallery extends React.Component {
   state = { cards: [], };
 
   renderCards = () => {
-    return this.state.cards.map( content => (
+    return this.state.cards.map(content => (
       <Card raised centered textAlign fluid style={cardStyles.card}>
         <Card.Content>
           <Card.Header style={styles.font}>
@@ -43,71 +44,80 @@ class Gallery extends React.Component {
       <div style={styles.background} >
         <Container>
           <SubHeader style={styles.font}>Our Gallery</SubHeader>
-            <div style={styles.line}>
+          <div style={styles.line}>
             <GalleryIconLine />
-          <Image centered 
-          style={styles.icon} 
-          src={FLEUR_ICON}
-          />
+            <Image centered
+              style={styles.icon}
+              src={FLEUR_ICON}
+            />
             <GalleryIconLine />
           </div>
           <div style={styles.button}>
-          <Menu secondary>
+            <Menu secondary>
 
-          <Menu.Item fitted='horizontally'>
-          <GalleryGoldButton>HOTEL & GROUNDS</GalleryGoldButton>
-          </Menu.Item>
+              <Menu.Item fitted='horizontally'>
+                <Link to="/underconstruction">
+                  <GalleryGoldButton>HOTEL & GROUNDS</GalleryGoldButton>
+                </Link>
+              </Menu.Item>
 
-          <Menu.Item fitted='horizontally'>
-          <GalleryGoldButton>ROOM/CABIN</GalleryGoldButton>
-          </Menu.Item>
-          <Menu.Item fitted='horizontally'>
-          <GalleryGoldButton>BATHROOM</GalleryGoldButton>
-          </Menu.Item>
-          <Menu.Item fitted='horizontally'>
-          <GalleryGoldButton>DINING</GalleryGoldButton>
-          </Menu.Item>
-          </Menu>
+              <Menu.Item fitted='horizontally'>
+                <Link to="/underconstruction">
+                  <GalleryGoldButton>ROOM/CABIN</GalleryGoldButton>
+                </Link>
+              </Menu.Item>
+              <Menu.Item fitted='horizontally'>
+                <Link to="/underconstruction">
+                  <GalleryGoldButton>BATHROOM</GalleryGoldButton>
+                </Link>
+              </Menu.Item>
+              <Menu.Item fitted='horizontally'>
+                <Link to="/underconstruction">
+                  <GalleryGoldButton>DINING</GalleryGoldButton>
+                </Link>
+              </Menu.Item>
+            </Menu>
           </div>
           {/* <Card.Group centered itemsPerRow={4}>
             {this.renderCards()}
           </Card.Group> */}
           <Grid>
-            <Grid.Row columns={4}> 
+            <Grid.Row columns={4}>
               <Grid.Column stretched>
-                <Image src={IMGone}/>
+                <Image src={IMGone} />
               </Grid.Column>
               <Grid.Column stretched>
-                <Image src={IMGtwo}/>
+                <Image src={IMGtwo} />
               </Grid.Column >
               <Grid.Column stretched>
-                <Image src={IMGthree}/>
+                <Image src={IMGthree} />
               </Grid.Column>
               <Grid.Column stretched>
-                <Image src={IMGfour}/>
+                <Image src={IMGfour} />
               </Grid.Column>
             </Grid.Row>
-            <Grid.Row columns={4}> 
+            <Grid.Row columns={4}>
               <Grid.Column stretched>
-                <Image src={IMGfive}/>
+                <Image src={IMGfive} />
               </Grid.Column>
               <Grid.Column stretched>
-                <Image src={IMGsix}/>
+                <Image src={IMGsix} />
               </Grid.Column>
               <Grid.Column stretched>
-                <Image src={IMGseven}/>
+                <Image src={IMGseven} />
               </Grid.Column>
               <Grid.Column stretched>
-                <Image src={IMGeight}/>
+                <Image src={IMGeight} />
               </Grid.Column>
             </Grid.Row>
           </Grid>
 
 
           <Item style={styles.button}>
-          <a href={'https://www.google.com/imghp'}>
-          <GalleryWhiteButton>VIEW MORE</GalleryWhiteButton>
-          </a>
+            <Link to="/underconstruction">
+              <GalleryWhiteButton>VIEW MORE</GalleryWhiteButton>
+            </Link>
+
           </Item>
         </Container>
       </div>
@@ -128,7 +138,7 @@ const styles = {
     fontFamily: "'Playfair Display', serif",
     fontSize: "50px",
     fontWeight: 'lighter',
-  }, 
+  },
   icon: {
     padding: '10px',
     display: 'flex',
