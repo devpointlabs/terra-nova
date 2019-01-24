@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Title, Title2, Title3, WhiteLine } from '../styles/AppStyles';
 import Rooms from './Rooms';
 import Review from './Review';
 import AboutUs from './AboutUs';
