@@ -46,8 +46,8 @@ const styles = {
     textAlign: "center",
   },
     background: {
-      backgroundImage: "grey",
-      minHeight: "100%",
+      backgroundImage: "url(" + LPI4 + ")",
+      minHeight: "100vh",
       minWidth: "100%",
     }
 }
