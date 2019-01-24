@@ -82,7 +82,7 @@ export const Title3 = styled.h3`
   text-shadow: 1px 1px #000000
   `;
 
-  export const Title3 = styled.h5`
+  export const Title4 = styled.h5`
   font-size: 2em;
   text-align: center;
   color: black;
