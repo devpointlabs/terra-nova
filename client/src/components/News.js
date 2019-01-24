@@ -1,20 +1,21 @@
 import React from 'react';
-import { NavLink, } from 'react-router-dom';
-import { SubHeader, HeaderLine2,} from "../styles/AppStyles";
-import { Grid, Header, } from 'semantic-ui-react';
-import { withNamespaces, } from 'react-i18next';
+import { NavLink } from 'react-router-dom';
+import { Grid, Container } from 'semantic-ui-react';
+import { SubHeader, HeaderLine } from "../styles/AppStyles";
+import { withNamespaces } from 'react-i18next';
 
 const News = ({t}) => (
-  <div style={padding}>
-        <Grid.Column>
-          <SubHeader>News</SubHeader>
-          <HeaderLine2/>
-            <Header as='h1' style={subHeader}>
-              {t("News")}
-            </Header>
-          </Grid.Column>
-
-      <Grid columns={4}centered divided>
+  <>
+  <Container>
+    <Grid columns={2} padded='vertically'>
+      <Grid.Column>
+        <SubHeader style={subHeader}>{t("News")}</SubHeader>
+        <HeaderLine/>
+      </Grid.Column>
+    </Grid>
+  </Container>
+    <div>
+        <Grid columns={4}centered divided>
       {/* Grid 0 */}
         <Grid>
         </Grid>
@@ -111,7 +112,8 @@ const News = ({t}) => (
           </NavLink>
         </Grid>
       </Grid>
-  </div>
+    </div>
+    </>
 )
 
 export default withNamespaces()(News);
@@ -133,7 +135,6 @@ const style = {
     fontSize: "45px",
     textAlign: "left",
     fontFamily: "'Playfair Display', serif",
-    // borderRight: '1px solid grey'
   },
   date: {
     color: "grey",
@@ -152,20 +153,12 @@ const style = {
 }
 
 const subHeader = {
-  fontSize: '3.5em',
-  fontWeight: 'normal',
+  fontSize: '3.0em',
+  fontWeight: 'lighter',
   textAlign: 'left',
   fontFamily: "'Playfair Display', serif",
   paddingTop: '110px',
-  paddingBottom: '10px',
-  marginBottom: '40px',
-  marginLeft: '50px',
-  borderBottom: '1px solid black',
-  width: '13%'
-}
-
-const padding = {
-  paddingBottom: '100px',
+  color: 'black',
 }
 
 const gridPad = {

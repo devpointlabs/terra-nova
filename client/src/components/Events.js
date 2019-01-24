@@ -1,46 +1,65 @@
 import React from 'react';
-import { SubHeader, Title4, } from "../styles/AppStyles";
-import { Card, Image, Container, Grid } from "semantic-ui-react";
+import { SubHeader, HeaderLine, Title4 } from "../styles/AppStyles";
+import { Card, Container, Grid } from "semantic-ui-react";
 import { withNamespaces } from 'react-i18next';
+import golfCup from "../assets/images/golfCup.jpg";
+import weddingDay from "../assets/images/weddingDay.jpg";
+import lakeBeach from "../assets/images/lakeBeach.jpg";
 
 const Events = ({ t }) => {
     return (
-        <div>
-            <Container>
-                <div>
-                    <Grid columns={2} padded='vertically'>
-                        <SubHeader><u>{t("Our Events")}</u></SubHeader>
-                    </Grid>
-                </div>
+        <Container>
+            <div>
+                <Grid columns={2} padded='vertically'>
+                <Grid.Column>
+                <SubHeader style={subHeader}>{t("Our Events")}</SubHeader>
+                <HeaderLine/>
+                </Grid.Column>
+                </Grid>
+            </div>
                 <Card.Group centered itemsPerRow={3}>
-                    <Card style={styles.card}>
-                        <Image />
+                <Card style={styleCard1}>
                         <Title4>Wedding Day</Title4>
                     </Card>
-                    <Card style={styles.card}>
-                        <Image />
+                    <Card style={styleCard2}> 
                         <Title4>Golf Cup 2017</Title4>
                     </Card>
-                    <Card style={styles.card}>
-                        <Image />
+                    <Card style={styleCard3}>
                         <Title4>Beach Sports</Title4>
                     </Card>
                 </Card.Group>
-            </Container>
-        </div>
+        </Container>
     )
 }
 
-export default withNamespaces()(Events);
-
-const styles = {
-    card: {
-        display: 'flex',
-        fontSize: '16px',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontFamily: "'Poppins', sans-serif",
-        padding: '20px 20px',
-        height: '400px',
-    }
+const styleCard1 = {
+    background: `url(${weddingDay})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
 }
+
+const styleCard2 = {
+    background: `url(${golfCup})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+}
+
+const styleCard3 = {
+    background: `url(${lakeBeach})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+}
+
+const subHeader = {
+    fontSize: '3.0em',
+    fontWeight: 'lighter',
+    textAlign: 'left',
+    fontFamily: "'Playfair Display', serif",
+    paddingTop: '110px',
+    color: 'black',
+}
+
+export default withNamespaces()(Events);
