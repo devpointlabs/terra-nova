@@ -8,7 +8,7 @@ import { BlackButton2, WhiteButton } from "../styles/AppStyles";
 
 // create links for social
 class EmailForm extends React.Component {
-  state = { email: "", showModal: false }
+  state = { email: "", open: false }
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -21,18 +21,19 @@ class EmailForm extends React.Component {
     this.setState({ [name]: value });
   }
 
-  handleOpen = () => this.setState({ showModal: true })
-
-  handleClose = () => this.setState({ showModal: false })
+  open = () => this.setState({ open: true })
+  close = () => this.setState({ open: false })
 
 
 
   emailModal = () => {
     const { t } = this.props;
+    const { open } = this.state;
     return(
-    <Modal trigger={<BlackButton2 onClick={this.handleOpen}>{t("Sign Up")}</BlackButton2>}
-      open={this.state.showModal}
-      close={this.handleClose}
+    <Modal trigger={<BlackButton2 onClick={this.open}>{t("Sign Up")}</BlackButton2>}
+      open={open}
+      onOpen={this.open}
+      onClose={this.close}
       size='small'
       centered={false}
       basic
@@ -50,7 +51,7 @@ class EmailForm extends React.Component {
       <Modal.Actions>
         <WhiteButton
           color="white"
-          onClick={this.handleClose}
+          onClick={this.close}
           centered
         >
           <Icon name="checkmark" /> Got it!
@@ -60,9 +61,9 @@ class EmailForm extends React.Component {
     )
   }
 
-  showModal = () => {
-    this.setState({ showModal: !this.state.showModal })
-  }
+  // showModal = () => {
+  //   this.setState({ showModal: !this.state.showModal })
+  // }
 
   render() {
     const {t} = this.props;

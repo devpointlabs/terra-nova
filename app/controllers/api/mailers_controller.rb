@@ -1,5 +1,5 @@
 class Api::MailersController < ApplicationController
-  before_action :set_mailer
+ 
 
   def index
     render json: Mailer.all
