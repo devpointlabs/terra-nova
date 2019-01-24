@@ -1,14 +1,14 @@
 import React from 'react';
 import { NavLink, } from 'react-router-dom';
+import { SubHeader, HeaderLine2,} from "../styles/AppStyles";
 import { Grid, Header, } from 'semantic-ui-react';
 import { withNamespaces, } from 'react-i18next';
-// import { GalleryIconLine2 } from '../styles/AppStyles';
-
-
 
 const News = ({t}) => (
   <div style={padding}>
         <Grid.Column>
+          <SubHeader>News</SubHeader>
+          <HeaderLine2/>
             <Header as='h1' style={subHeader}>
               {t("News")}
             </Header>

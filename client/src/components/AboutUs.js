@@ -13,7 +13,6 @@ import POOL_SPA_ICON from "../assets/icons/amenities_icons/POOL_SPA_ICON.png";
 import MAKE_EXPORTABLE_ICON from "../assets/icons/amenities_icons/MAKE_EXPORTABLE_ICON.png";
 import { withNamespaces } from 'react-i18next';
 
-
 const AboutUs = ({ t }) => (
   <Container>
     <div style={background}>

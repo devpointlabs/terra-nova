@@ -82,6 +82,15 @@ export const Title3 = styled.h3`
   text-shadow: 1px 1px #000000
   `;
 
+  export const Title3 = styled.h5`
+  font-size: 2em;
+  text-align: center;
+  color: black;
+  font-family: 'Playfair Display', serif !important;
+  padding-top: 300px;
+  padding-bottom: 40px;
+`;
+
 export const SubHeader = styled.h1`
   font-size: 3.0em;
   font-weight: normal;
