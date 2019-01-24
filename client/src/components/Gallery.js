@@ -43,8 +43,8 @@ class Gallery extends React.Component {
     return (
       <div style={styles.background} >
         <Container>
-          <SubHeader style={styles.font}>Our Gallery</SubHeader>
-          <div style={styles.line}>
+          <SubHeader style={styles.font}>{t("Our Gallery")}</SubHeader>
+            <div style={styles.line}>
             <GalleryIconLine />
             <Image centered
               style={styles.icon}
@@ -53,30 +53,22 @@ class Gallery extends React.Component {
             <GalleryIconLine />
           </div>
           <div style={styles.button}>
-            <Menu secondary>
+          <Menu secondary>
 
-              <Menu.Item fitted='horizontally'>
-                <Link to="/underconstruction">
-                  <GalleryGoldButton>HOTEL & GROUNDS</GalleryGoldButton>
-                </Link>
-              </Menu.Item>
+          <Menu.Item fitted='horizontally'>
+          <GalleryGoldButton>{t("HOTEL & GROUNDS")}</GalleryGoldButton>
+          </Menu.Item>
 
-              <Menu.Item fitted='horizontally'>
-                <Link to="/underconstruction">
-                  <GalleryGoldButton>ROOM/CABIN</GalleryGoldButton>
-                </Link>
-              </Menu.Item>
-              <Menu.Item fitted='horizontally'>
-                <Link to="/underconstruction">
-                  <GalleryGoldButton>BATHROOM</GalleryGoldButton>
-                </Link>
-              </Menu.Item>
-              <Menu.Item fitted='horizontally'>
-                <Link to="/underconstruction">
-                  <GalleryGoldButton>DINING</GalleryGoldButton>
-                </Link>
-              </Menu.Item>
-            </Menu>
+          <Menu.Item fitted='horizontally'>
+          <GalleryGoldButton>{t("ROOM/CABIN")}</GalleryGoldButton>
+          </Menu.Item>
+          <Menu.Item fitted='horizontally'>
+          <GalleryGoldButton>{t("BATHROOM")}</GalleryGoldButton>
+          </Menu.Item>
+          <Menu.Item fitted='horizontally'>
+          <GalleryGoldButton>{t("DINING")}</GalleryGoldButton>
+          </Menu.Item>
+          </Menu>
           </div>
           {/* <Card.Group centered itemsPerRow={4}>
             {this.renderCards()}
