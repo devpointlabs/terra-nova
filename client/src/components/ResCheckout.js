@@ -16,7 +16,7 @@ class ResCheckout extends React.Component {
     return (
       <Segment.Group horizontal raised>
         <Segment>
-          <Image src={image} alt="" />
+          {/* <Image src={image} alt="" /> */}
         </Segment>
         <Segment>
           <Header as="h2">{room_type}</Header>
