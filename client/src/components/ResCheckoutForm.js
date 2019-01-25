@@ -2,6 +2,7 @@ import React from "react";
 import { Form, Button } from "semantic-ui-react";
 import axios from "axios";
 import BraintreeDrop from './BraintreeDrop';
+import ResModal from "./ResModal";
 
 class ResCheckoutForm extends React.Component {
   state = {
@@ -30,13 +31,20 @@ class ResCheckoutForm extends React.Component {
     if (confirm)
       axios
         .post(`/api/rooms/${roomId}/reservations`, this.state.reservation)
-        .then(window.confirm("Booked"));
+        .then(res =>
+          // window.confirm("Booked"),
+          this.props.history.push({
+            pathname: "/checkout/confirmation",
+            state: { room: this.props.room, userSpecs: this.state.reservation }
+          })
+        );
   };
 
   render() {
     const {
       reservation: { first_name, last_name, phone, email }
     } = this.state;
+
     return (
       <Form onSubmit={this.handleSubmit} style={styles.flex}>
         <Form.Group>
@@ -73,7 +81,7 @@ class ResCheckoutForm extends React.Component {
             label="email"
           />
         </Form.Group>
-        <Button color="brown">Checkout Room</Button>
+        <Button color="brown">Reserve Room</Button>
       </Form>
     );
   }
