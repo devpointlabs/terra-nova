@@ -23,24 +23,26 @@ class Rooms extends React.Component {
 
       if (room.id === 1 || room.id === 6 || room.id === 11) {
         return (
-          <div>
-            <Card raised style={{ margin: '30px', }} >
-              <Image size="large" src={room.image} alt="room" />
+          <div >
+            <Card raised style={{ width: '310px', margin: '30px', }} >
+              <Image style={{height: '250px',}} size="large" src={room.image} alt="room" />
               <Card.Content>
                 <Card.Header style={roomHeader}>
                   {t(room.room_type)}
                 </Card.Header>
-                <Card.Description textAlign="center"> {t(room.description)}
+                <Card.Description style={{height: '120px'}} textAlign="center"> {t(room.description)}
                 </Card.Description>
               </Card.Content>
+              <div style={{height: '20px', marginTop: '15px'}} >
               <Card.Content extra style={cardFooter}>{t("Starting at")} ${room.cost} {t("/ Per Night")}</Card.Content>
+              </div>
               <Card.Meta textAlign="center">
                 <Room max={room.max_occupancy} bed={room.bed_type} size={room.size} view={room.view} />
               </Card.Meta>
               <Card.Meta textAlign="center">
                 <Link to="/reservations"
                   active={this.props.location.pathname === "/reservations"}
-                >
+                  >
                   <GoldButton style={{ marginBottom: "10px" }}> {t("Book Now")}
                     </GoldButton>
                 </Link>

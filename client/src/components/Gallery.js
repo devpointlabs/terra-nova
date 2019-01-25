@@ -76,35 +76,33 @@ class Gallery extends React.Component {
           <Grid>
             <Grid.Row columns={4}>
               <Grid.Column stretched>
-                <Image src={IMGone} />
+                <Image style={{height: '250px'}}src={IMGone} />
               </Grid.Column>
-              <Grid.Column stretched>
-                <Image src={IMGtwo} />
+              <Grid.Column>
+                <Image style={{height: '250px', width: '250px'}} src={IMGtwo} />
               </Grid.Column >
               <Grid.Column stretched>
-                <Image src={IMGthree} />
+                <Image style={{height: '250px'}}src={IMGthree} />
               </Grid.Column>
               <Grid.Column stretched>
-                <Image src={IMGfour} />
+                <Image style={{height: '250px'}}src={IMGfour} />
               </Grid.Column>
             </Grid.Row>
             <Grid.Row columns={4}>
               <Grid.Column stretched>
-                <Image src={IMGfive} />
+                <Image style={{height: '250px'}} src={IMGfive} />
               </Grid.Column>
               <Grid.Column stretched>
-                <Image src={IMGsix} />
+                <Image style={{height: '250px'}} src={IMGsix} />
               </Grid.Column>
               <Grid.Column stretched>
-                <Image src={IMGseven} />
+                <Image style={{height: '250px'}} src={IMGseven} />
               </Grid.Column>
               <Grid.Column stretched>
-                <Image src={IMGeight} />
+                <Image style={{height: '250px'}} src={IMGeight} />
               </Grid.Column>
             </Grid.Row>
           </Grid>
-
-
           <Item style={styles.button}>
             <Link to="/underconstruction">
               <GalleryWhiteButton>{t("VIEW MORE")}</GalleryWhiteButton>
