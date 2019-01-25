@@ -27,7 +27,7 @@ const News = ({t}) => (
             </Grid.Column>
             <Grid.Column width={7} style={style.date}>
             <Grid.Row textAlign='left'>
-              AUGUST
+              {t("AUGUST")}
             </Grid.Row>
             <Grid.Row textAlign='left'>
               2017
@@ -57,7 +57,7 @@ const News = ({t}) => (
             </Grid.Column>
             <Grid.Column width={7} style={style.date}>
             <Grid.Row textAlign='left'>
-              AUGUST
+            {t("AUGUST")}
             </Grid.Row>
             <Grid.Row textAlign='left'>
               2017
@@ -87,7 +87,7 @@ const News = ({t}) => (
             </Grid.Column>
             <Grid.Column width={7} style={style.date}>
             <Grid.Row textAlign='left'>
-              AUGUST
+            {t("AUGUST")}
             </Grid.Row>
             <Grid.Row textAlign='left'>
               2017
