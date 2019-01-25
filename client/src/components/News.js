@@ -1,19 +1,21 @@
 import React from 'react';
-import { NavLink, } from 'react-router-dom';
-import { Grid, Header, } from 'semantic-ui-react';
+import { NavLink } from 'react-router-dom';
+import { Grid, Container } from 'semantic-ui-react';
+import { SubHeader, HeaderLine } from "../styles/AppStyles";
+import { withNamespaces } from 'react-i18next';
 
-
-
-const News = () => (
-  <div style={padding}>
-        <Grid.Column>
-            <Header as='h1' style={subHeader}>
-              News
-              <hr />
-            </Header>
-          </Grid.Column>
-
-      <Grid columns={4}centered divided>
+const News = ({t}) => (
+  <>
+  <Container>
+    <Grid columns={2} padded='vertically'>
+      <Grid.Column>
+        <SubHeader style={subHeader}>{t("News")}</SubHeader>
+        <HeaderLine/>
+      </Grid.Column>
+    </Grid>
+  </Container>
+    <div>
+        <Grid columns={4}centered divided>
       {/* Grid 0 */}
         <Grid>
         </Grid>
@@ -33,7 +35,7 @@ const News = () => (
           </Grid.Column>
           </Grid.Row>
             <Grid.Row style={style.text}>
-              Update menu food in Skyline Hotel
+              {t("Update menu in Skyline Hotel")}
             </Grid.Row>
           <NavLink to='/' activeStyle=
           {{ 
@@ -43,7 +45,7 @@ const News = () => (
             fontSize: "13px",
             }}>
             <Grid.Row style={gridPad.link}>
-              Read More
+              {t("Read More")}
           </Grid.Row>
           </NavLink>
         </Grid>
@@ -63,7 +65,7 @@ const News = () => (
           </Grid.Column>
           </Grid.Row>
             <Grid.Row style={style.text}>
-              Las Maquinas on Tragamonedas
+              {t("New Hikes Available for Spring")}
             </Grid.Row>
           <NavLink to='/' activeStyle=
           {{ 
@@ -73,7 +75,7 @@ const News = () => (
             fontSize: "13px",
           }}>
             <Grid.Row style={gridPad.link}>
-              Read More
+              {t("Read More")}
           </Grid.Row>
           </NavLink>
         </Grid>
@@ -93,7 +95,7 @@ const News = () => (
           </Grid.Column>
           </Grid.Row>
             <Grid.Row style={style.text}>
-              Mother Earth Hosts Our Travels
+              {t("Mother Earth Hosts Our Travels")}
             </Grid.Row>
           <NavLink to='/' activeStyle=
           {{ 
@@ -104,16 +106,17 @@ const News = () => (
           }}>
           <Grid.Column>
             <Grid.Row style={gridPad.link}>
-              Read More
+              {t("Read More")}
           </Grid.Row>
           </Grid.Column>
           </NavLink>
         </Grid>
       </Grid>
-  </div>
+    </div>
+    </>
 )
 
-export default News;
+export default withNamespaces()(News);
 
 const style = {
   text: {
@@ -132,7 +135,6 @@ const style = {
     fontSize: "45px",
     textAlign: "left",
     fontFamily: "'Playfair Display', serif",
-    // borderRight: '1px solid grey'
   },
   date: {
     color: "grey",
@@ -143,21 +145,20 @@ const style = {
     letterSpacing: '1px',
     alignContent: 'left',
     paddingLeft: '30px',
+  },
+  line: {
+    marginLeft: '-800px',
+    marginTop: '1px',
   }
 }
 
 const subHeader = {
-  fontSize: '3.5em',
-  fontWeight: 'normal',
+  fontSize: '3.0em',
+  fontWeight: 'lighter',
   textAlign: 'left',
   fontFamily: "'Playfair Display', serif",
   paddingTop: '110px',
-  paddingBottom: '50px',
-  paddingLeft: '30px',
-}
-
-const padding = {
-  paddingBottom: '100px',
+  color: 'black',
 }
 
 const gridPad = {

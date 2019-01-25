@@ -43,6 +43,17 @@ export const BlackButton = styled.button`
   font-size: 14px;
   font-family: 'Poppins', sans-serif; 
 `;
+export const BlackButton2 = styled.button`
+  background-color: #363636;
+  border: 2px solid ##f8f8ff;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif; 
+`;
 
 export const Title = styled.h1`
   font-size: 6em;
@@ -71,6 +82,15 @@ export const Title3 = styled.h3`
   text-shadow: 1px 1px #000000
   `;
 
+  export const Title4 = styled.h5`
+  font-size: 2em;
+  text-align: center;
+  color: white;
+  font-family: 'Playfair Display', serif !important;
+  padding-top: 340px;
+  padding-bottom: 40px;
+`;
+
 export const SubHeader = styled.h1`
   font-size: 3.0em;
   font-weight: normal;
@@ -79,6 +99,7 @@ export const SubHeader = styled.h1`
   padding-top: 110px;
   color: black;
   `;
+  
 export const SubHeaderTwo = styled.h1`
   font-size: 3.0em;
   font-weight: normal;
@@ -139,8 +160,9 @@ export const GalleryIconLine = styled.hr`
 `;
 export const GalleryIconLine2 = styled.hr`
   border: 0.5px solid #826614;
-  width: 20%;
+  width: 13%;
   border-color: #826614;
+  
 `;
 
 export const GalleryWhiteButton = styled.button`

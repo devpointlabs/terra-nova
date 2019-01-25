@@ -17,50 +17,50 @@ const Footer = ({t}) => {
               <Image src={Terra_Nova_Cabins_Logo} size="small" />
             </Grid.Column>
             <Grid.Column>
-              <Link to={""} style={styles.link}>
+              <Link to={"/underconstruction"} style={styles.link}>
                 {t("Site Map")}
             </Link>
-              <Link to={""} style={styles.link}>
+              <Link to={"/underconstruction"} style={styles.link}>
                 {t("Term & Conditions")}
             </Link>
-              <Link to={""} style={styles.link}>
+              <Link to={"/underconstruction"} style={styles.link}>
                 {t("Privacy Policy")}
             </Link>
-              <Link to={""} style={styles.link}>
+              <Link to={"/underconstruction"} style={styles.link}>
               {t("Help")}
             </Link>
-              <Link to={""} style={styles.link}>
+              <Link to={"/underconstruction"} style={styles.link}>
                 {t("Affiliate")}
             </Link>
             </Grid.Column>
             <Grid.Column>
-              <Link to={""} style={styles.link}>
+              <Link to={"/underconstruction"} style={styles.link}>
                 {t("Our Location")}
             </Link>
-              <Link to={""} style={styles.link}>
+              <Link to={"/underconstruction"} style={styles.link}>
                 {t("Career")}
             </Link>
-              <Link to={""} style={styles.link}>
+              <Link to={"/about_us"} style={styles.link}>
                 {t("About Us")}
             </Link>
-              <Link to={""} style={styles.link}>
+              <Link to={"/contact"} style={styles.link}>
                 {t("Contact Us")}
             </Link>
             </Grid.Column>
             <Grid.Column>
-              <Link to={""} style={styles.link}>
+              <Link to={"/underconstruction"} style={styles.link}>
                 {t("FAQS")}
             </Link>
-              <Link to={""} style={styles.link}>
+              <Link to={"/underconstruction"} style={styles.link}>
                 {t("News")}
             </Link>
-              <Link to={""} style={styles.link}>
+              <Link to={"/underconstruction"} style={styles.link}>
                 {t("Photo & Video")}
             </Link>
-              <Link to={""} style={styles.link}>
+              <Link to={"/underconstruction"} style={styles.link}>
                 {t("Restaurant")}
             </Link>
-              <Link to={""} style={styles.link}>
+              <Link to={"/underconstruction"} style={styles.link}>
                 {t("Gift Card")}
             </Link>
           </Grid.Column >

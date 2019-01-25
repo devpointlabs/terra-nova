@@ -1,83 +1,91 @@
 import React from "react";
-import {
-  Form,
-  Icon,
-  Container,
-  Segment,
-  Button,
-  Modal,
-  Image,
-  Header
-} from "semantic-ui-react";
-import Terra_Nova_Cabins_Logo from "../assets/images/Terra_Nova_Cabins_Logo.png";
-import { withNamespaces } from "react-i18next";
+import { Form, Icon, Container, Segment, Modal, Image, } from "semantic-ui-react";
+import Terra_Nova_Cabins_Logo from '../assets/images/Terra_Nova_Cabins_Logo.png';
+import { withNamespaces } from 'react-i18next';
 import axios from "axios";
+import { BlackButton2, WhiteButton } from "../styles/AppStyles";
+
 
 // create links for social
 class EmailForm extends React.Component {
-  state = { email: "", showModal: false };
+  state = { email: "", open: false }
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault();
     const email = { ...this.state };
-    axios.post("/api/mailers", email);
-    this.setState({ email: "" });
-  };
+    axios.post('/api/mailers', email)
+    this.setState({ email: "" })
+  }
 
   handleChange = ({ target: { name, value } }) => {
     this.setState({ [name]: value });
-  };
+  }
 
-  handleOpen = () => this.setState({ showModal: true });
+  open = () => this.setState({ open: true })
+  close = () => this.setState({ open: false })
 
-  handleClose = () => this.setState({ showModal: false });
 
-  emailModal = () => (
-    <Modal
-      trigger={<Button onClick={this.handleOpen}>Submit</Button>}
-      open={this.state.showModal}
-      close={this.handleClose}
-      size="small"
+
+  emailModal = () => {
+    const { t } = this.props;
+    const { open } = this.state;
+    return(
+    <Modal trigger={<BlackButton2 onClick={this.open}>{t("Sign Up")}</BlackButton2>}
+      open={open}
+      onOpen={this.open}
+      onClose={this.close}
+      size='small'
       centered={false}
       basic
     >
-      <Modal.Header> Terra Nova Cabins</Modal.Header>
+      <Modal.Header style={styles.header}> Terra Nova Cabins</Modal.Header>
       <Modal.Content image>
-        <Image wrapped size="small" src={Terra_Nova_Cabins_Logo} />
+        <Image wrapped
+          size='small'
+          src={Terra_Nova_Cabins_Logo} />
         <Modal.Description>
-          <Header>Success!</Header>
-          <p> You have been signed up for the Terra Nova Newsletter.</p>
+          <Modal.Header style={styles.header2}>Success!</Modal.Header>
+          <p style={styles.body}> You have been signed up for the Terra Nova Newsletter.</p>
         </Modal.Description>
       </Modal.Content>
       <Modal.Actions>
-        <Button color="white" onClick={this.handleClose}>
+        <WhiteButton
+          color="white"
+          onClick={this.close}
+          centered
+        >
           <Icon name="checkmark" /> Got it!
-        </Button>
+          </WhiteButton>
       </Modal.Actions>
     </Modal>
-  );
+    )
+  }
 
-  showModal = () => {
-    this.setState({ showModal: !this.state.showModal });
-  };
+  // showModal = () => {
+  //   this.setState({ showModal: !this.state.showModal })
+  // }
 
   render() {
+    const {t} = this.props;
     return (
       <Segment style={styles.background} basic>
         <Container style={styles.flexbox}>
           <div style={styles.flexbox}>
-            <Icon name="mail" size="huge" />
-            <Form fluid onSubmit={this.handleSubmit}>
-              <Form.Input
-                name="email"
-                placeholder="Your Email Address "
-                icon="paper plane"
-                value={this.state.email}
-                onChange={this.handleChange}
-              />
+            {/* <Icon name="mail" size="huge" centered /> */}
+            <Form onSubmit={this.handleSubmit}>
+              <Form.Group>
+                <Form.Input style={styles.body2}
+                  icon="paper plane"
+                  name="email"
+                  placeholder={t("Your Email Address")}
+                  value={this.state.email}
+                  onChange={this.handleChange}
+                />
+                {this.emailModal()}
+              </Form.Group>
             </Form>
+
           </div>
-          {this.emailModal()}
           <div>
             <Icon inverted color="grey" name="instagram" size="big" />
             <Icon inverted color="grey" name="facebook" size="big" />
@@ -85,18 +93,19 @@ class EmailForm extends React.Component {
           </div>
         </Container>
       </Segment>
-    );
+    )
   }
 }
 
 export default withNamespaces()(EmailForm);
+
 
 const styles = {
   flexbox: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "center"
+    alignItems: "center",
     // padding: 0,
     // margin: 0,
   },
@@ -114,6 +123,30 @@ const styles = {
     paddingLeft: "240px",
     backgroundColor: "#363636",
     width: "100%",
-    marginBottom: "-15px"
-  }
+    marginBottom: "-15px",
+  },
+  header: {
+    fontFamily: "'Playfair Display', serif",
+    fontSize: "40px",
+    display: "flex",
+    alignItems: "center",
+  },
+  header2: {
+    fontFamily: "'Playfair Display', serif",
+    fontSize: "30px",
+    display: "flex",
+    alignItems: "center",
+},
+  body: {
+    fontFamily: "'Playfair Display', serif",
+    fontSize: "20px",
+    display: "flex",
+    alignItems: "center",
+  },
+  body2: {
+    fontFamily: "'Playfair Display', serif",
+    fontSize: "15px",
+    display: "flex",
+    alignItems: "center",
+  },
 };

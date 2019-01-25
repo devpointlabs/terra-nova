@@ -21,13 +21,20 @@ import Rooms from "./components/Rooms";
 import News from "./components/News";
 import Reviews from "./components/Reviews";
 import ResCheckout from "./components/ResCheckout";
+<<<<<<< HEAD
 import CheckoutConfirm from "./components/CheckoutConfirm";
+=======
+import UnderConstruction from "./components/UnderConstruction";
+import ScrollToTop from './components/ScrollToTop';
+>>>>>>> 506198b24721a5a77d12a290975164a44827982f
 
 const App = () => (
   <Fragment>
     <FetchUser>
       <Geobar />
       <Navbar />
+      <ScrollToTop>
+
       <div style={styles.body}>
         <Switch>
           <Route exact path="/" component={Home} />
@@ -52,9 +59,11 @@ const App = () => (
           <ProtectedRoute path="/careerapply" component={CareerForm} />
           <Route path="/reviewform" component={ReviewForm} />
           <Route path="/reviews" component={Reviews} />
+          <Route path="/underconstruction" component={UnderConstruction} />
           <Route component={NoMatch} />
         </Switch>
       </div>
+      </ScrollToTop>
       <Footer style={styles.footer} />
     </FetchUser>
   </Fragment>

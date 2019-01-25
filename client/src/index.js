@@ -9,7 +9,6 @@ import "react-bootstrap";
 import "./i18n";
 import { Provider } from "react-redux";
 import store from "./store";
-import './i18n';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
