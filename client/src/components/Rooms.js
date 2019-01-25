@@ -33,7 +33,7 @@ class Rooms extends React.Component {
                 <Card.Description textAlign="center"> {t(room.description)}
                 </Card.Description>
               </Card.Content>
-              <Card.Content extra style={cardFooter}>{t("Starting at")} ${room.cost} {t("/ Per Night")}</Card.Content>
+              <Card.Content extra style={cardFooter}>{t("Starting at")} {t("$")} {t(room.cost)} {t("/ Per Night")}</Card.Content>
               <Card.Meta textAlign="center">
                 <Room max={room.max_occupancy} bed={room.bed_type} size={room.size} view={room.view} />
               </Card.Meta>

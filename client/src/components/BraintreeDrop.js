@@ -2,7 +2,7 @@ import React, { Component, } from 'react';
 import axios from 'axios';
 import braintree from 'braintree-web-drop-in';
 import BraintreeDropin from 'braintree-dropin-react';
-import BraintreeSubmitButton from './BraintreeSubmitButton';
+// import BraintreeSubmitButton from './BraintreeSubmitButton';
 import { Dimmer, Loader, Segment, } from 'semantic-ui-react';
 
 class BraintreeDrop extends Component {
@@ -31,7 +31,7 @@ class BraintreeDrop extends Component {
                 braintree={braintree}
                 authorizationToken={token}
                 handlePaymentMethod={this.handlePaymentMethod}
-                renderSubmitButton={BraintreeSubmitButton}
+                // renderSubmitButton={BraintreeSubmitButton}
                 />
             </Segment>
         );
