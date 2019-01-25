@@ -40,7 +40,7 @@ const AboutUs = ({ t }) => (
           <br />
           <br />
           <br />
-          <Image src={montana} size="large" />
+          <Image style={{marginLeft: '82px'}} src={montana} size="large" />
         </Grid.Column>
         </Grid>
     </div>
