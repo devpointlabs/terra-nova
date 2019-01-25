@@ -102,6 +102,8 @@ const styles = {
     display: 'flex',
     justifyContent: 'space-evenly',
     fontSize: '10px',
+    // borderTop: '1px solid white',
+    // borderBottom: '1px solid white',
   },
   fontSize: {
     fontFamily: "'Poppins', sans-serif",

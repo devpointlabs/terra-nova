@@ -12,6 +12,7 @@ class Navbar extends React.Component {
   renderIcon = () => {
     return (
       <Menu.Item position="left">
+      <Link to='/'>
         <Image
           src={Terra_Nova_Cabins_Logo}
           size="tiny"
@@ -19,7 +20,8 @@ class Navbar extends React.Component {
           position="left"
           floated="left"
           verticalAlign="top"
-        />
+          />
+          </Link>
       </Menu.Item>
     );
   };
