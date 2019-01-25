@@ -21,6 +21,7 @@ import Rooms from "./components/Rooms";
 import News from "./components/News";
 import Reviews from "./components/Reviews";
 import ResCheckout from "./components/ResCheckout";
+import CheckoutConfirm from "./components/CheckoutConfirm";
 
 const App = () => (
   <Fragment>
@@ -39,6 +40,11 @@ const App = () => (
           <Route exact path="/gallery" component={Gallery} />
           <Route exact path="/reservations" component={Reservations} />
           <Route exact path="/checkout" component={ResCheckout} />
+          <Route
+            exact
+            path="/checkout/confirmation"
+            component={CheckoutConfirm}
+          />
           <Route exact path="/events" component={Events} />
           <Route exact path="/news" component={News} />
           <Route exact path="/careers" component={Careers} />
