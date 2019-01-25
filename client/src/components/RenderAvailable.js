@@ -1,65 +1,42 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Card, Image, Container } from "semantic-ui-react";
-// import { Link } from "react-router-dom";
-import { GoldButton, AmenitiesButton } from "../styles/AppStyles";
+import Room from "./Room";
+import ResModal from "./ResModal";
 
 class RenderAvailable extends React.Component {
-  state = { rooms: [], showDesc: false };
-
-  toggleDescription = () => {
-    this.setState({ showDesc: !this.state.showDesc });
-  };
-
-  showAmenities = r => {
-    return (
-      <Card.Description>
-        <ul>
-          <li>{r.max_occupancy}</li>
-        </ul>
-      </Card.Description>
-    );
-  };
-
-  confirm = room => {
-    const proceed = window.confirm(
-      "Are you sure you want to continue checkout with this room?"
-    );
-    if (proceed)
-      this.props.history.push({
-        pathname: "/checkout",
-        state: { room: room, userSpecs: this.props.userSpecs }
-      });
-  };
+  state = { showModal: false };
 
   findAvailable = () => {
     const { availableRoom } = this.props;
-    const { showDesc } = this.state;
     return availableRoom.map(r => (
-      <Card raised>
-        <Image src="https://picsum.photos/300?random" alt="" />
-        <Card.Content>
-          <Card.Header style={styles.roomHeader}>{r.room_type}</Card.Header>
-        </Card.Content>
-        <Card.Content extra style={styles.cardFooter}>
-          Starting at ${r.cost} / Per Night
-        </Card.Content>
-        <Card.Meta textAlign="center">
-          <AmenitiesButton onClick={() => this.toggleDescription()}>
-            {" "}
-            Amenities{" "}
-          </AmenitiesButton>
-          <hr />
-          {showDesc ? this.showAmenities(r) : null}
-          <GoldButton
-            style={{ marginBottom: "10px" }}
-            onClick={() => this.confirm(r)}
-          >
-            {" "}
-            Book Now
-          </GoldButton>
-        </Card.Meta>
-      </Card>
+      <div>
+        <Card raised style={{ margin: "20px" }}>
+          <Image src={r.image} alt="" />
+          <Card.Content>
+            <Card.Header style={styles.roomHeader}>{r.room_type}</Card.Header>
+          </Card.Content>
+          <Card.Description textAlign="center">
+            {r.description}
+          </Card.Description>
+          <Card.Content extra style={styles.cardFooter}>
+            ${r.cost} / Per Night
+          </Card.Content>
+          <Card.Meta textAlign="center">
+            <Room
+              max={r.max_occupancy}
+              bed={r.bed_type}
+              size={r.size}
+              view={r.view}
+            />
+            <ResModal
+              room={r}
+              history={this.props.history}
+              userSpecs={this.props.userSpecs}
+            />
+          </Card.Meta>
+        </Card>
+      </div>
     ));
   };
 
@@ -102,5 +79,10 @@ const styles = {
     marginBottom: "10em",
     display: "flex",
     alignItem: "space-between"
+  },
+  modal: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "flex-end"
   }
 };
