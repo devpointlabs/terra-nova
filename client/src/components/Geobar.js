@@ -1,10 +1,9 @@
 import React from 'react';
-import { Menu, Container, Dropdown, } from 'semantic-ui-react';
+import { Menu, Container, Button } from 'semantic-ui-react';
 import { AuthConsumer, } from '../providers/AuthProvider';
 import { faCloud, faPhone, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { withRouter, } from 'react-router-dom';
-// import ReactWeather from 'react-open-weather';
 import i18n from '../i18n';
 import { withNamespaces } from 'react-i18next';
 
@@ -41,15 +40,7 @@ class Geobar extends React.Component {
                   width: '20px'
                 }} />
               32˚F
-            {/* <ReactWeather
-              forecast="today"
-              apikey="4ad4c95bd36f481697d185313191001"
-              type="city"
-              city="Seattle" /> */}
-              {/* Weather API DOCS
-          {/* https://www.apixu.com/my/ */}
             </Menu.Item>
-
             <Menu.Item style={styles.font}>
               <FontAwesomeIcon
                 icon={faMapMarkerAlt}
@@ -59,7 +50,6 @@ class Geobar extends React.Component {
               />
               {t("Salt Lake City, UT")}
             </Menu.Item>
-
             <Menu.Item style={styles.font}>
               <FontAwesomeIcon
                 icon={faPhone}
@@ -68,21 +58,10 @@ class Geobar extends React.Component {
                 }} />
               1-TER-RAN-OVVA
             </Menu.Item >
-            <Menu.Item style={styles.font} position='right'>
-              <Dropdown item style={styles.font} text='$ (USD)'>
-                <Dropdown.Menu>
-                  <Dropdown.Item style={styles.font} onClick={this.handleChange}>
-                    ¥ (CYN)
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-              <Dropdown item style={styles.font} text={t("Language")}>
-                <Dropdown.Menu>
-                  <Dropdown.Item style={styles.font} onClick={() => this.toggleLanguage()}>
+            <Menu.Item  position='right'>
+                  <Button style={styles.toggle} onClick={() => this.toggleLanguage()}>
                     {this.state.toggled ? 'English' : '中文'}
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
+                  </Button>
             </Menu.Item>
           </Menu>
         </Container>
@@ -113,6 +92,18 @@ const styles = {
     display: 'flex',
     justifyContent: 'space-evenly',
     fontSize: '12px',
+  },
+  toggle: {
+    fontFamily: "'Poppins', sans-serif",
+    color: 'white',
+    backgroundColor: 'grey',
+    marginTop: '5px',
+    marginBottom: '5px',
+    display: 'flex',
+    justifyContent: 'space-evenly',
+    fontSize: '10px',
+    // borderTop: '1px solid white',
+    // borderBottom: '1px solid white',
   },
   fontSize: {
     fontFamily: "'Poppins', sans-serif",
