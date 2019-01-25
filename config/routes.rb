@@ -16,5 +16,10 @@ Rails.application.routes.draw do
       resources :mailers, only: [:index, :create]
     end
 
+    namespace :api do
+      get '/braintree_token', to: 'braintree#token'
+      post '/payment', to: 'braintree#payment'
+    end
+    
     get '*other', to: 'static#index'
 end

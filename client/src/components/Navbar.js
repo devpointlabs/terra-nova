@@ -1,54 +1,71 @@
-import React from 'react'
-import { AuthConsumer, } from "../providers/AuthProvider";
-import { Menu, Container, Image, Dropdown, } from 'semantic-ui-react';
-import { Link, withRouter, } from 'react-router-dom';
+import React from "react";
+import { AuthConsumer } from "../providers/AuthProvider";
+import { Menu, Container, Image, Dropdown } from "semantic-ui-react";
+import { Link, withRouter } from "react-router-dom";
 // import ReactWeather from 'react-open-weather';
-import Terra_Nova_Cabins_Logo from '../assets/images/Terra_Nova_Cabins_Logo.png';
-import { withNamespaces } from 'react-i18next';
+import Terra_Nova_Cabins_Logo from "../assets/images/Terra_Nova_Cabins_Logo.png";
+import { withNamespaces } from "react-i18next";
 
 class Navbar extends React.Component {
-  state = { user: null, };
+  state = { user: null };
 
   renderIcon = () => {
     return (
-      <Menu.Item position='left'>
-        <Image src={Terra_Nova_Cabins_Logo}
+      <Menu.Item position="left">
+      <Link to='/'>
+        <Image
+          src={Terra_Nova_Cabins_Logo}
           size="tiny"
           style={styles.image}
-          position='left'
-          floated='left'
-          verticalAlign='top'
-        />
+          position="left"
+          floated="left"
+          verticalAlign="top"
+          />
+          </Link>
       </Menu.Item>
-    )
-  }; 
+    );
+  };
 
   adminNav = () => {
-    const { auth: { user, handleLogout, }, t } = this.props;
+    const {
+      auth: { user, handleLogout },
+      t
+    } = this.props;
 
     return (
       // <Container>
-        <Dropdown.Menu style={styles.font} position='right'>
-          {user ?
-            <div style={styles.background}>
-
-              <Dropdown item style={styles.font}text={t("Welcome")} >
-              <Link to='/register'>
-                <Dropdown.Item style={styles.font} position='right' text={t("NEW ADMIN")}>
-                </Dropdown.Item></Link>
-              <Dropdown.Item href="/events" style={styles.font} text={t("NEW EVENT")}>
-              </Dropdown.Item>
-              <Dropdown.Item style={styles.font} text={t("LOGOUT")} onClick={() => handleLogout(this.props.history)}>
-              </Dropdown.Item>
-     </Dropdown>
-            </div>
-            :
-            null
-          }
-        </Dropdown.Menu>
+      <Dropdown.Menu style={styles.font} position="right">
+        {user ? (
+          <div style={styles.background}>
+            <Dropdown item style={styles.font} text={t("Welcome")}>
+              <Link to="/register">
+                <Dropdown.Item
+                  style={styles.font}
+                  position="right"
+                  text={t("NEW ADMIN")}
+                />
+              </Link>
+              <Dropdown.Item
+                href="/events"
+                style={styles.font}
+                text={t("NEW EVENT")}
+              />
+              <Dropdown.Item
+                style={styles.font}
+                text={t("LOGOUT")}
+                onClick={() => handleLogout(this.props.history)}
+              />
+            </Dropdown>
+          </div>
+        ) : null}
+      </Dropdown.Menu>
       // </Container>
-    )
-  }
+    );
+  };
+
+  handleRefresh = () => {
+    window.location.reload();
+  };
 
   render() {
     const { location, t } = this.props;
@@ -56,55 +73,57 @@ class Navbar extends React.Component {
     return (
       <div style={styles.background}>
         <Container>
-          <Menu position='center' secondary>
+          <Menu position="center" secondary>
             {this.renderIcon()}
-            <Link to='/'>
+            <Link to="/">
               <Menu.Item
                 style={styles.font}
                 name={t("HOME")}
-                id='home'
-                active={location.pathname === '/'}
+                id="home"
+                active={location.pathname === "/"}
               />
             </Link>
-            <Link to='/rooms'>
+            <Link to="/rooms">
               <Menu.Item
-                name='Room & Rate'
-                id='Room & Rate'
+                name="Room & Rate"
+                id="Room & Rate"
                 style={styles.font}
-                active={location.pathname === '/rooms'}
-              > {t("ROOM & RATE")}
+                active={location.pathname === "/rooms"}
+              >
+                {" "}
+                {t("ROOM & RATE")}
               </Menu.Item>
             </Link>
-            <Link to='/reservations'>
+            <Link to="/reservations" onClick={this.handleRefresh}>
               <Menu.Item
                 style={styles.font}
                 name={t("RESERVATIONS")}
-                id='reservations'
-                active={this.props.location.pathname === '/reservations'}
+                id="reservations"
+                active={this.props.location.pathname === "/reservations"}
               />
             </Link>
-            <Link to='/gallery'>
+            <Link to="/gallery">
               <Menu.Item
                 style={styles.font}
                 name={t("GALLERY")}
-                id='gallery'
-                active={this.props.location.pathname === '/gallery'}
+                id="gallery"
+                active={this.props.location.pathname === "/gallery"}
               />
             </Link>
-            <Link to='/about_us'>
+            <Link to="/about_us">
               <Menu.Item
                 style={styles.font}
                 name={t("ABOUT")}
-                id='about'
-                active={this.props.location.pathname === '/about_us'}
+                id="about"
+                active={this.props.location.pathname === "/about_us"}
               />
             </Link>
-            <Link to='/contact'>
+            <Link to="/contact">
               <Menu.Item
                 style={styles.font}
                 name={t("CONTACT")}
-                id='contact'
-                active={this.props.location.pathname === '/contact'}
+                id="contact"
+                active={this.props.location.pathname === "/contact"}
               />
             </Link>
             {this.adminNav()}
@@ -112,20 +131,17 @@ class Navbar extends React.Component {
           <br />
         </Container>
       </div>
-    )
+    );
   }
 }
-
 
 export class ConnectedNavbar extends React.Component {
   render() {
     return (
       <AuthConsumer>
-        {auth =>
-          <Navbar {...this.props} auth={auth} />
-        }
+        {auth => <Navbar {...this.props} auth={auth} />}
       </AuthConsumer>
-    )
+    );
   }
 }
 
@@ -134,29 +150,29 @@ export default withNamespaces()(withRouter(ConnectedNavbar));
 export const styles = {
   font: {
     fontFamily: "'Poppins', sans-serif",
-    color: 'white',
-    fontWeight: 'bold',
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    alignItems: 'center',
-    alignContent: 'center',
-    marginTop: '35px',
+    color: "white",
+    fontWeight: "bold",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+    alignContent: "center",
+    marginTop: "35px"
   },
   image: {
-    padding: '0.5px',
-    marginBottom: '-40px',
-    marginTop: '-10px',
-    height: '100px',
-    width: 'auto',
+    padding: "0.5px",
+    marginBottom: "-40px",
+    marginTop: "-10px",
+    height: "100px",
+    width: "auto"
   },
   background: {
-    backgroundColor: 'rgb(35, 35, 35)',
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    alignContent: 'center',
+    backgroundColor: "rgb(35, 35, 35)",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "flex-end",
+    alignItems: "center",
+    alignContent: "center"
     // padding: '0px'
   }
-}
+};

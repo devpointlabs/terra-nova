@@ -6,7 +6,7 @@ import ResCheckoutForm from "./ResCheckoutForm";
 class ResCheckout extends React.Component {
   renderRoomDetails = () => {
     const {
-      room: { room_type, cost, description, image },
+      room: { room_type, cost, description, },
       userSpecs: { start_date, end_date, adults, children }
     } = this.props.location.state;
 
@@ -14,20 +14,23 @@ class ResCheckout extends React.Component {
     const endDate = end_date.toString();
 
     return (
-      <Segment raised style={styles.flex}>
-        <Image src="https://picsum.photos/300?random" alt="" />
-        <div>
+      <Segment.Group horizontal raised>
+        <Segment>
+          <Image src={image} alt="" />
+        </Segment>
+        <Segment>
           <Header as="h2">{room_type}</Header>
           <hr />
-          <Header as="h4">Description</Header>
+          <Header as="h4">Room Description</Header>
           <p>{description}</p>
+          <Header as="h4">Reservation Details</Header>
           <p>Price: ${cost}</p>
           <p>Start Date: {startDate}</p>
           <p>End Date: {endDate}</p>
           <p>Adults: {adults}</p>
           <p>Children: {children}</p>
-        </div>
-      </Segment>
+        </Segment>
+      </Segment.Group>
     );
   };
 
@@ -39,6 +42,7 @@ class ResCheckout extends React.Component {
         <ResCheckoutForm
           userSpecs={this.props.history.location.state.userSpecs}
           room={this.props.history.location.state.room}
+          history={this.props.history}
         />
         <hr />
         {this.renderRoomDetails()}
@@ -48,11 +52,3 @@ class ResCheckout extends React.Component {
 }
 
 export default ResCheckout;
-
-const styles = {
-  flex: {
-    display: "flex",
-    justifyContent: "space-between",
-    marginTop: "4em"
-  }
-};
