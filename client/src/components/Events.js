@@ -19,13 +19,13 @@ const Events = ({ t }) => {
             </div>
                 <Card.Group centered itemsPerRow={3}>
                 <Card style={styleCard1}>
-                        <Title4>Wedding Day</Title4>
+                        <Title4>{t("Wedding Day")}</Title4>
                     </Card>
                     <Card style={styleCard2}> 
-                        <Title4>Golf Cup 2017</Title4>
+                        <Title4>{t("Golf Cup")} 2017</Title4>
                     </Card>
                     <Card style={styleCard3}>
-                        <Title4>Beach Sports</Title4>
+                        <Title4>{t("Beach Sports")}</Title4>
                     </Card>
                 </Card.Group>
         </Container>

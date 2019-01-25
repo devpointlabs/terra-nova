@@ -105,7 +105,7 @@ class Gallery extends React.Component {
           </Grid>
           <Item style={styles.button}>
             <Link to="/underconstruction">
-              <GalleryWhiteButton>VIEW MORE</GalleryWhiteButton>
+              <GalleryWhiteButton>{t("VIEW MORE")}</GalleryWhiteButton>
             </Link>
 
           </Item>

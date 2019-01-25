@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, } from 'react-router-dom';
-import { Header, } from 'semantic-ui-react';
 import { withNamespaces } from 'react-i18next';
 
 const NoMatch = ({ t }) => (
