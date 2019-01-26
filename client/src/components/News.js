@@ -26,15 +26,15 @@ const News = ({t}) => (
               25
             </Grid.Column>
             <Grid.Column width={7} style={style.date} stackable>
-            <Grid.Row textAlign='left'>
+            <Grid.Row textAlign='left' stackable>
               {t("AUGUST")}
             </Grid.Row>
-            <Grid.Row textAlign='left'>
+            <Grid.Row textAlign='left' stackable>
               2017
             </Grid.Row>
           </Grid.Column>
           </Grid.Row>
-            <Grid.Row style={style.text}>
+            <Grid.Row style={style.text}stackable>
               {t("Update menu in Skyline Hotel")}
             </Grid.Row>
           <NavLink to='/underconstruction' activeStyle=
@@ -44,7 +44,7 @@ const News = ({t}) => (
             fontWeight: 'lighter',
             fontSize: "13px",
             }}>
-            <Grid.Row style={gridPad.link}>
+            <Grid.Row style={gridPad.link} stackable>
               {t("Read More")}
           </Grid.Row>
           </NavLink>
@@ -67,7 +67,7 @@ const News = ({t}) => (
             <Grid.Row style={style.text}>
               {t("New Hikes Available for Spring")}
             </Grid.Row>
-          <NavLink to='/' activeStyle=
+          <NavLink to='/underconstruction' activeStyle=
           {{ 
             color: '#826614',
             fontFamily: "'Poppins', sans-serif",
@@ -97,7 +97,7 @@ const News = ({t}) => (
             <Grid.Row style={style.text}>
               {t("Mother Earth Hosts Our Travels")}
             </Grid.Row>
-          <NavLink to='/' activeStyle=
+          <NavLink to='/underconstruction' activeStyle=
           {{ 
             color: '#826614',
             fontFamily: "'Poppins', sans-serif",

@@ -2,6 +2,7 @@ import React from "react";
 // import LPI4 from "../assets/images/LandingPage/LPI4.jpg";
 import { withNamespaces } from 'react-i18next';
 import Yellowstone from '../assets/images/Yellowstone.png';
+import { Container} from 'semantic-ui-react';
 
 
 

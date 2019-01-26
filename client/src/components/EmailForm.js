@@ -30,7 +30,7 @@ class EmailForm extends React.Component {
     const { t } = this.props;
     const { open } = this.state;
     return(
-    <Modal trigger={<BlackButton2 onClick={this.open}>{t("Sign Up")}</BlackButton2>}
+    <Modal trigger={<BlackButton2 onClick={this.open}>{t("Stay Connected")}</BlackButton2>}
       open={open}
       onOpen={this.open}
       onClose={this.close}
@@ -121,8 +121,8 @@ const styles = {
   background: {
     paddingTop: "20px",
     paddingBottom: "20px",
-    paddingRight: "240px",
-    paddingLeft: "240px",
+    // paddingRight: "240px",
+    // paddingLeft: "240px",
     backgroundColor: "#363636",
     width: "100%",
     marginBottom: "-15px",
