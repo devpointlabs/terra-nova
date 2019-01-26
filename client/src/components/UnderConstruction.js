@@ -1,6 +1,7 @@
 import React from "react";
-import LPI4 from "../assets/images/LandingPage/LPI4.jpg";
+// import LPI4 from "../assets/images/LandingPage/LPI4.jpg";
 import { withNamespaces } from 'react-i18next';
+import Yellowstone from '../assets/images/Yellowstone.png';
 
 
 
@@ -26,7 +27,7 @@ const styles = {
     // color: "white",
     fontFamily: "'Playfair Display', serif !important",
     fontWeight: "300",
-    textShadow: "0.5px 0.5px #000000",
+    textShadow: "0.5px 0.5px white",
     textAlign: "center"
   },
   title2: {
@@ -35,7 +36,8 @@ const styles = {
     // color: "white",
     fontFamily: "'Playfair Display', serif !important",
     fontWeight: "300",
-    textAlign: "center"
+    textAlign: "center",
+    textShadow: "0.5px 0.5px white",
   },
   body: {
     paddingTop: "15px",
@@ -45,9 +47,10 @@ const styles = {
     fontWeight: "400",
     // textShadow: "0.5px 0.5px #000000",
     textAlign: "center",
+  
   },
     background: {
-      backgroundImage: "url(" + LPI4 + ")",
+      backgroundImage: "url(" + Yellowstone + ")",
       minHeight: "100vh",
       minWidth: "100%",
       backgroundSize: "cover",

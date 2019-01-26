@@ -13,6 +13,7 @@ const Review = ({t}) => (
         nextLabel={null}
         controls={false}
         stackable
+        
     >
         <Carousel.Item stackable>
             <div style={styles.background}>
