@@ -48,7 +48,7 @@ class Geobar extends React.Component {
                   width: '15px'
                 }}
               />
-              {t("Salt Lake City, UT")}
+              {t("West Yellowstone, Montana")}
             </Menu.Item>
             <Menu.Item style={styles.font}>
               <FontAwesomeIcon

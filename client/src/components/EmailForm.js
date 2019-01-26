@@ -78,6 +78,7 @@ class EmailForm extends React.Component {
                   icon="paper plane"
                   name="email"
                   placeholder={t("Your Email Address")}
+                  required
                   value={this.state.email}
                   onChange={this.handleChange}
                   required

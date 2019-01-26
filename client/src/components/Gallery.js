@@ -44,7 +44,7 @@ class Gallery extends React.Component {
       <div style={styles.background} >
         <Container>
           <SubHeader style={styles.font}>{t("Our Gallery")}</SubHeader>
-            <div style={styles.line}>
+          <div style={styles.line}>
             <GalleryIconLine />
             <Image centered
               style={styles.icon}
@@ -53,22 +53,30 @@ class Gallery extends React.Component {
             <GalleryIconLine />
           </div>
           <div style={styles.button}>
-          <Menu secondary>
+            <Menu secondary>
 
-          <Menu.Item fitted='horizontally'>
-          <GalleryGoldButton>{t("HOTEL & GROUNDS")}</GalleryGoldButton>
-          </Menu.Item>
+              <Menu.Item fitted='horizontally'>
+                <Link to="/underconstruction">
+                  <GalleryGoldButton>{t("HOTEL & GROUNDS")}</GalleryGoldButton>
+                </Link>
+              </Menu.Item>
 
-          <Menu.Item fitted='horizontally'>
-          <GalleryGoldButton>{t("ROOM/CABIN")}</GalleryGoldButton>
-          </Menu.Item>
-          <Menu.Item fitted='horizontally'>
-          <GalleryGoldButton>{t("BATHROOM")}</GalleryGoldButton>
-          </Menu.Item>
-          <Menu.Item fitted='horizontally'>
-          <GalleryGoldButton>{t("DINING")}</GalleryGoldButton>
-          </Menu.Item>
-          </Menu>
+              <Menu.Item fitted='horizontally'>
+                <Link to="/underconstruction">
+                <GalleryGoldButton>{t("ROOM/CABIN")}</GalleryGoldButton>
+                </Link>
+              </Menu.Item>
+              <Menu.Item fitted='horizontally'>
+              <Link to="/underconstruction">
+                <GalleryGoldButton>{t("BATHROOM")}</GalleryGoldButton>
+                </Link>
+              </Menu.Item>
+              <Menu.Item fitted='horizontally'>
+              <Link to="/underconstruction">
+                <GalleryGoldButton>{t("DINING")}</GalleryGoldButton>
+                </Link>
+              </Menu.Item>
+            </Menu>
           </div>
           {/* <Card.Group centered itemsPerRow={4}>
             {this.renderCards()}
@@ -76,30 +84,30 @@ class Gallery extends React.Component {
           <Grid>
             <Grid.Row columns={4}>
               <Grid.Column stretched>
-                <Image style={{height: '250px'}}src={IMGone} />
+                <Image style={{ height: '250px' }} src={IMGone} />
               </Grid.Column>
               <Grid.Column>
-                <Image style={{height: '250px', width: '250px'}} src={IMGtwo} />
+                <Image style={{ height: '250px', width: '250px' }} src={IMGtwo} />
               </Grid.Column >
               <Grid.Column stretched>
-                <Image style={{height: '250px'}}src={IMGthree} />
+                <Image style={{ height: '250px' }} src={IMGthree} />
               </Grid.Column>
               <Grid.Column stretched>
-                <Image style={{height: '250px'}}src={IMGfour} />
+                <Image style={{ height: '250px' }} src={IMGfour} />
               </Grid.Column>
             </Grid.Row>
             <Grid.Row columns={4}>
               <Grid.Column stretched>
-                <Image style={{height: '250px'}} src={IMGfive} />
+                <Image style={{ height: '250px' }} src={IMGfive} />
               </Grid.Column>
               <Grid.Column stretched>
-                <Image style={{height: '250px'}} src={IMGsix} />
+                <Image style={{ height: '250px' }} src={IMGsix} />
               </Grid.Column>
               <Grid.Column stretched>
-                <Image style={{height: '250px'}} src={IMGseven} />
+                <Image style={{ height: '250px' }} src={IMGseven} />
               </Grid.Column>
               <Grid.Column stretched>
-                <Image style={{height: '250px'}} src={IMGeight} />
+                <Image style={{ height: '250px' }} src={IMGeight} />
               </Grid.Column>
             </Grid.Row>
           </Grid>
