@@ -80,6 +80,7 @@ class EmailForm extends React.Component {
                   placeholder={t("Your Email Address")}
                   value={this.state.email}
                   onChange={this.handleChange}
+                  required
                 />
                 {this.emailModal()}
               </Form.Group>

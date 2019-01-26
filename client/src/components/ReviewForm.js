@@ -42,9 +42,19 @@ class ReviewForm extends React.Component {
                     <Form.Group style={styles.topForm}>
 
                     <Form.Input
-                        name="name"
-                        label={t("Name")}
-                        placeholder={t("Name")}
+                        name="first name"
+                        label={t("First Name")}
+                        placeholder={t("First Name")}
+                        autofocus
+                        required
+                        value={name}
+                        width='4'
+                        onChange={this.handleChange}
+                        /> 
+                    <Form.Input
+                        name="last name"
+                        label={t("Last Name")}
+                        placeholder={t("Last Name")}
                         autofocus
                         required
                         value={name}
@@ -53,7 +63,7 @@ class ReviewForm extends React.Component {
                         /> 
                     <Form.Input
                         name="location"
-                        label={t("Location")}
+                        label={t("City & State")}
                         placeholder={t("City & State")}
                         required
                         value={location}

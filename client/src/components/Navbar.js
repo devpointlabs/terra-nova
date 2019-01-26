@@ -33,7 +33,6 @@ class Navbar extends React.Component {
     } = this.props;
 
     return (
-      // <Container>
       <Dropdown.Menu style={styles.font} position="right">
         {user ? (
           <div style={styles.background}>
@@ -59,7 +58,6 @@ class Navbar extends React.Component {
           </div>
         ) : null}
       </Dropdown.Menu>
-      // </Container>
     );
   };
 
