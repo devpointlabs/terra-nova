@@ -8,24 +8,24 @@ const News = ({t}) => (
   <>
   <Container>
     <Grid columns={2} padded='vertically'>
-      <Grid.Column>
+      <Grid.Column stackable>
         <SubHeader style={subHeader}>{t("News")}</SubHeader>
         <HeaderLine/>
       </Grid.Column>
     </Grid>
   </Container>
     <div>
-        <Grid columns={4}centered divided>
+        <Grid columns={4}centered divided stackable>
       {/* Grid 0 */}
         <Grid>
         </Grid>
         {/* Grid 1 */}
-          <Grid columns={2} divided style={gridPad.main}>
-          <Grid.Row verticalAlign='top' textAlign='left'>
-            <Grid.Column width={7} style={style.numDate}>
+          <Grid columns={2} divided style={gridPad.main} stackable>
+          <Grid.Row verticalAlign='top' textAlign='left'stackable>
+            <Grid.Column width={7} style={style.numDate} stackable>
               25
             </Grid.Column>
-            <Grid.Column width={7} style={style.date}>
+            <Grid.Column width={7} style={style.date} stackable>
             <Grid.Row textAlign='left'>
               {t("AUGUST")}
             </Grid.Row>
@@ -37,7 +37,7 @@ const News = ({t}) => (
             <Grid.Row style={style.text}>
               {t("Update menu in Skyline Hotel")}
             </Grid.Row>
-          <NavLink to='/' activeStyle=
+          <NavLink to='/underconstruction' activeStyle=
           {{ 
             color: '#826614',
             fontFamily: "'Poppins', sans-serif",

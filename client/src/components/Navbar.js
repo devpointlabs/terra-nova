@@ -34,25 +34,28 @@ class Navbar extends React.Component {
 
     return (
       // <Container>
-      <Dropdown.Menu style={styles.font} position="right">
+      <Dropdown.Menu style={styles.font} position="right"stackable>
         {user ? (
           <div style={styles.background}>
-            <Dropdown item style={styles.font} text={t("Welcome")}>
+            <Dropdown item style={styles.font} text={t("Welcome")}stackable>
               <Link to="/register">
                 <Dropdown.Item
                   style={styles.font}
                   position="right"
                   text={t("NEW ADMIN")}
+                  stackable
                 />
               </Link>
               <Dropdown.Item
                 href="/events"
                 style={styles.font}
                 text={t("NEW EVENT")}
+                stackable
               />
               <Dropdown.Item
                 style={styles.font}
                 text={t("LOGOUT")}
+                stackable
                 onClick={() => handleLogout(this.props.history)}
               />
             </Dropdown>
@@ -72,7 +75,7 @@ class Navbar extends React.Component {
 
     return (
       <div style={styles.background}>
-        <Container>
+        <Container stackable>
           <Menu position="center" secondary>
             {this.renderIcon()}
             <Link to="/">

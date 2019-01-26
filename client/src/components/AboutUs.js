@@ -17,7 +17,7 @@ const AboutUs = ({ t }) => (
   <Container>
     <div style={background}>
       <div>
-        <Grid columns={2} padded='vertically'>
+        <Grid columns={2} padded='vertically'stackable>
           <Grid.Column>
             <h1 style={subHeader}>{t("About Us")}</h1>
             <HeaderLine />
@@ -32,7 +32,7 @@ const AboutUs = ({ t }) => (
             <WhiteButton>{t("Read More")}</WhiteButton>
             </Link>
           </Grid.Column>
-        <Grid.Column>
+        <Grid.Column stackable>
           <br />
           <br />
           <br />
@@ -45,7 +45,7 @@ const AboutUs = ({ t }) => (
         </Grid>
     </div>
 
-    <Card.Group centered itemsPerRow={4} style={cardGroup}>
+    <Card.Group centered itemsPerRow={4} style={cardGroup}stackable>
       <Card style={styles.card}>
         <Image src={Master_Bedroom_Icon} />
         <Card.Content>{t("MASTER BEDROOM")}</Card.Content>

@@ -53,7 +53,7 @@ class Gallery extends React.Component {
             <GalleryIconLine />
           </div>
           <div style={styles.button}>
-            <Menu secondary>
+            <Menu secondary stackable>
 
               <Menu.Item fitted='horizontally'>
                 <Link to="/underconstruction">
@@ -81,8 +81,8 @@ class Gallery extends React.Component {
           {/* <Card.Group centered itemsPerRow={4}>
             {this.renderCards()}
           </Card.Group> */}
-          <Grid>
-            <Grid.Row columns={4}>
+          <Grid stackable>
+            <Grid.Row columns={4} stackable>
               <Grid.Column stretched>
                 <Image style={{ height: '250px' }} src={IMGone} />
               </Grid.Column>
@@ -164,7 +164,7 @@ const styles = {
 }
 
 const cardStyles = {
-  card: {
+  card:  {
     display: 'flex',
     fontSize: '16px',
     justifyContent: 'center',

@@ -68,12 +68,12 @@ class EmailForm extends React.Component {
   render() {
     const {t} = this.props;
     return (
-      <Segment style={styles.background} basic>
-        <Container style={styles.flexbox}>
+      <Segment style={styles.background} basic stackable>
+        <Container style={styles.flexbox} stackable>
           <div style={styles.flexbox}>
             {/* <Icon name="mail" size="huge" centered /> */}
-            <Form onSubmit={this.handleSubmit}>
-              <Form.Group>
+            <Form onSubmit={this.handleSubmit}stackable>
+              <Form.Group stackable>
                 <Form.Input style={styles.body2}
                   icon="paper plane"
                   name="email"
@@ -81,6 +81,7 @@ class EmailForm extends React.Component {
                   required
                   value={this.state.email}
                   onChange={this.handleChange}
+                  stackable
                 />
                 {this.emailModal()}
               </Form.Group>
