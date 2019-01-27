@@ -55,7 +55,7 @@ class ResCheckoutForm extends React.Component {
             placeholder={t("First Name")}
             value={first_name}
             onChange={this.handleChange}
-            label="First Name"
+            label={t("First Name")}
             required
           />
           <Form.Input
@@ -63,7 +63,7 @@ class ResCheckoutForm extends React.Component {
             placeholder={t("Last Name")}
             value={last_name}
             onChange={this.handleChange}
-            label="Last Name"
+            label={t("Last Name")}
             required
           />
           <Form.Input
@@ -72,7 +72,7 @@ class ResCheckoutForm extends React.Component {
             value={phone}
             onChange={this.handleChange}
             required
-            label="Phone"
+            label={t("Phone Number")}
           />
           <Form.Input
             name="email"
@@ -80,7 +80,7 @@ class ResCheckoutForm extends React.Component {
             value={email}
             onChange={this.handleChange}
             required
-            label="email"
+            label={t("Email")}
           />
         </Form.Group>
         <Button color="brown">{t("Reserve Room")}</Button>
