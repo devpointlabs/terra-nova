@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Icon, Segment } from "semantic-ui-react";
+import { Card, Icon, Segment, Button } from "semantic-ui-react";
 import { withNamespaces } from 'react-i18next';
 
 class Room extends React.Component {
@@ -30,7 +30,7 @@ class Room extends React.Component {
     if (this.state.toggle === false) {
       return (
         <div style={styles.amenitiesDiv}>
-          {t("Room Details")}
+         <Button style={styles.detailsButton} onClick={() => this.toggle()}>{t("Room Details")}</Button>
             <Icon style={{ cursor: 'pointer' }} size="large" name="angle down" onClick={() => this.toggle()}></Icon>
           {this.state.toggle ? this.showAmenities() : null}
         </div>
@@ -64,6 +64,11 @@ const styles = {
     fontFamily: "'Poppins', sans-serif",
     fontSize: '15px',
     
+  },
+  detailsButton : {
+    background: "white",
+    fontFamily: "'Poppins', sans-serif",
+    fontSize: '18px',
   }
 
 }
