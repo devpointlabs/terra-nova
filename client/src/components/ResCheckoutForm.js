@@ -1,8 +1,8 @@
 import React from "react";
 import { Form, Button } from "semantic-ui-react";
 import axios from "axios";
-import BraintreeDrop from './BraintreeDrop';
-import ResModal from "./ResModal";
+// import BraintreeDrop from './BraintreeDrop';
+// import ResModal from "./ResModal";
 
 class ResCheckoutForm extends React.Component {
   state = {

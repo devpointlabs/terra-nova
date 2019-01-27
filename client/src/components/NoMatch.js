@@ -1,12 +1,8 @@
 import React from 'react';
 import { Link, } from 'react-router-dom';
-import { Header, } from 'semantic-ui-react';
 import { withNamespaces } from 'react-i18next';
 
 const NoMatch = ({ t }) => (
-  // <Header as="h1" textAlign="center">
-  //   {t("Page not found return")}
-  // </Header>
   <div style={styles.backgroun}>
     <h2 style={styles.title2}>Page not found</h2>
      <h1 style={styles.body}> Return

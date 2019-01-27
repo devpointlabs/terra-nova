@@ -12,13 +12,13 @@ import store from "./store";
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <Provider store={store}>
     <AuthProvider>
+  <Provider store={store}>
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    </AuthProvider>
-  </Provider>,
+  </Provider>
+    </AuthProvider>,
   document.getElementById("root")
 );
 

@@ -27,8 +27,8 @@ import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => (
   <Fragment>
-    <FetchUser>
       <Geobar />
+    <FetchUser>
       <Navbar />
       <ScrollToTop>
         <div style={styles.body}>
@@ -60,12 +60,11 @@ const App = () => (
           </Switch>
         </div>
       </ScrollToTop>
-      <Footer style={styles.footer} />
     </FetchUser>
+      <Footer style={styles.footer} />
   </Fragment>
 );
 
-export default App;
 
 const styles = {
   body: {
@@ -77,3 +76,5 @@ const styles = {
     margin: "auto auto 0 auto"
   }
 };
+
+export default App;

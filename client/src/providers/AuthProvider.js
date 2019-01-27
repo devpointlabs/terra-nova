@@ -21,7 +21,7 @@ class AuthProvider extends React.Component {
   handleLogin = (user, history) => {
     axios.post("/api/auth/sign_in", user )
     .then ( res => {
-      this.setState({ user: res.data.data, })
+      this.setState({ user: res.data.data, });
       history.push("/");
     })
     .catch( err => {
@@ -50,7 +50,7 @@ class AuthProvider extends React.Component {
         handleLogout: this.handleLogout,
         setUser: (user) => this.setState({ user, }),
       }}>
-        {this.props.children}
+        { this.props.children }
       </AuthContext.Provider>
     )
   }

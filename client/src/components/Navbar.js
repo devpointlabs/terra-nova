@@ -2,7 +2,6 @@ import React from "react";
 import { AuthConsumer } from "../providers/AuthProvider";
 import { Menu, Container, Image, Dropdown } from "semantic-ui-react";
 import { Link, withRouter } from "react-router-dom";
-// import ReactWeather from 'react-open-weather';
 import Terra_Nova_Cabins_Logo from "../assets/images/Terra_Nova_Cabins_Logo.png";
 import { withNamespaces } from "react-i18next";
 
@@ -27,39 +26,34 @@ class Navbar extends React.Component {
   };
 
   adminNav = () => {
-    const {
-      auth: { user, handleLogout },
-      t
-    } = this.props;
-
+    const { auth: { user, handleLogout }, t} = this.props;
     return (
-      // <Container>
-      <Dropdown.Menu style={styles.font} position="right">
+      <div style={styles.background}>
         {user ? (
-          <div style={styles.background}>
-            <Dropdown item style={styles.font} text={t("Welcome")}>
+      <Menu.Item style={styles.font}  position="right">
+          <Menu style={styles.font} text={t("Welcome")}>
               <Link to="/register">
-                <Dropdown.Item
+                <Menu.Item
                   style={styles.font}
-                  position="right"
+                  // position="right"
                   text={t("NEW ADMIN")}
-                />
+                  />
               </Link>
-              <Dropdown.Item
+              <Menu.Item
                 href="/events"
                 style={styles.font}
                 text={t("NEW EVENT")}
-              />
-              <Dropdown.Item
+                />
+              <Menu.Item
                 style={styles.font}
+                
                 text={t("LOGOUT")}
                 onClick={() => handleLogout(this.props.history)}
-              />
-            </Dropdown>
-          </div>
-        ) : null}
-      </Dropdown.Menu>
-      // </Container>
+                />
+            </Menu>
+      </Menu.Item>
+        ) : null }
+        </div>
     );
   };
 
@@ -68,7 +62,7 @@ class Navbar extends React.Component {
   };
 
   render() {
-    const { location, t } = this.props;
+    const { auth: {user,}, location, t } = this.props;
 
     return (
       <div style={styles.background}>
@@ -126,7 +120,15 @@ class Navbar extends React.Component {
                 active={this.props.location.pathname === "/contact"}
               />
             </Link>
-            {this.adminNav()}
+          <Dropdown>
+          {user ?
+          <Menu.Item
+          style={styles.font}
+          name="fuckkkk"
+          {...this.adminNav()}
+          />
+          : null }
+          </Dropdown>
           </Menu>
           <br />
         </Container>

@@ -23,12 +23,10 @@ class Admin extends React.Component {
     const { email, password, } = this.state;
     const { t } = this.props;
 
-  
     return (
       <Segment basic>
         <SubHeader>{t("Admin")}</SubHeader>
         <NavText>
-
         <Form onSubmit={this.handleSubmit}>
           <Form.Input
             label={t("Email")}
@@ -59,14 +57,13 @@ class Admin extends React.Component {
 }
 
 
-class ConnectedAdmin extends React.Component {
-  render() {
-    return (
+const ConnectedAdmin = (props) => (
       <AuthConsumer>
-        { auth => <Admin {...this.props} auth={auth} />}
+      { auth => 
+      <Admin {...props} auth={auth} />
+      }
       </AuthConsumer>
-    )
-  }
-}
+  )
+
 
 export default withNamespaces()(ConnectedAdmin);

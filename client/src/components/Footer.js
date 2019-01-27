@@ -11,7 +11,7 @@ const Footer = ({t}) => {
     <div>
       <EmailForm />
       <Segment inverted style={styles} basic>
-        <Container inverted>
+        <Container inverted='true'>
           <Grid columns={4}>
             <Grid.Column>
               <Image src={Terra_Nova_Cabins_Logo} size="small" />
