@@ -3,6 +3,7 @@ import LPI4 from "../assets/images/LandingPage/LPI4.jpg";
 import { withNamespaces } from 'react-i18next';
 
 
+
 class UnderConstruction extends React.Component {
   render() {
   const { t } = this.props;

@@ -6,7 +6,7 @@ import ResCheckoutForm from "./ResCheckoutForm";
 class ResCheckout extends React.Component {
   renderRoomDetails = () => {
     const {
-      room: { room_type, cost, description, image },
+      room: { room_type, cost, description, image},
       userSpecs: { start_date, end_date, adults, children }
     } = this.props.location.state;
 
@@ -16,7 +16,7 @@ class ResCheckout extends React.Component {
     return (
       <Segment.Group horizontal raised>
         <Segment>
-          <Image src={image} alt="" />
+          {/* <Image src={image} alt="" /> */}
         </Segment>
         <Segment>
           <Header as="h2">{room_type}</Header>

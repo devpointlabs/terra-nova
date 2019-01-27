@@ -10,8 +10,11 @@ class AuthProvider extends React.Component {
   handleRegister = (user, history) => {
     axios.post("/api/auth", user)
     .then( res => {
-      this.setState({ user: res.data.data, });
-      history.push("/");
+      axios.post('/api/users/${res.data.data.id}')
+      .then( res => {
+        this.setState({ user: res.data.data, });
+        history.push("/");
+       })
     })
     .catch( err => {
       console.log(err.response);
@@ -32,7 +35,7 @@ class AuthProvider extends React.Component {
   handleLogout = (history) => {
     axios.delete('/api/auth/sign_out')
     .then( res => {
-      this.setState({ user: null,});
+      this.setState({ user: null, });
       history.push('/admin');
     })
     .catch( err => {
