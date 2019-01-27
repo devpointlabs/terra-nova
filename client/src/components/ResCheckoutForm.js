@@ -1,6 +1,7 @@
 import React from "react";
 import { Form, Button } from "semantic-ui-react";
 import axios from "axios";
+import { withNamespaces } from 'react-i18next';
 // import BraintreeDrop from './BraintreeDrop';
 // import ResModal from "./ResModal";
 
@@ -44,13 +45,14 @@ class ResCheckoutForm extends React.Component {
     const {
       reservation: { first_name, last_name, phone, email }
     } = this.state;
+    const { t} = this.props
 
     return (
       <Form onSubmit={this.handleSubmit} style={styles.flex}>
         <Form.Group>
           <Form.Input
             name="first_name"
-            placeholder="First Name"
+            placeholder={t("First Name")}
             value={first_name}
             onChange={this.handleChange}
             label="First Name"
@@ -58,7 +60,7 @@ class ResCheckoutForm extends React.Component {
           />
           <Form.Input
             name="last_name"
-            placeholder="Last Name"
+            placeholder={t("Last Name")}
             value={last_name}
             onChange={this.handleChange}
             label="Last Name"
@@ -66,7 +68,7 @@ class ResCheckoutForm extends React.Component {
           />
           <Form.Input
             name="phone"
-            placeholder="Phone #"
+            placeholder={t("Phone Number")}
             value={phone}
             onChange={this.handleChange}
             required
@@ -74,20 +76,20 @@ class ResCheckoutForm extends React.Component {
           />
           <Form.Input
             name="email"
-            placeholder="email"
+            placeholder={t("Email")}
             value={email}
             onChange={this.handleChange}
             required
             label="email"
           />
         </Form.Group>
-        <Button color="brown">Reserve Room</Button>
+        <Button color="brown">{t("Reserve Room")}</Button>
       </Form>
     );
   }
 }
 
-export default ResCheckoutForm;
+export default withNamespaces()(ResCheckoutForm);
 
 const styles = {
   flex: {

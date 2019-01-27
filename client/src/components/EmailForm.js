@@ -81,7 +81,6 @@ class EmailForm extends React.Component {
                   required
                   value={this.state.email}
                   onChange={this.handleChange}
-                  required
                 />
                 {this.emailModal()}
               </Form.Group>
