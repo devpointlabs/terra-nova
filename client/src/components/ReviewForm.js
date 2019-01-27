@@ -26,28 +26,26 @@ class ReviewForm extends React.Component {
     };
 
     render() {
-        const { title, body, rating, name, location, } = this.state;
+        const { title, body, rating, Fname, Lname, location, } = this.state;
         const { t } = this.props;
         return (
             <Container>
                 <Form style={styles.text}
                     onSubmit={this.handleSubmit}>
                     <div style={styles.top}>
-
                     <SubHeaderTwo style={styles.header}>{t("Leave a Review")}</SubHeaderTwo>
                     <NavLink to="/reviews">
                         <Button style={styles.button}>{t("Back to Reviews")}</Button>
                     </NavLink>
                     </div>
-                    <Form.Group style={styles.topForm}>
-
+                    <Form.Group style={styles.topForm}> 
                     <Form.Input
                         name="first name"
                         label={t("First Name")}
                         placeholder={t("First Name")}
                         autofocus
                         required
-                        value={name}
+                        value={Fname}
                         width='4'
                         onChange={this.handleChange}
                         /> 
@@ -57,7 +55,7 @@ class ReviewForm extends React.Component {
                         placeholder={t("Last Name")}
                         autofocus
                         required
-                        value={name}
+                        value={Lname}
                         width='4'
                         onChange={this.handleChange}
                         /> 

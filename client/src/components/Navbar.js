@@ -27,16 +27,14 @@ class Navbar extends React.Component {
   };
 
   adminNav = () => {
-    const {
-      auth: { user, handleLogout },
-      t
+    const { auth: { user, handleLogout }, t
     } = this.props;
 
     return (
-      <Dropdown.Menu style={styles.font} position="right">
+      <Menu style={styles.font} position="right">
         {user ? (
           <div style={styles.background}>
-            <Dropdown item style={styles.font} text={t("Welcome")}>
+            <Menu item style={styles.font} text={t("Welcome")}>
               <Link to="/register">
                 <Dropdown.Item
                   style={styles.font}
@@ -54,10 +52,10 @@ class Navbar extends React.Component {
                 text={t("LOGOUT")}
                 onClick={() => handleLogout(this.props.history)}
               />
-            </Dropdown>
+            </Menu>
           </div>
         ) : null}
-      </Dropdown.Menu>
+      </Menu>
     );
   };
 

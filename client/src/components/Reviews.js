@@ -2,8 +2,10 @@ import React from 'react';
 import { withNamespaces } from 'react-i18next';
 import axios from 'axios';
 import { NavLink, } from 'react-router-dom';
-import { Container, Rating, Segment, Button, Header, Icon } from 'semantic-ui-react';
+import { Container, Rating, Segment, Button, Header, Icon, Menu } from 'semantic-ui-react';
 import { SubHeaderTwo, } from '../styles/AppStyles';
+import { AuthConsumer } from "../providers/AuthProvider";
+
 
 class Reviews extends React.Component {
     state = { reviews: [] };
@@ -23,10 +25,9 @@ class Reviews extends React.Component {
             })
     }
 
-
     renderReviews = () => {
         const { reviews } = this.state;
-        const { t } = this.props;
+        const { auth: { user, }, t, } = this.props;
 
         return (
             reviews.map(r => (
@@ -59,11 +60,13 @@ class Reviews extends React.Component {
                             "{t(r.body)}"
                         </div>
                         <br />
-                        <Button
-                            style={styles.deleteButton}
-                            onClick={(() => this.deleteReview(r.id))}>
-                            {t("Delete Review")}
-                        </Button>
+                        {user ?
+                            <Button
+                                style={styles.deleteButton}
+                                onClick={(() => this.deleteReview(r.id))}>
+                                {t("Delete Review")}
+                            </Button>
+                            : null}
                     </Segment>
                     <br />
                 </div>
@@ -91,7 +94,17 @@ class Reviews extends React.Component {
     }
 };
 
-export default withNamespaces()(Reviews);
+export class ConnectedReviews extends React.Component {
+    render() {
+        return (
+            <AuthConsumer>
+                {auth => <Reviews {...this.props} auth={auth} />}
+            </AuthConsumer>
+        );
+    }
+}
+
+export default withNamespaces()(ConnectedReviews);
 
 
 const styles = {
