@@ -164,6 +164,8 @@
 
     "NEW EVENT": "NEW EVENT",
 
+    "REVIEWS": "REVIEWS",
+
     "LOGOUT": "LOGOUT",
 
 
@@ -356,7 +358,9 @@
 
     "West Yellowstone, Montana": "West Yellowstone, Montana",
 
-    "AUGUST": "AUGUST"
+    "AUGUST": "AUGUST",
+
+    "Stay Connected": "Stay Connected"
 
     
 }

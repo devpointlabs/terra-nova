@@ -6,106 +6,106 @@ import { withNamespaces } from 'react-i18next';
 
 const News = ({t}) => (
   <>
-  <Container>
-    <Grid columns={2} padded='vertically'>
-      <Grid.Column>
+  <Container stackable>
+    <Grid columns={2} padded='vertically' stackable>
+      <Grid.Column >
         <SubHeader style={subHeader}>{t("News")}</SubHeader>
         <HeaderLine/>
       </Grid.Column>
     </Grid>
   </Container>
     <div>
-        <Grid columns={4}centered divided>
+        <Grid columns={4}centered divided stackable>
       {/* Grid 0 */}
         <Grid>
         </Grid>
         {/* Grid 1 */}
-          <Grid columns={2} divided style={gridPad.main}>
-          <Grid.Row verticalAlign='top' textAlign='left'>
-            <Grid.Column width={7} style={style.numDate}>
+          <Grid columns={2} divided style={gridPad.main} stackable>
+          <Grid.Row verticalAlign='top' textAlign='left'stackable>
+            <Grid.Column width={7} style={style.numDate} stackable>
               25
             </Grid.Column>
-            <Grid.Column width={7} style={style.date}>
-            <Grid.Row textAlign='left'>
+            <Grid.Column width={7} style={style.date} stackable>
+            <Grid.Row textAlign='left' stackable>
               {t("AUGUST")}
             </Grid.Row>
-            <Grid.Row textAlign='left'>
+            <Grid.Row textAlign='left' stackable>
               2017
             </Grid.Row>
           </Grid.Column>
           </Grid.Row>
-            <Grid.Row style={style.text}>
+            <Grid.Row style={style.text}stackable>
               {t("Update menu in Skyline Hotel")}
             </Grid.Row>
-          <NavLink to='/' activeStyle=
+          <NavLink to='/underconstruction' activeStyle=
           {{ 
             color: '#826614',
             fontFamily: "'Poppins', sans-serif",
             fontWeight: 'lighter',
             fontSize: "13px",
             }}>
-            <Grid.Row style={gridPad.link}>
+            <Grid.Row style={gridPad.link} stackable>
               {t("Read More")}
           </Grid.Row>
           </NavLink>
         </Grid>
           {/* Grid 2 */}
-        <Grid columns={2} divided style={gridPad.main}>
-          <Grid.Row verticalAlign='top' textAlign='left'>
-            <Grid.Column width={7} style={style.numDate}>
+        <Grid columns={2} divided style={gridPad.main} stackable>
+          <Grid.Row verticalAlign='top' textAlign='left' stackable>
+            <Grid.Column width={7} style={style.numDate}stackable>
               22
             </Grid.Column>
-            <Grid.Column width={7} style={style.date}>
-            <Grid.Row textAlign='left'>
+            <Grid.Column width={7} style={style.date}stackable>
+            <Grid.Row textAlign='left'stackable>
             {t("AUGUST")}
             </Grid.Row>
-            <Grid.Row textAlign='left'>
+            <Grid.Row textAlign='left'stackable>
               2017
             </Grid.Row>
           </Grid.Column>
           </Grid.Row>
-            <Grid.Row style={style.text}>
+            <Grid.Row style={style.text}stackable>
               {t("New Hikes Available for Spring")}
             </Grid.Row>
-          <NavLink to='/' activeStyle=
+          <NavLink to='/underconstruction' activeStyle=
           {{ 
             color: '#826614',
             fontFamily: "'Poppins', sans-serif",
             fontWeight: 'lighter',
             fontSize: "13px",
           }}>
-            <Grid.Row style={gridPad.link}>
+            <Grid.Row style={gridPad.link} stackable>
               {t("Read More")}
           </Grid.Row>
           </NavLink>
         </Grid>
           {/* Grid 3 */}
-        <Grid columns={2} divided  style={gridPad.main}>
-        <Grid.Row verticalAlign='top' textAlign='left'>
-            <Grid.Column width={7} style={style.numDate}>
+        <Grid columns={2} divided  style={gridPad.main} stackable>
+        <Grid.Row verticalAlign='top' textAlign='left' stackable>
+            <Grid.Column width={7} style={style.numDate} stackable>
               06
             </Grid.Column>
-            <Grid.Column width={7} style={style.date}>
-            <Grid.Row textAlign='left'>
+            <Grid.Column width={7} style={style.date} stackable>
+            <Grid.Row textAlign='left' stackable>
             {t("AUGUST")}
             </Grid.Row>
-            <Grid.Row textAlign='left'>
+            <Grid.Row textAlign='left' stackable>
               2017
             </Grid.Row>
           </Grid.Column>
           </Grid.Row>
-            <Grid.Row style={style.text}>
+            <Grid.Row style={style.text} stackable>
               {t("Mother Earth Hosts Our Travels")}
             </Grid.Row>
-          <NavLink to='/' activeStyle=
+          <NavLink to='/underconstruction' activeStyle=
           {{ 
             color: '#826614',
             fontFamily: "'Poppins', sans-serif",
             fontWeight: 'lighter',
             fontSize: "13px",
           }}>
-          <Grid.Column>
-            <Grid.Row style={gridPad.link}>
+          <Grid.Column stackable>
+            <Grid.Row style={gridPad.link} stackable>
               {t("Read More")}
           </Grid.Row>
           </Grid.Column>

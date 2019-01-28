@@ -17,6 +17,7 @@ import { withNamespaces } from 'react-i18next';
 class Gallery extends React.Component {
   state = { cards: [], };
 
+  
   renderCards = () => {
     return this.state.cards.map(content => (
       <Card raised centered textAlign fluid style={cardStyles.card}>
@@ -53,7 +54,7 @@ class Gallery extends React.Component {
             <GalleryIconLine />
           </div>
           <div style={styles.button}>
-            <Menu secondary>
+            <Menu secondary stackable>
 
               <Menu.Item fitted='horizontally'>
                 <Link to="/underconstruction">
@@ -81,8 +82,8 @@ class Gallery extends React.Component {
           {/* <Card.Group centered itemsPerRow={4}>
             {this.renderCards()}
           </Card.Group> */}
-          <Grid>
-            <Grid.Row columns={4}>
+          <Grid equal height row stackable>
+            <Grid.Row columns={4} stackable>
               <Grid.Column stretched>
                 <Image style={{ height: '250px' }} src={IMGone} />
               </Grid.Column>
@@ -164,7 +165,7 @@ const styles = {
 }
 
 const cardStyles = {
-  card: {
+  card:  {
     display: 'flex',
     fontSize: '16px',
     justifyContent: 'center',
@@ -172,6 +173,9 @@ const cardStyles = {
     fontFamily: "'Poppins', sans-serif",
     padding: '20px 20px',
     color: 'red',
+  },
+  grid: {
+    display: 'block'
   }
 }
 

@@ -12,8 +12,10 @@ const Review = ({t}) => (
         nextIcon={null}
         nextLabel={null}
         controls={false}
+        stackable
+        
     >
-        <Carousel.Item>
+        <Carousel.Item stackable>
             <div style={styles.background}>
                 <div style={styles.circle}></div>
                 <div style={styles.stars}>
@@ -40,7 +42,7 @@ const Review = ({t}) => (
                 </div>
             </div>
         </Carousel.Item>
-        <Carousel.Item>
+        <Carousel.Item stackable>
             <div style={styles.background}>
                 <div style={styles.circle}></div>
                 <div style={styles.stars}>
@@ -67,7 +69,7 @@ const Review = ({t}) => (
                 </div>
             </div>
         </Carousel.Item>
-        <Carousel.Item>
+        <Carousel.Item stackable>
             <div style={styles.background}>
                 <div style={styles.circle}></div>
                 <div style={styles.stars}>
