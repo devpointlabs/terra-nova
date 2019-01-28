@@ -37,22 +37,25 @@ class EmailForm extends React.Component {
       size='small'
       centered={false}
       basic
+      stackable
     >
-      <Modal.Header style={styles.header}> Terra Nova Cabins</Modal.Header>
-      <Modal.Content image>
+      <Modal.Header style={styles.header} stackable> Terra Nova Cabins</Modal.Header>
+      <Modal.Content image stackable>
         <Image wrapped
+          stackable
           size='small'
           src={Terra_Nova_Cabins_Logo} />
-        <Modal.Description>
-          <Modal.Header style={styles.header2}>Success!</Modal.Header>
+        <Modal.Description stackable>
+          <Modal.Header style={styles.header2} stackable>Success!</Modal.Header>
           <p style={styles.body}> You have been signed up for the Terra Nova Newsletter.</p>
         </Modal.Description>
       </Modal.Content>
-      <Modal.Actions>
+      <Modal.Actions stackable>
         <WhiteButton
           color="white"
           onClick={this.close}
           centered
+          stackable
         >
           <Icon name="checkmark" /> Got it!
           </WhiteButton>

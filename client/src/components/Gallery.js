@@ -17,6 +17,7 @@ import { withNamespaces } from 'react-i18next';
 class Gallery extends React.Component {
   state = { cards: [], };
 
+  
   renderCards = () => {
     return this.state.cards.map(content => (
       <Card raised centered textAlign fluid style={cardStyles.card}>
@@ -81,7 +82,7 @@ class Gallery extends React.Component {
           {/* <Card.Group centered itemsPerRow={4}>
             {this.renderCards()}
           </Card.Group> */}
-          <Grid stackable>
+          <Grid equal height row stackable>
             <Grid.Row columns={4} stackable>
               <Grid.Column stretched>
                 <Image style={{ height: '250px' }} src={IMGone} />
@@ -172,6 +173,9 @@ const cardStyles = {
     fontFamily: "'Poppins', sans-serif",
     padding: '20px 20px',
     color: 'red',
+  },
+  grid: {
+    display: 'block'
   }
 }
 

@@ -40,14 +40,14 @@ const AboutUs = ({ t }) => (
           <br />
           <br />
           <br />
-          <Image style={{marginLeft: '82px'}} src={montana} size="large" centered />
+          <Image src={montana} size="large" centered />
         </Grid.Column>
         </Grid>
     </div>
 
-    <Card.Group centered itemsPerRow={4} style={cardGroup}stackable>
+    <Card.Group centered itemsPerRow={4} style={cardGroup} stackable>
       <Card style={styles.card}>
-        <Image src={Master_Bedroom_Icon} />
+        <Image src={Master_Bedroom_Icon}/>
         <Card.Content>{t("MASTER BEDROOM")}</Card.Content>
       </Card>
       <Card style={styles.card}>

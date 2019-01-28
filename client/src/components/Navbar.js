@@ -11,7 +11,7 @@ class Navbar extends React.Component {
 
   renderIcon = () => {
     return (
-      <Menu.Item position="left">
+      <Menu.Item position="left" stackable>
       <Link to='/'>
         <Image
           src={Terra_Nova_Cabins_Logo}
@@ -20,6 +20,7 @@ class Navbar extends React.Component {
           position="left"
           floated="left"
           verticalAlign="top"
+          stackable
           />
           </Link>
       </Menu.Item>
