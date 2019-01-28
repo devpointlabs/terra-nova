@@ -11,7 +11,7 @@ class Navbar extends React.Component {
 
   renderIcon = () => {
     return (
-      <Menu.Item position="left">
+      <Menu.Item position="left" stackable>
       <Link to='/'>
         <Image
           src={Terra_Nova_Cabins_Logo}
@@ -20,6 +20,7 @@ class Navbar extends React.Component {
           position="left"
           floated="left"
           verticalAlign="top"
+          stackable
           />
           </Link>
       </Menu.Item>
@@ -31,25 +32,30 @@ class Navbar extends React.Component {
     } = this.props;
 
     return (
-      <Menu style={styles.font} position="right">
+
+      // <Container>
+      <Dropdown.Menu style={styles.font} position="right"stackable>
         {user ? (
           <div style={styles.background}>
-            <Menu item style={styles.font} text={t("Welcome")}>
+            <Dropdown item style={styles.font} text={t("Welcome")}stackable>
               <Link to="/register">
                 <Dropdown.Item
                   style={styles.font}
                   position="right"
                   text={t("NEW ADMIN")}
+                  stackable
                 />
               </Link>
               <Dropdown.Item
                 href="/events"
                 style={styles.font}
                 text={t("NEW EVENT")}
+                stackable
               />
               <Dropdown.Item
                 style={styles.font}
                 text={t("LOGOUT")}
+                stackable
                 onClick={() => handleLogout(this.props.history)}
               />
             </Menu>
@@ -68,7 +74,7 @@ class Navbar extends React.Component {
 
     return (
       <div style={styles.background}>
-        <Container>
+        <Container stackable>
           <Menu position="center" secondary>
             {this.renderIcon()}
             <Link to="/">
