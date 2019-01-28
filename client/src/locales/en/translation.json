@@ -197,7 +197,11 @@
     
     "Reservations": "Reservations",
 
+    "Reserve Room": "Reserve Room",
 
+    "Reservation Checkout": "Reservation Checkout",
+
+    
     
     "Leave a Review": "Leave a Review",
 
@@ -207,7 +211,8 @@
 
     "Location": "Location",
 
-    "Name": "Name",
+    "First Name": "First Name",
+
 
     "Title": "Title",
     
@@ -346,7 +351,13 @@
 
     "The Adventure Begins":"The Adventure Begins",
 
-    "Hold tight as we get this page up and running": "Hold tight as we get this page up and running"
+    "Hold tight as we get this page up and running": "Hold tight as we get this page up and running",
+
+    "West Yellowstone, Montana": "West Yellowstone, Montana",
+
+    "AUGUST": "AUGUST",
+
+    "Stay Connected": "Stay Connected"
 
     
 }
