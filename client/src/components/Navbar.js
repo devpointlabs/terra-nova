@@ -25,6 +25,10 @@ class Navbar extends React.Component {
       </Menu.Item>
     );
   };
+
+  handleRefresh = () => {
+    window.location.reload();
+  };
   render() {
     const {
       auth: { user },
