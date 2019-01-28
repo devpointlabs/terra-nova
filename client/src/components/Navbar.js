@@ -6,14 +6,13 @@ import Terra_Nova_Cabins_Logo from "../assets/images/Terra_Nova_Cabins_Logo.png"
 import { withNamespaces } from "react-i18next";
 
 class Navbar extends React.Component {
-  state = { user: null };
+  state = { user: null, };
 
   renderIcon = () => {
     return (
-      <Menu.Item position="left" stackable>
-      <Link to='/'>
-        <Image
-          src={Terra_Nova_Cabins_Logo}
+      <Menu.Item position='left'>
+      <Link to="/">
+        <Image src={Terra_Nova_Cabins_Logo}
           size="tiny"
           style={styles.image}
           position="left"
@@ -23,52 +22,8 @@ class Navbar extends React.Component {
           />
         </Link>
       </Menu.Item>
-    );
-  };
-
-
-  adminNav = () => {
-    const { auth: { user, handleLogout }, t
-    } = this.props;
-
-    return (
-
-      // <Container>
-      <Dropdown.Menu style={styles.font} position="right"stackable>
-        {user ? (
-          <div style={styles.background}>
-            <Menu item style={styles.font} text={t("Welcome")}stackable>
-              <Link to="/register">
-                <Dropdown.Item
-                  style={styles.font}
-                  position="right"
-                  text={t("NEW ADMIN")}
-                  stackable
-                />
-              </Link>
-              <Dropdown.Item
-                href="/events"
-                style={styles.font}
-                text={t("NEW EVENT")}
-                stackable
-              />
-              <Dropdown.Item
-                style={styles.font}
-                text={t("LOGOUT")}
-                stackable
-                onClick={() => handleLogout(this.props.history)}
-              />
-            </Menu>
-          </div>
-        ) : null}
-      </Dropdown.Menu>
-    );
-  };
-
-  handleRefresh = () => {
-    window.location.reload();
-  };
-
+    )
+  } 
   render() {
     const { auth: { user }, location, t } = this.props;
     if (user) {
@@ -235,13 +190,16 @@ class Navbar extends React.Component {
   }
 }
 
+
 export class ConnectedNavbar extends React.Component {
   render() {
     return (
       <AuthConsumer>
-        {auth => <Navbar {...this.props} auth={auth} />}
+        {auth =>
+          <Navbar {...this.props} auth={auth} />
+        }
       </AuthConsumer>
-    );
+    )
   }
 }
 
@@ -250,14 +208,14 @@ export default withNamespaces()(withRouter(ConnectedNavbar));
 export const styles = {
   font: {
     fontFamily: "'Poppins', sans-serif",
-    color: "white",
-    fontWeight: "bold",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-evenly",
-    alignItems: "center",
-    alignContent: "center",
-    marginTop: "35px"
+    color: 'white',
+    fontWeight: 'bold',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    alignContent: 'center',
+    marginTop: '35px',
   },
   adminFont: {
     fontFamily: "'Poppins', sans-serif",
@@ -287,4 +245,4 @@ export const styles = {
     alignContent: "center",
     // padding: '0px' 
   }
-};
+}
