@@ -31,35 +31,38 @@ class Geobar extends React.Component {
     return (
       <div style={styles.background}>
 
-        <Container >
-          <Menu secondary size='mini'>
+        <Container stackable>
+          <Menu secondary size='mini'stackable>
             <Menu.Item style={styles.font}>
               <FontAwesomeIcon
+                stackable
                 icon={faCloud}
                 style={{
                   width: '20px'
                 }} />
               32˚F
             </Menu.Item>
-            <Menu.Item style={styles.font}>
+            <Menu.Item style={styles.font} stackable>
               <FontAwesomeIcon
+                stackable
                 icon={faMapMarkerAlt}
                 style={{
                   width: '15px'
                 }}
               />
-              {t("Salt Lake City, UT")}
+              {t("West Yellowstone, Montana")}
             </Menu.Item>
-            <Menu.Item style={styles.font}>
+            <Menu.Item style={styles.font} stackable>
               <FontAwesomeIcon
+                stackable
                 icon={faPhone}
                 style={{
                   width: '20px'
                 }} />
               1-TER-RAN-OVVA
             </Menu.Item >
-            <Menu.Item  position='right'>
-                  <Button style={styles.toggle} onClick={() => this.toggleLanguage()}>
+            <Menu.Item  position='right' stackable>
+                  <Button style={styles.toggle} onClick={() => this.toggleLanguage()} stackable>
                     {this.state.toggled ? 'English' : '中文'}
                   </Button>
             </Menu.Item>

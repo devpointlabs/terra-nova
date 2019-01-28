@@ -30,29 +30,32 @@ class EmailForm extends React.Component {
     const { t } = this.props;
     const { open } = this.state;
     return(
-    <Modal trigger={<BlackButton2 onClick={this.open}>{t("Sign Up")}</BlackButton2>}
+    <Modal trigger={<BlackButton2 onClick={this.open}>{t("Stay Connected")}</BlackButton2>}
       open={open}
       onOpen={this.open}
       onClose={this.close}
       size='small'
       centered={false}
       basic
+      stackable
     >
-      <Modal.Header style={styles.header}> Terra Nova Cabins</Modal.Header>
-      <Modal.Content image>
+      <Modal.Header style={styles.header} stackable> Terra Nova Cabins</Modal.Header>
+      <Modal.Content image stackable>
         <Image wrapped
+          stackable
           size='small'
           src={Terra_Nova_Cabins_Logo} />
-        <Modal.Description>
-          <Modal.Header style={styles.header2}>Success!</Modal.Header>
+        <Modal.Description stackable>
+          <Modal.Header style={styles.header2} stackable>Success!</Modal.Header>
           <p style={styles.body}> You have been signed up for the Terra Nova Newsletter.</p>
         </Modal.Description>
       </Modal.Content>
-      <Modal.Actions>
+      <Modal.Actions stackable>
         <WhiteButton
           color="white"
           onClick={this.close}
           centered
+          stackable
         >
           <Icon name="checkmark" /> Got it!
           </WhiteButton>
@@ -68,18 +71,21 @@ class EmailForm extends React.Component {
   render() {
     const {t} = this.props;
     return (
-      <Segment style={styles.background} basic>
-        <Container style={styles.flexbox}>
+      <Segment style={styles.background} basic stackable>
+        <Container style={styles.flexbox} stackable>
           <div style={styles.flexbox}>
             {/* <Icon name="mail" size="huge" centered /> */}
-            <Form onSubmit={this.handleSubmit}>
-              <Form.Group>
+            <Form onSubmit={this.handleSubmit}stackable>
+              <Form.Group stackable>
                 <Form.Input style={styles.body2}
                   icon="paper plane"
                   name="email"
                   placeholder={t("Your Email Address")}
+                  required
                   value={this.state.email}
                   onChange={this.handleChange}
+                  stackable
+                  required
                 />
                 {this.emailModal()}
               </Form.Group>
@@ -119,8 +125,8 @@ const styles = {
   background: {
     paddingTop: "20px",
     paddingBottom: "20px",
-    paddingRight: "240px",
-    paddingLeft: "240px",
+    // paddingRight: "240px",
+    // paddingLeft: "240px",
     backgroundColor: "#363636",
     width: "100%",
     marginBottom: "-15px",

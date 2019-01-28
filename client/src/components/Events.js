@@ -17,8 +17,8 @@ const Events = ({ t }) => {
                 </Grid.Column>
                 </Grid>
             </div>
-                <Card.Group centered itemsPerRow={3}>
-                <Card style={styleCard1}>
+                <Card.Group centered itemsPerRow={3}stackable>
+                <Card style={styleCard1} stackable>
                         <Title4>{t("Wedding Day")}</Title4>
                     </Card>
                     <Card style={styleCard2}> 

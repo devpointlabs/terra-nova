@@ -34,7 +34,7 @@ const App = () => (
         <div style={styles.body}>
           <Switch>
             <Route exact path="/" component={Home} />
-            <ProtectedRoute exact path="admin/home" component={Home} />
+            <ProtectedRoute exact path="/home" component={Home} />
             <Route exact path="/admin" component={Admin} />
             <ProtectedRoute exact path="/register" component={Register} />
             <Route exact path="/rooms" component={Rooms} />
