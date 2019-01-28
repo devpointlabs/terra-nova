@@ -19,16 +19,15 @@ const MainCarousel = ({ t }) => (
       indicators={false}
       interval={3000}
       controls={false}
+      // style={styles.main}
     >
 
       <Carousel.Item>
         <img
-          width={1400}
-          height={400}
           alt="1400x400"
           src={LPI1}
           style={styles.image}
-          />
+        />
         <Carousel.Caption>
           <Title style={styles.title}> {t("Welcome to Terra Nova Cabins")}</Title>
           <div style={styles.subtitle}>
@@ -45,8 +44,6 @@ const MainCarousel = ({ t }) => (
 
       <Carousel.Item>
         <img
-          width={1400}
-          height={400}
           alt="1400x400"
           src={LPI2}
           style={styles.image}
@@ -57,7 +54,7 @@ const MainCarousel = ({ t }) => (
             <div style={styles.topLine}>
               <WhiteLine />
               <Title3>
-              {t("HOTELS & RESORTS")}
+                {t("HOTELS & RESORTS")}
               </Title3>
               <WhiteLine />
             </div>
@@ -67,8 +64,6 @@ const MainCarousel = ({ t }) => (
 
       <Carousel.Item>
         <img
-          width={1400}
-          height={400}
           alt="1400x400"
           src={LPI3}
           style={styles.image}
@@ -79,7 +74,7 @@ const MainCarousel = ({ t }) => (
             <div style={styles.topLine}>
               <WhiteLine />
               <Title3>
-              {t("HOTELS & RESORTS")}
+                {t("HOTELS & RESORTS")}
               </Title3>
               <WhiteLine />
             </div>
@@ -115,8 +110,10 @@ const styles = {
     justifyContent: 'center',
   },
   image: {
-    height: '600px',
-    width: '100%'
+    height: '100vh',
+    minHeight: 'calc(100vh-136px)',
+    width: '100%',
+    marginTop: '75px',
   },
   title: {
     height: '100%',
@@ -134,5 +131,8 @@ const styles = {
   },
   caption: {
     height: '550px',
+  },
+  main: {
+    // marginTop: "calc(100vh-136px)"
   }
 }

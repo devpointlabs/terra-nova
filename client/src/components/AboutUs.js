@@ -51,31 +51,31 @@ const AboutUs = ({ t }) => (
         <Card.Content>{t("MASTER BEDROOM")}</Card.Content>
       </Card>
       <Card style={styles.card}>
-        <Image src={LAKE_VIEW_ICON} />
+        <Image src={LAKE_VIEW_ICON} style={styles.image} />
         <Card.Content>{t("LAKE VIEW BALCONY")}</Card.Content>
       </Card>
       <Card style={styles.card}>
-        <Image src={POOL_SPA_ICON} />
+        <Image src={POOL_SPA_ICON} style={styles.image}/>
         <Card.Content>{t("POOL & SPA")}</Card.Content>
       </Card>
       <Card style={styles.card}>
-        <Image src={MAKE_EXPORTABLE_ICON} />
+        <Image src={MAKE_EXPORTABLE_ICON} style={styles.image}/>
         <Card.Content>{t("WIFI COVERAGE")}</Card.Content>
       </Card>
       <Card style={styles.card}>
-        <Image src={AWESOME_PACKAGES_ICON} />
+        <Image src={AWESOME_PACKAGES_ICON} style={styles.image}/>
         <Card.Content>{t("AWESOME PACKAGES")}</Card.Content>
       </Card>
       <Card style={styles.card}>
-        <Image SRC={CLEANING_EVERYDAY_ICON} />
+        <Image SRC={CLEANING_EVERYDAY_ICON} style={styles.image}/>
         <Card.Content>{t("CLEANING EVERYDAY")}</Card.Content>
       </Card>
       <Card style={styles.card}>
-        <Image src={BUFFET_BREAKFAST_ICON} />
+        <Image src={BUFFET_BREAKFAST_ICON} style={styles.image}/>
         <Card.Content>{t("BUFFET BREAKFAST")}</Card.Content>
       </Card>
       <Card style={styles.card}>
-        <Image src={AIRPORT_TAXI_ICON} />
+        <Image src={AIRPORT_TAXI_ICON} style={styles.image}/>
         <Card.Content>{t("AIRPORT TAXIS")}</Card.Content>
       </Card>
     </Card.Group>
@@ -93,8 +93,12 @@ const styles = {
     alignItems: 'center',
     fontFamily: "'Poppins', sans-serif",
     padding: '20px 20px',
-    color: 'black'
+    color: 'black',
+    backgroundColor: 'white'
 
+  },
+  image: {
+    backgroundColor: 'white'
   }
 }
 
