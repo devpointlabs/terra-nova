@@ -37,7 +37,7 @@ class Navbar extends React.Component {
       <Dropdown.Menu style={styles.font} position="right"stackable>
         {user ? (
           <div style={styles.background}>
-            <Dropdown item style={styles.font} text={t("Welcome")}stackable>
+            <Menu item style={styles.font} text={t("Welcome")}stackable>
               <Link to="/register">
                 <Dropdown.Item
                   style={styles.font}
@@ -61,7 +61,7 @@ class Navbar extends React.Component {
             </Menu>
           </div>
         ) : null}
-      </Menu>
+      </Dropdown.Menu>
     );
   };
 
@@ -162,7 +162,7 @@ export const styles = {
     marginTop: "35px"
   },
   image: {
-    padding: "0.5px",
+    padding: "10px",
     marginBottom: "-40px",
     marginTop: "-10px",
     height: "100px",
@@ -174,7 +174,7 @@ export const styles = {
     flexDirection: "row",
     justifyContent: "flex-end",
     alignItems: "center",
-    alignContent: "center"
-    // padding: '0px'
+    alignContent: "center",
+    // padding: '0px' 
   }
 };

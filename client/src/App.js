@@ -28,8 +28,10 @@ import ScrollToTop from "./components/ScrollToTop";
 const App = () => (
   <Fragment>
     <FetchUser>
+      <div style={styles.nav}>
       <Geobar />
       <Navbar />
+      </div>
       <ScrollToTop>
         <div style={styles.body}>
           <Switch>
@@ -75,5 +77,10 @@ const styles = {
   },
   footer: {
     margin: "auto auto 0 auto"
+  },
+  nav: {
+    position: 'fixed',
+    zIndex: '99',
+    width: '100%'
   }
 };
