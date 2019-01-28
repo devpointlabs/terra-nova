@@ -1,6 +1,6 @@
 import React from "react";
 import { AuthConsumer } from "../providers/AuthProvider";
-import { Menu, Container, Image, } from "semantic-ui-react";
+import { Menu, Container, Image } from "semantic-ui-react";
 import { Link, withRouter } from "react-router-dom";
 import Terra_Nova_Cabins_Logo from "../assets/images/Terra_Nova_Cabins_Logo.png";
 import { withNamespaces } from "react-i18next";
@@ -10,16 +10,16 @@ class Navbar extends React.Component {
 
   renderIcon = () => {
     return (
-      <Menu.Item position="left" stackable>
-      <Link to='/'>
-        <Image
-          src={Terra_Nova_Cabins_Logo}
-          size="tiny"
-          style={styles.image}
-          position="left"
-          floated="left"
-          verticalAlign="top"
-          stackable
+      <Menu.Item position="left">
+        <Link to="/">
+          <Image
+            src={Terra_Nova_Cabins_Logo}
+            size="tiny"
+            style={styles.image}
+            position="left"
+            floated="left"
+            verticalAlign="top"
+            stackable
           />
         </Link>
       </Menu.Item>
@@ -29,21 +29,26 @@ class Navbar extends React.Component {
   handleRefresh = () => {
     window.location.reload();
   };
-
   render() {
-    const { auth: { user }, location, t } = this.props;
+    const {
+      auth: { user },
+      location,
+      t
+    } = this.props;
     if (user) {
       return (
         <div style={styles.background}>
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            color: 'white',
-            marginLeft: '50px',
-            marginRight: '-100px'
-          }}>
-            <h6 >{t("Welcome")},</h6>
-            <h5 style={{marginTop: '-5px'}}>{user.first_name}</h5>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              color: "white",
+              marginLeft: "50px",
+              marginRight: "-100px"
+            }}
+          >
+            <h6>{t("Welcome")},</h6>
+            <h5 style={{ marginTop: "-5px" }}>{user.first_name}</h5>
           </div>
           <Container>
             <Menu position="center" secondary>
@@ -103,25 +108,29 @@ class Navbar extends React.Component {
                 <Menu.Item
                   style={styles.adminFont}
                   name={t("NEW ADMIN")}
-                  active={location.pathname === '/register'}
+                  active={location.pathname === "/register"}
                 />
               </Link>
               <Link to="/events">
                 <Menu.Item
                   style={styles.adminFont}
                   name={t("NEW EVENT")}
-                  active={location.pathname === '/events'}
+                  active={location.pathname === "/events"}
                 />
               </Link>
               <Link to="/reviews">
                 <Menu.Item
                   style={styles.adminFont}
                   name={t("REVIEWS")}
-                  active={location.pathname === '/reviews'}
+                  active={location.pathname === "/reviews"}
                 />
               </Link>
               <Menu.Item
-                style={{marginTop: '35px', color: 'white', fontWeight: 'bold'}}
+                style={{
+                  marginTop: "35px",
+                  color: "white",
+                  fontWeight: "bold"
+                }}
                 name={t("LOGOUT")}
                 onClick={() => this.props.auth.handleLogout(this.props.history)}
               />
@@ -129,7 +138,7 @@ class Navbar extends React.Component {
             <br />
           </Container>
         </div>
-      )
+      );
     } else {
       return (
         <div style={styles.background}>
@@ -230,10 +239,10 @@ export const styles = {
     alignItems: "center",
     alignContent: "center",
     marginTop: "35px",
-    marginBottom: '-20px'
+    marginBottom: "-20px"
   },
   image: {
-    padding: "0.5px",
+    padding: "10px",
     marginBottom: "-40px",
     marginTop: "-10px",
     height: "100px",

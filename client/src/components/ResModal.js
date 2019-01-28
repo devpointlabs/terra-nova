@@ -16,7 +16,7 @@ class ResModal extends React.Component {
         basic
         size="small"
         open={this.state.showModal}
-        close={this.handleClose}
+        // close={this.handleClose}
         centered={false}
         trigger={
           <GoldButton

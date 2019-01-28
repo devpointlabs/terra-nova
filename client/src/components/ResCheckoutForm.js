@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Divider } from "semantic-ui-react";
+import { Form, Button } from "semantic-ui-react";
 import axios from "axios";
 import { withNamespaces } from 'react-i18next';
 import BraintreeDrop from './BraintreeDrop';
@@ -16,13 +16,75 @@ class ResCheckoutForm extends React.Component {
       children: this.props.userSpecs.children,
       start_date: this.props.userSpecs.start_date,
       end_date: this.props.userSpecs.end_date
-    }
+    },
+    formErrors: { email: "" },
+    emailValid: false,
+    formValid: false,
+    phoneValid: false
   };
 
-  handleChange = ({ target: { name, value } }) => {
+  FormErrors = ({ formErrors }) => {
+    return (
+      <div className="formErrors" style={{ color: "red" }}>
+        {Object.keys(formErrors).map((fieldName, i) => {
+          if (formErrors[fieldName].length > 0) {
+            return (
+              <p key={i}>
+                * {fieldName} {formErrors[fieldName]}
+              </p>
+            );
+          } else {
+            return "";
+          }
+        })}
+      </div>
+    );
+  };
+
+  validateField(fieldName, value) {
+    let fieldValidationErrors = this.state.formErrors;
+    let emailValid = this.state.emailValid;
+    let phoneValid = this.state.phoneValid;
+
+    switch (fieldName) {
+      case "email":
+        emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+        fieldValidationErrors.email = emailValid ? "" : " is not valid";
+        break;
+      case "phone":
+        phoneValid = value.length >= 10;
+        fieldValidationErrors.phone = phoneValid
+          ? ""
+          : " is not a valid number";
+        break;
+      default:
+        break;
+    }
+    this.setState(
+      {
+        formErrors: fieldValidationErrors,
+        emailValid: emailValid,
+        phoneValid: phoneValid
+      },
+      this.validateForm
+    );
+  }
+
+  validateForm() {
     this.setState({
-      reservation: { ...this.state.reservation, [name]: value }
+      formValid: this.state.emailValid && this.state.phoneValid
     });
+  }
+
+  handleChange = ({ target: { name, value } }) => {
+    this.setState(
+      {
+        reservation: { ...this.state.reservation, [name]: value }
+      },
+      () => {
+        this.validateField(name, value);
+      }
+    );
   };
 
   handleSubmit = () => {
@@ -33,7 +95,6 @@ class ResCheckoutForm extends React.Component {
       axios
         .post(`/api/rooms/${roomId}/reservations`, this.state.reservation)
         .then(res =>
-          // window.confirm("Booked"),
           this.props.history.push({
             pathname: "/checkout/confirmation",
             state: { room: this.props.room, userSpecs: this.state.reservation }
@@ -56,7 +117,7 @@ class ResCheckoutForm extends React.Component {
     } = this.state;
     // const {t} = this.props;
     const {room: {cost}, t }= this.props;
-    // const cost = this.state;
+    const { formErrors } = this.state;
 
     return (
 
@@ -97,6 +158,14 @@ class ResCheckoutForm extends React.Component {
         </Form.Group>
         {/* {this.renderBrainTree} */}
         <BraintreeDrop {...this.state} amount={cost}/>
+        <Button
+          style={{ marginBottom: "7px" }}
+          color="brown"
+          disabled={!this.state.formValid}
+        >
+          {t("Reserve Room")}
+        </Button>
+        {this.FormErrors({ formErrors })}
       </Form>
     );
   }

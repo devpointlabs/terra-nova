@@ -4,9 +4,11 @@ import { withNamespaces } from 'react-i18next';
 import { RoomBody, SubHeaderTwo } from '../styles/AppStyles';
 
 const Contact = ({ t }) => (
-  <div styles={styles.background}>
+  <div style={styles.background}>
     <Container>
-      <SubHeaderTwo />
+      <SubHeaderTwo>
+      {t("Contact")}
+      </SubHeaderTwo>
       <RoomBody>{t("If you would like to know more, please contact us")}</RoomBody>
       <Card.Group centered itemsPerRow={2}>
         <Card raised centered textAlign fluid style={cardStyles.card}>
@@ -45,7 +47,8 @@ export default withNamespaces()(Contact);
 
 const styles = {
   background: {
-    backgroundColor: "#F5F5F5",
+    // backgroundColor: "#F5F5F5",
+    marginTop: '150px',
   },
   hr: {
     borderBottom: "1px solid black",
