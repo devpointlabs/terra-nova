@@ -16,7 +16,7 @@ class Reservation extends React.Component {
     const { t } = this.props;
     return (
       <Container>
-        <SubHeader>{t("Reservations")}</SubHeader>
+        <SubHeader style={styles.nav}>{t("Reservations")}</SubHeader>
         <hr />
         <ResForm />
         <RenderAvailable history={this.props.history} />
@@ -26,3 +26,9 @@ class Reservation extends React.Component {
 }
 
 export default withNamespaces()(connect()(Reservation));
+
+const styles = {
+  nav: {
+    marginTop: '100px',
+  }
+}

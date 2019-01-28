@@ -113,6 +113,7 @@ const text = {
 
 const background = {
   paddingBottom: '150px',
+  marginTop: '100px',
 }
 
 const cardGroup = {

@@ -131,6 +131,7 @@ const styles = {
   background: {
     backgroundColor: "rgb(35, 35, 35)",
     paddingBottom: '100px',
+    marginTop: '100px',
   },
   font: {
     color: 'white',
