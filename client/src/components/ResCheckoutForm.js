@@ -48,11 +48,13 @@ class ResCheckoutForm extends React.Component {
     switch (fieldName) {
       case "email":
         emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
-        fieldValidationErrors.email = emailValid ? "" : " is invalid";
+        fieldValidationErrors.email = emailValid ? "" : " is not valid";
         break;
       case "phone":
         phoneValid = value.length >= 10;
-        fieldValidationErrors.phone = phoneValid ? "" : " is a invalid number";
+        fieldValidationErrors.phone = phoneValid
+          ? ""
+          : " is not a valid number";
         break;
       default:
         break;

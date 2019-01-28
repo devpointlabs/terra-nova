@@ -50,7 +50,7 @@ class ResCheckout extends React.Component {
   render() {
     const { t } = this.props;
     return (
-      <Container>
+      <Container style={{ marginTop: "8em" }}>
         <SubHeader>{t("Reservation Checkout")}</SubHeader>
         <hr />
         <ResCheckoutForm
