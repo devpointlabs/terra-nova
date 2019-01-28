@@ -9,7 +9,9 @@ import "react-bootstrap";
 import "./i18n";
 import { Provider } from "react-redux";
 import store from "./store";
+import ModalImage from 'react-modal-image';
 import * as serviceWorker from './serviceWorker';
+
 
 ReactDOM.render(
   <Provider store={store}>

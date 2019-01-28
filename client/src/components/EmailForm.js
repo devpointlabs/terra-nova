@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Icon, Container, Segment, Modal, Image, } from "semantic-ui-react";
+import { Form, Icon, Container, Segment, Modal, Image, Button } from "semantic-ui-react";
 import Terra_Nova_Cabins_Logo from '../assets/images/Terra_Nova_Cabins_Logo.png';
 import { withNamespaces } from 'react-i18next';
 import axios from "axios";
@@ -30,7 +30,7 @@ class EmailForm extends React.Component {
     const { t } = this.props;
     const { open } = this.state;
     return(
-    <Modal trigger={<BlackButton2 onClick={this.open}>{t("Stay Connected")}</BlackButton2>}
+    <Modal trigger={<Button onSubmit={this.open}>{t("Stay Connected")}</Button>}
       open={open}
       onOpen={this.open}
       onClose={this.close}
