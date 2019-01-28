@@ -19,7 +19,7 @@ import ModalImage from 'react-modal-image';
 class Gallery extends React.Component {
   state = { cards: [], };
 
-  
+
   renderCards = () => {
     return this.state.cards.map(content => (
       <Card raised centered textAlign fluid style={cardStyles.card}>
@@ -66,17 +66,17 @@ class Gallery extends React.Component {
 
               <Menu.Item fitted='horizontally'>
                 <Link to="/underconstruction">
-                <GalleryGoldButton>{t("ROOM/CABIN")}</GalleryGoldButton>
+                  <GalleryGoldButton>{t("ROOM/CABIN")}</GalleryGoldButton>
                 </Link>
               </Menu.Item>
               <Menu.Item fitted='horizontally'>
-              <Link to="/underconstruction">
-                <GalleryGoldButton>{t("BATHROOM")}</GalleryGoldButton>
+                <Link to="/underconstruction">
+                  <GalleryGoldButton>{t("BATHROOM")}</GalleryGoldButton>
                 </Link>
               </Menu.Item>
               <Menu.Item fitted='horizontally'>
-              <Link to="/underconstruction">
-                <GalleryGoldButton>{t("DINING")}</GalleryGoldButton>
+                <Link to="/underconstruction">
+                  <GalleryGoldButton>{t("DINING")}</GalleryGoldButton>
                 </Link>
               </Menu.Item>
             </Menu>
@@ -85,52 +85,56 @@ class Gallery extends React.Component {
             {this.renderCards()}
           </Card.Group> */}
           <Grid equal height row stackable>
-           
-            <Grid.Row columns={4} stackable style={{height: "250px"}}>
+
+            <Grid.Row columns={4} stackable style={{ height: "275px" }}>
               <Grid.Column stretched>
-                <ModalImage 
-                small={IMGone} 
-                large={IMGone}
+                <ModalImage
+                  small={IMGone}
+                  large={IMGone}
                 />
               </Grid.Column>
-              <Grid.Column>
-                <Image style={{ height: '222px', width: '250px' }} src={IMGtwo}
-                />
+              <Grid.Column stretched>
+                <div style={{ display: 'flex', alignItems: 'stretch', }}>
+                  <ModalImage
+                    small={IMGtwo}
+                    large={IMGtwo}
+                  />
+                </div>
               </Grid.Column >
               <Grid.Column stretched>
-                <ModalImage 
-                  small={IMGthree} 
+                <ModalImage
+                  small={IMGthree}
                   large={IMGthree}
-                  />
+                />
               </Grid.Column>
               <Grid.Column stretched>
-                <ModalImage 
-                  small={IMGfour} 
+                <ModalImage
+                  small={IMGfour}
                   large={IMGfour}
-                  />
+                />
               </Grid.Column>
             </Grid.Row>
-               
-            <Grid.Row columns={4} style={{height: "250px"}}>
+
+            <Grid.Row columns={4} style={{ height: "275px" }}>
               <Grid.Column stretched>
-                <ModalImage 
+                <ModalImage
                   small={IMGfive}
                   large={IMGfive} />
               </Grid.Column>
               <Grid.Column stretched>
-                <ModalImage 
+                <ModalImage
                   small={IMGsix}
                   large={IMGsix} />
               </Grid.Column>
               <Grid.Column stretched>
-                <ModalImage 
+                <ModalImage
                   small={IMGseven}
                   large={IMGseven} />
               </Grid.Column>
               <Grid.Column stretched>
                 <ModalImage
-                small={IMGeight}
-                large={IMGeight}
+                  small={IMGeight}
+                  large={IMGeight}
                 />
               </Grid.Column>
             </Grid.Row>
@@ -189,7 +193,7 @@ const styles = {
 }
 
 const cardStyles = {
-  card:  {
+  card: {
     display: 'flex',
     fontSize: '16px',
     justifyContent: 'center',
