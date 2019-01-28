@@ -7,7 +7,7 @@ import { withNamespaces } from "react-i18next";
 class ResCheckout extends React.Component {
   renderRoomDetails = () => {
     const {
-      room: { room_type, cost, description },
+      room: { room_type, cost, description, image },
       userSpecs: { start_date, end_date, adults, children }
     } = this.props.location.state;
 
@@ -18,7 +18,7 @@ class ResCheckout extends React.Component {
     return (
       <Segment.Group horizontal raised>
         <Segment>
-          <Image alt="" />
+          <Image src={image} alt="" />
         </Segment>
         <Segment>
           <Header as="h2">{t(room_type)}</Header>
@@ -50,7 +50,7 @@ class ResCheckout extends React.Component {
   render() {
     const { t } = this.props;
     return (
-      <Container>
+      <Container style={{ marginTop: "8em" }}>
         <SubHeader>{t("Reservation Checkout")}</SubHeader>
         <hr />
         <ResCheckoutForm
