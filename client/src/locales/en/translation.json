@@ -164,6 +164,8 @@
 
     "NEW EVENT": "NEW EVENT",
 
+    "REVIEWS": "REVIEWS",
+
     "LOGOUT": "LOGOUT",
 
 
@@ -206,14 +208,15 @@
     "Leave a Review": "Leave a Review",
 
     "Back to Reviews": "Back to Reviews",
+
+    "REVIEWS": "REVIEWS",
     
     "City & State": "City & State",
 
     "Location": "Location",
 
-    "First Name": "First Name",
 
-
+    
     "Title": "Title",
     
     "Body": "Body",
