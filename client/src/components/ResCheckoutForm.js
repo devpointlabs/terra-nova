@@ -29,7 +29,7 @@ class ResCheckoutForm extends React.Component {
           if (formErrors[fieldName].length > 0) {
             return (
               <p key={i}>
-                {fieldName} {formErrors[fieldName]}
+                * {fieldName} {formErrors[fieldName]}
               </p>
             );
           } else {
@@ -108,7 +108,6 @@ class ResCheckoutForm extends React.Component {
 
     return (
       <Form onSubmit={this.handleSubmit} style={styles.flex}>
-        {this.FormErrors({ formErrors })}
         <Form.Group>
           <Form.Input
             name="first_name"
@@ -143,9 +142,14 @@ class ResCheckoutForm extends React.Component {
             label={t("Email")}
           />
         </Form.Group>
-        <Button color="brown" disabled={!this.state.formValid}>
+        <Button
+          style={{ marginBottom: "7px" }}
+          color="brown"
+          disabled={!this.state.formValid}
+        >
           {t("Reserve Room")}
         </Button>
+        {this.FormErrors({ formErrors })}
       </Form>
     );
   }
