@@ -13,21 +13,35 @@ class ResCheckout extends React.Component {
 
     const startDate = start_date.toString();
     const endDate = end_date.toString();
+    const { t } = this.props;
 
     return (
       <Segment.Group horizontal raised>
-        <Segment>{/* <Image src={image} alt="" /> */}</Segment>
         <Segment>
-          <Header as="h2">{room_type}</Header>
+          <Image src={image} alt="" />
+        </Segment>
+        <Segment>
+          <Header as="h2">{t(room_type)}</Header>
           <hr />
-          <Header as="h4">Room Description</Header>
-          <p>{description}</p>
-          <Header as="h4">Reservation Details</Header>
-          <p>Price: ${cost}</p>
-          <p>Start Date: {startDate}</p>
-          <p>End Date: {endDate}</p>
-          <p>Adults: {adults}</p>
-          <p>Children: {children}</p>
+          <Header as="h4">{t("Room Description")}</Header>
+          <p>{t(description)}</p>
+          <Header as="h4">{t("Reservation Details")}</Header>
+          <p>
+            {t("Price")}: {t("$")}
+            {t(cost)}
+          </p>
+          <p>
+            {t("Start Date")}: {startDate}
+          </p>
+          <p>
+            {t("End Date")}: {endDate}
+          </p>
+          <p>
+            {t("Adults")}: {adults}
+          </p>
+          <p>
+            {t("Children")}: {children}
+          </p>
         </Segment>
       </Segment.Group>
     );
@@ -45,7 +59,7 @@ class ResCheckout extends React.Component {
           history={this.props.history}
         />
         <hr />
-        {t(this.renderRoomDetails())}
+        {this.renderRoomDetails()}
       </Container>
     );
   }
