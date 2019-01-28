@@ -21,7 +21,7 @@ class ResForm extends React.Component {
     reservation: {
       start_date: new Date(),
       end_date: new Date(),
-      room: "",
+      room: "Single Room",
       adults: 1,
       children: 0
     }
@@ -108,11 +108,9 @@ class ResForm extends React.Component {
             <Header>{t("Rooms & Guest")}</Header>
             <Header as="h4">{t("Rooms")}</Header>
             <Dropdown
-              placeholder={t("Select Room")}
-              openOnFocus
+              placeholder={t("Single Room")}
               selection
               options={Room}
-              item
               onChange={this.handleRoom}
             />
             <div style={styles.flex}>
