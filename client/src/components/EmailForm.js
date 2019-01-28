@@ -94,7 +94,6 @@ class EmailForm extends React.Component {
                   value={this.state.email}
                   onChange={this.handleChange}
                   stackable
-                  required
                 />
                 {this.state.form ? this.emailModal() : null}
               </Form.Group>

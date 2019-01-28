@@ -46,37 +46,37 @@ const AboutUs = ({ t }) => (
     </div>
 
     <Card.Group centered itemsPerRow={4} style={cardGroup} stackable>
-      <Card style={styles.card}>
-        <Image src={Master_Bedroom_Icon}/>
-        <Card.Content>{t("MASTER BEDROOM")}</Card.Content>
+      <Card style={styles.card} >
+        <Image src={Master_Bedroom_Icon} style={styles.image}/>
+        <Card.Description>{t("MASTER BEDROOM")}</Card.Description>
       </Card>
       <Card style={styles.card}>
         <Image src={LAKE_VIEW_ICON} style={styles.image} />
-        <Card.Content>{t("LAKE VIEW BALCONY")}</Card.Content>
+        <Card.Description>{t("LAKE VIEW BALCONY")}</Card.Description>
       </Card>
       <Card style={styles.card}>
         <Image src={POOL_SPA_ICON} style={styles.image}/>
-        <Card.Content>{t("POOL & SPA")}</Card.Content>
+        <Card.Description>{t("POOL & SPA")}</Card.Description>
       </Card>
       <Card style={styles.card}>
         <Image src={MAKE_EXPORTABLE_ICON} style={styles.image}/>
-        <Card.Content>{t("WIFI COVERAGE")}</Card.Content>
+        <Card.Description>{t("WIFI COVERAGE")}</Card.Description>
       </Card>
       <Card style={styles.card}>
         <Image src={AWESOME_PACKAGES_ICON} style={styles.image}/>
-        <Card.Content>{t("AWESOME PACKAGES")}</Card.Content>
+        <Card.Description>{t("AWESOME PACKAGES")}</Card.Description>
       </Card>
       <Card style={styles.card}>
         <Image SRC={CLEANING_EVERYDAY_ICON} style={styles.image}/>
-        <Card.Content>{t("CLEANING EVERYDAY")}</Card.Content>
+        <Card.Description>{t("CLEANING EVERYDAY")}</Card.Description>
       </Card>
       <Card style={styles.card}>
         <Image src={BUFFET_BREAKFAST_ICON} style={styles.image}/>
-        <Card.Content>{t("BUFFET BREAKFAST")}</Card.Content>
+        <Card.Description>{t("BUFFET BREAKFAST")}</Card.Description>
       </Card>
       <Card style={styles.card}>
         <Image src={AIRPORT_TAXI_ICON} style={styles.image}/>
-        <Card.Content>{t("AIRPORT TAXIS")}</Card.Content>
+        <Card.Description>{t("AIRPORT TAXIS")}</Card.Description>
       </Card>
     </Card.Group>
     </div>
@@ -98,7 +98,8 @@ const styles = {
 
   },
   image: {
-    backgroundColor: 'white'
+    backgroundColor: 'white',
+    marginBottom: '20px',
   }
 }
 

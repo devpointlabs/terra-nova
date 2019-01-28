@@ -2,7 +2,7 @@ import React from 'react';
 import { withNamespaces } from 'react-i18next';
 import axios from 'axios';
 import { NavLink, } from 'react-router-dom';
-import { Container, Rating, Segment, Button, Header, Icon, Menu } from 'semantic-ui-react';
+import { Container, Rating, Segment, Button, Header, Icon, } from 'semantic-ui-react';
 import { SubHeaderTwo, } from '../styles/AppStyles';
 import { AuthConsumer } from "../providers/AuthProvider";
 
