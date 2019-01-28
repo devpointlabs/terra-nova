@@ -10,11 +10,9 @@ class AuthProvider extends React.Component {
   handleRegister = (user, history) => {
     axios.post("/api/auth", user)
     .then( res => {
-      axios.post('/api/users/${res.data.data.id}')
-      .then( res => {
-        this.setState({ user: res.data.data, });
-        history.push("/");
-       })
+      axios.post(`/api/users/${res.data.data.id}`)
+      .then( res => { console.log(res)})
+      history.push("/");
     })
     .catch( err => {
       console.log(err.response);
@@ -24,7 +22,6 @@ class AuthProvider extends React.Component {
   handleLogin = (user, history) => {
     axios.post("/api/auth/sign_in", user )
     .then ( res => {
-      debugger
       this.setState({ user: res.data.data, })
       history.push("/");
     })

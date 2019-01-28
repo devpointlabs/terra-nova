@@ -113,13 +113,6 @@ const styles = {
     justifyContent: 'center',
     width: '115px',
   },
-  border: {
-    borderBottom: '15px solid white',
-    borderStyle: 'solid',
-    borderWidth: '5px',
-    borderColor: 'white',
-    background: 'blue, !important',
-  },
   background: {
     backgroundColor: 'grey',
     marginBottom: '-10px',
