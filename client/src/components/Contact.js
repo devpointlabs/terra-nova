@@ -4,7 +4,7 @@ import { withNamespaces } from 'react-i18next';
 import { RoomBody, SubHeaderTwo } from '../styles/AppStyles';
 
 const Contact = ({ t }) => (
-  <div styles={styles.background}>
+  <div style={styles.background}>
     <Container>
       <SubHeaderTwo>
       {t("Contact")}
@@ -47,7 +47,8 @@ export default withNamespaces()(Contact);
 
 const styles = {
   background: {
-    backgroundColor: "#F5F5F5",
+    // backgroundColor: "#F5F5F5",
+    marginTop: '150px',
   },
   hr: {
     borderBottom: "1px solid black",

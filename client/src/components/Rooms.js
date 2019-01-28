@@ -86,6 +86,7 @@ const styles = {
   background: {
     backgroundColor: "#F5F5F5",
     paddingBottom: "100px",
+    marginTop: '100px',
   },
   line: {
     display: 'flex',
