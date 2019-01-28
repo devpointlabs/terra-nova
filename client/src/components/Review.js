@@ -115,36 +115,6 @@ const styles = {
         alignItems: 'center',
         alignContent: 'center',
     },
-    circle: {
-        height: "115px",
-        width: "115px",
-        backgroundColor: "black",
-        borderRadius: "50%",
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        marginBottom: '20px'
-    },
-    triangle: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        width: '0',
-        height: '0',
-        borderStyle: 'solid',
-        borderWidth: '0 62.5px 108.3px 62.5px',
-        borderColor: 'transparent transparent #000000 transparent',
-        marginBottom: '20px'
-    },
-    sqaure: {
-        height: "115px",
-        width: "115px",
-        backgroundColor: "black",
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        marginBottom: '20px'
-    },
     body: {
         color: "white",
         fontSize: "16px",
@@ -169,7 +139,7 @@ const styles = {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
-        color: 'black',
+        color: 'white',
     },
     name: {
         fontSize: '18px',

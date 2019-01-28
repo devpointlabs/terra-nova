@@ -197,7 +197,11 @@
     
     "Reservations": "Reservations",
 
+    "Reserve Room": "Reserve Room",
 
+    "Reservation Checkout": "Reservation Checkout",
+
+    
     
     "Leave a Review": "Leave a Review",
 
@@ -207,7 +211,8 @@
 
     "Location": "Location",
 
-    "Name": "Name",
+    "First Name": "First Name",
+
 
     "Title": "Title",
     

@@ -28,12 +28,11 @@ class Navbar extends React.Component {
   };
 
   adminNav = () => {
-    const {
-      auth: { user, handleLogout },
-      t
+    const { auth: { user, handleLogout }, t
     } = this.props;
 
     return (
+
       // <Container>
       <Dropdown.Menu style={styles.font} position="right"stackable>
         {user ? (
@@ -59,11 +58,10 @@ class Navbar extends React.Component {
                 stackable
                 onClick={() => handleLogout(this.props.history)}
               />
-            </Dropdown>
+            </Menu>
           </div>
         ) : null}
-      </Dropdown.Menu>
-      // </Container>
+      </Menu>
     );
   };
 

@@ -2,11 +2,13 @@ import React from "react";
 import { Container, Header, Segment, Image } from "semantic-ui-react";
 import { SubHeader } from "../styles/AppStyles";
 import ResCheckoutForm from "./ResCheckoutForm";
+import { withNamespaces } from 'react-i18next';
+
 
 class ResCheckout extends React.Component {
   renderRoomDetails = () => {
     const {
-      room: { room_type, cost, description, },
+      room: { room_type, cost, description, image},
       userSpecs: { start_date, end_date, adults, children }
     } = this.props.location.state;
 
@@ -35,9 +37,10 @@ class ResCheckout extends React.Component {
   };
 
   render() {
+    const { t } = this.props
     return (
       <Container>
-        <SubHeader>Reservation Checkout</SubHeader>
+        <SubHeader>{t("Reservation Checkout")}</SubHeader>
         <hr />
         <ResCheckoutForm
           userSpecs={this.props.history.location.state.userSpecs}
@@ -45,10 +48,10 @@ class ResCheckout extends React.Component {
           history={this.props.history}
         />
         <hr />
-        {this.renderRoomDetails()}
+        {t(this.renderRoomDetails())}
       </Container>
     );
   }
 }
 
-export default ResCheckout;
+export default withNamespaces()(ResCheckout);
