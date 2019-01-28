@@ -6,7 +6,7 @@ import ResCheckoutForm from "./ResCheckoutForm";
 class ResCheckout extends React.Component {
   renderRoomDetails = () => {
     const {
-      room: { room_type, cost, description, },
+      room: { room_type, cost, description, image },
       userSpecs: { start_date, end_date, adults, children }
     } = this.props.location.state;
 

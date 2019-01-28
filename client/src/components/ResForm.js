@@ -33,7 +33,7 @@ class ResForm extends React.Component {
     });
   };
 
-  handleDepDate = date => {
+  handleEndDate = date => {
     this.setState({
       reservation: { ...this.state.reservation, end_date: date }
     });
@@ -98,13 +98,12 @@ class ResForm extends React.Component {
               minDate={new Date()}
               selected={start_date}
               onChange={this.handleStartDate}
-              name="startDate"
             />
             <Header as="h4">{t("Departure")}</Header>
             <DatePicker
+              minDate={new Date()}
               selected={end_date}
-              onChange={this.handleDepDate}
-              name="departureDate"
+              onChange={this.handleEndDate}
             />
             <Header>{t("Rooms & Guest")}</Header>
             <Header as="h4">{t("Rooms")}</Header>
