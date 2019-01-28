@@ -11,16 +11,21 @@ import { Provider } from "react-redux";
 import store from "./store";
 import ModalImage from 'react-modal-image';
 import * as serviceWorker from './serviceWorker';
+import { initMiddleware, } from 'devise-axios';
+
+initMiddleware()
 
 
 ReactDOM.render(
-  <Provider store={store}>
-    <AuthProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </AuthProvider>
-  </Provider>,
+  <AuthProvider>
+    <React.Fragment>
+      <Provider store={store}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </Provider>
+    </React.Fragment>
+  </AuthProvider>,
   document.getElementById("root")
 );
 
