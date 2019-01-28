@@ -56,7 +56,7 @@ class EmailForm extends React.Component {
           onClick={this.close}
           centered
           stackable
-        >
+        > 
           <Icon name="checkmark" /> Got it!
           </WhiteButton>
       </Modal.Actions>

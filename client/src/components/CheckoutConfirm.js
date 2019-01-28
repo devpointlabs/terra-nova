@@ -8,7 +8,7 @@ class CheckoutConfirm extends React.Component {
     const endDate = userSpecs.end_date.toString();
 
     return (
-      <Container>
+      <Container style={styles}>
         <Segment>
           <h1>Your reservation has been booked!</h1>
           <hr />
@@ -26,3 +26,7 @@ class CheckoutConfirm extends React.Component {
   }
 }
 export default CheckoutConfirm;
+
+const styles = {
+  marginTop: '200px',
+}

@@ -7,10 +7,10 @@ import { withRouter, NavLink} from 'react-router-dom';
 import { SubHeaderTwo } from '../styles/AppStyles';
 
 class ReviewForm extends React.Component {
-    state = {  title: "", body: "", rating: 0, name: "", location: "",  };
+    state = {  title: "", body: "", rating: 0, first_name: "", last_name: "", location: "",  };
     // can we get the user name from the user_id??
 
-    handleSubmit = (e) => {
+    handleSubmit = (e) => { 
         e.preventDefault();
         const review = {...this.state};
         axios.post('/api/reviews', review)
@@ -26,10 +26,10 @@ class ReviewForm extends React.Component {
     };
 
     render() {
-        const { title, body, rating, Fname, Lname, location, } = this.state;
+        const { title, body, rating, first_name, last_name, location, } = this.state;
         const { t } = this.props;
         return (
-            <Container>
+            <Container style={styles.background}>
                 <Form style={styles.text}
                     onSubmit={this.handleSubmit}>
                     <div style={styles.top}>
@@ -40,22 +40,21 @@ class ReviewForm extends React.Component {
                     </div>
                     <Form.Group style={styles.topForm}> 
                     <Form.Input
-                        name="first name"
+                        name="first_name"
                         label={t("First Name")}
                         placeholder={t("First Name")}
                         autofocus
                         required
-                        value={Fname}
+                        value={first_name}
                         width='4'
                         onChange={this.handleChange}
                         /> 
                     <Form.Input
-                        name="last name"
+                        name="last_name"
                         label={t("Last Name")}
                         placeholder={t("Last Name")}
-                        autofocus
                         required
-                        value={Lname}
+                        value={last_name}
                         width='4'
                         onChange={this.handleChange}
                         /> 
@@ -155,11 +154,16 @@ const styles = {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
+        marginBottom: '30px',
+        marginTop: '25px',
     },
     topForm: {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'flex-start',
         // alignItems: 'center',
+    },
+    background: {
+        marginTop: '150px'
     }
 }

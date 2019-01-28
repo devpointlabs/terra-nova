@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon, Card, Container, } from 'semantic-ui-react';
+import { Icon, Card, Container, Form } from 'semantic-ui-react';
 import { withNamespaces } from 'react-i18next';
 import { RoomBody, SubHeaderTwo } from '../styles/AppStyles';
 
@@ -39,6 +39,12 @@ const Contact = ({ t }) => (
       </Card.Content>
         </Card>
       </Card.Group>
+      <Form>
+        <Form.Input
+         />
+        <Form.Input />
+        <Form.Input />
+      </Form>
     </Container>
   </div >
 )
@@ -68,4 +74,11 @@ const cardStyles = {
     fontFamily: "'Poppins', sans-serif",
     padding: '10px 10px'
   }
+}
+
+const form = {
+  font: {
+
+  },
+
 }

@@ -47,7 +47,7 @@ const AboutUs = ({ t }) => (
 
     <Card.Group centered itemsPerRow={4} style={cardGroup} stackable>
       <Card style={styles.card}>
-        <Image src={Master_Bedroom_Icon}/>
+        <Image src={Master_Bedroom_Icon} style={styles.image}/>
         <Card.Content>{t("MASTER BEDROOM")}</Card.Content>
       </Card>
       <Card style={styles.card}>
@@ -98,7 +98,7 @@ const styles = {
 
   },
   image: {
-    backgroundColor: 'white'
+    backgroundColor: 'white',
   }
 }
 
@@ -113,7 +113,7 @@ const text = {
 
 const background = {
   paddingBottom: '150px',
-  marginTop: '100px',
+  marginTop: '50px',
 }
 
 const cardGroup = {

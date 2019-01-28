@@ -113,7 +113,7 @@ class Profile extends React.Component {
   render() {
     const { editing, } = this.state;
     return (
-      <Container>
+      <Container style={styles}>
         <Divider hidden />
         <Grid>
           <Grid.Row>
@@ -137,3 +137,7 @@ const ConnectedProfile = (props) => (
 )
 
 export default ConnectedProfile;
+
+const styles = {
+  marginTop: '100px'
+}

@@ -26,45 +26,6 @@ class Navbar extends React.Component {
     );
   };
 
-
-  adminNav = () => {
-    const { auth: { user, handleLogout }, t
-    } = this.props;
-
-    return (
-
-      // <Container>
-      <Dropdown.Menu style={styles.font} position="right"stackable>
-        {user ? (
-          <div style={styles.background}>
-            <Menu item style={styles.font} text={t("Welcome")}stackable>
-              <Link to="/register">
-                <Dropdown.Item
-                  style={styles.font}
-                  position="right"
-                  text={t("NEW ADMIN")}
-                  stackable
-                />
-              </Link>
-              <Dropdown.Item
-                href="/events"
-                style={styles.font}
-                text={t("NEW EVENT")}
-                stackable
-              />
-              <Dropdown.Item
-                style={styles.font}
-                text={t("LOGOUT")}
-                stackable
-                onClick={() => handleLogout(this.props.history)}
-              />
-            </Menu>
-          </div>
-        ) : null}
-      </Dropdown.Menu>
-    );
-  };
-
   handleRefresh = () => {
     window.location.reload();
   };
@@ -272,7 +233,7 @@ export const styles = {
     marginBottom: '-20px'
   },
   image: {
-    padding: "10px",
+    padding: "2px",
     marginBottom: "-40px",
     marginTop: "-10px",
     height: "100px",
