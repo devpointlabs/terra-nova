@@ -12,32 +12,33 @@ class Navbar extends React.Component {
   renderIcon = () => {
     return (
       <Menu.Item position="left" stackable>
-      <Link to='/'>
-        <Image
-          src={Terra_Nova_Cabins_Logo}
-          size="tiny"
-          style={styles.image}
-          position="left"
-          floated="left"
-          verticalAlign="top"
-          stackable
+        <Link to="/">
+          <Image
+            src={Terra_Nova_Cabins_Logo}
+            size="tiny"
+            style={styles.image}
+            position="left"
+            floated="left"
+            verticalAlign="top"
+            stackable
           />
-          </Link>
+        </Link>
       </Menu.Item>
     );
   };
 
   adminNav = () => {
-    const { auth: { user, handleLogout }, t
+    const {
+      auth: { user, handleLogout },
+      t
     } = this.props;
 
     return (
-
       // <Container>
-      <Dropdown.Menu style={styles.font} position="right"stackable>
+      <Dropdown.Menu style={styles.font} position="right" stackable>
         {user ? (
           <div style={styles.background}>
-            <Dropdown item style={styles.font} text={t("Welcome")}stackable>
+            <Dropdown item style={styles.font} text={t("Welcome")} stackable>
               <Link to="/register">
                 <Dropdown.Item
                   style={styles.font}
@@ -58,10 +59,10 @@ class Navbar extends React.Component {
                 stackable
                 onClick={() => handleLogout(this.props.history)}
               />
-            </Menu>
+            </Dropdown>
           </div>
         ) : null}
-      </Menu>
+      </Dropdown.Menu>
     );
   };
 
