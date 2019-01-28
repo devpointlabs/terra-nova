@@ -10,7 +10,6 @@ import IMGthree from '../assets/images/GalleryImages/HotelandGrounds/IMGthree.jp
 import IMGtwo from '../assets/images/GalleryImages/HotelandGrounds/IMGtwo.jpg';
 import IMGseven from '../assets/images/GalleryImages/HotelandGrounds/IMGseven.jpg';
 import IMGsix from '../assets/images/GalleryImages/HotelandGrounds/IMGsix.jpg';
-import rainbow from '../assets/images/rainbow2.jpg';
 import { Link } from "react-router-dom";
 import { withNamespaces } from 'react-i18next';
 import ModalImage from 'react-modal-image';
