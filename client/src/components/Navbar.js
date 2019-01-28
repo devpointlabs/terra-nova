@@ -10,7 +10,7 @@ class Navbar extends React.Component {
 
   renderIcon = () => {
     return (
-      <Menu.Item position="left" stackable>
+      <Menu.Item position="left">
         <Link to="/">
           <Image
             src={Terra_Nova_Cabins_Logo}
@@ -25,11 +25,6 @@ class Navbar extends React.Component {
       </Menu.Item>
     );
   };
-
-  handleRefresh = () => {
-    window.location.reload();
-  };
-
   render() {
     const {
       auth: { user },

@@ -10,8 +10,10 @@ import IMGthree from '../assets/images/GalleryImages/HotelandGrounds/IMGthree.jp
 import IMGtwo from '../assets/images/GalleryImages/HotelandGrounds/IMGtwo.jpg';
 import IMGseven from '../assets/images/GalleryImages/HotelandGrounds/IMGseven.jpg';
 import IMGsix from '../assets/images/GalleryImages/HotelandGrounds/IMGsix.jpg';
+import rainbow from '../assets/images/rainbow2.jpg';
 import { Link } from "react-router-dom";
 import { withNamespaces } from 'react-i18next';
+import ModalImage from 'react-modal-image';
 
 
 class Gallery extends React.Component {
@@ -83,32 +85,53 @@ class Gallery extends React.Component {
             {this.renderCards()}
           </Card.Group> */}
           <Grid equal height row stackable>
-            <Grid.Row columns={4} stackable>
+           
+            <Grid.Row columns={4} stackable style={{height: "250px"}}>
               <Grid.Column stretched>
-                <Image style={{ height: '250px' }} src={IMGone} />
+                <ModalImage 
+                small={IMGone} 
+                large={IMGone}
+                />
               </Grid.Column>
               <Grid.Column>
-                <Image style={{ height: '250px', width: '250px' }} src={IMGtwo} />
+                <Image style={{ height: '222px', width: '250px' }} src={IMGtwo}
+                />
               </Grid.Column >
               <Grid.Column stretched>
-                <Image style={{ height: '250px' }} src={IMGthree} />
+                <ModalImage 
+                  small={IMGthree} 
+                  large={IMGthree}
+                  />
               </Grid.Column>
               <Grid.Column stretched>
-                <Image style={{ height: '250px' }} src={IMGfour} />
+                <ModalImage 
+                  small={IMGfour} 
+                  large={IMGfour}
+                  />
               </Grid.Column>
             </Grid.Row>
-            <Grid.Row columns={4}>
+               
+            <Grid.Row columns={4} style={{height: "250px"}}>
               <Grid.Column stretched>
-                <Image style={{ height: '250px' }} src={IMGfive} />
+                <ModalImage 
+                  small={IMGfive}
+                  large={IMGfive} />
               </Grid.Column>
               <Grid.Column stretched>
-                <Image style={{ height: '250px' }} src={IMGsix} />
+                <ModalImage 
+                  small={IMGsix}
+                  large={IMGsix} />
               </Grid.Column>
               <Grid.Column stretched>
-                <Image style={{ height: '250px' }} src={IMGseven} />
+                <ModalImage 
+                  small={IMGseven}
+                  large={IMGseven} />
               </Grid.Column>
               <Grid.Column stretched>
-                <Image style={{ height: '250px' }} src={IMGeight} />
+                <ModalImage
+                small={IMGeight}
+                large={IMGeight}
+                />
               </Grid.Column>
             </Grid.Row>
           </Grid>
@@ -131,6 +154,7 @@ const styles = {
   background: {
     backgroundColor: "rgb(35, 35, 35)",
     paddingBottom: '100px',
+    marginTop: '100px',
   },
   font: {
     color: 'white',
@@ -175,7 +199,10 @@ const cardStyles = {
     color: 'red',
   },
   grid: {
-    display: 'block'
+    display: 'block',
+  },
+  image: {
+    width: '1000px',
   }
 }
 

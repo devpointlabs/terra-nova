@@ -5,7 +5,8 @@ import {
   Container,
   Segment,
   Modal,
-  Image
+  Image,
+  Button
 } from "semantic-ui-react";
 import Terra_Nova_Cabins_Logo from "../assets/images/Terra_Nova_Cabins_Logo.png";
 import { withNamespaces } from "react-i18next";
@@ -37,13 +38,10 @@ class EmailForm extends React.Component {
     const { open } = this.state;
     return (
       <Modal
-        trigger={
-          <BlackButton2 onClick={() => this.showModal()}>
-            {t("Submit")}
-          </BlackButton2>
-        }
+        trigger={<Button onSubmit={this.open}>{t("Stay Connected")}</Button>}
         open={open}
-        // onClose={this.close}
+        onOpen={this.open}
+        onClose={this.close}
         size="small"
         centered={false}
         basic
