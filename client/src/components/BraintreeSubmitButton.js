@@ -1,18 +1,19 @@
 import React from 'react';
-import { GoldButton } from '../styles/AppStyles'
 import { withNamespaces } from 'react-i18next';
+import {Button} from 'semantic-ui-react';
 
 
-
-const renderSubmitButton = ({onClick, isDisabled, text, t}) => {
+const renderSubmitButton = ({onClick, isDisabled, t}) => {
+    debugger
   return (
-    <GoldButton
+    <Button
       primary
       onClick={onClick}
       disabled={isDisabled}
+      color="brown"
     >
       {t("Reserve Room")}
-    </GoldButton>
+    </Button>
   )
 }
 

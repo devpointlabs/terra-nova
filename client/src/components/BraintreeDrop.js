@@ -3,8 +3,9 @@ import axios from 'axios';
 import braintree from 'braintree-web-drop-in';
 import BraintreeDropin from 'braintree-dropin-react';
 import renderSubmitButton from './BraintreeSubmitButton';
-import { Dimmer, Loader, Segment, } from 'semantic-ui-react';
+import { Dimmer, Loader, Segment, Button} from 'semantic-ui-react';
 import { withNamespaces } from 'react-i18next';
+
 
 
 class BraintreeDrop extends Component {

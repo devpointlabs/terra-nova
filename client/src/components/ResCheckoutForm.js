@@ -2,7 +2,7 @@ import React from "react";
 import { Form, Button } from "semantic-ui-react";
 import axios from "axios";
 import { withNamespaces } from 'react-i18next';
-import BraintreeDrop from './BraintreeDrop';
+import BraintreeDrop from "./BraintreeDrop";
 // import ResModal from "./ResModal";
 
 class ResCheckoutForm extends React.Component {
@@ -157,7 +157,8 @@ class ResCheckoutForm extends React.Component {
             />
         </Form.Group>
         {/* {this.renderBrainTree} */}
-        <BraintreeDrop {...this.state} amount={cost}/>
+        <BraintreeDrop {...this.state.reservation} amount={cost} disabled={!this.state.formValid}
+ />
         <Button
           style={{ marginBottom: "7px" }}
           color="brown"
