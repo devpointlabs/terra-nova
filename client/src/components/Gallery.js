@@ -90,22 +90,29 @@ class Gallery extends React.Component {
                 <ModalImage 
                 small={IMGone} 
                 large={IMGone}
+                hideDownload
                 />
               </Grid.Column>
               <Grid.Column>
-                <Image style={{ height: '222px', width: '250px' }} src={IMGtwo}
-                />
+                <ModalImage
+                  small={IMGtwo}
+                  large={IMGtwo}
+                  />
+                {/* <Image style={{ height: '222px', width: '250px' }} src={IMGtwo}
+                /> */}
               </Grid.Column >
               <Grid.Column stretched>
                 <ModalImage 
                   small={IMGthree} 
                   large={IMGthree}
+                  hideDownload
                   />
               </Grid.Column>
               <Grid.Column stretched>
                 <ModalImage 
                   small={IMGfour} 
                   large={IMGfour}
+                  hideDownload
                   />
               </Grid.Column>
             </Grid.Row>
@@ -114,22 +121,30 @@ class Gallery extends React.Component {
               <Grid.Column stretched>
                 <ModalImage 
                   small={IMGfive}
-                  large={IMGfive} />
+                  large={IMGfive} 
+                  hideDownload
+                  />
+                  
               </Grid.Column>
               <Grid.Column stretched>
                 <ModalImage 
                   small={IMGsix}
-                  large={IMGsix} />
+                  large={IMGsix} 
+                  hideDownload
+                  />
               </Grid.Column>
               <Grid.Column stretched>
                 <ModalImage 
                   small={IMGseven}
-                  large={IMGseven} />
+                  large={IMGseven} 
+                  hideDownload
+                  />
               </Grid.Column>
               <Grid.Column stretched>
                 <ModalImage
                 small={IMGeight}
                 large={IMGeight}
+                hideDownload
                 />
               </Grid.Column>
             </Grid.Row>
