@@ -1,25 +1,62 @@
 import React from 'react';
 import axios from 'axios';
-import { Icon, Card, Container, Form, Grid, } from 'semantic-ui-react';
+import { Icon, Card, Container, Form, Grid, Modal, Image, Button } from 'semantic-ui-react';
 import { withNamespaces } from 'react-i18next';
 import { RoomBody, SubHeaderTwo } from '../styles/AppStyles';
+import Terra_Nova_Cabins_Logo from "../assets/images/Terra_Nova_Cabins_Logo.png";
 
 class Contact extends React.Component {
-  state = { first_name: '', last_name: '', email: '', message: '', }
+  state = { first_name: '', last_name: '', email: '', message: '', open: false, form: false }
 
   handleSubmit = (e) => {
     e.preventDefault();
     const contact = { ...this.state };
     axios.post('/api/mailers', contact)
-      // .then(res => this.props.history.push('/contact'))
+    // .then(res => this.props.history.push('/contact'))
   };
 
   handleChange = ({ target: { name, value } }) => {
     this.setState({ [name]: value });
   };
 
-// Need Modal for submitting and create columns in mailer for state objects
+  open = () => this.setState({ open: true });
+  close = () => this.setState({ open: false });
+  // Need Modal for submitting and create columns in mailer for state objects
 
+  emailModal = () => {
+    const { t } = this.props;
+    const { open } = this.state;
+    return (
+      <Modal
+        trigger={<Button style={styles.button} onSubmit={this.open}>{t("Submit")}</Button>}
+        open={open}
+        onOpen={this.open}
+        onClose={this.close}
+        size="small"
+        centered={false}
+        basic
+        stackable
+      >
+        <Modal.Header style={styles.header} stackable> Terra Nova Cabins</Modal.Header>
+        <Modal.Content image stackable>
+          <Image wrapped stackable size="small" src={Terra_Nova_Cabins_Logo} />
+          <Modal.Description stackable>
+            <Modal.Header style={styles.header2} stackable>
+              Thank You!
+          </Modal.Header>
+            <p style={styles.body}>
+              Thank you for reaching out to Terra Nova Cabins. You will be hearing from us shortly.
+            </p>
+          </Modal.Description>
+        </Modal.Content>
+        <Modal.Actions stackable>
+          <Button onClick={this.close} centered stackable>
+            <Icon name="checkmark" /> Got it!
+            </Button>
+        </Modal.Actions>
+      </Modal>
+    );
+  };
   render() {
     const { t } = this.props;
     const { first_name, last_name, email, message, } = this.state;
@@ -71,7 +108,7 @@ class Contact extends React.Component {
                     onChange={this.handleChange}
                   />
                 </div>
-                <Form.Button style={styles.button}>{t("Submit")}</Form.Button>
+                {this.emailModal()}
               </Form>
             </Grid.Column>
             <Grid.Column>
@@ -147,7 +184,25 @@ const styles = {
   },
   text: {
     marginBottom: '1px',
-  }
+  },
+  header: {
+    fontFamily: "'Playfair Display', serif",
+    fontSize: "40px",
+    display: "flex",
+    alignItems: "center"
+  },
+  header2: {
+    fontFamily: "'Playfair Display', serif",
+    fontSize: "30px",
+    display: "flex",
+    alignItems: "center"
+  },
+  body: {
+    fontFamily: "'Playfair Display', serif",
+    fontSize: "20px",
+    display: "flex",
+    alignItems: "center"
+  },
 }
 
 const cardStyles = {
