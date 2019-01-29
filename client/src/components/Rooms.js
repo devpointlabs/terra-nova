@@ -60,7 +60,7 @@ class Rooms extends React.Component {
     const { t } = this.props;
     return (
       <div style={styles.background}>
-        <SubHeader> {t("Our Rooms")} </SubHeader>
+        <SubHeader style={styles.margin}> {t("Our Rooms")} </SubHeader>
         <div style={styles.line}>
           <GalleryIconLine />
           <Image centered
@@ -86,7 +86,7 @@ const styles = {
   background: {
     backgroundColor: "#F5F5F5",
     paddingBottom: "100px",
-    marginTop: '100px',
+    // marginTop: '80px',
   },
   line: {
     display: 'flex',
@@ -104,6 +104,9 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: '30px'
+  },
+  margin: {
+    marginTop: '50px',
   }
 }
 

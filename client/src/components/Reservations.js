@@ -29,6 +29,6 @@ export default withNamespaces()(connect()(Reservation));
 
 const styles = {
   nav: {
-    marginTop: '100px',
+    marginTop: '90px',
   }
 }

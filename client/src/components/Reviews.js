@@ -2,7 +2,7 @@ import React from 'react';
 import { withNamespaces } from 'react-i18next';
 import axios from 'axios';
 import { NavLink, } from 'react-router-dom';
-import { Container, Rating, Segment, Button, Header, Icon, Menu } from 'semantic-ui-react';
+import { Container, Rating, Segment, Button, Header, Icon, } from 'semantic-ui-react';
 import { SubHeaderTwo, } from '../styles/AppStyles';
 import { AuthConsumer } from "../providers/AuthProvider";
 
@@ -43,7 +43,7 @@ class Reviews extends React.Component {
                                     name='user circle'
                                     size='mini'
                                 />
-                                {r.name}
+                                {r.first_name} {r.last_name}
                             </Header>
                             <div textAlign='right' style={styles.stars}>
                                 <Rating defaultRating={r.rating} maxRating={5} disabled>
@@ -115,7 +115,8 @@ const styles = {
         paddingLeft: "240px",
         backgroundColor: "#555555",
         width: "100%",
-        marginLeft: 0
+        marginLeft: 0,
+        marginTop: '100px',
     },
     mainText: {
         color: "black",
@@ -139,6 +140,7 @@ const styles = {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
+        marginTop: '125px',
         marginBottom: '50px',
     },
     buttonTwo: {

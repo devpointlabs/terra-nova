@@ -2,7 +2,6 @@ import React from "react";
 // import LPI4 from "../assets/images/LandingPage/LPI4.jpg";
 import { withNamespaces } from 'react-i18next';
 import Yellowstone from '../assets/images/Yellowstone.png';
-import { Container} from 'semantic-ui-react';
 
 
 
@@ -56,6 +55,7 @@ const styles = {
       minWidth: "100%",
       backgroundSize: "cover",
       backgroundPosition: "center center",
+      marginTop: '130px',
       // backgrounColor: "black",
       // backgroundBlendMode: "screen",
       // opacity: "0.2",

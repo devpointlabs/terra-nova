@@ -50,7 +50,7 @@ class ResCheckout extends React.Component {
   render() {
     const { t } = this.props;
     return (
-      <Container style={{ marginTop: "8em" }}>
+      <Container style={styles.background}>
         <SubHeader>{t("Reservation Checkout")}</SubHeader>
         <hr />
         <ResCheckoutForm
@@ -66,3 +66,10 @@ class ResCheckout extends React.Component {
 }
 
 export default withNamespaces()(ResCheckout);
+
+
+const styles = {
+  background: {
+    marginTop: '100px',
+  }
+}

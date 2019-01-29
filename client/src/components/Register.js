@@ -64,7 +64,7 @@ class Register extends React.Component {
     const { t } = this.props;
 
     return (
-      <Segment basic>
+      <Segment style={styles} basic>
         <SubHeader>Register New Admin</SubHeader>
         <Form onSubmit={this.handleSubmit}>
           <NavText>
@@ -149,3 +149,7 @@ export class ConnectedRegister extends React.Component {
 }
 
 export default withNamespaces()(ConnectedRegister);
+
+const styles = {
+  marginTop: '100px'
+}

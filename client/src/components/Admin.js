@@ -25,6 +25,8 @@ class Admin extends React.Component {
 
   
     return (
+      <div style={styles}>
+
       <Segment basic>
         <SubHeader>{t("Admin")}</SubHeader>
         <NavText>
@@ -49,11 +51,12 @@ class Admin extends React.Component {
             onChange={this.handleChange}
             />
           <Segment textAlign='center' basic>
-            <Button primary type='submit'>{t("Submit")}</Button>
+            <Button color='black' type='submit'>{t("Submit")}</Button>
           </Segment>
         </Form>
             </NavText>
       </Segment>
+            </div>
     )
   }
 }
@@ -70,3 +73,7 @@ class ConnectedAdmin extends React.Component {
 }
 
 export default withNamespaces()(ConnectedAdmin);
+
+const styles = {
+  marginTop: '80px',
+}
