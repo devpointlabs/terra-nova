@@ -21,6 +21,6 @@ private
   end
 
   def mailer_params
-    params.require(:mailer).permit(:email)
+    params.require(:mailer).permit(:email, :first_name, :last_name, :message)
   end
 end

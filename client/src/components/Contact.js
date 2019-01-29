@@ -12,7 +12,7 @@ class Contact extends React.Component {
     e.preventDefault();
     const contact = { ...this.state };
     axios.post('/api/mailers', contact)
-    // .then(res => this.props.history.push('/contact'))
+    .then( res => this.setState({ first_name: '', last_name: '', email: '', message: ''}))
   };
 
   handleChange = ({ target: { name, value } }) => {
@@ -70,7 +70,7 @@ class Contact extends React.Component {
           <RoomBody style={styles.text}>{t("If you would like to know more, please contact us")}</RoomBody>
           <Grid columns={2}>
             <Grid.Column>
-              <Form style={form.styling}>
+              <Form onSubmit={this.handleSubmit} style={form.styling}>
                 <Form.Group widths='equal'>
                   <Form.Input
                     name="first_name"
