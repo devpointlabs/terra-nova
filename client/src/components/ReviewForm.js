@@ -28,7 +28,7 @@ class ReviewForm extends React.Component {
     render() {
         const { title, body, rating, first_name, last_name, location, } = this.state;
         const { t } = this.props;
-        return (
+        return ( 
             <Container style={styles.background}>
                 <Form style={styles.text}
                     onSubmit={this.handleSubmit}>

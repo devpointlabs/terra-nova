@@ -40,7 +40,6 @@ class Gallery extends React.Component {
 
   render() {
     const { t } = this.props;
-
     return (
       <div style={styles.background} >
         <Container>
@@ -140,7 +139,7 @@ const styles = {
     fontWeight: 'lighter',
   },
   icon: {
-    padding: '10px',
+    padding: '10px', 
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
