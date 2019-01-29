@@ -115,7 +115,6 @@ class ResCheckoutForm extends React.Component {
     const {
       reservation: { first_name, last_name, phone, email, }
     } = this.state;
-    // const {t} = this.props;
     const {room: {cost}, t }= this.props;
     const { formErrors } = this.state;
 
@@ -156,15 +155,13 @@ class ResCheckoutForm extends React.Component {
             label={t("Email")}
             />
         </Form.Group>
-        {/* {this.renderBrainTree} */}
-        <BraintreeDrop {...this.state.reservation} amount={cost} disabled={!this.state.formValid}
- />
+        <BraintreeDrop {...this.state.reservation} history={this.props.history} amount={cost} disabled={!this.state.formValid} /> 
         <Button
           style={{ marginBottom: "7px" }}
           color="brown"
           disabled={!this.state.formValid}
         >
-          {t("Reserve Room")}
+          {t("fuckk")}
         </Button>
         {this.FormErrors({ formErrors })}
       </Form>

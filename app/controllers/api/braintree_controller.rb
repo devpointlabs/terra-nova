@@ -4,6 +4,7 @@ class Api::BraintreeController < ApplicationController
   end
 
   def payment
+    binding.pry
     result = Braintree::Transaction.sale(
       :amount => params[:amount],
       :payment_method_nonce => params[:nonce],
