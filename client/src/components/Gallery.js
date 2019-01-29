@@ -21,7 +21,7 @@ class Gallery extends React.Component {
 
   renderCards = () => {
     return this.state.cards.map(content => (
-      <Card raised centered textAlign fluid style={cardStyles.card}>
+      <Card raised centered textAlign fluid style={cardStyles.card} stackable>
         <Card.Content>
           <Card.Header style={styles.font}>
             <i>{content}TITLE</i>
@@ -44,7 +44,7 @@ class Gallery extends React.Component {
 
     return (
       <div style={styles.background} >
-        <Container>
+        <Container stackable>
           <SubHeader style={styles.font}>{t("Our Gallery")}</SubHeader>
           <div style={styles.line}>
             <GalleryIconLine />
@@ -86,64 +86,74 @@ class Gallery extends React.Component {
           <Grid equal height row stackable>
 
             <Grid.Row columns={4} stackable style={{ height: "275px" }}>
-              <Grid.Column stretched>
+              <Grid.Column stretched stackable>
                 <ModalImage
                   small={IMGone}
                   large={IMGone}
+                  stackable
+                
                 />
               </Grid.Column>
-              <Grid.Column stretched>
+              <Grid.Column stretched stackable>
                 <div style={{ display: 'flex', alignItems: 'stretch', }}>
                   <ModalImage
                     small={IMGtwo}
                     large={IMGtwo}
+                    stackable
+                  
                   />
                 </div>
               </Grid.Column >
-              <Grid.Column stretched>
+              <Grid.Column stretched stackable>
                 <ModalImage
                   small={IMGthree}
                   large={IMGthree}
-                  hideDownload
+                
+                  stackable
                   />
               </Grid.Column>
-              <Grid.Column stretched>
+              <Grid.Column stretched stackable>
                 <ModalImage
                   small={IMGfour}
                   large={IMGfour}
-                  hideDownload
+                
+                  stackable
                   />
               </Grid.Column>
             </Grid.Row>
 
-            <Grid.Row columns={4} style={{ height: "275px" }}>
-              <Grid.Column stretched>
+            <Grid.Row columns={4} style={{ height: "275px" }} stackable>
+              <Grid.Column stretched stackable>
                 <ModalImage
                   small={IMGfive}
                   large={IMGfive} 
-                  hideDownload
+                
+                  stackable
                   />
                   
               </Grid.Column>
-              <Grid.Column stretched>
+              <Grid.Column stretched stackable>
                 <ModalImage
                   small={IMGsix}
                   large={IMGsix} 
-                  hideDownload
+                
+                  stackable
                   />
               </Grid.Column>
-              <Grid.Column stretched>
+              <Grid.Column stretched stackable>
                 <ModalImage
                   small={IMGseven}
                   large={IMGseven} 
-                  hideDownload
+                
+                  stackable
                   />
               </Grid.Column>
-              <Grid.Column stretched>
+              <Grid.Column stretched stackable>
                 <ModalImage
                 small={IMGeight}
                 large={IMGeight}
-                hideDownload
+              
+                stackable
                 />
               </Grid.Column>
             </Grid.Row>
