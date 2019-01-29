@@ -58,14 +58,14 @@ class EmailForm extends React.Component {
               Success!
             </Modal.Header>
             <p style={styles.body}>
-              {" "}
-              You have been signed up for the Terra Nova Newsletter.
+              
+              {t("You have been signed up for the Terra Nova Newsletter.")}
             </p>
           </Modal.Description>
         </Modal.Content>
         <Modal.Actions stackable>
           <WhiteButton color="white" onClick={this.close} centered stackable>
-            <Icon name="checkmark" /> Got it!
+            <Icon name="checkmark" /> {t("Got it")}!
           </WhiteButton>
         </Modal.Actions>
       </Modal>

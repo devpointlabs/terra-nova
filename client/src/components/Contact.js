@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { Icon, Card, Container, Form, Grid, Modal, Image, Button } from 'semantic-ui-react';
 import { withNamespaces } from 'react-i18next';
-import { RoomBody, SubHeaderTwo } from '../styles/AppStyles';
+import { RoomBody, SubHeaderTwo, WhiteButton } from '../styles/AppStyles';
 import Terra_Nova_Cabins_Logo from "../assets/images/Terra_Nova_Cabins_Logo.png";
 
 class Contact extends React.Component {
@@ -42,17 +42,17 @@ class Contact extends React.Component {
           <Image wrapped stackable size="small" src={Terra_Nova_Cabins_Logo} />
           <Modal.Description stackable>
             <Modal.Header style={styles.header2} stackable>
-              Thank You!
+              {t("Thank You")}!
           </Modal.Header>
             <p style={styles.body}>
-              Thank you for reaching out to Terra Nova Cabins. You will be hearing from us shortly.
+              {t("Thank you for reaching out to Terra Nova Cabins. You will be hearing from us shortly.")}
             </p>
           </Modal.Description>
         </Modal.Content>
         <Modal.Actions stackable>
-          <Button onClick={this.close} centered stackable>
-            <Icon name="checkmark" /> Got it!
-            </Button>
+          <WhiteButton onClick={this.close} centered stackable>
+            <Icon name="checkmark" /> {t("Got it")}!
+            </WhiteButton>
         </Modal.Actions>
       </Modal>
     );
