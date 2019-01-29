@@ -2,8 +2,6 @@ import React from "react";
 import { Form, Button } from "semantic-ui-react";
 import axios from "axios";
 import { withNamespaces } from 'react-i18next';
-import BraintreeDrop from './BraintreeDrop';
-// import ResModal from "./ResModal";
 
 class ResCheckoutForm extends React.Component {
   state = {
@@ -102,14 +100,6 @@ class ResCheckoutForm extends React.Component {
         );
   };
 
-//  renderBrainTree () {
-//    const {cost} = this.props;
-//    return (
-
-//      <BraintreeDrop amount={cost} />
-//      )
-//   }
-  
 
   render() {
     const {
@@ -156,8 +146,6 @@ class ResCheckoutForm extends React.Component {
             label={t("Email")}
             />
         </Form.Group>
-        {/* {this.renderBrainTree} */}
-        <BraintreeDrop {...this.state} amount={cost}/>
         <Button
           style={{ marginBottom: "7px" }}
           color="brown"
