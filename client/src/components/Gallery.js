@@ -12,15 +12,16 @@ import IMGseven from '../assets/images/GalleryImages/HotelandGrounds/IMGseven.jp
 import IMGsix from '../assets/images/GalleryImages/HotelandGrounds/IMGsix.jpg';
 import { Link } from "react-router-dom";
 import { withNamespaces } from 'react-i18next';
+import ModalImage from 'react-modal-image';
 
 
 class Gallery extends React.Component {
   state = { cards: [], };
 
-  
+
   renderCards = () => {
     return this.state.cards.map(content => (
-      <Card raised centered textAlign fluid style={cardStyles.card}>
+      <Card raised centered textAlign fluid style={cardStyles.card} stackable>
         <Card.Content>
           <Card.Header style={styles.font}>
             <i>{content}TITLE</i>
@@ -42,7 +43,7 @@ class Gallery extends React.Component {
     const { t } = this.props;
     return (
       <div style={styles.background} >
-        <Container>
+        <Container stackable>
           <SubHeader style={styles.font}>{t("Our Gallery")}</SubHeader>
           <div style={styles.line}>
             <GalleryIconLine />
@@ -63,17 +64,17 @@ class Gallery extends React.Component {
 
               <Menu.Item fitted='horizontally'>
                 <Link to="/underconstruction">
-                <GalleryGoldButton>{t("ROOM/CABIN")}</GalleryGoldButton>
+                  <GalleryGoldButton>{t("ROOM/CABIN")}</GalleryGoldButton>
                 </Link>
               </Menu.Item>
               <Menu.Item fitted='horizontally'>
-              <Link to="/underconstruction">
-                <GalleryGoldButton>{t("BATHROOM")}</GalleryGoldButton>
+                <Link to="/underconstruction">
+                  <GalleryGoldButton>{t("BATHROOM")}</GalleryGoldButton>
                 </Link>
               </Menu.Item>
               <Menu.Item fitted='horizontally'>
-              <Link to="/underconstruction">
-                <GalleryGoldButton>{t("DINING")}</GalleryGoldButton>
+                <Link to="/underconstruction">
+                  <GalleryGoldButton>{t("DINING")}</GalleryGoldButton>
                 </Link>
               </Menu.Item>
             </Menu>
@@ -82,32 +83,77 @@ class Gallery extends React.Component {
             {this.renderCards()}
           </Card.Group> */}
           <Grid equal height row stackable>
-            <Grid.Row columns={4} stackable>
-              <Grid.Column stretched>
-                <Image style={{ height: '250px' }} src={IMGone} />
+
+            <Grid.Row columns={4} stackable style={{ height: "275px" }}>
+              <Grid.Column stretched stackable>
+                <ModalImage
+                  small={IMGone}
+                  large={IMGone}
+                  stackable
+                
+                />
               </Grid.Column>
-              <Grid.Column>
-                <Image style={{ height: '250px', width: '250px' }} src={IMGtwo} />
+              <Grid.Column stretched stackable>
+                <div style={{ display: 'flex', alignItems: 'stretch', }}>
+                  <ModalImage
+                    small={IMGtwo}
+                    large={IMGtwo}
+                    stackable
+                  
+                  />
+                </div>
               </Grid.Column >
-              <Grid.Column stretched>
-                <Image style={{ height: '250px' }} src={IMGthree} />
+              <Grid.Column stretched stackable>
+                <ModalImage
+                  small={IMGthree}
+                  large={IMGthree}
+                
+                  stackable
+                  />
               </Grid.Column>
-              <Grid.Column stretched>
-                <Image style={{ height: '250px' }} src={IMGfour} />
+              <Grid.Column stretched stackable>
+                <ModalImage
+                  small={IMGfour}
+                  large={IMGfour}
+                
+                  stackable
+                  />
               </Grid.Column>
             </Grid.Row>
-            <Grid.Row columns={4}>
-              <Grid.Column stretched>
-                <Image style={{ height: '250px' }} src={IMGfive} />
+
+            <Grid.Row columns={4} style={{ height: "275px" }} stackable>
+              <Grid.Column stretched stackable>
+                <ModalImage
+                  small={IMGfive}
+                  large={IMGfive} 
+                
+                  stackable
+                  />
+                  
               </Grid.Column>
-              <Grid.Column stretched>
-                <Image style={{ height: '250px' }} src={IMGsix} />
+              <Grid.Column stretched stackable>
+                <ModalImage
+                  small={IMGsix}
+                  large={IMGsix} 
+                
+                  stackable
+                  />
               </Grid.Column>
-              <Grid.Column stretched>
-                <Image style={{ height: '250px' }} src={IMGseven} />
+              <Grid.Column stretched stackable>
+                <ModalImage
+                  small={IMGseven}
+                  large={IMGseven} 
+                
+                  stackable
+                  />
               </Grid.Column>
-              <Grid.Column stretched>
-                <Image style={{ height: '250px' }} src={IMGeight} />
+              <Grid.Column stretched stackable>
+                <ModalImage
+                small={IMGeight}
+                large={IMGeight}
+              
+                stackable
+                />
               </Grid.Column>
             </Grid.Row>
           </Grid>
@@ -165,7 +211,7 @@ const styles = {
 }
 
 const cardStyles = {
-  card:  {
+  card: {
     display: 'flex',
     fontSize: '16px',
     justifyContent: 'center',
@@ -175,7 +221,10 @@ const cardStyles = {
     color: 'red',
   },
   grid: {
-    display: 'block'
+    display: 'block',
+  },
+  image: {
+    width: '1000px',
   }
 }
 

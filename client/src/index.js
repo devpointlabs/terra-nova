@@ -14,6 +14,7 @@ import { initMiddleware, } from 'devise-axios';
 
 initMiddleware()
 
+
 ReactDOM.render(
   <AuthProvider>
     <React.Fragment>
