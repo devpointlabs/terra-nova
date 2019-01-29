@@ -31,7 +31,7 @@ class EmailForm extends React.Component {
   open = () => this.setState({ open: true });
   close = () => this.setState({ open: false });
 
-  showModal = () => this.setState({ open: !this.state.open });
+  // showModal = () => this.setState({ open: !this.state.open });
 
   emailModal = () => {
     const { t } = this.props;
