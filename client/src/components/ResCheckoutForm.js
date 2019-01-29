@@ -1,8 +1,7 @@
 import React from "react";
 import { Form, Button } from "semantic-ui-react";
 import axios from "axios";
-import { withNamespaces } from "react-i18next";
-// import BraintreeDrop from './BraintreeDrop';
+import { withNamespaces } from 'react-i18next';
 
 class ResCheckoutForm extends React.Component {
   state = {
@@ -101,14 +100,17 @@ class ResCheckoutForm extends React.Component {
         );
   };
 
+
   render() {
     const {
-      reservation: { first_name, last_name, phone, email }
+      reservation: { first_name, last_name, phone, email, }
     } = this.state;
-    const { t } = this.props;
+    // const {t} = this.props;
+    const {room: {cost}, t }= this.props;
     const { formErrors } = this.state;
 
     return (
+
       <Form onSubmit={this.handleSubmit} style={styles.flex}>
         <Form.Group>
           <Form.Input
@@ -118,7 +120,7 @@ class ResCheckoutForm extends React.Component {
             onChange={this.handleChange}
             label={t("First Name")}
             required
-          />
+            />
           <Form.Input
             name="last_name"
             placeholder={t("Last Name")}
@@ -126,7 +128,7 @@ class ResCheckoutForm extends React.Component {
             onChange={this.handleChange}
             label={t("Last Name")}
             required
-          />
+            />
           <Form.Input
             name="phone"
             placeholder={t("Phone Number")}
@@ -134,7 +136,7 @@ class ResCheckoutForm extends React.Component {
             onChange={this.handleChange}
             required
             label={t("Phone Number")}
-          />
+            />
           <Form.Input
             name="email"
             placeholder={t("Email")}
@@ -142,7 +144,7 @@ class ResCheckoutForm extends React.Component {
             onChange={this.handleChange}
             required
             label={t("Email")}
-          />
+            />
         </Form.Group>
         <Button
           style={{ marginBottom: "7px" }}
