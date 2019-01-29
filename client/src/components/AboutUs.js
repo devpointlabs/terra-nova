@@ -100,6 +100,7 @@ const styles = {
   image: {
     backgroundColor: 'white',
     marginBottom: '20px',
+
   }
 }
 
@@ -114,7 +115,7 @@ const text = {
 
 const background = {
   paddingBottom: '150px',
-  marginTop: '100px',
+  marginTop: '50px',
 }
 
 const cardGroup = {

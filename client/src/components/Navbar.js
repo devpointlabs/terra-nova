@@ -242,7 +242,7 @@ export const styles = {
     marginBottom: "-20px"
   },
   image: {
-    padding: "10px",
+    padding: "2px",
     marginBottom: "-40px",
     marginTop: "-10px",
     height: "100px",

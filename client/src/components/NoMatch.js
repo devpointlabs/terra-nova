@@ -6,7 +6,7 @@ const NoMatch = ({ t }) => (
   // <Header as="h1" textAlign="center">
   //   {t("Page not found return")}
   // </Header>
-  <div style={styles.backgroun}>
+  <div style={styles.background}>
     <h2 style={styles.title2}>Page not found</h2>
      <h1 style={styles.body}> Return
     <Link to="/" styles={styles.body}> {t("Home")}.</Link>
@@ -43,5 +43,8 @@ const styles = {
     // textShadow: "0.5px 0.5px #000000",
     textAlign: "center",
   },
+  background: {
+    marginTop: '100px'
+  }
 
 }

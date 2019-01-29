@@ -44,7 +44,8 @@ end
 end   
 
 Review.create(
-  name: 'Tyler Cook',
+  first_name: 'Tyler',
+  last_name: 'Cook',
   location: 'New York City, NY',
   title: "Best stay I've had in YellowStone.",
   rating: 5,
@@ -52,7 +53,8 @@ Review.create(
   The rooms are so relaxing, the views are beatiful and the neighbors and staff are wonderful. Will stay here again."
 )
 Review.create(
-  name: 'Brittany Jones',
+  first_name: 'Brittany',
+  last_name: 'Jones',
   location: 'Birmingham, AL',
   title: "Want to stay cozy in the mountains?",
   rating: 5,
@@ -60,7 +62,8 @@ Review.create(
   Then this IS the place! Thank you to Terra Nova cabins for our amazing getaway this year."
 )
 Review.create(
-  name: 'Meghan Higgins',
+  first_name: 'Meghan',
+  last_name: 'Higgins',
   location: 'Greenwhich, CT',
   title: "Honeymoon well spent.",
   rating: 5,

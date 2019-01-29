@@ -55,6 +55,7 @@ const styles = {
       minWidth: "100%",
       backgroundSize: "cover",
       backgroundPosition: "center center",
+      marginTop: '130px',
       // backgrounColor: "black",
       // backgroundBlendMode: "screen",
       // opacity: "0.2",

@@ -11,7 +11,7 @@ class CareerForm extends React.Component {
         const { t } = this.props;
 
         return(
-            <Container>
+            <Container style={styles}>
             <Form onSubmit={this.handleSubmit}>
                     <Form.Group width="equal">
                         <Form.Input
@@ -56,3 +56,7 @@ class CareerForm extends React.Component {
 };//end of CareerForm
 
 export default withNamespaces()(CareerForm);
+
+const styles = {
+    marginTop: '100px',
+}
